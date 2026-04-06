@@ -16834,6 +16834,7 @@ const navLinks = [
   { label: "ধর্মীয় অনুষ্ঠান", href: "#religion" },
   { label: "ফিচার স্টোরি", href: "#feature" },
   { label: "মাল্টিমিডিয়া", href: "#multimedia" },
+  { label: "আবহাওয়া", href: "#weather" },
   { label: "আমাদের সম্পর্কে", href: "#about" },
   { label: "যোগাযোগ", href: "#contact" }
 ];
@@ -32253,7 +32254,7 @@ function WeatherSection() {
       return h2 === nowHour;
     });
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "aria-labelledby": "weather-section-heading", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "weather", "aria-labelledby": "weather-section-heading", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-3 mb-6", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "div",

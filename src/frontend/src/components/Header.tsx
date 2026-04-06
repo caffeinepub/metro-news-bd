@@ -14,6 +14,7 @@ const navLinks = [
   { label: "ধর্মীয় অনুষ্ঠান", href: "#religion" },
   { label: "ফিচার স্টোরি", href: "#feature" },
   { label: "মাল্টিমিডিয়া", href: "#multimedia" },
+  { label: "আবহাওয়া", href: "#weather" },
   { label: "আমাদের সম্পর্কে", href: "#about" },
   { label: "যোগাযোগ", href: "#contact" },
 ];

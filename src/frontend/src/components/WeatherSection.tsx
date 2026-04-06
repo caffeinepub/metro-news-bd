@@ -339,7 +339,7 @@ export function WeatherSection() {
   };
 
   return (
-    <section aria-labelledby="weather-section-heading">
+    <section id="weather" aria-labelledby="weather-section-heading">
       {/* Section Header */}
       <div className="flex flex-wrap items-center gap-3 mb-6">
         <div
