@@ -35,18 +35,18 @@ export function Header() {
             className="flex items-center justify-center w-10 h-10 rounded font-bold text-xl"
             style={{ backgroundColor: "#1a1a1a", border: "1px solid #2d2d2d" }}
           >
-            <span className="text-white">ম</span>
-            <span className="news-red">ন</span>
+            <span className="text-white">বা</span>
+            <span className="news-red">নি</span>
           </div>
           <div className="leading-tight">
             <div className="text-white font-bold text-lg tracking-widest uppercase">
-              মেট্রো নিউজ
+              বালীগাঁও নিউজ
             </div>
             <div
               className="text-xs tracking-wider uppercase"
               style={{ color: "#9c9c9c" }}
             >
-              সত্যের সন্ধানে, সংবাদের পথে
+              Voice of Truth &amp; Freedom
             </div>
           </div>
         </div>

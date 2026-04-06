@@ -1,3 +1,4 @@
+import { Mail, MapPin, User } from "lucide-react";
 import { SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 
 const sectionLinks = [
@@ -42,17 +43,44 @@ export function Footer() {
                   border: "1px solid #2d2d2d",
                 }}
               >
-                <span className="text-white">ম</span>
-                <span className="news-red">ন</span>
+                <span className="text-white">বা</span>
+                <span className="news-red">নি</span>
               </div>
               <span className="text-white font-bold text-sm uppercase tracking-widest">
-                মেট্রো নিউজ
+                বালীগাঁও নিউজ
               </span>
             </div>
-            <p className="text-xs leading-relaxed" style={{ color: "#9c9c9c" }}>
-              মেট্রো নিউজ বাংলাদেশের একটি নির্ভরযোগ্য সংবাদ মাধ্যম। আমরা প্রতিদিন সর্বশেষ,
-              নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।
+            <p
+              className="text-xs leading-relaxed mb-4"
+              style={{ color: "#9c9c9c" }}
+            >
+              বালীগাঁও নিউজ বালিগাঁও, লাখাই, হবিগঞ্জ-এর একটি নির্ভরযোগ্য স্থানীয় সংবাদ মাধ্যম।
+              আমরা প্রতিদিন সর্বশেষ, নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।
             </p>
+            {/* Contact Info */}
+            <div className="flex flex-col gap-2">
+              <div
+                className="flex items-center gap-2"
+                style={{ color: "#9c9c9c" }}
+              >
+                <Mail size={12} className="shrink-0" />
+                <span className="text-xs">baligawnews@gmail.com</span>
+              </div>
+              <div
+                className="flex items-start gap-2"
+                style={{ color: "#9c9c9c" }}
+              >
+                <MapPin size={12} className="shrink-0 mt-0.5" />
+                <span className="text-xs">বালিগাঁও, লাখাই, হবিগঞ্জ</span>
+              </div>
+              <div
+                className="flex items-center gap-2"
+                style={{ color: "#9c9c9c" }}
+              >
+                <User size={12} className="shrink-0" />
+                <span className="text-xs">সম্পাদক: এম.ডি ব্রাইট</span>
+              </div>
+            </div>
           </div>
 
           {/* Sections column */}
@@ -64,7 +92,7 @@ export function Footer() {
               {sectionLinks.map((link) => (
                 <li key={link}>
                   <a
-                    href="https://metronewsbd.com"
+                    href="#content"
                     className="text-xs transition-colors hover:text-white"
                     style={{ color: "#9c9c9c" }}
                   >
@@ -84,7 +112,7 @@ export function Footer() {
               {resourceLinks.map((link) => (
                 <li key={link}>
                   <a
-                    href="https://metronewsbd.com"
+                    href="#content"
                     className="text-xs transition-colors hover:text-white"
                     style={{ color: "#9c9c9c" }}
                   >
@@ -102,7 +130,7 @@ export function Footer() {
             </h3>
             <div className="flex flex-col gap-3">
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/baligawnews"
                 data-ocid="footer.facebook.link"
                 className="flex items-center gap-2.5 text-xs transition-colors group"
                 style={{ color: "#9c9c9c" }}
@@ -113,11 +141,11 @@ export function Footer() {
                   className="group-hover:text-white transition-colors"
                 />
                 <span className="group-hover:text-white transition-colors">
-                  @metronewsbd
+                  @baligawnews
                 </span>
               </a>
               <a
-                href="https://x.com"
+                href="https://x.com/baligawnews"
                 data-ocid="footer.twitter.link"
                 className="flex items-center gap-2.5 text-xs transition-colors group"
                 style={{ color: "#9c9c9c" }}
@@ -128,11 +156,11 @@ export function Footer() {
                   className="group-hover:text-white transition-colors"
                 />
                 <span className="group-hover:text-white transition-colors">
-                  @metronewsbd
+                  @baligawnews
                 </span>
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@baligawnews"
                 data-ocid="footer.youtube.link"
                 className="flex items-center gap-2.5 text-xs transition-colors group"
                 style={{ color: "#9c9c9c" }}
@@ -143,11 +171,11 @@ export function Footer() {
                   className="group-hover:text-white transition-colors"
                 />
                 <span className="group-hover:text-white transition-colors">
-                  Metro News BD
+                  বালীগাঁও নিউজ
                 </span>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/baligawnews"
                 data-ocid="footer.instagram.link"
                 className="flex items-center gap-2.5 text-xs transition-colors group"
                 style={{ color: "#9c9c9c" }}
@@ -158,7 +186,7 @@ export function Footer() {
                   className="group-hover:text-white transition-colors"
                 />
                 <span className="group-hover:text-white transition-colors">
-                  @metronewsbd
+                  @baligawnews
                 </span>
               </a>
             </div>
@@ -170,7 +198,7 @@ export function Footer() {
           className="mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
           style={{ borderTop: "1px solid #2d2d2d", color: "#6b6b6b" }}
         >
-          <p>© {currentYear} মেট্রো নিউজ। সকল স্বত্ব সংরক্ষিত।</p>
+          <p>© {currentYear} বালীগাঁও নিউজ। সকল স্বত্ব সংরক্ষিত।</p>
           <p>
             Built with ❤️ using{" "}
             <a

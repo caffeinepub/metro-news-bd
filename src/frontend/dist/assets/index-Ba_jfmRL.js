@@ -14128,6 +14128,205 @@ function EditorsPicks() {
     }
   );
 }
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const toCamelCase = (string) => string.replace(
+  /^([A-Z])|[\s-_]+(\w)/g,
+  (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
+);
+const toPascalCase = (string) => {
+  const camelCase = toCamelCase(string);
+  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+const mergeClasses = (...classes) => classes.filter((className, index2, array) => {
+  return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index2;
+}).join(" ").trim();
+const hasA11yProp = (props) => {
+  for (const prop in props) {
+    if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
+      return true;
+    }
+  }
+};
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+var defaultAttributes = {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: 24,
+  height: 24,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+};
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const Icon = reactExports.forwardRef(
+  ({
+    color = "currentColor",
+    size = 24,
+    strokeWidth = 2,
+    absoluteStrokeWidth,
+    className = "",
+    children,
+    iconNode,
+    ...rest
+  }, ref) => reactExports.createElement(
+    "svg",
+    {
+      ref,
+      ...defaultAttributes,
+      width: size,
+      height: size,
+      stroke: color,
+      strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+      className: mergeClasses("lucide", className),
+      ...!children && !hasA11yProp(rest) && { "aria-hidden": "true" },
+      ...rest
+    },
+    [
+      ...iconNode.map(([tag, attrs]) => reactExports.createElement(tag, attrs)),
+      ...Array.isArray(children) ? children : [children]
+    ]
+  )
+);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const createLucideIcon = (iconName, iconNode) => {
+  const Component2 = reactExports.forwardRef(
+    ({ className, ...props }, ref) => reactExports.createElement(Icon, {
+      ref,
+      iconNode,
+      className: mergeClasses(
+        `lucide-${toKebabCase(toPascalCase(iconName))}`,
+        `lucide-${iconName}`,
+        className
+      ),
+      ...props
+    })
+  );
+  Component2.displayName = toPascalCase(iconName);
+  return Component2;
+};
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$8 = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$8);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$7 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$7);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$6 = [
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
+];
+const Mail = createLucideIcon("mail", __iconNode$6);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$5 = [
+  [
+    "path",
+    {
+      d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
+      key: "1r0f0z"
+    }
+  ],
+  ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
+];
+const MapPin = createLucideIcon("map-pin", __iconNode$5);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$4 = [
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 18h16", key: "19g7jn" }],
+  ["path", { d: "M4 6h16", key: "1o0s65" }]
+];
+const Menu = createLucideIcon("menu", __iconNode$4);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$3 = [
+  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
+];
+const Search = createLucideIcon("search", __iconNode$3);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$2 = [
+  ["path", { d: "m17 2-5 5-5-5", key: "16satq" }],
+  ["rect", { width: "20", height: "15", x: "2", y: "7", rx: "2", key: "1e6viu" }]
+];
+const Tv = createLucideIcon("tv", __iconNode$2);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1 = [
+  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
+  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
+];
+const User = createLucideIcon("user", __iconNode$1);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode = [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+];
+const X = createLucideIcon("x", __iconNode);
 var DefaultContext = {
   color: void 0,
   size: void 0,
@@ -14309,21 +14508,63 @@ function Footer() {
                     border: "1px solid #2d2d2d"
                   },
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "ম" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "ন" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
                   ]
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-bold text-sm uppercase tracking-widest", children: "মেট্রো নিউজ" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-bold text-sm uppercase tracking-widest", children: "বালীগাঁও নিউজ" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs leading-relaxed", style: { color: "#9c9c9c" }, children: "মেট্রো নিউজ বাংলাদেশের একটি নির্ভরযোগ্য সংবাদ মাধ্যম। আমরা প্রতিদিন সর্বশেষ, নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "p",
+              {
+                className: "text-xs leading-relaxed mb-4",
+                style: { color: "#9c9c9c" },
+                children: "বালীগাঁও নিউজ বালিগাঁও, লাখাই, হবিগঞ্জ-এর একটি নির্ভরযোগ্য স্থানীয় সংবাদ মাধ্যম। আমরা প্রতিদিন সর্বশেষ, নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-2",
+                  style: { color: "#9c9c9c" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { size: 12, className: "shrink-0" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "baligawnews@gmail.com" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-start gap-2",
+                  style: { color: "#9c9c9c" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { size: 12, className: "shrink-0 mt-0.5" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "বালিগাঁও, লাখাই, হবিগঞ্জ" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-2",
+                  style: { color: "#9c9c9c" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 12, className: "shrink-0" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "সম্পাদক: এম.ডি ব্রাইট" })
+                  ]
+                }
+              )
+            ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "বিভাগ" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: sectionLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
               "a",
               {
-                href: "https://metronewsbd.com",
+                href: "#content",
                 className: "text-xs transition-colors hover:text-white",
                 style: { color: "#9c9c9c" },
                 children: link
@@ -14335,7 +14576,7 @@ function Footer() {
             /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: resourceLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
               "a",
               {
-                href: "https://metronewsbd.com",
+                href: "#content",
                 className: "text-xs transition-colors hover:text-white",
                 style: { color: "#9c9c9c" },
                 children: link
@@ -14348,7 +14589,7 @@ function Footer() {
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "a",
                 {
-                  href: "https://facebook.com",
+                  href: "https://facebook.com/baligawnews",
                   "data-ocid": "footer.facebook.link",
                   className: "flex items-center gap-2.5 text-xs transition-colors group",
                   style: { color: "#9c9c9c" },
@@ -14361,14 +14602,14 @@ function Footer() {
                         className: "group-hover:text-white transition-colors"
                       }
                     ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@metronewsbd" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
                   ]
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "a",
                 {
-                  href: "https://x.com",
+                  href: "https://x.com/baligawnews",
                   "data-ocid": "footer.twitter.link",
                   className: "flex items-center gap-2.5 text-xs transition-colors group",
                   style: { color: "#9c9c9c" },
@@ -14381,14 +14622,14 @@ function Footer() {
                         className: "group-hover:text-white transition-colors"
                       }
                     ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@metronewsbd" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
                   ]
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "a",
                 {
-                  href: "https://youtube.com",
+                  href: "https://youtube.com/@baligawnews",
                   "data-ocid": "footer.youtube.link",
                   className: "flex items-center gap-2.5 text-xs transition-colors group",
                   style: { color: "#9c9c9c" },
@@ -14401,14 +14642,14 @@ function Footer() {
                         className: "group-hover:text-white transition-colors"
                       }
                     ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "Metro News BD" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "বালীগাঁও নিউজ" })
                   ]
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "a",
                 {
-                  href: "https://instagram.com",
+                  href: "https://instagram.com/baligawnews",
                   "data-ocid": "footer.instagram.link",
                   className: "flex items-center gap-2.5 text-xs transition-colors group",
                   style: { color: "#9c9c9c" },
@@ -14421,7 +14662,7 @@ function Footer() {
                         className: "group-hover:text-white transition-colors"
                       }
                     ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@metronewsbd" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
                   ]
                 }
               )
@@ -14437,7 +14678,7 @@ function Footer() {
               /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
                 "© ",
                 currentYear,
-                " মেট্রো নিউজ। সকল স্বত্ব সংরক্ষিত।"
+                " বালীগাঁও নিউজ। সকল স্বত্ব সংরক্ষিত।"
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
                 "Built with ❤️ using",
@@ -14460,166 +14701,6 @@ function Footer() {
     }
   );
 }
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
-const toCamelCase = (string) => string.replace(
-  /^([A-Z])|[\s-_]+(\w)/g,
-  (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
-);
-const toPascalCase = (string) => {
-  const camelCase = toCamelCase(string);
-  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
-};
-const mergeClasses = (...classes) => classes.filter((className, index2, array) => {
-  return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index2;
-}).join(" ").trim();
-const hasA11yProp = (props) => {
-  for (const prop in props) {
-    if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
-      return true;
-    }
-  }
-};
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-var defaultAttributes = {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: 24,
-  height: 24,
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round"
-};
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const Icon = reactExports.forwardRef(
-  ({
-    color = "currentColor",
-    size = 24,
-    strokeWidth = 2,
-    absoluteStrokeWidth,
-    className = "",
-    children,
-    iconNode,
-    ...rest
-  }, ref) => reactExports.createElement(
-    "svg",
-    {
-      ref,
-      ...defaultAttributes,
-      width: size,
-      height: size,
-      stroke: color,
-      strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
-      className: mergeClasses("lucide", className),
-      ...!children && !hasA11yProp(rest) && { "aria-hidden": "true" },
-      ...rest
-    },
-    [
-      ...iconNode.map(([tag, attrs]) => reactExports.createElement(tag, attrs)),
-      ...Array.isArray(children) ? children : [children]
-    ]
-  )
-);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const createLucideIcon = (iconName, iconNode) => {
-  const Component2 = reactExports.forwardRef(
-    ({ className, ...props }, ref) => reactExports.createElement(Icon, {
-      ref,
-      iconNode,
-      className: mergeClasses(
-        `lucide-${toKebabCase(toPascalCase(iconName))}`,
-        `lucide-${iconName}`,
-        className
-      ),
-      ...props
-    })
-  );
-  Component2.displayName = toPascalCase(iconName);
-  return Component2;
-};
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$5 = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$5);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$4 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$4);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$3 = [
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 18h16", key: "19g7jn" }],
-  ["path", { d: "M4 6h16", key: "1o0s65" }]
-];
-const Menu = createLucideIcon("menu", __iconNode$3);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$2 = [
-  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-];
-const Search = createLucideIcon("search", __iconNode$2);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1 = [
-  ["path", { d: "m17 2-5 5-5-5", key: "16satq" }],
-  ["rect", { width: "20", height: "15", x: "2", y: "7", rx: "2", key: "1e6viu" }]
-];
-const Tv = createLucideIcon("tv", __iconNode$1);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode = [
-  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
-  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
-];
-const X = createLucideIcon("x", __iconNode);
 const navLinks = [
   { label: "হোম", href: "#home" },
   { label: "স্থানীয় খবর", href: "#local" },
@@ -14653,19 +14734,19 @@ function Header() {
                 className: "flex items-center justify-center w-10 h-10 rounded font-bold text-xl",
                 style: { backgroundColor: "#1a1a1a", border: "1px solid #2d2d2d" },
                 children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "ম" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "ন" })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
                 ]
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "leading-tight", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-bold text-lg tracking-widest uppercase", children: "মেট্রো নিউজ" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-bold text-lg tracking-widest uppercase", children: "বালীগাঁও নিউজ" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
                   className: "text-xs tracking-wider uppercase",
                   style: { color: "#9c9c9c" },
-                  children: "সত্যের সন্ধানে, সংবাদের পথে"
+                  children: "Voice of Truth & Freedom"
                 }
               )
             ] })
