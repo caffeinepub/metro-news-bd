@@ -1106,8 +1106,8 @@ video {
 .max-w-\[1200px\] {
   max-width: 1200px;
 }
-.max-w-\[120px\] {
-  max-width: 120px;
+.max-w-\[130px\] {
+  max-width: 130px;
 }
 .max-w-\[600px\] {
   max-width: 600px;
@@ -3633,12 +3633,20 @@ video {
     display: inline-flex;
   }
 
+  .sm\:w-auto {
+    width: auto;
+  }
+
   .sm\:max-w-lg {
     max-width: 32rem;
   }
 
   .sm\:max-w-sm {
     max-width: 24rem;
+  }
+
+  .sm\:flex-none {
+    flex: none;
   }
 
   .sm\:grid-cols-2 {
