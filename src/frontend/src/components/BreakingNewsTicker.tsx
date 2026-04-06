@@ -51,7 +51,6 @@ export function BreakingNewsTicker() {
       className="w-full"
       style={{
         backgroundColor: "#111111",
-        /* No overflow clipping on the outer wrapper so Bengali diacritics are never cut */
         overflow: "visible",
       }}
       aria-label="ব্রেকিং নিউজ"
@@ -60,21 +59,21 @@ export function BreakingNewsTicker() {
         style={{
           display: "flex",
           alignItems: "stretch",
-          /* Reduced overall bar height so red label appears shorter */
-          minHeight: "60px",
+          /* Overall bar height driven by black box padding — red label stretches to match */
+          minHeight: "44px",
         }}
       >
-        {/* Label — red box */}
+        {/* Label — red box: padding reduced to make it shorter */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: "6px",
-            padding: "0 16px",
+            padding: "0 12px",
             backgroundColor: "#cc0000",
             color: "#ffffff",
             fontWeight: 700,
-            fontSize: "12px",
+            fontSize: "11px",
             textTransform: "uppercase",
             letterSpacing: "0.08em",
             flexShrink: 0,
@@ -84,8 +83,8 @@ export function BreakingNewsTicker() {
           <span
             style={{
               display: "inline-block",
-              width: "8px",
-              height: "8px",
+              width: "7px",
+              height: "7px",
               borderRadius: "50%",
               backgroundColor: "#fff",
               animation: "pulse 1.5s infinite",
@@ -105,9 +104,8 @@ export function BreakingNewsTicker() {
         />
 
         {/* Scrolling content — black box.
-            Key fix: clip-path is avoided; overflow:hidden is set only on x-axis
-            so the container scrolls horizontally while giving vertical breathing
-            room via generous paddingTop/paddingBottom. */}
+            paddingTop/Bottom increased so Bengali diacritics are fully visible.
+            Text shifted down via marginTop on headline span. */}
         <div
           style={{
             flex: 1,
@@ -115,17 +113,15 @@ export function BreakingNewsTicker() {
             overflowY: "visible",
             position: "relative",
             backgroundColor: "#111111",
-            /* Increased vertical padding so Bengali matras above/below characters
-               are never clipped by the container boundary */
-            paddingTop: "26px",
-            paddingBottom: "26px",
+            paddingTop: "32px",
+            paddingBottom: "32px",
           }}
         >
           <div
             className="ticker-animation"
             style={{
               display: "flex",
-              alignItems: "center",
+              alignItems: "flex-end",
               whiteSpace: "nowrap",
             }}
           >
@@ -135,13 +131,14 @@ export function BreakingNewsTicker() {
                 key={`ticker-${item.id}-${idx}`}
                 style={{
                   display: "inline-flex",
-                  alignItems: "center",
+                  alignItems: "flex-end",
                   gap: "12px",
                   color: "#ffffff",
                   fontSize: "14px",
                   fontWeight: 600,
-                  /* lineHeight > 2 gives enough room for Bengali diacritics */
                   lineHeight: "2.2",
+                  /* Push headline + author/time further down */
+                  marginTop: "10px",
                 }}
               >
                 <span
@@ -161,6 +158,8 @@ export function BreakingNewsTicker() {
                     fontWeight: 400,
                     marginLeft: "4px",
                     lineHeight: "2.2",
+                    /* Author/time also pushed down */
+                    marginTop: "6px",
                   }}
                 >
                   ({item.time})

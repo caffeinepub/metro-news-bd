@@ -14766,7 +14766,6 @@ function BreakingNewsTicker() {
       className: "w-full",
       style: {
         backgroundColor: "#111111",
-        /* No overflow clipping on the outer wrapper so Bengali diacritics are never cut */
         overflow: "visible"
       },
       "aria-label": "ব্রেকিং নিউজ",
@@ -14776,8 +14775,8 @@ function BreakingNewsTicker() {
           style: {
             display: "flex",
             alignItems: "stretch",
-            /* Reduced overall bar height so red label appears shorter */
-            minHeight: "60px"
+            /* Overall bar height driven by black box padding — red label stretches to match */
+            minHeight: "44px"
           },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14787,11 +14786,11 @@ function BreakingNewsTicker() {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
-                  padding: "0 16px",
+                  padding: "0 12px",
                   backgroundColor: "#cc0000",
                   color: "#ffffff",
                   fontWeight: 700,
-                  fontSize: "12px",
+                  fontSize: "11px",
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",
                   flexShrink: 0,
@@ -14803,8 +14802,8 @@ function BreakingNewsTicker() {
                     {
                       style: {
                         display: "inline-block",
-                        width: "8px",
-                        height: "8px",
+                        width: "7px",
+                        height: "7px",
                         borderRadius: "50%",
                         backgroundColor: "#fff",
                         animation: "pulse 1.5s infinite",
@@ -14835,10 +14834,8 @@ function BreakingNewsTicker() {
                   overflowY: "visible",
                   position: "relative",
                   backgroundColor: "#111111",
-                  /* Increased vertical padding so Bengali matras above/below characters
-                     are never clipped by the container boundary */
-                  paddingTop: "26px",
-                  paddingBottom: "26px"
+                  paddingTop: "32px",
+                  paddingBottom: "32px"
                 },
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
@@ -14846,7 +14843,7 @@ function BreakingNewsTicker() {
                     className: "ticker-animation",
                     style: {
                       display: "flex",
-                      alignItems: "center",
+                      alignItems: "flex-end",
                       whiteSpace: "nowrap"
                     },
                     children: tickerContent.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14854,13 +14851,14 @@ function BreakingNewsTicker() {
                       {
                         style: {
                           display: "inline-flex",
-                          alignItems: "center",
+                          alignItems: "flex-end",
                           gap: "12px",
                           color: "#ffffff",
                           fontSize: "14px",
                           fontWeight: 600,
-                          /* lineHeight > 2 gives enough room for Bengali diacritics */
-                          lineHeight: "2.2"
+                          lineHeight: "2.2",
+                          /* Push headline + author/time further down */
+                          marginTop: "10px"
                         },
                         children: [
                           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14883,7 +14881,9 @@ function BreakingNewsTicker() {
                                 fontSize: "12px",
                                 fontWeight: 400,
                                 marginLeft: "4px",
-                                lineHeight: "2.2"
+                                lineHeight: "2.2",
+                                /* Author/time also pushed down */
+                                marginTop: "6px"
                               },
                               children: [
                                 "(",
