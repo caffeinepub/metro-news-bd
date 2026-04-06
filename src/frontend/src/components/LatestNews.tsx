@@ -10,6 +10,8 @@ interface NewsItem {
   author: string;
   time: string;
   image: string;
+  sourceUrl: string;
+  sourceName: string;
 }
 
 const staticLatestNews: NewsItem[] = [
@@ -22,6 +24,8 @@ const staticLatestNews: NewsItem[] = [
     author: "কামরুল ইসলাম",
     time: "১ ঘন্টা আগে",
     image: "/assets/generated/thumb-tech.dim_300x200.jpg",
+    sourceUrl: "https://www.bdnews24.com",
+    sourceName: "BD News 24",
   },
   {
     id: 2,
@@ -32,6 +36,8 @@ const staticLatestNews: NewsItem[] = [
     author: "শাহানা পারভীন",
     time: "২ ঘন্টা আগে",
     image: "/assets/generated/thumb-business.dim_300x200.jpg",
+    sourceUrl: "https://www.prothomalo.com",
+    sourceName: "প্রথম আলো",
   },
   {
     id: 3,
@@ -42,6 +48,8 @@ const staticLatestNews: NewsItem[] = [
     author: "আশরাফ উদ্দিন",
     time: "৩ ঘন্টা আগে",
     image: "/assets/generated/thumb-flood.dim_300x200.jpg",
+    sourceUrl: "https://www.thedailystar.net",
+    sourceName: "The Daily Star",
   },
   {
     id: 4,
@@ -52,6 +60,8 @@ const staticLatestNews: NewsItem[] = [
     author: "মিজানুর রহমান",
     time: "৪ ঘন্টা আগে",
     image: "/assets/generated/thumb-sports.dim_300x200.jpg",
+    sourceUrl: "https://www.bdnews24.com",
+    sourceName: "BD News 24",
   },
   {
     id: 5,
@@ -62,6 +72,8 @@ const staticLatestNews: NewsItem[] = [
     author: "নিলুফার হোসেন",
     time: "৫ ঘন্টা আগে",
     image: "/assets/generated/thumb-culture.dim_300x200.jpg",
+    sourceUrl: "https://www.bbcbangla.com",
+    sourceName: "BBC বাংলা",
   },
   {
     id: 6,
@@ -72,6 +84,8 @@ const staticLatestNews: NewsItem[] = [
     author: "হামিদ উল্লাহ",
     time: "৬ ঘন্টা আগে",
     image: "/assets/generated/thumb-education.dim_300x200.jpg",
+    sourceUrl: "https://www.prothomalo.com",
+    sourceName: "প্রথম আলো",
   },
 ];
 
@@ -224,6 +238,8 @@ export function LatestNews({ articles }: LatestNewsProps) {
                       author: item.author,
                       time: item.time,
                       image: item.image,
+                      sourceUrl: item.sourceUrl,
+                      sourceName: item.sourceName,
                     })
                   }
                 >

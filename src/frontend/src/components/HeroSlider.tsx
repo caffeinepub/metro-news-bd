@@ -10,6 +10,8 @@ interface SlideItem {
   author: string;
   time: string;
   image: string;
+  sourceUrl: string;
+  sourceName: string;
 }
 
 const slides: SlideItem[] = [
@@ -22,6 +24,8 @@ const slides: SlideItem[] = [
     author: "আহমেদ রহমান",
     time: "২ ঘন্টা আগে",
     image: "/assets/generated/hero-city-news.dim_800x450.jpg",
+    sourceUrl: "https://www.prothomalo.com",
+    sourceName: "প্রথম আলো",
   },
   {
     id: 2,
@@ -32,6 +36,8 @@ const slides: SlideItem[] = [
     author: "ফারহান হোসেন",
     time: "৪ ঘন্টা আগে",
     image: "/assets/generated/hero-politics.dim_800x450.jpg",
+    sourceUrl: "https://www.thedailystar.net",
+    sourceName: "The Daily Star",
   },
   {
     id: 3,
@@ -42,6 +48,8 @@ const slides: SlideItem[] = [
     author: "সুমাইয়া বেগম",
     time: "৬ ঘন্টা আগে",
     image: "/assets/generated/hero-market.dim_800x450.jpg",
+    sourceUrl: "https://www.bdnews24.com",
+    sourceName: "BD News 24",
   },
 ];
 
@@ -78,6 +86,8 @@ export function HeroSlider() {
       author: slide.author,
       time: slide.time,
       image: slide.image,
+      sourceUrl: slide.sourceUrl,
+      sourceName: slide.sourceName,
     });
   };
 

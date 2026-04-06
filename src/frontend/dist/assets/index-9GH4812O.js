@@ -15484,7 +15484,9 @@ const picks = [
     excerpt: "বিশ্ববিদ্যালয় ভর্তি কমিটি এবার কেন্দ্রীয় পরীক্ষার পাশাপাশি বিষয়ভিত্তিক আলাদা পরীক্ষার ব্যবস্থা রাখছে। নতুন নিয়মে আবেদনকারীদের ন্যূনতম জিপিএ ৩.৫ থাকতে হবে। মেধা তালিকা প্রস্তুতে পূর্ববর্তী ফলাফলের পাশাপাশি ভর্তি পরীক্ষার নম্বর সমান গুরুত্ব পাবে।",
     author: "রেজওয়ান আলী",
     time: "৩ ঘন্টা আগে",
-    image: "/assets/generated/thumb-education.dim_300x200.jpg"
+    image: "/assets/generated/thumb-education.dim_300x200.jpg",
+    sourceUrl: "https://www.prothomalo.com",
+    sourceName: "প্রথম আলো"
   },
   {
     id: 2,
@@ -15493,7 +15495,9 @@ const picks = [
     excerpt: "সর্বশেষ আইসিসি টি-টোয়েন্টি র‍্যাঙ্কিংয়ে বাংলাদেশ ৩ ধাপ এগিয়ে ৬ নম্বরে উঠে এসেছে। এ সাফল্যের পেছনে তরুণ ব্যাটারদের ধারাবাহিক পারফরম্যান্স এবং স্পিন বিভাগের দুর্দান্ত কার্যকারিতা অবদান রেখেছে।",
     author: "তানভীর ইসলাম",
     time: "৫ ঘন্টা আগে",
-    image: "/assets/generated/thumb-sports.dim_300x200.jpg"
+    image: "/assets/generated/thumb-sports.dim_300x200.jpg",
+    sourceUrl: "https://www.thedailystar.net",
+    sourceName: "The Daily Star"
   },
   {
     id: 3,
@@ -15502,7 +15506,9 @@ const picks = [
     excerpt: "তিন দিনব্যাপী এই মেলায় দেশের বিভিন্ন অঞ্চল থেকে ১ লাখেরও বেশি দর্শনার্থী এসেছেন। লোকসংগীত, হস্তশিল্প প্রদর্শনী ও ঐতিহ্যবাহী খাবারের স্টল মেলাকে বর্ণময় করে তুলেছে। আয়োজকরা জানিয়েছেন আগামী বছর মেলাটি আরও বড় পরিসরে আয়োজন করা হবে।",
     author: "নাসরিন চৌধুরী",
     time: "৭ ঘন্টা আগে",
-    image: "/assets/generated/thumb-culture.dim_300x200.jpg"
+    image: "/assets/generated/thumb-culture.dim_300x200.jpg",
+    sourceUrl: "https://www.bbcbangla.com",
+    sourceName: "BBC বাংলা"
   }
 ];
 function EditorsPicks() {
@@ -15535,7 +15541,9 @@ function EditorsPicks() {
               category: pick.category,
               author: pick.author,
               time: pick.time,
-              image: pick.image
+              image: pick.image,
+              sourceUrl: pick.sourceUrl,
+              sourceName: pick.sourceName
             }),
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -28545,6 +28553,21 @@ const CATEGORY_ORDER = [
   "সাধারণ খবর"
 ];
 const SKELETON_IDS = ["sk-1", "sk-2", "sk-3", "sk-4", "sk-5", "sk-6"];
+const CATEGORY_IMAGES = {
+  রাজনৈতিক: "/assets/generated/thumb-politics.dim_300x200.jpg",
+  "জাতীয় খবর": "/assets/generated/thumb-politics.dim_300x200.jpg",
+  "আন্তর্জাতিক খবর": "/assets/generated/thumb-international.dim_300x200.jpg",
+  অর্থনৈতিক: "/assets/generated/thumb-business.dim_300x200.jpg",
+  ক্রীড়া: "/assets/generated/thumb-sports.dim_300x200.jpg",
+  শিক্ষা: "/assets/generated/thumb-education.dim_300x200.jpg",
+  স্বাস্থ্য: "/assets/generated/thumb-health.dim_300x200.jpg",
+  কৃষি: "/assets/generated/thumb-agriculture.dim_300x200.jpg",
+  প্রযুক্তি: "/assets/generated/thumb-tech.dim_300x200.jpg",
+  সংস্কৃতি: "/assets/generated/thumb-culture.dim_300x200.jpg"
+};
+function getCategoryImage(category) {
+  return CATEGORY_IMAGES[category] ?? "/assets/generated/thumb-international.dim_300x200.jpg";
+}
 function formatFetchedAt(fetchedAt) {
   const ms = Number(fetchedAt / BigInt(1e6));
   const diff = Date.now() - ms;
@@ -28580,38 +28603,81 @@ function getSortedCategories(map) {
   return ordered;
 }
 function NewsCard({ item, onClick, index: index2 }) {
+  const thumbImg = getCategoryImage(item.category);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "button",
     {
       type: "button",
       "data-ocid": `external_news.item.${index2}`,
-      className: "relative flex flex-col gap-3 p-4 rounded-md cursor-pointer transition-all duration-200 border group w-full text-left",
+      className: "relative flex flex-col gap-0 rounded-md cursor-pointer transition-all duration-200 border group w-full text-left overflow-hidden",
       style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
       onClick: () => onClick(item),
       "aria-label": `সংবাদ পড়ুন: ${item.title}`,
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "span",
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
           {
-            className: "absolute top-3 right-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white rounded-sm max-w-[120px] truncate",
-            style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-            title: item.sourceName,
-            children: item.sourceName
+            className: "relative w-full overflow-hidden",
+            style: { height: "140px" },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "img",
+                {
+                  src: thumbImg,
+                  alt: item.category,
+                  className: "w-full h-full object-cover transition-transform duration-300 group-hover:scale-105",
+                  loading: "lazy"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "absolute inset-0",
+                  style: {
+                    background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%)"
+                  }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: "absolute top-2 left-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white rounded-sm max-w-[120px] truncate",
+                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                  title: item.sourceName,
+                  children: item.sourceName
+                }
+              )
+            ]
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "h3",
-          {
-            className: "text-sm font-bold text-white leading-snug line-clamp-2 pr-24 group-hover:opacity-80 transition-opacity",
-            style: { minHeight: "2.5rem" },
-            children: item.title
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] mt-auto", style: { color: "#6b6b6b" }, children: formatFetchedAt(item.fetchedAt) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2 p-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "h3",
+            {
+              className: "text-sm font-bold text-white leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity",
+              style: { minHeight: "2.5rem" },
+              children: item.title
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mt-auto", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px]", style: { color: "#6b6b6b" }, children: formatFetchedAt(item.fetchedAt) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "span",
+              {
+                className: "text-[10px] font-semibold flex items-center gap-1",
+                style: { color: "oklch(0.4764 0.2183 22.8)" },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { size: 10 }),
+                  "বিস্তারিত"
+                ]
+              }
+            )
+          ] })
+        ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300 rounded-b-md",
+            className: "absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300",
             style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
           }
         )
@@ -28622,6 +28688,7 @@ function NewsCard({ item, onClick, index: index2 }) {
 function NewsModal({ item, onClose }) {
   var _a3;
   if (!item) return null;
+  const thumbImg = getCategoryImage(item.category);
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) onClose();
   };
@@ -28641,42 +28708,48 @@ function NewsModal({ item, onClose }) {
       children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "div",
         {
-          className: "relative w-full max-w-xl rounded-lg shadow-2xl",
+          className: "relative w-full max-w-xl rounded-lg shadow-2xl overflow-hidden",
           style: { backgroundColor: "#111111", border: "1px solid #2d2d2d" },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
               {
-                className: "flex items-start justify-between px-6 py-4 border-b gap-4",
-                style: { borderColor: "#2d2d2d" },
+                className: "relative w-full overflow-hidden",
+                style: { height: "180px" },
                 children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3 flex-1 min-w-0", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "div",
-                      {
-                        className: "w-1 shrink-0 rounded-sm mt-1",
-                        style: {
-                          backgroundColor: "oklch(0.4764 0.2183 22.8)",
-                          minHeight: "1.25rem"
-                        }
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "img",
+                    {
+                      src: thumbImg,
+                      alt: item.category,
+                      className: "w-full h-full object-cover"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "absolute inset-0",
+                      style: {
+                        background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 70%)"
                       }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "h2",
-                      {
-                        id: "ext-news-modal-title",
-                        className: "text-base font-bold text-white leading-snug",
-                        children: item.title
-                      }
-                    )
-                  ] }),
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: "absolute bottom-3 left-4 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white rounded-sm",
+                      style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                      children: item.category
+                    }
+                  ),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "button",
                     {
                       type: "button",
                       "data-ocid": "external_news.close_button",
                       onClick: onClose,
-                      className: "shrink-0 p-1.5 rounded text-gray-400 hover:text-white transition-colors",
+                      className: "absolute top-3 right-3 p-1.5 rounded text-white transition-colors",
+                      style: { backgroundColor: "rgba(0,0,0,0.5)" },
                       "aria-label": "বন্ধ করুন",
                       children: /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 18 })
                     }
@@ -28684,7 +28757,34 @@ function NewsModal({ item, onClose }) {
                 ]
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-6 py-5 flex flex-col gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "flex items-start px-5 pt-4 pb-3 gap-3",
+                style: { borderBottom: "1px solid #2d2d2d" },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "w-1 shrink-0 rounded-sm mt-1",
+                      style: {
+                        backgroundColor: "oklch(0.4764 0.2183 22.8)",
+                        minHeight: "1.25rem"
+                      }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "h2",
+                    {
+                      id: "ext-news-modal-title",
+                      className: "text-base font-bold text-white leading-snug",
+                      children: item.title
+                    }
+                  )
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-5 py-4 flex flex-col gap-4", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "p",
@@ -28699,7 +28799,7 @@ function NewsModal({ item, onClose }) {
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
-                  className: "flex items-center justify-between pt-3 border-t",
+                  className: "flex items-center justify-between pt-3 border-t flex-wrap gap-3",
                   style: { borderColor: "#2d2d2d" },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -28719,7 +28819,18 @@ function NewsModal({ item, onClose }) {
                         item.category,
                         " · ",
                         formatFetchedAt(item.fetchedAt)
-                      ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "a",
+                        {
+                          href: item.sourceUrl,
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          className: "text-xs mt-1 block underline underline-offset-2 break-all",
+                          style: { color: "#7ba7c7" },
+                          children: item.sourceUrl
+                        }
+                      )
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs(
                       "a",
@@ -28728,7 +28839,7 @@ function NewsModal({ item, onClose }) {
                         target: "_blank",
                         rel: "noopener noreferrer",
                         "data-ocid": "external_news.link",
-                        className: "inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80",
+                        className: "inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80 shrink-0",
                         style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
                         children: [
                           /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { size: 13 }),
@@ -28750,37 +28861,39 @@ function SkeletonCard() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
-      className: "flex flex-col gap-3 p-4 rounded-md border",
+      className: "flex flex-col rounded-md border overflow-hidden",
       style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "h-3 w-20 rounded animate-pulse ml-auto",
-            style: { backgroundColor: "#2d2d2d" }
+            className: "w-full animate-pulse",
+            style: { height: "140px", backgroundColor: "#2d2d2d" }
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "h-4 w-full rounded animate-pulse",
-            style: { backgroundColor: "#2d2d2d" }
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "h-4 w-3/4 rounded animate-pulse",
-            style: { backgroundColor: "#2d2d2d" }
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "h-3 w-16 rounded animate-pulse mt-1",
-            style: { backgroundColor: "#232323" }
-          }
-        )
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3 p-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "h-4 w-full rounded animate-pulse",
+              style: { backgroundColor: "#2d2d2d" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "h-4 w-3/4 rounded animate-pulse",
+              style: { backgroundColor: "#2d2d2d" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "h-3 w-16 rounded animate-pulse mt-1",
+              style: { backgroundColor: "#232323" }
+            }
+          )
+        ] })
       ]
     }
   );
@@ -29699,7 +29812,9 @@ const slides = [
     excerpt: "ঢাকা মেট্রোপলিটান কর্তৃপক্ষ জানিয়েছে, নতুন মেট্রোরেল লাইন চালু হলে প্রতিদিন প্রায় পাঁচ লক্ষ যাত্রী পরিবহন করা সম্ভব হবে। এই লাইনটি উত্তরা থেকে গাজীপুর পর্যন্ত বিস্তৃত হবে এবং ২০টি স্টেশন থাকবে। প্রকল্পটি বাস্তবায়নে ব্যয় হবে ১২ হাজার কোটি টাকা।",
     author: "আহমেদ রহমান",
     time: "২ ঘন্টা আগে",
-    image: "/assets/generated/hero-city-news.dim_800x450.jpg"
+    image: "/assets/generated/hero-city-news.dim_800x450.jpg",
+    sourceUrl: "https://www.prothomalo.com",
+    sourceName: "প্রথম আলো"
   },
   {
     id: 2,
@@ -29708,7 +29823,9 @@ const slides = [
     excerpt: "আজ জাতীয় সংসদের বিশেষ অধিবেশনে দেশের অর্থনৈতিক উন্নয়নে একটি যুগান্তকারী আর্থিক নীতিমালা সর্বসম্মতিক্রমে পাস হয়েছে। নতুন নীতিমালায় রাজস্ব বিভাজন, বিনিয়োগ প্রণোদনা এবং বৈদেশিক ঋণ ব্যবস্থাপনার বিষয়ে সুনির্দিষ্ট নির্দেশনা অন্তর্ভুক্ত করা হয়েছে।",
     author: "ফারহান হোসেন",
     time: "৪ ঘন্টা আগে",
-    image: "/assets/generated/hero-politics.dim_800x450.jpg"
+    image: "/assets/generated/hero-politics.dim_800x450.jpg",
+    sourceUrl: "https://www.thedailystar.net",
+    sourceName: "The Daily Star"
   },
   {
     id: 3,
@@ -29717,7 +29834,9 @@ const slides = [
     excerpt: "চলতি অর্থবছরে বাংলাদেশের কৃষিপণ্য রফতানি গত বছরের তুলনায় ৩০ শতাংশ বৃদ্ধি পেয়ে নতুন মাইলফলক স্পর্শ করেছে। মাছ, সবজি ও পাট পণ্য রফতানিতে সবচেয়ে বেশি প্রবৃদ্ধি হয়েছে। বাণিজ্য মন্ত্রণালয় জানিয়েছে আগামী বছর এই লক্ষ্যমাত্রা আরও বাড়ানো হবে।",
     author: "সুমাইয়া বেগম",
     time: "৬ ঘন্টা আগে",
-    image: "/assets/generated/hero-market.dim_800x450.jpg"
+    image: "/assets/generated/hero-market.dim_800x450.jpg",
+    sourceUrl: "https://www.bdnews24.com",
+    sourceName: "BD News 24"
   }
 ];
 function HeroSlider() {
@@ -29747,7 +29866,9 @@ function HeroSlider() {
       category: slide.category,
       author: slide.author,
       time: slide.time,
-      image: slide.image
+      image: slide.image,
+      sourceUrl: slide.sourceUrl,
+      sourceName: slide.sourceName
     });
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -29890,7 +30011,9 @@ const staticLatestNews = [
     excerpt: "টেলিযোগাযোগ বিভাগ জানিয়েছে, এই বছরের মধ্যে সারা দেশে ৫জি কভারেজ নিশ্চিত করা হবে। ৫জি প্রযুক্তি চালু হলে ডাউনলোড গতি ১ গিগাবিট পর্যন্ত পৌঁছাবে, যা বর্তমান ৪জি-র তুলনায় দশ গুণ বেশি। শিল্প বিশেষজ্ঞরা বলছেন এটি দেশের ডিজিটাল রূপান্তরে মাইলফলক হয়ে উঠবে।",
     author: "কামরুল ইসলাম",
     time: "১ ঘন্টা আগে",
-    image: "/assets/generated/thumb-tech.dim_300x200.jpg"
+    image: "/assets/generated/thumb-tech.dim_300x200.jpg",
+    sourceUrl: "https://www.bdnews24.com",
+    sourceName: "BD News 24"
   },
   {
     id: 2,
@@ -29899,7 +30022,9 @@ const staticLatestNews = [
     excerpt: "সরকার ঘরোয়া বিনিয়োগ বাড়াতে বিশেষ কর ছাড় ও ঋণ সুবিধার ঘোষণা দিয়েছে। নতুন প্যাকেজের আওতায় ক্ষুদ্র ও মাঝারি উদ্যোক্তারা সহজ শর্তে ঋণ পাবেন এবং করমুক্ত সুবিধা ভোগ করবেন। অর্থনীতিবিদরা বলছেন এই পদক্ষেপ কর্মসংস্থান বৃদ্ধিতে সহায়ক হবে।",
     author: "শাহানা পারভীন",
     time: "২ ঘন্টা আগে",
-    image: "/assets/generated/thumb-business.dim_300x200.jpg"
+    image: "/assets/generated/thumb-business.dim_300x200.jpg",
+    sourceUrl: "https://www.prothomalo.com",
+    sourceName: "প্রথম আলো"
   },
   {
     id: 3,
@@ -29908,7 +30033,9 @@ const staticLatestNews = [
     excerpt: "সেনাবাহিনী ও স্বেচ্ছাসেবীরা বন্যাকবলিত অঞ্চলে সাহায্য পৌঁছে দিচ্ছেন। গত ৪৮ ঘণ্টায় ১০ হাজারেরও বেশি পরিবারকে নিরাপদ স্থানে সরিয়ে নেওয়া হয়েছে। খাদ্য, বিশুদ্ধ পানি ও চিকিৎসা সরবরাহ চলমান রয়েছে।",
     author: "আশরাফ উদ্দিন",
     time: "৩ ঘন্টা আগে",
-    image: "/assets/generated/thumb-flood.dim_300x200.jpg"
+    image: "/assets/generated/thumb-flood.dim_300x200.jpg",
+    sourceUrl: "https://www.thedailystar.net",
+    sourceName: "The Daily Star"
   },
   {
     id: 4,
@@ -29917,7 +30044,9 @@ const staticLatestNews = [
     excerpt: "এবারের সিজনে তিনটি নতুন দল লিগে অংশ নিচ্ছে, যা প্রতিযোগিতাকে আরও তীব্র করে তুলবে। নতুন দলগুলোর মধ্যে রয়েছে ঢাকা সিটি এফসি, চট্টগ্রাম পোর্ট ও সিলেট স্টার। বাফুফে জানিয়েছে এ বছর দর্শক উপস্থিতি ৩০% বাড়বে বলে আশা করা হচ্ছে।",
     author: "মিজানুর রহমান",
     time: "৪ ঘন্টা আগে",
-    image: "/assets/generated/thumb-sports.dim_300x200.jpg"
+    image: "/assets/generated/thumb-sports.dim_300x200.jpg",
+    sourceUrl: "https://www.bdnews24.com",
+    sourceName: "BD News 24"
   },
   {
     id: 5,
@@ -29926,7 +30055,9 @@ const staticLatestNews = [
     excerpt: "ফ্রাঙ্কফুর্ট বইমেলায় বাংলাদেশের প্যাভিলিয়ন প্রশংসিত হয়েছে বিদেশি দর্শনার্থীদের কাছে। ৫০টিরও বেশি বাংলাদেশি প্রকাশনা সংস্থা এতে অংশ নিয়েছে। বাংলা সাহিত্যের বেশ কয়েকটি বই ইংরেজিতে অনুবাদের আগ্রহ দেখিয়েছেন আন্তর্জাতিক প্রকাশকরা।",
     author: "নিলুফার হোসেন",
     time: "৫ ঘন্টা আগে",
-    image: "/assets/generated/thumb-culture.dim_300x200.jpg"
+    image: "/assets/generated/thumb-culture.dim_300x200.jpg",
+    sourceUrl: "https://www.bbcbangla.com",
+    sourceName: "BBC বাংলা"
   },
   {
     id: 6,
@@ -29935,7 +30066,9 @@ const staticLatestNews = [
     excerpt: "বিশ্ববিদ্যালয় মঞ্জুরি কমিশন সারা দেশের পাবলিক বিশ্ববিদ্যালয়গুলোর গবেষণা বাজেট বাড়ানোর পরিকল্পনা ঘোষণা করেছে। আগামী দুই বছরে এই তহবিল থেকে বিজ্ঞান, প্রকৌশল ও সামাজিক গবেষণায় ৫০০ কোটি টাকা বরাদ্দ করা হবে।",
     author: "হামিদ উল্লাহ",
     time: "৬ ঘন্টা আগে",
-    image: "/assets/generated/thumb-education.dim_300x200.jpg"
+    image: "/assets/generated/thumb-education.dim_300x200.jpg",
+    sourceUrl: "https://www.prothomalo.com",
+    sourceName: "প্রথম আলো"
   }
 ];
 function formatPublishedAt(publishedAt) {
@@ -30086,7 +30219,9 @@ function LatestNews({ articles }) {
             category: item.category,
             author: item.author,
             time: item.time,
-            image: item.image
+            image: item.image,
+            sourceUrl: item.sourceUrl,
+            sourceName: item.sourceName
           }),
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(

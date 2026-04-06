@@ -21,6 +21,27 @@ const CATEGORY_ORDER = [
 
 const SKELETON_IDS = ["sk-1", "sk-2", "sk-3", "sk-4", "sk-5", "sk-6"];
 
+// Category-based thumbnail images
+const CATEGORY_IMAGES: Record<string, string> = {
+  রাজনৈতিক: "/assets/generated/thumb-politics.dim_300x200.jpg",
+  "জাতীয় খবর": "/assets/generated/thumb-politics.dim_300x200.jpg",
+  "আন্তর্জাতিক খবর": "/assets/generated/thumb-international.dim_300x200.jpg",
+  অর্থনৈতিক: "/assets/generated/thumb-business.dim_300x200.jpg",
+  ক্রীড়া: "/assets/generated/thumb-sports.dim_300x200.jpg",
+  শিক্ষা: "/assets/generated/thumb-education.dim_300x200.jpg",
+  স্বাস্থ্য: "/assets/generated/thumb-health.dim_300x200.jpg",
+  কৃষি: "/assets/generated/thumb-agriculture.dim_300x200.jpg",
+  প্রযুক্তি: "/assets/generated/thumb-tech.dim_300x200.jpg",
+  সংস্কৃতি: "/assets/generated/thumb-culture.dim_300x200.jpg",
+};
+
+function getCategoryImage(category: string): string {
+  return (
+    CATEGORY_IMAGES[category] ??
+    "/assets/generated/thumb-international.dim_300x200.jpg"
+  );
+}
+
 function formatFetchedAt(fetchedAt: bigint): string {
   const ms = Number(fetchedAt / BigInt(1_000_000));
   const diff = Date.now() - ms;
@@ -66,40 +87,74 @@ interface NewsCardProps {
 }
 
 function NewsCard({ item, onClick, index }: NewsCardProps) {
+  const thumbImg = getCategoryImage(item.category);
+
   return (
     <button
       type="button"
       data-ocid={`external_news.item.${index}`}
-      className="relative flex flex-col gap-3 p-4 rounded-md cursor-pointer transition-all duration-200 border group w-full text-left"
+      className="relative flex flex-col gap-0 rounded-md cursor-pointer transition-all duration-200 border group w-full text-left overflow-hidden"
       style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
       onClick={() => onClick(item)}
       aria-label={`সংবাদ পড়ুন: ${item.title}`}
     >
-      {/* Source badge */}
-      <span
-        className="absolute top-3 right-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white rounded-sm max-w-[120px] truncate"
-        style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
-        title={item.sourceName}
+      {/* Thumbnail image */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: "140px" }}
       >
-        {item.sourceName}
-      </span>
+        <img
+          src={thumbImg}
+          alt={item.category}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+        {/* Dark gradient overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%)",
+          }}
+        />
+        {/* Source badge on image */}
+        <span
+          className="absolute top-2 left-2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white rounded-sm max-w-[120px] truncate"
+          style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
+          title={item.sourceName}
+        >
+          {item.sourceName}
+        </span>
+      </div>
 
-      {/* Title */}
-      <h3
-        className="text-sm font-bold text-white leading-snug line-clamp-2 pr-24 group-hover:opacity-80 transition-opacity"
-        style={{ minHeight: "2.5rem" }}
-      >
-        {item.title}
-      </h3>
+      {/* Card body */}
+      <div className="flex flex-col gap-2 p-3">
+        {/* Title */}
+        <h3
+          className="text-sm font-bold text-white leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity"
+          style={{ minHeight: "2.5rem" }}
+        >
+          {item.title}
+        </h3>
 
-      {/* Time */}
-      <p className="text-[11px] mt-auto" style={{ color: "#6b6b6b" }}>
-        {formatFetchedAt(item.fetchedAt)}
-      </p>
+        {/* Time + source link hint */}
+        <div className="flex items-center justify-between mt-auto">
+          <p className="text-[11px]" style={{ color: "#6b6b6b" }}>
+            {formatFetchedAt(item.fetchedAt)}
+          </p>
+          <span
+            className="text-[10px] font-semibold flex items-center gap-1"
+            style={{ color: "oklch(0.4764 0.2183 22.8)" }}
+          >
+            <ExternalLink size={10} />
+            বিস্তারিত
+          </span>
+        </div>
+      </div>
 
       {/* Hover accent line at bottom */}
       <div
-        className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300 rounded-b-md"
+        className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300"
         style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
       />
     </button>
@@ -113,6 +168,8 @@ interface NewsModalProps {
 
 function NewsModal({ item, onClose }: NewsModalProps) {
   if (!item) return null;
+
+  const thumbImg = getCategoryImage(item.category);
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose();
@@ -133,42 +190,68 @@ function NewsModal({ item, onClose }: NewsModalProps) {
       onKeyDown={handleKeyDown}
     >
       <div
-        className="relative w-full max-w-xl rounded-lg shadow-2xl"
+        className="relative w-full max-w-xl rounded-lg shadow-2xl overflow-hidden"
         style={{ backgroundColor: "#111111", border: "1px solid #2d2d2d" }}
       >
-        {/* Modal Header */}
+        {/* Image */}
         <div
-          className="flex items-start justify-between px-6 py-4 border-b gap-4"
-          style={{ borderColor: "#2d2d2d" }}
+          className="relative w-full overflow-hidden"
+          style={{ height: "180px" }}
         >
-          <div className="flex items-start gap-3 flex-1 min-w-0">
-            <div
-              className="w-1 shrink-0 rounded-sm mt-1"
-              style={{
-                backgroundColor: "oklch(0.4764 0.2183 22.8)",
-                minHeight: "1.25rem",
-              }}
-            />
-            <h2
-              id="ext-news-modal-title"
-              className="text-base font-bold text-white leading-snug"
-            >
-              {item.title}
-            </h2>
-          </div>
+          <img
+            src={thumbImg}
+            alt={item.category}
+            className="w-full h-full object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 70%)",
+            }}
+          />
+          {/* Category badge */}
+          <span
+            className="absolute bottom-3 left-4 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white rounded-sm"
+            style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
+          >
+            {item.category}
+          </span>
+          {/* Close button */}
           <button
             type="button"
             data-ocid="external_news.close_button"
             onClick={onClose}
-            className="shrink-0 p-1.5 rounded text-gray-400 hover:text-white transition-colors"
+            className="absolute top-3 right-3 p-1.5 rounded text-white transition-colors"
+            style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
             aria-label="বন্ধ করুন"
           >
             <X size={18} />
           </button>
         </div>
 
+        {/* Modal Header */}
+        <div
+          className="flex items-start px-5 pt-4 pb-3 gap-3"
+          style={{ borderBottom: "1px solid #2d2d2d" }}
+        >
+          <div
+            className="w-1 shrink-0 rounded-sm mt-1"
+            style={{
+              backgroundColor: "oklch(0.4764 0.2183 22.8)",
+              minHeight: "1.25rem",
+            }}
+          />
+          <h2
+            id="ext-news-modal-title"
+            className="text-base font-bold text-white leading-snug"
+          >
+            {item.title}
+          </h2>
+        </div>
+
         {/* Modal Body */}
-        <div className="px-6 py-5 flex flex-col gap-4">
+        <div className="px-5 py-4 flex flex-col gap-4">
           {/* Summary */}
           <div>
             <p
@@ -182,9 +265,9 @@ function NewsModal({ item, onClose }: NewsModalProps) {
             </p>
           </div>
 
-          {/* Source + Category */}
+          {/* Source + link */}
           <div
-            className="flex items-center justify-between pt-3 border-t"
+            className="flex items-center justify-between pt-3 border-t flex-wrap gap-3"
             style={{ borderColor: "#2d2d2d" }}
           >
             <div>
@@ -200,13 +283,23 @@ function NewsModal({ item, onClose }: NewsModalProps) {
               <p className="text-xs mt-0.5" style={{ color: "#6b6b6b" }}>
                 ক্যাটাগরি: {item.category} · {formatFetchedAt(item.fetchedAt)}
               </p>
+              {/* Source URL as text link */}
+              <a
+                href={item.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs mt-1 block underline underline-offset-2 break-all"
+                style={{ color: "#7ba7c7" }}
+              >
+                {item.sourceUrl}
+              </a>
             </div>
             <a
               href={item.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
               data-ocid="external_news.link"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80 shrink-0"
               style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
             >
               <ExternalLink size={13} />
@@ -222,25 +315,27 @@ function NewsModal({ item, onClose }: NewsModalProps) {
 function SkeletonCard() {
   return (
     <div
-      className="flex flex-col gap-3 p-4 rounded-md border"
+      className="flex flex-col rounded-md border overflow-hidden"
       style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
     >
       <div
-        className="h-3 w-20 rounded animate-pulse ml-auto"
-        style={{ backgroundColor: "#2d2d2d" }}
+        className="w-full animate-pulse"
+        style={{ height: "140px", backgroundColor: "#2d2d2d" }}
       />
-      <div
-        className="h-4 w-full rounded animate-pulse"
-        style={{ backgroundColor: "#2d2d2d" }}
-      />
-      <div
-        className="h-4 w-3/4 rounded animate-pulse"
-        style={{ backgroundColor: "#2d2d2d" }}
-      />
-      <div
-        className="h-3 w-16 rounded animate-pulse mt-1"
-        style={{ backgroundColor: "#232323" }}
-      />
+      <div className="flex flex-col gap-3 p-3">
+        <div
+          className="h-4 w-full rounded animate-pulse"
+          style={{ backgroundColor: "#2d2d2d" }}
+        />
+        <div
+          className="h-4 w-3/4 rounded animate-pulse"
+          style={{ backgroundColor: "#2d2d2d" }}
+        />
+        <div
+          className="h-3 w-16 rounded animate-pulse mt-1"
+          style={{ backgroundColor: "#232323" }}
+        />
+      </div>
     </div>
   );
 }
@@ -260,7 +355,6 @@ export function ExternalNewsSection() {
   const hasFetchedOnce = isFetched;
   const isFetching = fetchMutation.isPending;
 
-  // Last fetched time display
   let lastFetchedLabel = "কখনো নয়";
   if (
     lastFetchedTime &&

@@ -9,6 +9,8 @@ interface PickItem {
   author: string;
   time: string;
   image: string;
+  sourceUrl: string;
+  sourceName: string;
 }
 
 const picks: PickItem[] = [
@@ -21,6 +23,8 @@ const picks: PickItem[] = [
     author: "রেজওয়ান আলী",
     time: "৩ ঘন্টা আগে",
     image: "/assets/generated/thumb-education.dim_300x200.jpg",
+    sourceUrl: "https://www.prothomalo.com",
+    sourceName: "প্রথম আলো",
   },
   {
     id: 2,
@@ -31,6 +35,8 @@ const picks: PickItem[] = [
     author: "তানভীর ইসলাম",
     time: "৫ ঘন্টা আগে",
     image: "/assets/generated/thumb-sports.dim_300x200.jpg",
+    sourceUrl: "https://www.thedailystar.net",
+    sourceName: "The Daily Star",
   },
   {
     id: 3,
@@ -41,6 +47,8 @@ const picks: PickItem[] = [
     author: "নাসরিন চৌধুরী",
     time: "৭ ঘন্টা আগে",
     image: "/assets/generated/thumb-culture.dim_300x200.jpg",
+    sourceUrl: "https://www.bbcbangla.com",
+    sourceName: "BBC বাংলা",
   },
 ];
 
@@ -79,6 +87,8 @@ export function EditorsPicks() {
                 author: pick.author,
                 time: pick.time,
                 image: pick.image,
+                sourceUrl: pick.sourceUrl,
+                sourceName: pick.sourceName,
               })
             }
           >
