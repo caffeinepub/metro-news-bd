@@ -118,45 +118,39 @@ export function HeroSlider() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)",
+                "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
             }}
           />
 
-          {/* Content — aligned to bottom so headline sits just above the red button */}
-          <div className="absolute inset-0 flex items-end">
-            <div
-              className="p-6 md:p-10 max-w-[600px] w-full"
-              style={{ paddingBottom: "56px" }}
-            >
+          {/* Content — positioned at bottom with safe padding */}
+          <div
+            className="absolute left-0 right-0 bottom-0"
+            style={{ padding: "20px 24px 36px 24px" }}
+          >
+            <div className="max-w-[600px] w-full">
               <span
-                className="inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest text-white mb-3"
+                className="inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest text-white mb-2"
                 style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
               >
                 {slide.category}
               </span>
               <button
                 type="button"
-                className="block text-left text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight cursor-pointer hover:opacity-80 transition-opacity"
-                style={{ marginBottom: "10px" }}
+                className="block text-left text-lg md:text-xl lg:text-2xl font-bold text-white cursor-pointer hover:opacity-80 transition-opacity mb-2"
+                style={{ lineHeight: "1.5" }}
                 onClick={openModal}
               >
                 {slide.headline}
               </button>
-              <p className="text-sm md:text-base text-gray-300 mb-4 leading-relaxed hidden sm:block">
-                {slide.excerpt}
-              </p>
-              <div
-                className="flex items-center gap-3 mb-5"
-                style={{ marginTop: "8px" }}
-              >
+              <div className="flex items-center gap-3 mb-3">
                 <span
                   className="text-xs font-medium"
-                  style={{ color: "#9c9c9c", fontSize: "13px" }}
+                  style={{ color: "#c0c0c0", fontSize: "13px" }}
                 >
                   {slide.author}
                 </span>
-                <span style={{ color: "#2d2d2d" }}>•</span>
-                <span className="text-xs" style={{ color: "#9c9c9c" }}>
+                <span style={{ color: "#555" }}>•</span>
+                <span className="text-xs" style={{ color: "#c0c0c0" }}>
                   {slide.time}
                 </span>
               </div>
@@ -166,7 +160,6 @@ export function HeroSlider() {
                 className="inline-flex items-center px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-80"
                 style={{
                   backgroundColor: "oklch(0.4764 0.2183 22.8)",
-                  marginTop: "20px",
                 }}
                 onClick={openModal}
               >
