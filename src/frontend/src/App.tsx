@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { HeroSlider } from "./components/HeroSlider";
 import { LatestNews } from "./components/LatestNews";
+import { LocalNewsSection } from "./components/LocalNewsSection";
 import { NewsPostModal } from "./components/NewsPostModal";
 import { SettingsModal } from "./components/SettingsModal";
 import { WeatherSection } from "./components/WeatherSection";
@@ -68,6 +69,16 @@ function AppContent() {
         {/* Latest News section */}
         <div className="max-w-[1200px] mx-auto px-4 py-8">
           <LatestNews articles={hasBackendArticles ? latestSix : undefined} />
+        </div>
+
+        {/* Divider before local news */}
+        <div className="max-w-[1200px] mx-auto px-4">
+          <div className="h-px" style={{ backgroundColor: "#e5e7eb" }} />
+        </div>
+
+        {/* Local News Section */}
+        <div id="local-news" className="max-w-[1200px] mx-auto px-4 py-8">
+          <LocalNewsSection />
         </div>
 
         {/* Category News sections (only shown when backend articles exist) */}

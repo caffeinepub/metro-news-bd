@@ -12,7 +12,7 @@ import { useSiteSettings } from "../context/SiteSettingsContext";
 
 const navLinks = [
   { label: "হোম", href: "#home" },
-  { label: "স্থানীয় খবর", href: "#local" },
+  { label: "স্থানীয় খবর", href: "#local-news" },
   { label: "জাতীয় খবর", href: "#national" },
   { label: "আন্তর্জাতিক খবর", href: "#international" },
   { label: "শিক্ষা", href: "#education" },

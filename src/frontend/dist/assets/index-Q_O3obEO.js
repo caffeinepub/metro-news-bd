@@ -14916,16 +14916,50 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$s = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$s);
+const __iconNode$v = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$v);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$r = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$r);
+const __iconNode$u = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$u);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$t = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$t);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$s = [
+  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+];
+const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$s);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$r = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14933,29 +14967,6 @@ const ChevronRight = createLucideIcon("chevron-right", __iconNode$r);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$q = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$q);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$p = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$p);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$o = [
   [
     "path",
     {
@@ -14971,26 +14982,26 @@ const __iconNode$o = [
     }
   ]
 ];
-const Droplets = createLucideIcon("droplets", __iconNode$o);
+const Droplets = createLucideIcon("droplets", __iconNode$q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$n = [
+const __iconNode$p = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "M10 14 21 3", key: "gplh6r" }],
   ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$n);
+const ExternalLink = createLucideIcon("external-link", __iconNode$p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$m = [
+const __iconNode$o = [
   [
     "path",
     {
@@ -15000,19 +15011,39 @@ const __iconNode$m = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$m);
+const Eye = createLucideIcon("eye", __iconNode$o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$l = [
+const __iconNode$n = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
   ["path", { d: "M2 12h20", key: "9i4pu4" }]
 ];
-const Globe = createLucideIcon("globe", __iconNode$l);
+const Globe = createLucideIcon("globe", __iconNode$n);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$m = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+];
+const Image = createLucideIcon("image", __iconNode$m);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$l = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$l);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15020,19 +15051,22 @@ const Globe = createLucideIcon("globe", __iconNode$l);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$k = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
 ];
-const Image = createLucideIcon("image", __iconNode$k);
+const Lock = createLucideIcon("lock", __iconNode$k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$j = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$j);
+const __iconNode$j = [
+  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
+  ["path", { d: "M21 12H9", key: "dn1m92" }],
+  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
+];
+const LogOut = createLucideIcon("log-out", __iconNode$j);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -17422,7 +17456,7 @@ function Footer() {
 }
 const navLinks = [
   { label: "হোম", href: "#home" },
-  { label: "স্থানীয় খবর", href: "#local" },
+  { label: "স্থানীয় খবর", href: "#local-news" },
   { label: "জাতীয় খবর", href: "#national" },
   { label: "আন্তর্জাতিক খবর", href: "#international" },
   { label: "শিক্ষা", href: "#education" },
@@ -18379,6 +18413,712 @@ function LatestNews({ articles }) {
         },
         item.id
       )) })
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      NewsDetailModal,
+      {
+        item: selectedItem,
+        onClose: () => setSelectedItem(null)
+      }
+    )
+  ] });
+}
+const CATEGORIES = [
+  "স্থানীয় খবর",
+  "রাজনৈতিক",
+  "ক্রীড়া",
+  "অর্থনীতি",
+  "শিক্ষা",
+  "স্বাস্থ্য",
+  "কৃষি",
+  "ধর্মীয় অনুষ্ঠান",
+  "জাতীয় খবর",
+  "আন্তর্জাতিক খবর",
+  "বিনোদন",
+  "অপরাধ"
+];
+const PASSWORD = "baligaon2024";
+function formatRelativeTime(publishedAt) {
+  const diff = Date.now() - publishedAt;
+  if (diff < 6e4) return "এইমাত্র";
+  if (diff < 36e5) {
+    const mins = Math.floor(diff / 6e4);
+    return `${mins} মিনিট আগে`;
+  }
+  if (diff < 864e5) {
+    const hours = Math.floor(diff / 36e5);
+    return `${hours} ঘন্টা আগে`;
+  }
+  const days = Math.floor(diff / 864e5);
+  if (days === 1) return "গতকাল";
+  return `${days} দিন আগে`;
+}
+const CATEGORY_COLORS = {
+  "স্থানীয় খবর": "#dc2626",
+  রাজনৈতিক: "#2563eb",
+  ক্রীড়া: "#16a34a",
+  অর্থনীতি: "#ca8a04",
+  শিক্ষা: "#7c3aed",
+  স্বাস্থ্য: "#0891b2",
+  কৃষি: "#65a30d",
+  "ধর্মীয় অনুষ্ঠান": "#b45309",
+  "জাতীয় খবর": "#dc2626",
+  "আন্তর্জাতিক খবর": "#6366f1",
+  বিনোদন: "#db2777",
+  অপরাধ: "#374151"
+};
+function loadArticles() {
+  try {
+    const raw = localStorage.getItem("localNews");
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+function saveArticles(articles) {
+  localStorage.setItem("localNews", JSON.stringify(articles));
+}
+function LocalNewsSection() {
+  const [articles, setArticles] = reactExports.useState(
+    () => loadArticles()
+  );
+  const [isLoggedIn, setIsLoggedIn] = reactExports.useState(
+    () => localStorage.getItem("localNewsLoggedIn") === "1"
+  );
+  const [showLoginBox, setShowLoginBox] = reactExports.useState(false);
+  const [passwordInput, setPasswordInput] = reactExports.useState("");
+  const [loginError, setLoginError] = reactExports.useState("");
+  const [title, setTitle] = reactExports.useState("");
+  const [summary, setSummary] = reactExports.useState("");
+  const [author, setAuthor] = reactExports.useState("");
+  const [sourceName, setSourceName] = reactExports.useState("");
+  const [sourceUrl, setSourceUrl] = reactExports.useState("");
+  const [category, setCategory] = reactExports.useState(CATEGORIES[0]);
+  const [imageBase64, setImageBase64] = reactExports.useState("");
+  const [imagePreview, setImagePreview] = reactExports.useState("");
+  const [titleError, setTitleError] = reactExports.useState("");
+  const [summaryError, setSummaryError] = reactExports.useState("");
+  const [showSuccess, setShowSuccess] = reactExports.useState(false);
+  const [selectedItem, setSelectedItem] = reactExports.useState(null);
+  const fileInputRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    if (showSuccess) {
+      const timer = setTimeout(() => setShowSuccess(false), 2e3);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccess]);
+  function handleLogin() {
+    if (passwordInput === PASSWORD) {
+      setIsLoggedIn(true);
+      localStorage.setItem("localNewsLoggedIn", "1");
+      setShowLoginBox(false);
+      setPasswordInput("");
+      setLoginError("");
+    } else {
+      setLoginError("পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।");
+    }
+  }
+  function handleLogout() {
+    setIsLoggedIn(false);
+    localStorage.removeItem("localNewsLoggedIn");
+    setShowLoginBox(false);
+  }
+  function handleImageUpload(e) {
+    var _a3;
+    const file = (_a3 = e.target.files) == null ? void 0 : _a3[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      var _a4;
+      const result = (_a4 = ev.target) == null ? void 0 : _a4.result;
+      setImageBase64(result);
+      setImagePreview(result);
+    };
+    reader.readAsDataURL(file);
+  }
+  function handleRemoveImage() {
+    setImageBase64("");
+    setImagePreview("");
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  }
+  function handlePublish() {
+    let valid = true;
+    if (!title.trim()) {
+      setTitleError("শিরোনাম আবশ্যক");
+      valid = false;
+    } else {
+      setTitleError("");
+    }
+    if (!summary.trim()) {
+      setSummaryError("সংবাদের বিস্তারিত আবশ্যক");
+      valid = false;
+    } else {
+      setSummaryError("");
+    }
+    if (!valid) return;
+    const newArticle = {
+      id: Date.now().toString(),
+      title: title.trim(),
+      summary: summary.trim(),
+      sourceUrl: sourceUrl.trim(),
+      sourceName: sourceName.trim() || "নিজস্ব প্রতিবেদক",
+      category,
+      imageBase64,
+      author: author.trim() || "বালীগাঁও নিউজ",
+      publishedAt: Date.now()
+    };
+    const updated = [newArticle, ...articles];
+    setArticles(updated);
+    saveArticles(updated);
+    setTitle("");
+    setSummary("");
+    setAuthor("");
+    setSourceName("");
+    setSourceUrl("");
+    setCategory(CATEGORIES[0]);
+    setImageBase64("");
+    setImagePreview("");
+    if (fileInputRef.current) fileInputRef.current.value = "";
+    setShowSuccess(true);
+  }
+  function handleDelete(id) {
+    const updated = articles.filter((a2) => a2.id !== id);
+    setArticles(updated);
+    saveArticles(updated);
+  }
+  function openArticle(article) {
+    setSelectedItem({
+      title: article.title,
+      summary: article.summary,
+      category: article.category,
+      author: article.author,
+      time: formatRelativeTime(article.publishedAt),
+      sourceUrl: article.sourceUrl || void 0,
+      sourceName: article.sourceName || void 0,
+      image: article.imageBase64 || void 0
+    });
+  }
+  const sorted = [...articles].sort((a2, b2) => b2.publishedAt - a2.publishedAt);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "local-news", "aria-labelledby": "local-news-heading", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "flex items-center justify-between gap-4 mb-6 pb-3",
+        style: { borderBottom: "2px solid #e5e7eb" },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "w-1 h-7 rounded-sm shrink-0",
+                style: { backgroundColor: "#dc2626" }
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h2",
+              {
+                id: "local-news-heading",
+                className: "text-lg font-bold uppercase tracking-wide",
+                style: { color: "#111827", letterSpacing: "0.06em" },
+                children: "স্থানীয় সংবাদ"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: isLoggedIn ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              type: "button",
+              "data-ocid": "local_news.logout.button",
+              onClick: handleLogout,
+              className: "flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-colors",
+              style: {
+                color: "#6b7280",
+                border: "1px solid #e5e7eb",
+                backgroundColor: "#f9fafb"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(LogOut, { size: 13 }),
+                "লগআউট"
+              ]
+            }
+          ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              type: "button",
+              "data-ocid": "local_news.login.button",
+              onClick: () => setShowLoginBox(!showLoginBox),
+              className: "flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-colors",
+              style: {
+                color: "#dc2626",
+                border: "1.5px solid #dc2626",
+                backgroundColor: showLoginBox ? "#fef2f2" : "transparent"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 13 }),
+                "সংবাদকর্মী লগইন"
+              ]
+            }
+          ) })
+        ]
+      }
+    ),
+    showLoginBox && !isLoggedIn && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "mb-6 p-4 rounded-lg",
+        style: { backgroundColor: "#fef2f2", border: "1px solid #fecaca" },
+        "data-ocid": "local_news.login.panel",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "p",
+            {
+              className: "text-sm font-semibold mb-3",
+              style: { color: "#991b1b" },
+              children: "🔐 সংবাদকর্মী লগইন"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "input",
+              {
+                type: "password",
+                value: passwordInput,
+                onChange: (e) => setPasswordInput(e.target.value),
+                onKeyDown: (e) => e.key === "Enter" && handleLogin(),
+                placeholder: "পাসওয়ার্ড দিন...",
+                "data-ocid": "local_news.password.input",
+                className: "flex-1 px-3 py-2 text-sm rounded-md border focus:outline-none",
+                style: {
+                  borderColor: loginError ? "#ef4444" : "#fca5a5",
+                  backgroundColor: "#ffffff",
+                  color: "#111827"
+                }
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "local_news.login_submit.button",
+                onClick: handleLogin,
+                className: "px-4 py-2 text-xs font-bold text-white rounded-md transition-colors",
+                style: { backgroundColor: "#dc2626" },
+                children: "লগইন"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => {
+                  setShowLoginBox(false);
+                  setPasswordInput("");
+                  setLoginError("");
+                },
+                className: "p-2 rounded-md",
+                style: { color: "#9ca3af" },
+                "aria-label": "বাতিল",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 16 })
+              }
+            )
+          ] }),
+          loginError && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "p",
+            {
+              className: "text-xs mt-2",
+              style: { color: "#dc2626" },
+              "data-ocid": "local_news.login.error_state",
+              children: loginError
+            }
+          )
+        ]
+      }
+    ),
+    showSuccess && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "mb-4 px-4 py-3 rounded-lg flex items-center gap-2",
+        style: { backgroundColor: "#f0fdf4", border: "1px solid #bbf7d0" },
+        "data-ocid": "local_news.publish.success_state",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheckBig, { size: 16, style: { color: "#16a34a" } }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-semibold", style: { color: "#15803d" }, children: "সংবাদ সফলভাবে প্রকাশিত হয়েছে!" })
+        ]
+      }
+    ),
+    isLoggedIn && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "mb-8 p-5 rounded-xl",
+        style: {
+          backgroundColor: "#f9fafb",
+          border: "1px solid #e5e7eb"
+        },
+        "data-ocid": "local_news.editor.panel",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "h3",
+            {
+              className: "text-sm font-bold mb-4 flex items-center gap-2",
+              style: { color: "#111827" },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 15, style: { color: "#dc2626" } }),
+                "নতুন সংবাদ লিখুন"
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  type: "text",
+                  value: title,
+                  onChange: (e) => setTitle(e.target.value),
+                  placeholder: "শিরোনাম লিখুন...",
+                  "data-ocid": "local_news.title.input",
+                  className: "w-full px-3 py-2.5 text-sm rounded-md border focus:outline-none transition-colors",
+                  style: {
+                    borderColor: titleError ? "#ef4444" : "#e5e7eb",
+                    backgroundColor: "#ffffff",
+                    color: "#111827"
+                  }
+                }
+              ),
+              titleError && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "p",
+                {
+                  className: "text-xs mt-1",
+                  style: { color: "#dc2626" },
+                  "data-ocid": "local_news.title.error_state",
+                  children: titleError
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "textarea",
+                {
+                  value: summary,
+                  onChange: (e) => setSummary(e.target.value),
+                  placeholder: "সংবাদের বিস্তারিত লিখুন...",
+                  rows: 5,
+                  "data-ocid": "local_news.summary.textarea",
+                  className: "w-full px-3 py-2.5 text-sm rounded-md border focus:outline-none transition-colors resize-none",
+                  style: {
+                    borderColor: summaryError ? "#ef4444" : "#e5e7eb",
+                    backgroundColor: "#ffffff",
+                    color: "#111827"
+                  }
+                }
+              ),
+              summaryError && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "p",
+                {
+                  className: "text-xs mt-1",
+                  style: { color: "#dc2626" },
+                  "data-ocid": "local_news.summary.error_state",
+                  children: summaryError
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  type: "text",
+                  value: author,
+                  onChange: (e) => setAuthor(e.target.value),
+                  placeholder: "সাংবাদিকের নাম...",
+                  "data-ocid": "local_news.author.input",
+                  className: "px-3 py-2.5 text-sm rounded-md border focus:outline-none",
+                  style: {
+                    borderColor: "#e5e7eb",
+                    backgroundColor: "#ffffff",
+                    color: "#111827"
+                  }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  type: "text",
+                  value: sourceName,
+                  onChange: (e) => setSourceName(e.target.value),
+                  placeholder: "সোর্সের নাম (যেমন: নিজস্ব প্রতিবেদক)...",
+                  "data-ocid": "local_news.source_name.input",
+                  className: "px-3 py-2.5 text-sm rounded-md border focus:outline-none",
+                  style: {
+                    borderColor: "#e5e7eb",
+                    backgroundColor: "#ffffff",
+                    color: "#111827"
+                  }
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  type: "url",
+                  value: sourceUrl,
+                  onChange: (e) => setSourceUrl(e.target.value),
+                  placeholder: "সোর্স লিংক (ঐচ্ছিক)...",
+                  "data-ocid": "local_news.source_url.input",
+                  className: "px-3 py-2.5 text-sm rounded-md border focus:outline-none",
+                  style: {
+                    borderColor: "#e5e7eb",
+                    backgroundColor: "#ffffff",
+                    color: "#111827"
+                  }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "select",
+                {
+                  value: category,
+                  onChange: (e) => setCategory(e.target.value),
+                  "data-ocid": "local_news.category.select",
+                  className: "px-3 py-2.5 text-sm rounded-md border focus:outline-none",
+                  style: {
+                    borderColor: "#e5e7eb",
+                    backgroundColor: "#ffffff",
+                    color: "#111827"
+                  },
+                  children: CATEGORIES.map((cat) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: cat, children: cat }, cat))
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              imagePreview ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative inline-block", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "img",
+                  {
+                    src: imagePreview,
+                    alt: "প্রিভিউ",
+                    className: "rounded-md object-cover",
+                    style: {
+                      height: 120,
+                      maxWidth: 240,
+                      border: "1px solid #e5e7eb"
+                    }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: handleRemoveImage,
+                    "data-ocid": "local_news.remove_image.button",
+                    className: "absolute top-1 right-1 p-1 rounded-full",
+                    style: {
+                      backgroundColor: "rgba(0,0,0,0.6)",
+                      color: "#fff"
+                    },
+                    "aria-label": "ছবি সরান",
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 12 })
+                  }
+                )
+              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => {
+                    var _a3;
+                    return (_a3 = fileInputRef.current) == null ? void 0 : _a3.click();
+                  },
+                  "data-ocid": "local_news.upload_button",
+                  className: "flex items-center gap-2 px-4 py-2.5 text-xs font-semibold rounded-md border-2 border-dashed transition-colors",
+                  style: {
+                    borderColor: "#d1d5db",
+                    color: "#6b7280",
+                    backgroundColor: "transparent"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Upload, { size: 14 }),
+                    "ছবি আপলোড করুন"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  ref: fileInputRef,
+                  type: "file",
+                  accept: "image/*",
+                  className: "hidden",
+                  onChange: handleImageUpload,
+                  "data-ocid": "local_news.image_file.input"
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: handlePublish,
+                "data-ocid": "local_news.publish.submit_button",
+                className: "w-full sm:w-auto self-end px-6 py-2.5 text-sm font-bold text-white rounded-md transition-colors",
+                style: { backgroundColor: "#dc2626" },
+                children: "প্রকাশ করুন"
+              }
+            )
+          ] })
+        ]
+      }
+    ),
+    sorted.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "flex flex-col items-center justify-center py-16",
+        "data-ocid": "local_news.empty_state",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "w-16 h-16 rounded-full flex items-center justify-center mb-4",
+              style: { backgroundColor: "#fef2f2" },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 28 }, children: "📰" })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium", style: { color: "#9ca3af" }, children: "এখনো কোনো স্থানীয় সংবাদ নেই" }),
+          !isLoggedIn && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs mt-1", style: { color: "#d1d5db" }, children: "সংবাদকর্মী লগইন করে সংবাদ প্রকাশ করুন" })
+        ]
+      }
+    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5",
+        "data-ocid": "local_news.list",
+        children: sorted.map((article, i) => {
+          const catColor = CATEGORY_COLORS[article.category] ?? "#dc2626";
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "article",
+            {
+              "data-ocid": `local_news.item.${i + 1}`,
+              className: "rounded-xl overflow-hidden flex flex-col transition-shadow duration-200",
+              style: {
+                backgroundColor: "#ffffff",
+                border: "1px solid #e5e7eb",
+                boxShadow: "0 1px 4px rgba(0,0,0,0.06)"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => openArticle(article),
+                    className: "block w-full text-left focus:outline-none",
+                    "aria-label": article.title,
+                    children: article.imageBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "w-full overflow-hidden",
+                        style: { height: 160 },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "img",
+                          {
+                            src: article.imageBase64,
+                            alt: article.title,
+                            className: "w-full h-full object-cover transition-transform duration-300 hover:scale-105",
+                            loading: "lazy"
+                          }
+                        )
+                      }
+                    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "w-full flex items-center justify-center",
+                        style: {
+                          height: 160,
+                          background: `linear-gradient(135deg, ${catColor}22 0%, ${catColor}11 100%)`
+                        },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-4xl font-bold",
+                            style: { color: catColor, opacity: 0.4 },
+                            children: article.category.charAt(0)
+                          }
+                        )
+                      }
+                    )
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col flex-1 p-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: "inline-block self-start px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white rounded-sm mb-2",
+                      style: { backgroundColor: catColor },
+                      children: article.category
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      onClick: () => openArticle(article),
+                      "data-ocid": `local_news.title.${i + 1}`,
+                      className: "text-sm font-bold text-left leading-snug mb-2 hover:underline focus:outline-none transition-colors",
+                      style: { color: "#111827" },
+                      children: article.title
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      className: "text-xs leading-relaxed line-clamp-2 flex-1",
+                      style: { color: "#6b7280" },
+                      children: article.summary
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      className: "flex items-center justify-between mt-3 pt-3",
+                      style: { borderTop: "1px solid #f3f4f6" },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "p",
+                            {
+                              className: "text-[11px] font-medium",
+                              style: { color: "#374151" },
+                              children: article.author
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px]", style: { color: "#9ca3af" }, children: formatRelativeTime(article.publishedAt) })
+                        ] }),
+                        isLoggedIn && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "button",
+                          {
+                            type: "button",
+                            onClick: () => handleDelete(article.id),
+                            "data-ocid": `local_news.delete_button.${i + 1}`,
+                            className: "flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded transition-colors",
+                            style: {
+                              color: "#dc2626",
+                              backgroundColor: "#fef2f2",
+                              border: "1px solid #fecaca"
+                            },
+                            "aria-label": "সংবাদ মুছুন",
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { size: 10 }),
+                              "মুছুন"
+                            ]
+                          }
+                        )
+                      ]
+                    }
+                  )
+                ] })
+              ]
+            },
+            article.id
+          );
+        })
+      }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       NewsDetailModal,
@@ -33411,6 +34151,8 @@ function AppContent() {
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#e5e7eb" } }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LatestNews, { articles: hasBackendArticles ? latestSix : void 0 }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#e5e7eb" } }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { id: "local-news", className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LocalNewsSection, {}) }),
       hasBackendArticles && articles.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#e5e7eb" } }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CategoryNewsSection, { articles }) })
