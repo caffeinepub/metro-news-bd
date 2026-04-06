@@ -358,7 +358,6 @@ export function LocalNewsSection() {
   const loadArticles = useCallback(async () => {
     // If actor is still being fetched or not yet available, wait
     if (actorFetching || !actor) {
-      if (articles.length === 0) setIsLoading(true);
       return;
     }
     setIsLoading(true);
@@ -455,14 +454,15 @@ export function LocalNewsSection() {
     } finally {
       setIsLoading(false);
     }
-  }, [actor, actorFetching, articles.length]);
+  }, [actor, actorFetching]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: intentionally excludes loadArticles to prevent infinite loop
   useEffect(() => {
     // Load when actor becomes available
     if (!actorFetching && actor) {
       loadArticles();
     }
-  }, [actorFetching, actor, loadArticles]);
+  }, [actorFetching, actor]);
 
   // Auto-refresh from blockchain every 30 seconds to stay in sync across devices
   useEffect(() => {
