@@ -48,16 +48,22 @@ export function BreakingNewsTicker() {
 
   return (
     <div
-      className="w-full flex items-center overflow-hidden"
-      style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)", height: "44px" }}
+      className="w-full flex items-center"
+      style={{
+        backgroundColor: "oklch(0.4764 0.2183 22.8)",
+        minHeight: "52px",
+        paddingTop: "6px",
+        paddingBottom: "6px",
+      }}
       aria-label="ব্রেকিং নিউজ"
     >
       {/* Label */}
       <div
-        className="flex items-center gap-2 px-4 text-white font-bold text-xs uppercase tracking-widest shrink-0 h-full"
+        className="flex items-center gap-2 px-4 text-white font-bold text-xs uppercase tracking-widest shrink-0 py-2"
         style={{
           backgroundColor: "oklch(0.34 0.2183 22.8)",
           minWidth: "max-content",
+          lineHeight: "1.6",
         }}
       >
         <span className="inline-block w-2 h-2 rounded-full bg-white animate-pulse" />
@@ -66,7 +72,7 @@ export function BreakingNewsTicker() {
 
       {/* Vertical separator */}
       <div
-        className="shrink-0 h-full"
+        className="shrink-0 self-stretch"
         style={{
           width: "2px",
           backgroundColor: "oklch(0.38 0.2183 22.8)",
@@ -81,10 +87,14 @@ export function BreakingNewsTicker() {
               // eslint-disable-next-line react/no-array-index-key
               key={`ticker-${item.id}-${idx}`}
               className="inline-flex items-center gap-3 text-white text-sm font-semibold"
+              style={{ lineHeight: "1.6" }}
             >
               <span className="mx-8 text-red-200 opacity-70">◆</span>
-              <span>{item.text}</span>
-              <span className="text-red-200 opacity-80 text-xs font-normal ml-1">
+              <span style={{ lineHeight: "1.6" }}>{item.text}</span>
+              <span
+                className="text-red-200 opacity-80 text-xs font-normal ml-1"
+                style={{ lineHeight: "1.6" }}
+              >
                 ({item.time})
               </span>
             </span>

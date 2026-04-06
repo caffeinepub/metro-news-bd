@@ -90,7 +90,7 @@ export function Header({
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div
           className="flex items-center justify-between gap-4"
-          style={{ height: 64 }}
+          style={{ minHeight: 64, paddingTop: 8, paddingBottom: 8 }}
         >
           {/* === LEFT: Logo + Site Name + Tagline === */}
           <div className="flex items-center gap-3 sm:gap-4 min-w-0">
@@ -116,7 +116,7 @@ export function Header({
                   style={{
                     color: "#dc2626",
                     fontSize: 18,
-                    lineHeight: 1,
+                    lineHeight: "1.3",
                   }}
                 >
                   বা
@@ -125,13 +125,14 @@ export function Header({
             </div>
 
             {/* Site name + tagline */}
-            <div className="leading-tight min-w-0">
+            <div className="min-w-0" style={{ lineHeight: "normal" }}>
               <div
                 className="font-bold truncate"
                 style={{
                   color: "#111827",
                   fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
                   letterSpacing: "0.03em",
+                  lineHeight: "1.4",
                 }}
               >
                 {settings.siteName}
@@ -143,6 +144,7 @@ export function Header({
                   letterSpacing: "0.08em",
                   fontWeight: 500,
                   marginTop: 2,
+                  lineHeight: "1.4",
                 }}
               >
                 {settings.tagline}
@@ -289,6 +291,7 @@ export function Header({
                   backgroundColor: "#ffffff",
                   borderColor: searchFocused ? "#dc2626" : "#d1d5db",
                   color: "#111827",
+                  lineHeight: "1.6",
                 }}
                 data-ocid="header.search_field.input"
                 onFocus={() => setSearchFocused(true)}
@@ -313,6 +316,7 @@ export function Header({
               color: "#9ca3af",
               letterSpacing: "0.08em",
               fontWeight: 500,
+              lineHeight: "1.6",
             }}
           >
             {settings.tagline}
@@ -334,6 +338,7 @@ export function Header({
                   style={{
                     color: isActive ? "#dc2626" : "#374151",
                     backgroundColor: isActive ? "#fef2f2" : "transparent",
+                    lineHeight: "1.6",
                   }}
                 >
                   {link.label}
@@ -352,7 +357,7 @@ export function Header({
                   onSettingsClick();
                 }}
                 className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-md transition-colors"
-                style={{ color: "#6b7280" }}
+                style={{ color: "#6b7280", lineHeight: "1.6" }}
               >
                 <Settings size={15} />
                 সেটিংস
@@ -377,7 +382,11 @@ export function Header({
                 className="flex items-center gap-2 px-3 py-2.5 mt-1"
                 data-ocid="mobile.preview_switch.toggle"
               >
-                <span style={{ color: "#6b7280", fontSize: 12 }}>ভিউ:</span>
+                <span
+                  style={{ color: "#6b7280", fontSize: 12, lineHeight: "1.4" }}
+                >
+                  ভিউ:
+                </span>
                 <button
                   type="button"
                   data-ocid="mobile.preview_mobile.button"
@@ -393,6 +402,7 @@ export function Header({
                       previewMode === "mobile"
                         ? "1px solid #dc2626"
                         : "1px solid #e5e7eb",
+                    lineHeight: "1.4",
                   }}
                 >
                   <Smartphone size={13} />
@@ -413,6 +423,7 @@ export function Header({
                       previewMode === "desktop"
                         ? "1px solid #dc2626"
                         : "1px solid #e5e7eb",
+                    lineHeight: "1.4",
                   }}
                 >
                   <Monitor size={13} />
@@ -453,6 +464,7 @@ function NavLink({
         color: isActive ? "#dc2626" : hovered ? "#111827" : "#374151",
         borderBottomColor: isActive ? "#dc2626" : "transparent",
         letterSpacing: "0.01em",
+        lineHeight: "1.6",
       }}
     >
       {label}
@@ -484,6 +496,7 @@ function PostBtn({
         border: "1.5px solid #dc2626",
         color: hovered ? "#fff" : "#dc2626",
         backgroundColor: hovered ? "#dc2626" : "transparent",
+        lineHeight: "1.4",
       }}
     >
       <PenSquare size={13} />

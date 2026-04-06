@@ -14763,17 +14763,23 @@ function BreakingNewsTicker() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
-      className: "w-full flex items-center overflow-hidden",
-      style: { backgroundColor: "oklch(0.4764 0.2183 22.8)", height: "44px" },
+      className: "w-full flex items-center",
+      style: {
+        backgroundColor: "oklch(0.4764 0.2183 22.8)",
+        minHeight: "52px",
+        paddingTop: "6px",
+        paddingBottom: "6px"
+      },
       "aria-label": "ব্রেকিং নিউজ",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            className: "flex items-center gap-2 px-4 text-white font-bold text-xs uppercase tracking-widest shrink-0 h-full",
+            className: "flex items-center gap-2 px-4 text-white font-bold text-xs uppercase tracking-widest shrink-0 py-2",
             style: {
               backgroundColor: "oklch(0.34 0.2183 22.8)",
-              minWidth: "max-content"
+              minWidth: "max-content",
+              lineHeight: "1.6"
             },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-2 h-2 rounded-full bg-white animate-pulse" }),
@@ -14784,7 +14790,7 @@ function BreakingNewsTicker() {
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "shrink-0 h-full",
+            className: "shrink-0 self-stretch",
             style: {
               width: "2px",
               backgroundColor: "oklch(0.38 0.2183 22.8)"
@@ -14795,14 +14801,22 @@ function BreakingNewsTicker() {
           "span",
           {
             className: "inline-flex items-center gap-3 text-white text-sm font-semibold",
+            style: { lineHeight: "1.6" },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mx-8 text-red-200 opacity-70", children: "◆" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: item.text }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-red-200 opacity-80 text-xs font-normal ml-1", children: [
-                "(",
-                item.time,
-                ")"
-              ] })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { lineHeight: "1.6" }, children: item.text }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-red-200 opacity-80 text-xs font-normal ml-1",
+                  style: { lineHeight: "1.6" },
+                  children: [
+                    "(",
+                    item.time,
+                    ")"
+                  ]
+                }
+              )
             ]
           },
           `ticker-${item.id}-${idx}`
@@ -17520,7 +17534,7 @@ function Header({
           "div",
           {
             className: "flex items-center justify-between gap-4",
-            style: { height: 64 },
+            style: { minHeight: 64, paddingTop: 8, paddingBottom: 8 },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 sm:gap-4 min-w-0", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17547,14 +17561,14 @@ function Header({
                         style: {
                           color: "#dc2626",
                           fontSize: 18,
-                          lineHeight: 1
+                          lineHeight: "1.3"
                         },
                         children: "বা"
                       }
                     )
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "leading-tight min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", style: { lineHeight: "normal" }, children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "div",
                     {
@@ -17562,7 +17576,8 @@ function Header({
                       style: {
                         color: "#111827",
                         fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
-                        letterSpacing: "0.03em"
+                        letterSpacing: "0.03em",
+                        lineHeight: "1.4"
                       },
                       children: settings.siteName
                     }
@@ -17575,7 +17590,8 @@ function Header({
                         color: "#9ca3af",
                         letterSpacing: "0.08em",
                         fontWeight: 500,
-                        marginTop: 2
+                        marginTop: 2,
+                        lineHeight: "1.4"
                       },
                       children: settings.tagline
                     }
@@ -17727,7 +17743,8 @@ function Header({
                   style: {
                     backgroundColor: "#ffffff",
                     borderColor: searchFocused ? "#dc2626" : "#d1d5db",
-                    color: "#111827"
+                    color: "#111827",
+                    lineHeight: "1.6"
                   },
                   "data-ocid": "header.search_field.input",
                   onFocus: () => setSearchFocused(true),
@@ -17751,7 +17768,8 @@ function Header({
                   style: {
                     color: "#9ca3af",
                     letterSpacing: "0.08em",
-                    fontWeight: 500
+                    fontWeight: 500,
+                    lineHeight: "1.6"
                   },
                   children: settings.tagline
                 }
@@ -17771,7 +17789,8 @@ function Header({
                       className: "px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
                       style: {
                         color: isActive ? "#dc2626" : "#374151",
-                        backgroundColor: isActive ? "#fef2f2" : "transparent"
+                        backgroundColor: isActive ? "#fef2f2" : "transparent",
+                        lineHeight: "1.6"
                       },
                       children: link.label
                     },
@@ -17789,7 +17808,7 @@ function Header({
                       onSettingsClick();
                     },
                     className: "flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
-                    style: { color: "#6b7280" },
+                    style: { color: "#6b7280", lineHeight: "1.6" },
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, { size: 15 }),
                       "সেটিংস"
@@ -17814,7 +17833,13 @@ function Header({
                     className: "flex items-center gap-2 px-3 py-2.5 mt-1",
                     "data-ocid": "mobile.preview_switch.toggle",
                     children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#6b7280", fontSize: 12 }, children: "ভিউ:" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          style: { color: "#6b7280", fontSize: 12, lineHeight: "1.4" },
+                          children: "ভিউ:"
+                        }
+                      ),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs(
                         "button",
                         {
@@ -17827,7 +17852,8 @@ function Header({
                           style: {
                             backgroundColor: previewMode === "mobile" ? "#dc2626" : "#f3f4f6",
                             color: previewMode === "mobile" ? "#ffffff" : "#6b7280",
-                            border: previewMode === "mobile" ? "1px solid #dc2626" : "1px solid #e5e7eb"
+                            border: previewMode === "mobile" ? "1px solid #dc2626" : "1px solid #e5e7eb",
+                            lineHeight: "1.4"
                           },
                           children: [
                             /* @__PURE__ */ jsxRuntimeExports.jsx(Smartphone, { size: 13 }),
@@ -17847,7 +17873,8 @@ function Header({
                           style: {
                             backgroundColor: previewMode === "desktop" ? "#dc2626" : "#f3f4f6",
                             color: previewMode === "desktop" ? "#ffffff" : "#6b7280",
-                            border: previewMode === "desktop" ? "1px solid #dc2626" : "1px solid #e5e7eb"
+                            border: previewMode === "desktop" ? "1px solid #dc2626" : "1px solid #e5e7eb",
+                            lineHeight: "1.4"
                           },
                           children: [
                             /* @__PURE__ */ jsxRuntimeExports.jsx(Monitor, { size: 13 }),
@@ -17885,7 +17912,8 @@ function NavLink({
       style: {
         color: isActive ? "#dc2626" : hovered ? "#111827" : "#374151",
         borderBottomColor: isActive ? "#dc2626" : "transparent",
-        letterSpacing: "0.01em"
+        letterSpacing: "0.01em",
+        lineHeight: "1.6"
       },
       children: label
     }
@@ -17910,7 +17938,8 @@ function PostBtn({
       style: {
         border: "1.5px solid #dc2626",
         color: hovered ? "#fff" : "#dc2626",
-        backgroundColor: hovered ? "#dc2626" : "transparent"
+        backgroundColor: hovered ? "#dc2626" : "transparent",
+        lineHeight: "1.4"
       },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 13 }),

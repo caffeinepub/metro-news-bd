@@ -1365,6 +1365,9 @@ video {
 .self-end {
   align-self: flex-end;
 }
+.self-stretch {
+  align-self: stretch;
+}
 .justify-self-end {
   justify-self: end;
 }
