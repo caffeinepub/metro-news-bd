@@ -14760,68 +14760,153 @@ const breakingItems = [
 ];
 function BreakingNewsTicker() {
   const tickerContent = [...breakingItems, ...breakingItems];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
-      className: "w-full flex items-center",
+      className: "w-full",
       style: {
         backgroundColor: "oklch(0.4764 0.2183 22.8)",
-        minHeight: "52px",
-        paddingTop: "6px",
-        paddingBottom: "6px"
+        /* Extra vertical padding so Bengali diacritics have full room */
+        paddingTop: "10px",
+        paddingBottom: "10px"
       },
       "aria-label": "ব্রেকিং নিউজ",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "div",
-          {
-            className: "flex items-center gap-2 px-4 text-white font-bold text-xs uppercase tracking-widest shrink-0 py-2",
-            style: {
-              backgroundColor: "oklch(0.34 0.2183 22.8)",
-              minWidth: "max-content",
-              lineHeight: "1.6"
-            },
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-2 h-2 rounded-full bg-white animate-pulse" }),
-              "🔴 ব্রেকিং নিউজ"
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "shrink-0 self-stretch",
-            style: {
-              width: "2px",
-              backgroundColor: "oklch(0.38 0.2183 22.8)"
-            }
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 overflow-hidden relative", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ticker-animation flex items-center", children: tickerContent.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "span",
-          {
-            className: "inline-flex items-center gap-3 text-white text-sm font-semibold",
-            style: { lineHeight: "1.6" },
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mx-8 text-red-200 opacity-70", children: "◆" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { lineHeight: "1.6" }, children: item.text }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "span",
-                {
-                  className: "text-red-200 opacity-80 text-xs font-normal ml-1",
-                  style: { lineHeight: "1.6" },
-                  children: [
-                    "(",
-                    item.time,
-                    ")"
-                  ]
-                }
-              )
-            ]
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          style: {
+            display: "flex",
+            alignItems: "center",
+            minHeight: "40px"
           },
-          `ticker-${item.id}-${idx}`
-        )) }) })
-      ]
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                style: {
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  padding: "6px 16px",
+                  backgroundColor: "oklch(0.34 0.2183 22.8)",
+                  color: "#ffffff",
+                  fontWeight: 700,
+                  fontSize: "12px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  lineHeight: "2",
+                  flexShrink: 0,
+                  whiteSpace: "nowrap",
+                  /* Ensure label does not clip its own text */
+                  overflow: "visible"
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      style: {
+                        display: "inline-block",
+                        width: "8px",
+                        height: "8px",
+                        borderRadius: "50%",
+                        backgroundColor: "#fff",
+                        animation: "pulse 1.5s infinite",
+                        flexShrink: 0
+                      }
+                    }
+                  ),
+                  "🔴 ব্রেকিং নিউজ"
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                style: {
+                  width: "2px",
+                  alignSelf: "stretch",
+                  backgroundColor: "oklch(0.38 0.2183 22.8)",
+                  flexShrink: 0
+                }
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                style: {
+                  flex: 1,
+                  /* clip horizontally without touching vertical overflow */
+                  clipPath: "inset(0 0 0 0)",
+                  position: "relative",
+                  /* Extra vertical room for diacritics */
+                  paddingTop: "4px",
+                  paddingBottom: "4px"
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "ticker-animation",
+                    style: {
+                      display: "flex",
+                      alignItems: "center",
+                      whiteSpace: "nowrap"
+                    },
+                    children: tickerContent.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "span",
+                      {
+                        style: {
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "12px",
+                          color: "#ffffff",
+                          fontSize: "14px",
+                          fontWeight: 600,
+                          /* lineHeight:2 gives Bengali vowel marks (মাত্রা) plenty of
+                             space above and below the baseline */
+                          lineHeight: "2"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "span",
+                            {
+                              style: {
+                                margin: "0 32px",
+                                color: "rgba(254,202,202,0.8)",
+                                fontSize: "12px",
+                                lineHeight: "2"
+                              },
+                              children: "◆"
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { lineHeight: "2" }, children: item.text }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                            "span",
+                            {
+                              style: {
+                                color: "rgba(254,202,202,0.9)",
+                                fontSize: "12px",
+                                fontWeight: 400,
+                                marginLeft: "4px",
+                                lineHeight: "2"
+                              },
+                              children: [
+                                "(",
+                                item.time,
+                                ")"
+                              ]
+                            }
+                          )
+                        ]
+                      },
+                      `ticker-${item.id}-${idx}`
+                    ))
+                  }
+                )
+              }
+            )
+          ]
+        }
+      )
     }
   );
 }

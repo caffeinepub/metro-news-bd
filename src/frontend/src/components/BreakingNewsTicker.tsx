@@ -48,57 +48,133 @@ export function BreakingNewsTicker() {
 
   return (
     <div
-      className="w-full flex items-center"
+      className="w-full"
       style={{
         backgroundColor: "oklch(0.4764 0.2183 22.8)",
-        minHeight: "52px",
-        paddingTop: "6px",
-        paddingBottom: "6px",
+        /* Extra vertical padding so Bengali diacritics have full room */
+        paddingTop: "10px",
+        paddingBottom: "10px",
       }}
       aria-label="ব্রেকিং নিউজ"
     >
-      {/* Label */}
       <div
-        className="flex items-center gap-2 px-4 text-white font-bold text-xs uppercase tracking-widest shrink-0 py-2"
         style={{
-          backgroundColor: "oklch(0.34 0.2183 22.8)",
-          minWidth: "max-content",
-          lineHeight: "1.6",
+          display: "flex",
+          alignItems: "center",
+          minHeight: "40px",
         }}
       >
-        <span className="inline-block w-2 h-2 rounded-full bg-white animate-pulse" />
-        🔴 ব্রেকিং নিউজ
-      </div>
+        {/* Label */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
+            padding: "6px 16px",
+            backgroundColor: "oklch(0.34 0.2183 22.8)",
+            color: "#ffffff",
+            fontWeight: 700,
+            fontSize: "12px",
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            lineHeight: "2",
+            flexShrink: 0,
+            whiteSpace: "nowrap",
+            /* Ensure label does not clip its own text */
+            overflow: "visible",
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              width: "8px",
+              height: "8px",
+              borderRadius: "50%",
+              backgroundColor: "#fff",
+              animation: "pulse 1.5s infinite",
+              flexShrink: 0,
+            }}
+          />
+          🔴 ব্রেকিং নিউজ
+        </div>
 
-      {/* Vertical separator */}
-      <div
-        className="shrink-0 self-stretch"
-        style={{
-          width: "2px",
-          backgroundColor: "oklch(0.38 0.2183 22.8)",
-        }}
-      />
+        {/* Vertical separator */}
+        <div
+          style={{
+            width: "2px",
+            alignSelf: "stretch",
+            backgroundColor: "oklch(0.38 0.2183 22.8)",
+            flexShrink: 0,
+          }}
+        />
 
-      {/* Scrolling content */}
-      <div className="flex-1 overflow-hidden relative">
-        <div className="ticker-animation flex items-center">
-          {tickerContent.map((item, idx) => (
-            <span
-              // eslint-disable-next-line react/no-array-index-key
-              key={`ticker-${item.id}-${idx}`}
-              className="inline-flex items-center gap-3 text-white text-sm font-semibold"
-              style={{ lineHeight: "1.6" }}
-            >
-              <span className="mx-8 text-red-200 opacity-70">◆</span>
-              <span style={{ lineHeight: "1.6" }}>{item.text}</span>
+        {/*
+          Scrolling content wrapper.
+          IMPORTANT: We use clip-path instead of overflow:hidden to mask
+          horizontal overflow, because setting overflow-x:hidden forces
+          overflow-y to become "auto" in all browsers — which clips Bengali
+          diacritics above the line. clip-path does not trigger that behaviour.
+        */}
+        <div
+          style={{
+            flex: 1,
+            /* clip horizontally without touching vertical overflow */
+            clipPath: "inset(0 0 0 0)",
+            position: "relative",
+            /* Extra vertical room for diacritics */
+            paddingTop: "4px",
+            paddingBottom: "4px",
+          }}
+        >
+          <div
+            className="ticker-animation"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {tickerContent.map((item, idx) => (
               <span
-                className="text-red-200 opacity-80 text-xs font-normal ml-1"
-                style={{ lineHeight: "1.6" }}
+                // eslint-disable-next-line react/no-array-index-key
+                key={`ticker-${item.id}-${idx}`}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "12px",
+                  color: "#ffffff",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  /* lineHeight:2 gives Bengali vowel marks (মাত্রা) plenty of
+                     space above and below the baseline */
+                  lineHeight: "2",
+                }}
               >
-                ({item.time})
+                <span
+                  style={{
+                    margin: "0 32px",
+                    color: "rgba(254,202,202,0.8)",
+                    fontSize: "12px",
+                    lineHeight: "2",
+                  }}
+                >
+                  ◆
+                </span>
+                <span style={{ lineHeight: "2" }}>{item.text}</span>
+                <span
+                  style={{
+                    color: "rgba(254,202,202,0.9)",
+                    fontSize: "12px",
+                    fontWeight: 400,
+                    marginLeft: "4px",
+                    lineHeight: "2",
+                  }}
+                >
+                  ({item.time})
+                </span>
               </span>
-            </span>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
