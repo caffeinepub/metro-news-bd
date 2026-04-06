@@ -1,0 +1,36 @@
+{
+  "name": "বালীগাঁও নিউজ",
+  "short_name": "বালীগাঁও নিউজ",
+  "description": "বালীগাঁও, লাখাই, হবিগঞ্জ ও আশপাশের এলাকার সর্বশেষ স্থানীয়, জাতীয় ও আন্তর্জাতিক সংবাদ।",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#cc0000",
+  "orientation": "portrait-primary",
+  "lang": "bn",
+  "scope": "/",
+  "categories": ["news"],
+  "icons": [
+    {
+      "src": "/assets/generated/icon-512x512-transparent.dim_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/generated/icon-512x512-transparent.dim_512x512.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/design-preview.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "বালীগাঁও নিউজ হোমপেজ"
+    }
+  ]
+}

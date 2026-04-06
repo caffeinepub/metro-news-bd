@@ -1,13 +1,22 @@
 <html lang="bn">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>বালীগাঁও নিউজ - Voice of Truth & Freedom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>বালীগাঁও নিউজ - Voice of Truth &amp; Freedom</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#cc0000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="বালীগাঁও নিউজ" />
+    <link rel="apple-touch-icon" href="/assets/generated/icon-512x512-transparent.dim_512x512.png" />
 
     <!-- Default Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="বালীগাঁও নিউজ" />
-    <meta property="og:title" content="বালীগাঁও নিউজ - Voice of Truth & Freedom" />
+    <meta property="og:title" content="বালীগাঁও নিউজ - Voice of Truth &amp; Freedom" />
     <meta property="og:description" content="বালীগাঁও, লাখাই, হবিগঞ্জ ও আশপাশের এলাকার সর্বশেষ স্থানীয়, জাতীয় ও আন্তর্জাতিক সংবাদ।" />
     <meta property="og:url" content="" id="og-url" />
     <meta property="og:image" content="" id="og-image" />
@@ -17,7 +26,7 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="বালীগাঁও নিউজ - Voice of Truth & Freedom" id="twitter-title" />
+    <meta name="twitter:title" content="বালীগাঁও নিউজ - Voice of Truth &amp; Freedom" id="twitter-title" />
     <meta name="twitter:description" content="বালীগাঁও, লাখাই, হবিগঞ্জ ও আশপাশের এলাকার সর্বশেষ স্থানীয়, জাতীয় ও আন্তর্জাতিক সংবাদ।" id="twitter-description" />
     <meta name="twitter:image" content="" id="twitter-image" />
 
@@ -28,5 +37,17 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Register Service Worker for PWA/Android APK support -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('SW registered:', registration.scope);
+          }).catch(function(err) {
+            console.log('SW registration failed:', err);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
