@@ -90,19 +90,17 @@ export function Footer() {
             {/* Logo + Site name */}
             <div className="flex items-center gap-3 mb-4">
               <div
-                className="flex items-center justify-center shrink-0 rounded-md overflow-hidden"
+                className="flex items-center justify-center shrink-0"
                 style={{
                   width: 42,
                   height: 42,
-                  border: "2px solid #dc2626",
-                  background: "#1a0000",
                 }}
               >
                 {settings.logoBase64 ? (
                   <img
                     src={settings.logoBase64}
                     alt={settings.siteName}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 ) : (
                   <span
