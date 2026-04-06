@@ -117,11 +117,18 @@ export function EditorsPicks() {
               </span>
               <h3
                 className="text-sm font-semibold leading-snug line-clamp-2 group-hover:text-news-red transition-colors"
-                style={{ color: "#111827" }}
+                style={{
+                  color: "#111827",
+                  fontSize: "16px",
+                  marginBottom: "6px",
+                }}
               >
                 {pick.title}
               </h3>
-              <p className="text-xs mt-1" style={{ color: "#9ca3af" }}>
+              <p
+                className="text-xs mt-1"
+                style={{ color: "#9ca3af", fontSize: "13px", marginTop: "6px" }}
+              >
                 {pick.author} · {pick.time}
               </p>
             </div>

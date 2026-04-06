@@ -650,7 +650,11 @@ export function LocalNewsSection() {
                     onClick={() => openArticle(article)}
                     data-ocid={`local_news.title.${i + 1}`}
                     className="text-sm font-bold text-left leading-snug mb-2 hover:underline focus:outline-none transition-colors"
-                    style={{ color: "#111827" }}
+                    style={{
+                      color: "#111827",
+                      fontSize: "16px",
+                      marginBottom: "10px",
+                    }}
                   >
                     {article.title}
                   </button>
@@ -671,7 +675,11 @@ export function LocalNewsSection() {
                     <div>
                       <p
                         className="text-[11px] font-medium"
-                        style={{ color: "#374151" }}
+                        style={{
+                          color: "#374151",
+                          fontSize: "13px",
+                          marginTop: "6px",
+                        }}
                       >
                         {article.author}
                       </p>

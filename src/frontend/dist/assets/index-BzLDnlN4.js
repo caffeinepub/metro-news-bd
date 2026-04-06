@@ -14766,19 +14766,10 @@ function BreakingNewsTicker() {
       className: "w-full",
       style: {
         backgroundColor: "oklch(0.4764 0.2183 22.8)",
-        /*
-         * Generous vertical padding so Bengali vowel marks (মাত্রা/স্বরচিহ্ন)
-         * that extend above the cap-height are never cropped.
-         */
-        paddingTop: "14px",
-        paddingBottom: "14px",
-        /*
-         * overflow: clip on the OUTER shell hides horizontal overflow without
-         * creating a scroll container and — crucially — does NOT force the
-         * perpendicular axis (overflow-y) to become "auto"/"hidden".
-         * This is the key difference vs overflow:hidden which forces both axes.
-         */
-        overflow: "clip"
+        paddingTop: "16px",
+        paddingBottom: "16px",
+        overflow: "visible",
+        height: "auto"
       },
       "aria-label": "ব্রেকিং নিউজ",
       children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14787,13 +14778,7 @@ function BreakingNewsTicker() {
           style: {
             display: "flex",
             alignItems: "center",
-            /*
-             * minHeight must accommodate: line-height × font-size + vertical padding
-             * Bengali diacritics add ~0.3em above the cap height, so lineHeight:2
-             * on 14px text ≈ 28px; 12px×2 = 24px for the label.
-             * 56px is a safe lower bound.
-             */
-            minHeight: "64px"
+            minHeight: "72px"
           },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14810,10 +14795,9 @@ function BreakingNewsTicker() {
                   fontSize: "12px",
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",
-                  lineHeight: "2",
+                  lineHeight: "2.2",
                   flexShrink: 0,
                   whiteSpace: "nowrap",
-                  /* Never clip this label's own text either */
                   overflow: "visible",
                   alignSelf: "stretch"
                 },
@@ -14852,12 +14836,10 @@ function BreakingNewsTicker() {
               {
                 style: {
                   flex: 1,
-                  /* MUST be visible — no clip here — parent already clips x-axis */
                   overflow: "visible",
                   position: "relative",
-                  /* Room for Bengali vowel marks above the cap-height */
-                  paddingTop: "6px",
-                  paddingBottom: "6px"
+                  paddingTop: "10px",
+                  paddingBottom: "10px"
                 },
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
@@ -14867,7 +14849,6 @@ function BreakingNewsTicker() {
                       display: "flex",
                       alignItems: "center",
                       whiteSpace: "nowrap",
-                      /* Also visible here — clipping is handled by the outermost shell */
                       overflow: "visible"
                     },
                     children: tickerContent.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14880,12 +14861,7 @@ function BreakingNewsTicker() {
                           color: "#ffffff",
                           fontSize: "12px",
                           fontWeight: 600,
-                          /*
-                           * lineHeight:2 gives Bengali vowel marks (মাত্রা) plenty of
-                           * vertical space. Without this, ascenders get clipped even
-                           * when overflow is visible because the line-box itself is tight.
-                           */
-                          lineHeight: "2"
+                          lineHeight: "2.2"
                         },
                         children: [
                           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14895,12 +14871,12 @@ function BreakingNewsTicker() {
                                 margin: "0 32px",
                                 color: "rgba(254,202,202,0.8)",
                                 fontSize: "12px",
-                                lineHeight: "2"
+                                lineHeight: "2.2"
                               },
                               children: "◆"
                             }
                           ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { lineHeight: "2" }, children: item.text }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { lineHeight: "2.2" }, children: item.text }),
                           /* @__PURE__ */ jsxRuntimeExports.jsxs(
                             "span",
                             {
@@ -14909,7 +14885,7 @@ function BreakingNewsTicker() {
                                 fontSize: "12px",
                                 fontWeight: 400,
                                 marginLeft: "4px",
-                                lineHeight: "2"
+                                lineHeight: "2.2"
                               },
                               children: [
                                 "(",
@@ -15864,15 +15840,26 @@ function EditorsPicks() {
                   "h3",
                   {
                     className: "text-sm font-semibold leading-snug line-clamp-2 group-hover:text-news-red transition-colors",
-                    style: { color: "#111827" },
+                    style: {
+                      color: "#111827",
+                      fontSize: "16px",
+                      marginBottom: "6px"
+                    },
                     children: pick.title
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs mt-1", style: { color: "#9ca3af" }, children: [
-                  pick.author,
-                  " · ",
-                  pick.time
-                ] })
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "p",
+                  {
+                    className: "text-xs mt-1",
+                    style: { color: "#9ca3af", fontSize: "13px", marginTop: "6px" },
+                    children: [
+                      pick.author,
+                      " · ",
+                      pick.time
+                    ]
+                  }
+                )
               ] })
             ]
           },
@@ -18257,31 +18244,42 @@ function HeroSlider() {
                 "button",
                 {
                   type: "button",
-                  className: "block text-left text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3 cursor-pointer hover:opacity-80 transition-opacity",
+                  className: "block text-left text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight cursor-pointer hover:opacity-80 transition-opacity",
+                  style: { marginBottom: "10px" },
                   onClick: openModal,
                   children: slide.headline
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm md:text-base text-gray-300 mb-4 leading-relaxed hidden sm:block", children: slide.excerpt }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-5", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "span",
-                  {
-                    className: "text-xs font-medium",
-                    style: { color: "#9c9c9c" },
-                    children: slide.author
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#2d2d2d" }, children: "•" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#9c9c9c" }, children: slide.time })
-              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-3 mb-5",
+                  style: { marginTop: "8px" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "text-xs font-medium",
+                        style: { color: "#9c9c9c", fontSize: "13px" },
+                        children: slide.author
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#2d2d2d" }, children: "•" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#9c9c9c" }, children: slide.time })
+                  ]
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "button",
                 {
                   type: "button",
                   "data-ocid": "hero.read_full.button",
                   className: "inline-flex items-center px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-80",
-                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                  style: {
+                    backgroundColor: "oklch(0.4764 0.2183 22.8)",
+                    marginTop: "20px"
+                  },
                   onClick: openModal,
                   children: "বিস্তারিত পড়ুন"
                 }
@@ -18294,8 +18292,8 @@ function HeroSlider() {
               type: "button",
               "data-ocid": "hero.slider.pagination_prev",
               onClick: prev,
-              className: "absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80 z-10",
-              style: { backgroundColor: "rgba(0,0,0,0.5)" },
+              className: "absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80",
+              style: { backgroundColor: "rgba(0,0,0,0.4)" },
               "aria-label": "আগের স্লাইড",
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { size: 20 })
             }
@@ -18306,23 +18304,22 @@ function HeroSlider() {
               type: "button",
               "data-ocid": "hero.slider.pagination_next",
               onClick: next,
-              className: "absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80 z-10",
-              style: { backgroundColor: "rgba(0,0,0,0.5)" },
+              className: "absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80",
+              style: { backgroundColor: "rgba(0,0,0,0.4)" },
               "aria-label": "পরের স্লাইড",
               children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 20 })
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10", children: slides.map((s2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2", children: slides.map((s2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
             {
               type: "button",
-              "data-ocid": `hero.dot.${i + 1}`,
+              "data-ocid": `hero.slider.dot.${i + 1}`,
               onClick: () => goTo(i),
-              className: "rounded-full transition-all",
+              className: "w-2 h-2 rounded-full transition-all",
               style: {
-                width: i === current ? "20px" : "8px",
-                height: "8px",
-                backgroundColor: i === current ? "oklch(0.4764 0.2183 22.8)" : "rgba(255,255,255,0.4)"
+                backgroundColor: i === current ? "#ffffff" : "rgba(255,255,255,0.4)",
+                transform: i === current ? "scale(1.3)" : "scale(1)"
               },
               "aria-label": `স্লাইড ${i + 1}`
             },
@@ -18526,7 +18523,11 @@ function LatestNews({ articles }) {
                 "h3",
                 {
                   className: "text-sm font-semibold leading-snug line-clamp-2 hover:text-news-red transition-colors",
-                  style: { color: "#111827" },
+                  style: {
+                    color: "#111827",
+                    fontSize: "16px",
+                    marginBottom: "6px"
+                  },
                   children: article.title
                 }
               ),
@@ -18541,8 +18542,12 @@ function LatestNews({ articles }) {
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "p",
                 {
-                  className: "text-[11px] mt-1.5",
-                  style: { color: "#9ca3af" },
+                  className: "text-[11px]",
+                  style: {
+                    color: "#9ca3af",
+                    fontSize: "13px",
+                    marginTop: "6px"
+                  },
                   children: [
                     article.author,
                     " ·",
@@ -18606,7 +18611,11 @@ function LatestNews({ articles }) {
                 "h3",
                 {
                   className: "text-sm font-semibold leading-snug line-clamp-2 hover:text-news-red transition-colors",
-                  style: { color: "#111827" },
+                  style: {
+                    color: "#111827",
+                    fontSize: "16px",
+                    marginBottom: "6px"
+                  },
                   children: item.title
                 }
               ),
@@ -18621,8 +18630,12 @@ function LatestNews({ articles }) {
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "p",
                 {
-                  className: "text-[11px] mt-1.5",
-                  style: { color: "#9ca3af" },
+                  className: "text-[11px]",
+                  style: {
+                    color: "#9ca3af",
+                    fontSize: "13px",
+                    marginTop: "6px"
+                  },
                   children: [
                     item.author,
                     " · ",
@@ -19283,7 +19296,11 @@ function LocalNewsSection() {
                       onClick: () => openArticle(article),
                       "data-ocid": `local_news.title.${i + 1}`,
                       className: "text-sm font-bold text-left leading-snug mb-2 hover:underline focus:outline-none transition-colors",
-                      style: { color: "#111827" },
+                      style: {
+                        color: "#111827",
+                        fontSize: "16px",
+                        marginBottom: "10px"
+                      },
                       children: article.title
                     }
                   ),
@@ -19306,7 +19323,11 @@ function LocalNewsSection() {
                             "p",
                             {
                               className: "text-[11px] font-medium",
-                              style: { color: "#374151" },
+                              style: {
+                                color: "#374151",
+                                fontSize: "13px",
+                                marginTop: "6px"
+                              },
                               children: article.author
                             }
                           ),

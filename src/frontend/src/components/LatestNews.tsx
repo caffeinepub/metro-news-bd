@@ -211,7 +211,11 @@ export function LatestNews({ articles }: LatestNewsProps) {
                     </span>
                     <h3
                       className="text-sm font-semibold leading-snug line-clamp-2 hover:text-news-red transition-colors"
-                      style={{ color: "#111827" }}
+                      style={{
+                        color: "#111827",
+                        fontSize: "16px",
+                        marginBottom: "6px",
+                      }}
                     >
                       {article.title}
                     </h3>
@@ -222,8 +226,12 @@ export function LatestNews({ articles }: LatestNewsProps) {
                       {article.summary}
                     </p>
                     <p
-                      className="text-[11px] mt-1.5"
-                      style={{ color: "#9ca3af" }}
+                      className="text-[11px]"
+                      style={{
+                        color: "#9ca3af",
+                        fontSize: "13px",
+                        marginTop: "6px",
+                      }}
                     >
                       {article.author} ·{" "}
                       {formatPublishedAt(article.publishedAt)}
@@ -278,7 +286,11 @@ export function LatestNews({ articles }: LatestNewsProps) {
                     </span>
                     <h3
                       className="text-sm font-semibold leading-snug line-clamp-2 hover:text-news-red transition-colors"
-                      style={{ color: "#111827" }}
+                      style={{
+                        color: "#111827",
+                        fontSize: "16px",
+                        marginBottom: "6px",
+                      }}
                     >
                       {item.title}
                     </h3>
@@ -289,8 +301,12 @@ export function LatestNews({ articles }: LatestNewsProps) {
                       {item.excerpt}
                     </p>
                     <p
-                      className="text-[11px] mt-1.5"
-                      style={{ color: "#9ca3af" }}
+                      className="text-[11px]"
+                      style={{
+                        color: "#9ca3af",
+                        fontSize: "13px",
+                        marginTop: "6px",
+                      }}
                     >
                       {item.author} · {item.time}
                     </p>

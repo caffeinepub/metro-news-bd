@@ -133,7 +133,8 @@ export function HeroSlider() {
               </span>
               <button
                 type="button"
-                className="block text-left text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3 cursor-pointer hover:opacity-80 transition-opacity"
+                className="block text-left text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight cursor-pointer hover:opacity-80 transition-opacity"
+                style={{ marginBottom: "10px" }}
                 onClick={openModal}
               >
                 {slide.headline}
@@ -141,10 +142,13 @@ export function HeroSlider() {
               <p className="text-sm md:text-base text-gray-300 mb-4 leading-relaxed hidden sm:block">
                 {slide.excerpt}
               </p>
-              <div className="flex items-center gap-3 mb-5">
+              <div
+                className="flex items-center gap-3 mb-5"
+                style={{ marginTop: "8px" }}
+              >
                 <span
                   className="text-xs font-medium"
-                  style={{ color: "#9c9c9c" }}
+                  style={{ color: "#9c9c9c", fontSize: "13px" }}
                 >
                   {slide.author}
                 </span>
@@ -157,7 +161,10 @@ export function HeroSlider() {
                 type="button"
                 data-ocid="hero.read_full.button"
                 className="inline-flex items-center px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-80"
-                style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
+                style={{
+                  backgroundColor: "oklch(0.4764 0.2183 22.8)",
+                  marginTop: "20px",
+                }}
                 onClick={openModal}
               >
                 বিস্তারিত পড়ুন
@@ -171,8 +178,8 @@ export function HeroSlider() {
           type="button"
           data-ocid="hero.slider.pagination_prev"
           onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80 z-10"
-          style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
           aria-label="আগের স্লাইড"
         >
           <ChevronLeft size={20} />
@@ -181,29 +188,26 @@ export function HeroSlider() {
           type="button"
           data-ocid="hero.slider.pagination_next"
           onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80 z-10"
-          style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
           aria-label="পরের স্লাইড"
         >
           <ChevronRight size={20} />
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
           {slides.map((s, i) => (
             <button
-              key={s.id}
               type="button"
-              data-ocid={`hero.dot.${i + 1}`}
+              key={s.id}
+              data-ocid={`hero.slider.dot.${i + 1}`}
               onClick={() => goTo(i)}
-              className="rounded-full transition-all"
+              className="w-2 h-2 rounded-full transition-all"
               style={{
-                width: i === current ? "20px" : "8px",
-                height: "8px",
                 backgroundColor:
-                  i === current
-                    ? "oklch(0.4764 0.2183 22.8)"
-                    : "rgba(255,255,255,0.4)",
+                  i === current ? "#ffffff" : "rgba(255,255,255,0.4)",
+                transform: i === current ? "scale(1.3)" : "scale(1)",
               }}
               aria-label={`স্লাইড ${i + 1}`}
             />
