@@ -32,6 +32,17 @@ export interface ExternalNews {
     category: string;
     fetchedAt: Time;
 }
+export interface LocalNewsArticle {
+    id: bigint;
+    title: string;
+    summary: string;
+    category: string;
+    imageBase64: string;
+    author: string;
+    sourceName: string;
+    sourceUrl: string;
+    publishedAt: Time;
+}
 export interface backendInterface {
     addAdmin(admin: Principal): Promise<void>;
     createArticle(title: string, summary: string, category: string, imageUrl: string, author: string, isFeatured: boolean): Promise<bigint>;
@@ -43,4 +54,9 @@ export interface backendInterface {
     getExternalNews(): Promise<Array<ExternalNews>>;
     getFeaturedArticles(): Promise<Array<Article>>;
     getLastFetchedTime(): Promise<[] | [Time]>;
+    addLocalNews(title: string, summary: string, category: string, imageBase64: string, author: string, sourceName: string, sourceUrl: string): Promise<bigint>;
+    getAllLocalNews(): Promise<Array<LocalNewsArticle>>;
+    deleteLocalNews(id: bigint): Promise<boolean>;
+    searchLocalNews(keyword: string): Promise<Array<LocalNewsArticle>>;
+    getLocalNewsByDateRange(fromTimestamp: bigint, toTimestamp: bigint): Promise<Array<LocalNewsArticle>>;
 }

@@ -24,6 +24,17 @@ export const BreakingNews = IDL.Record({
   'createdAt' : Time,
   'text' : IDL.Text,
 });
+export const LocalNewsArticle = IDL.Record({
+  'id' : IDL.Nat,
+  'title' : IDL.Text,
+  'summary' : IDL.Text,
+  'category' : IDL.Text,
+  'imageBase64' : IDL.Text,
+  'author' : IDL.Text,
+  'sourceName' : IDL.Text,
+  'sourceUrl' : IDL.Text,
+  'publishedAt' : Time,
+});
 
 export const idlService = IDL.Service({
   'addAdmin' : IDL.Func([IDL.Principal], [], []),
@@ -37,6 +48,11 @@ export const idlService = IDL.Service({
   'getAllBreakingNews' : IDL.Func([], [IDL.Vec(BreakingNews)], ['query']),
   'getArticle' : IDL.Func([IDL.Nat], [Article], ['query']),
   'getFeaturedArticles' : IDL.Func([], [IDL.Vec(Article)], ['query']),
+  'addLocalNews' : IDL.Func([IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text], [IDL.Nat], []),
+  'getAllLocalNews' : IDL.Func([], [IDL.Vec(LocalNewsArticle)], ['query']),
+  'deleteLocalNews' : IDL.Func([IDL.Nat], [IDL.Bool], []),
+  'searchLocalNews' : IDL.Func([IDL.Text], [IDL.Vec(LocalNewsArticle)], ['query']),
+  'getLocalNewsByDateRange' : IDL.Func([IDL.Int, IDL.Int], [IDL.Vec(LocalNewsArticle)], ['query']),
 });
 
 export const idlInitArgs = [];
@@ -58,6 +74,17 @@ export const idlFactory = ({ IDL }) => {
     'createdAt' : Time,
     'text' : IDL.Text,
   });
+  const LocalNewsArticle = IDL.Record({
+    'id' : IDL.Nat,
+    'title' : IDL.Text,
+    'summary' : IDL.Text,
+    'category' : IDL.Text,
+    'imageBase64' : IDL.Text,
+    'author' : IDL.Text,
+    'sourceName' : IDL.Text,
+    'sourceUrl' : IDL.Text,
+    'publishedAt' : Time,
+  });
   
   return IDL.Service({
     'addAdmin' : IDL.Func([IDL.Principal], [], []),
@@ -71,6 +98,11 @@ export const idlFactory = ({ IDL }) => {
     'getAllBreakingNews' : IDL.Func([], [IDL.Vec(BreakingNews)], ['query']),
     'getArticle' : IDL.Func([IDL.Nat], [Article], ['query']),
     'getFeaturedArticles' : IDL.Func([], [IDL.Vec(Article)], ['query']),
+    'addLocalNews' : IDL.Func([IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text], [IDL.Nat], []),
+    'getAllLocalNews' : IDL.Func([], [IDL.Vec(LocalNewsArticle)], ['query']),
+    'deleteLocalNews' : IDL.Func([IDL.Nat], [IDL.Bool], []),
+    'searchLocalNews' : IDL.Func([IDL.Text], [IDL.Vec(LocalNewsArticle)], ['query']),
+    'getLocalNewsByDateRange' : IDL.Func([IDL.Int, IDL.Int], [IDL.Vec(LocalNewsArticle)], ['query']),
   });
 };
 

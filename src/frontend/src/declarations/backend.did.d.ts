@@ -25,6 +25,17 @@ export interface BreakingNews {
   'createdAt' : Time,
   'text' : string,
 }
+export interface LocalNewsArticle {
+  'id' : bigint,
+  'title' : string,
+  'summary' : string,
+  'category' : string,
+  'imageBase64' : string,
+  'author' : string,
+  'sourceName' : string,
+  'sourceUrl' : string,
+  'publishedAt' : Time,
+}
 export type Time = bigint;
 export interface _SERVICE {
   'addAdmin' : ActorMethod<[Principal], undefined>,
@@ -37,6 +48,11 @@ export interface _SERVICE {
   'getAllBreakingNews' : ActorMethod<[], Array<BreakingNews>>,
   'getArticle' : ActorMethod<[bigint], Article>,
   'getFeaturedArticles' : ActorMethod<[], Array<Article>>,
+  'addLocalNews' : ActorMethod<[string, string, string, string, string, string, string], bigint>,
+  'getAllLocalNews' : ActorMethod<[], Array<LocalNewsArticle>>,
+  'deleteLocalNews' : ActorMethod<[bigint], boolean>,
+  'searchLocalNews' : ActorMethod<[string], Array<LocalNewsArticle>>,
+  'getLocalNewsByDateRange' : ActorMethod<[bigint, bigint], Array<LocalNewsArticle>>,
 }
 export declare const idlService: IDL.ServiceClass;
 export declare const idlInitArgs: IDL.Type[];

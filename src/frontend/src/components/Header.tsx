@@ -10,11 +10,19 @@ import {
 import { useState } from "react";
 import { useSiteSettings } from "../context/SiteSettingsContext";
 
-const navLinks = [
+const navLinks: {
+  label: string;
+  href: string;
+  tab?: "national" | "online" | "international";
+}[] = [
   { label: "হোম", href: "#home" },
   { label: "স্থানীয় খবর", href: "#local-news" },
-  { label: "জাতীয় খবর", href: "#national" },
-  { label: "আন্তর্জাতিক খবর", href: "#international" },
+  { label: "জাতীয় খবর", href: "#external-news-section", tab: "national" },
+  {
+    label: "আন্তর্জাতিক খবর",
+    href: "#external-news-section",
+    tab: "international",
+  },
   { label: "শিক্ষা", href: "#education" },
   { label: "স্বাস্থ্য", href: "#health" },
   { label: "কৃষি", href: "#agriculture" },
@@ -28,6 +36,7 @@ const navLinks = [
 ];
 
 interface HeaderProps {
+  onCategoryNav?: (tab: "national" | "online" | "international") => void;
   onPostClick?: () => void;
   onSettingsClick?: () => void;
   previewMode?: "desktop" | "mobile";
@@ -70,6 +79,7 @@ export function Header({
   onSettingsClick,
   previewMode = "desktop",
   onPreviewChange,
+  onCategoryNav,
 }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -283,7 +293,12 @@ export function Header({
                     label={link.label}
                     href={link.href}
                     isActive={isActive}
-                    onClick={() => setActiveNav(link.label)}
+                    onClick={() => {
+                      setActiveNav(link.label);
+                      if (link.tab && onCategoryNav) {
+                        onCategoryNav(link.tab);
+                      }
+                    }}
                   />
                 );
               })}
@@ -397,6 +412,9 @@ export function Header({
                   onClick={() => {
                     setActiveNav(link.label);
                     setMobileMenuOpen(false);
+                    if (link.tab && onCategoryNav) {
+                      onCategoryNav(link.tab);
+                    }
                   }}
                   className="px-3 py-2.5 text-sm font-medium rounded-md transition-colors"
                   style={{

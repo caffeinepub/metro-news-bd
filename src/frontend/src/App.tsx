@@ -15,12 +15,15 @@ import { WeatherSection } from "./components/WeatherSection";
 import { SiteSettingsProvider } from "./context/SiteSettingsContext";
 import { useGetAllArticles } from "./hooks/useQueries";
 
+type NewsTabCategory = "national" | "online" | "international" | null;
+
 function AppContent() {
   const [showPostModal, setShowPostModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">(
     "desktop",
   );
+  const [activeNewsTab, setActiveNewsTab] = useState<NewsTabCategory>(null);
 
   const { data: allArticles, refetch: refetchArticles } = useGetAllArticles();
 
@@ -38,6 +41,17 @@ function AppContent() {
 
   // All articles for category grouping
   const hasBackendArticles = allArticles !== undefined;
+
+  // Handle nav category click — set tab and scroll to external news section
+  function handleCategoryNav(tab: "national" | "online" | "international") {
+    setActiveNewsTab(tab);
+    setTimeout(() => {
+      const el = document.getElementById("external-news-section");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 50);
+  }
 
   const mainContent = (
     <div style={{ backgroundColor: "#f8f9fa" }}>
@@ -100,7 +114,7 @@ function AppContent() {
         </div>
 
         {/* Weather Section */}
-        <div className="max-w-[1200px] mx-auto px-4 py-8">
+        <div id="weather" className="max-w-[1200px] mx-auto px-4 py-8">
           <WeatherSection />
         </div>
 
@@ -110,8 +124,11 @@ function AppContent() {
         </div>
 
         {/* External News Section - national & international headlines */}
-        <div className="max-w-[1200px] mx-auto px-4 py-8">
-          <ExternalNewsSection />
+        <div
+          id="external-news-section"
+          className="max-w-[1200px] mx-auto px-4 py-8"
+        >
+          <ExternalNewsSection initialTab={activeNewsTab ?? "national"} />
         </div>
       </main>
 
@@ -128,6 +145,7 @@ function AppContent() {
         onSettingsClick={() => setShowSettingsModal(true)}
         previewMode={previewMode}
         onPreviewChange={setPreviewMode}
+        onCategoryNav={handleCategoryNav}
       />
 
       {/* Content area — wrapped in mobile frame if previewMode === 'mobile' */}

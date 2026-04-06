@@ -3,6 +3,7 @@ import Iter "mo:core/Iter";
 import Order "mo:core/Order";
 import Runtime "mo:core/Runtime";
 import Nat "mo:core/Nat";
+import Int "mo:core/Int";
 import Time "mo:core/Time";
 import Principal "mo:core/Principal";
 import Map "mo:core/Map";
@@ -10,7 +11,7 @@ import Array "mo:core/Array";
 import Blob "mo:core/Blob";
 
 actor {
-  // ── Existing types ──────────────────────────────────────────────
+  // ── Existing types ──────────────────────────────────────────────────────────────────
   type Article = {
     id : Nat;
     title : Text;
@@ -28,7 +29,7 @@ actor {
     createdAt : Time.Time;
   };
 
-  // ── New: External News type ──────────────────────────────────────
+  // ── New: External News type ──────────────────────────────────────────────────
   type ExternalNews = {
     id : Nat;
     title : Text;
@@ -39,7 +40,20 @@ actor {
     fetchedAt : Time.Time;
   };
 
-  // ── HTTP outcalls types ──────────────────────────────────────────
+  // ── New: Local News Article type (user-submitted, stored on-chain) ──────────────
+  type LocalNewsArticle = {
+    id : Nat;
+    title : Text;
+    summary : Text;
+    category : Text;
+    imageBase64 : Text;
+    author : Text;
+    sourceName : Text;
+    sourceUrl : Text;
+    publishedAt : Time.Time;
+  };
+
+  // ── HTTP outcalls types ───────────────────────────────────────────────────────────
   type HttpHeader = { name : Text; value : Text };
   type HttpMethod = { #get; #post; #head };
   type HttpRequest = {
@@ -65,23 +79,25 @@ actor {
     http_request : HttpRequest -> async HttpResponse;
   } = actor ("aaaaa-aa");
 
-  // ── State ────────────────────────────────────────────────────────
+  // ── State ──────────────────────────────────────────────────────────────────────────
   let admins = Map.empty<Principal, Bool>();
   let articles = Map.empty<Nat, Article>();
   let breakingNewsItems = Map.empty<Nat, BreakingNews>();
   var externalNewsItems = Map.empty<Nat, ExternalNews>();
+  let localNewsItems = Map.empty<Nat, LocalNewsArticle>();
 
   var nextArticleId = 1;
   var nextBreakingNewsId = 1;
   var nextExternalNewsId = 1;
+  var nextLocalNewsId = 1;
   var lastFetchedAt : ?Time.Time = null;
 
-  // ── Transform function (strips headers for consensus) ────────────
+  // ── Transform function (strips headers for consensus) ────────────────────────
   public query func transform(args : TransformArgs) : async HttpResponse {
     { status = args.response.status; headers = []; body = args.response.body };
   };
 
-  // ── Text helpers ─────────────────────────────────────────────────
+  // ── Text helpers ───────────────────────────────────────────────────────────────────
 
   // Find the position of needle in haystack; returns null if not found
   func indexOfText(haystack : Text, needle : Text) : ?Nat {
@@ -299,7 +315,7 @@ actor {
     };
   };
 
-  // ── fetchExternalNews ─────────────────────────────────────────────
+  // ── fetchExternalNews ───────────────────────────────────────────────────────────────
   public func fetchExternalNews() : async Nat {
     type Source = { url : Text; name : Text };
     let sources : [Source] = [
@@ -360,7 +376,86 @@ actor {
     totalFetched;
   };
 
-  // ── Queries ──────────────────────────────────────────────────────
+  // ── Local News Article functions ─────────────────────────────────────────────
+
+  public func addLocalNews(
+    title : Text,
+    summary : Text,
+    category : Text,
+    imageBase64 : Text,
+    author : Text,
+    sourceName : Text,
+    sourceUrl : Text
+  ) : async Nat {
+    let newsId = nextLocalNewsId;
+    nextLocalNewsId += 1;
+    let news : LocalNewsArticle = {
+      id = newsId;
+      title;
+      summary;
+      category;
+      imageBase64;
+      author;
+      sourceName;
+      sourceUrl;
+      publishedAt = Time.now();
+    };
+    localNewsItems.add(newsId, news);
+    newsId;
+  };
+
+  public query func getAllLocalNews() : async [LocalNewsArticle] {
+    localNewsItems.values().toArray().sort(
+      func(a : LocalNewsArticle, b : LocalNewsArticle) : Order.Order {
+        if (b.publishedAt > a.publishedAt) return #less;
+        if (b.publishedAt < a.publishedAt) return #greater;
+        Nat.compare(b.id, a.id);
+      }
+    );
+  };
+
+  public func deleteLocalNews(id : Nat) : async Bool {
+    switch (localNewsItems.get(id)) {
+      case null { false };
+      case (?_) {
+        ignore localNewsItems.remove(id);
+        true;
+      };
+    };
+  };
+
+  public query func searchLocalNews(keyword : Text) : async [LocalNewsArticle] {
+    let lower = keyword.toLower();
+    localNewsItems.values().toArray().filter(
+      func(a : LocalNewsArticle) : Bool {
+        a.title.toLower().contains(#text lower) or
+        a.summary.toLower().contains(#text lower) or
+        a.category.toLower().contains(#text lower)
+      }
+    ).sort(
+      func(a : LocalNewsArticle, b : LocalNewsArticle) : Order.Order {
+        if (b.publishedAt > a.publishedAt) return #less;
+        if (b.publishedAt < a.publishedAt) return #greater;
+        Nat.compare(b.id, a.id);
+      }
+    );
+  };
+
+  public query func getLocalNewsByDateRange(fromTimestamp : Time.Time, toTimestamp : Time.Time) : async [LocalNewsArticle] {
+    localNewsItems.values().toArray().filter(
+      func(a : LocalNewsArticle) : Bool {
+        a.publishedAt >= fromTimestamp and a.publishedAt <= toTimestamp;
+      }
+    ).sort(
+      func(a : LocalNewsArticle, b : LocalNewsArticle) : Order.Order {
+        if (b.publishedAt > a.publishedAt) return #less;
+        if (b.publishedAt < a.publishedAt) return #greater;
+        Nat.compare(b.id, a.id);
+      }
+    );
+  };
+
+  // ── Queries ──────────────────────────────────────────────────────────────────────────
   public query func getExternalNews() : async [ExternalNews] {
     externalNewsItems.values().toArray().sort(
       func(a : ExternalNews, b : ExternalNews) : Order.Order {
@@ -375,7 +470,7 @@ actor {
     lastFetchedAt;
   };
 
-  // ── Existing functions (unchanged) ───────────────────────────────
+  // ── Existing functions (unchanged) ───────────────────────────────────────────────
   public shared ({ caller }) func addAdmin(admin : Principal) : async () {
     assertIsAdmin(caller);
     admins.add(admin, true);

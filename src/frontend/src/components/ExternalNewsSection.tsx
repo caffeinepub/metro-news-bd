@@ -949,12 +949,21 @@ function NewsModal({ item, onClose }: NewsModalProps) {
   );
 }
 
-export function ExternalNewsSection() {
+export function ExternalNewsSection({
+  initialTab,
+}: { initialTab?: "national" | "online" | "international" }) {
   const [selectedItem, setSelectedItem] = useState<NewsItem | null>(null);
   const [refreshCount, setRefreshCount] = useState(0);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [lastRefreshed, setLastRefreshed] = useState<string>("এইমাত্র");
-  const [activeTab, setActiveTab] = useState<SourceGroup>("national");
+  const [activeTab, setActiveTab] = useState<SourceGroup>(
+    initialTab ?? "national",
+  );
+
+  // Sync tab when initialTab prop changes (from nav click)
+  useEffect(() => {
+    if (initialTab) setActiveTab(initialTab);
+  }, [initialTab]);
 
   // Auto-refresh every 6 hours
   useEffect(() => {
