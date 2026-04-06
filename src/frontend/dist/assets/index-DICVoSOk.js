@@ -14621,14 +14621,19 @@ const __iconNode = [
 ];
 const X = createLucideIcon("x", __iconNode);
 const navLinks = [
-  { label: "হোম", href: "#" },
-  { label: "স্থানীয়", href: "#" },
-  { label: "জাতীয়", href: "#" },
-  { label: "বিশ্ব", href: "#" },
-  { label: "রাজনীতি", href: "#" },
-  { label: "ব্যবসা", href: "#" },
-  { label: "খেলাধুলা", href: "#" },
-  { label: "বিনোদন", href: "#" }
+  { label: "হোম", href: "#home" },
+  { label: "স্থানীয় খবর", href: "#local" },
+  { label: "জাতীয় খবর", href: "#national" },
+  { label: "আন্তর্জাতিক খবর", href: "#international" },
+  { label: "শিক্ষা", href: "#education" },
+  { label: "স্বাস্থ্য", href: "#health" },
+  { label: "কৃষি", href: "#agriculture" },
+  { label: "খেলাধুলা", href: "#sports" },
+  { label: "ধর্মীয় অনুষ্ঠান", href: "#religion" },
+  { label: "ফিচার স্টোরি", href: "#feature" },
+  { label: "মাল্টিমিডিয়া", href: "#multimedia" },
+  { label: "আমাদের সম্পর্কে", href: "#about" },
+  { label: "যোগাযোগ", href: "#contact" }
 ];
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = reactExports.useState(false);
@@ -14665,25 +14670,6 @@ function Header() {
               )
             ] })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "nav",
-            {
-              className: "hidden lg:flex items-center gap-1 flex-1 justify-center",
-              "aria-label": "Primary navigation",
-              children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "a",
-                {
-                  href: link.href,
-                  "data-ocid": `nav.${link.label}.link`,
-                  onClick: () => setActiveNav(link.label),
-                  className: `px-2.5 py-1.5 text-[13px] font-medium uppercase tracking-wide transition-colors ${activeNav === link.label ? "news-red border-b-2" : "text-gray-300 hover:text-white"}`,
-                  style: activeNav === link.label ? { borderBottomColor: "oklch(0.4764 0.2183 22.8)" } : {},
-                  children: link.label
-                },
-                link.label
-              ))
-            }
-          ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
@@ -14708,9 +14694,9 @@ function Header() {
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "a",
+              "button",
               {
-                href: "https://metronewsbd.com",
+                type: "button",
                 "data-ocid": "header.subscribe.button",
                 className: "hidden sm:inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80",
                 style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
@@ -14730,6 +14716,35 @@ function Header() {
             )
           ] })
         ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "hidden lg:block border-t w-full",
+            style: { backgroundColor: "#0d0d0d", borderColor: "#2d2d2d" },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "nav",
+              {
+                className: "max-w-[1200px] mx-auto px-4",
+                "aria-label": "Primary navigation",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center flex-wrap", children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "a",
+                  {
+                    href: link.href,
+                    "data-ocid": `nav.${link.label}.link`,
+                    onClick: () => setActiveNav(link.label),
+                    className: `px-3 py-3 text-[12px] font-medium tracking-wide whitespace-nowrap transition-colors border-b-2 ${activeNav === link.label ? "text-white" : "text-gray-400 hover:text-white border-transparent"}`,
+                    style: activeNav === link.label ? {
+                      borderBottomColor: "oklch(0.4764 0.2183 22.8)",
+                      color: "oklch(0.4764 0.2183 22.8)"
+                    } : { borderBottomColor: "transparent" },
+                    children: link.label
+                  },
+                  link.label
+                )) })
+              }
+            )
+          }
+        ),
         searchOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
@@ -14772,16 +14787,19 @@ function Header() {
                     setActiveNav(link.label);
                     setMobileMenuOpen(false);
                   },
-                  className: `px-3 py-2.5 text-sm font-medium uppercase tracking-wide rounded transition-colors ${activeNav === link.label ? "text-white" : "text-gray-300 hover:text-white"}`,
-                  style: activeNav === link.label ? { backgroundColor: "oklch(0.4764 0.2183 22.8 / 0.2)" } : {},
+                  className: `px-3 py-2.5 text-sm font-medium tracking-wide rounded transition-colors ${activeNav === link.label ? "text-white" : "text-gray-300 hover:text-white"}`,
+                  style: activeNav === link.label ? {
+                    backgroundColor: "oklch(0.4764 0.2183 22.8 / 0.2)",
+                    color: "oklch(0.4764 0.2183 22.8)"
+                  } : {},
                   children: link.label
                 },
                 link.label
               )),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "a",
+                "button",
                 {
-                  href: "https://metronewsbd.com",
+                  type: "button",
                   "data-ocid": "mobile.subscribe.button",
                   className: "mt-2 text-center px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-white rounded hover:opacity-80 transition-opacity",
                   style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },

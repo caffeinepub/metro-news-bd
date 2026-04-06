@@ -1581,8 +1581,8 @@ video {
 .text-\[11px\] {
   font-size: 11px;
 }
-.text-\[13px\] {
-  font-size: 13px;
+.text-\[12px\] {
+  font-size: 12px;
 }
 .text-base {
   font-size: 1rem;
@@ -3541,8 +3541,8 @@ video {
     grid-column: span 1 / span 1;
   }
 
-  .lg\:flex {
-    display: flex;
+  .lg\:block {
+    display: block;
   }
 
   .lg\:hidden {
