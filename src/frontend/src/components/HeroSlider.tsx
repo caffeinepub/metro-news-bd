@@ -118,14 +118,14 @@ export function HeroSlider() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
+                "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 60%, transparent 100%)",
             }}
           />
 
-          {/* Content — positioned at bottom with safe padding */}
+          {/* Content — positioned at very bottom */}
           <div
             className="absolute left-0 right-0 bottom-0"
-            style={{ padding: "20px 24px 36px 24px" }}
+            style={{ padding: "0px 24px 10px 24px" }}
           >
             <div className="max-w-[600px] w-full">
               <span
@@ -160,6 +160,7 @@ export function HeroSlider() {
                 className="inline-flex items-center px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-80"
                 style={{
                   backgroundColor: "oklch(0.4764 0.2183 22.8)",
+                  marginBottom: "8px",
                 }}
                 onClick={openModal}
               >
