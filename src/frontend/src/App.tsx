@@ -17,6 +17,9 @@ import { useGetAllArticles } from "./hooks/useQueries";
 function AppContent() {
   const [showPostModal, setShowPostModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
+  const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">(
+    "desktop",
+  );
 
   const { data: allArticles, refetch: refetchArticles } = useGetAllArticles();
 
@@ -35,14 +38,8 @@ function AppContent() {
   // All articles for category grouping
   const hasBackendArticles = allArticles !== undefined;
 
-  return (
-    <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b" }}>
-      {/* Sticky header */}
-      <Header
-        onPostClick={() => setShowPostModal(true)}
-        onSettingsClick={() => setShowSettingsModal(true)}
-      />
-
+  const mainContent = (
+    <div style={{ backgroundColor: "#f8f9fa" }}>
       {/* Breaking news ticker */}
       <BreakingNewsTicker />
 
@@ -65,7 +62,7 @@ function AppContent() {
 
         {/* Divider */}
         <div className="max-w-[1200px] mx-auto px-4">
-          <div className="h-px" style={{ backgroundColor: "#2d2d2d" }} />
+          <div className="h-px" style={{ backgroundColor: "#e5e7eb" }} />
         </div>
 
         {/* Latest News section */}
@@ -78,7 +75,7 @@ function AppContent() {
           <>
             {/* Divider */}
             <div className="max-w-[1200px] mx-auto px-4">
-              <div className="h-px" style={{ backgroundColor: "#2d2d2d" }} />
+              <div className="h-px" style={{ backgroundColor: "#e5e7eb" }} />
             </div>
             <div className="max-w-[1200px] mx-auto px-4 py-8">
               <CategoryNewsSection articles={articles} />
@@ -88,7 +85,7 @@ function AppContent() {
 
         {/* Divider before weather */}
         <div className="max-w-[1200px] mx-auto px-4">
-          <div className="h-px" style={{ backgroundColor: "#2d2d2d" }} />
+          <div className="h-px" style={{ backgroundColor: "#e5e7eb" }} />
         </div>
 
         {/* Weather Section */}
@@ -98,7 +95,7 @@ function AppContent() {
 
         {/* Divider before external news */}
         <div className="max-w-[1200px] mx-auto px-4">
-          <div className="h-px" style={{ backgroundColor: "#2d2d2d" }} />
+          <div className="h-px" style={{ backgroundColor: "#e5e7eb" }} />
         </div>
 
         {/* External News Section - national & international headlines */}
@@ -109,6 +106,47 @@ function AppContent() {
 
       {/* Footer */}
       <Footer />
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen" style={{ backgroundColor: "#f0f2f5" }}>
+      {/* Sticky header — always full width */}
+      <Header
+        onPostClick={() => setShowPostModal(true)}
+        onSettingsClick={() => setShowSettingsModal(true)}
+        previewMode={previewMode}
+        onPreviewChange={setPreviewMode}
+      />
+
+      {/* Content area — wrapped in mobile frame if previewMode === 'mobile' */}
+      {previewMode === "mobile" ? (
+        <div
+          style={{
+            padding: "0",
+            backgroundColor: "#d1d5db",
+            minHeight: "100vh",
+          }}
+        >
+          {/* Mobile frame label */}
+          <div
+            style={{
+              textAlign: "center",
+              padding: "10px 0 6px",
+              fontSize: "11px",
+              fontWeight: 600,
+              color: "#6b7280",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}
+          >
+            📱 মোবাইল ভিউ
+          </div>
+          <div className="mobile-preview-frame">{mainContent}</div>
+        </div>
+      ) : (
+        mainContent
+      )}
 
       {/* News Post Modal */}
       <NewsPostModal

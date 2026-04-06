@@ -14746,6 +14746,16 @@ const breakingItems = [
     id: 5,
     text: "দেশের তৈরি পোশাক শিল্পে রফতানি আয় বৃদ্ধি পেয়েছে",
     time: "৩ ঘন্টা আগে"
+  },
+  {
+    id: 6,
+    text: "ইরান-আমেরিকা উত্তেজনায় পারস্য উপসাগরে মার্কিন রণতরী মোতায়েন",
+    time: "৪ ঘন্টা আগে"
+  },
+  {
+    id: 7,
+    text: "বালীগাঁও এলাকায় নতুন সেচ প্রকল্প চালু হচ্ছে আগামী মাসে",
+    time: "৫ ঘন্টা আগে"
   }
 ];
 function BreakingNewsTicker() {
@@ -14754,31 +14764,41 @@ function BreakingNewsTicker() {
     "div",
     {
       className: "w-full flex items-center overflow-hidden",
-      style: { backgroundColor: "oklch(0.4764 0.2183 22.8)", height: "38px" },
+      style: { backgroundColor: "oklch(0.4764 0.2183 22.8)", height: "44px" },
       "aria-label": "ব্রেকিং নিউজ",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            className: "flex items-center gap-2 px-4 text-white font-bold text-xs uppercase tracking-widest shrink-0 h-full border-r",
+            className: "flex items-center gap-2 px-4 text-white font-bold text-xs uppercase tracking-widest shrink-0 h-full",
             style: {
-              backgroundColor: "oklch(0.38 0.2183 22.8)",
-              borderColor: "oklch(0.38 0.2183 22.8)"
+              backgroundColor: "oklch(0.34 0.2183 22.8)",
+              minWidth: "max-content"
             },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-2 h-2 rounded-full bg-white animate-pulse" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "ব্রেকিং" })
+              "🔴 ব্রেকিং নিউজ"
             ]
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 overflow-hidden relative", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ticker-animation flex items-center gap-0", children: tickerContent.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "shrink-0 h-full",
+            style: {
+              width: "2px",
+              backgroundColor: "oklch(0.38 0.2183 22.8)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 overflow-hidden relative", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ticker-animation flex items-center", children: tickerContent.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "span",
           {
-            className: "inline-flex items-center gap-3 text-white text-sm font-medium",
+            className: "inline-flex items-center gap-3 text-white text-sm font-semibold",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mx-6 text-red-200 opacity-60", children: "●" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mx-8 text-red-200 opacity-70", children: "◆" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: item.text }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-red-200 opacity-80 text-xs", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-red-200 opacity-80 text-xs font-normal ml-1", children: [
                 "(",
                 item.time,
                 ")"
@@ -14896,16 +14916,39 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$q = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$q);
+const __iconNode$s = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$s);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$p = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$p);
+const __iconNode$r = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$r);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$q = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$q);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$p = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14913,29 +14956,6 @@ const ChevronRight = createLucideIcon("chevron-right", __iconNode$p);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$o = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$o);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$n = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$n);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$m = [
   [
     "path",
     {
@@ -14951,26 +14971,26 @@ const __iconNode$m = [
     }
   ]
 ];
-const Droplets = createLucideIcon("droplets", __iconNode$m);
+const Droplets = createLucideIcon("droplets", __iconNode$o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$l = [
+const __iconNode$n = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "M10 14 21 3", key: "gplh6r" }],
   ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$l);
+const ExternalLink = createLucideIcon("external-link", __iconNode$n);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$k = [
+const __iconNode$m = [
   [
     "path",
     {
@@ -14980,19 +15000,39 @@ const __iconNode$k = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$k);
+const Eye = createLucideIcon("eye", __iconNode$m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$j = [
+const __iconNode$l = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
   ["path", { d: "M2 12h20", key: "9i4pu4" }]
 ];
-const Globe = createLucideIcon("globe", __iconNode$j);
+const Globe = createLucideIcon("globe", __iconNode$l);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$k = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+];
+const Image = createLucideIcon("image", __iconNode$k);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$j = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$j);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15000,37 +15040,17 @@ const Globe = createLucideIcon("globe", __iconNode$j);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$i = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
-];
-const Image = createLucideIcon("image", __iconNode$i);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$h = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$h);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$g = [
   ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
   ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const Mail = createLucideIcon("mail", __iconNode$g);
+const Mail = createLucideIcon("mail", __iconNode$i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$f = [
+const __iconNode$h = [
   [
     "path",
     {
@@ -15040,7 +15060,31 @@ const __iconNode$f = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$f);
+const MapPin = createLucideIcon("map-pin", __iconNode$h);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$g = [
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 18h16", key: "19g7jn" }],
+  ["path", { d: "M4 6h16", key: "1o0s65" }]
+];
+const Menu = createLucideIcon("menu", __iconNode$g);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
+  ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
+  ["line", { x1: "8", x2: "16", y1: "21", y2: "21", key: "1svkeh" }],
+  ["line", { x1: "12", x2: "12", y1: "17", y2: "21", key: "vw1qmm" }]
+];
+const Monitor = createLucideIcon("monitor", __iconNode$f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15048,18 +15092,6 @@ const MapPin = createLucideIcon("map-pin", __iconNode$f);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$e = [
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 18h16", key: "19g7jn" }],
-  ["path", { d: "M4 6h16", key: "1o0s65" }]
-];
-const Menu = createLucideIcon("menu", __iconNode$e);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$d = [
   [
     "path",
     {
@@ -15068,7 +15100,18 @@ const __iconNode$d = [
     }
   ]
 ];
-const Phone = createLucideIcon("phone", __iconNode$d);
+const Phone = createLucideIcon("phone", __iconNode$e);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$d = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15076,10 +15119,12 @@ const Phone = createLucideIcon("phone", __iconNode$d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$c = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
 ];
-const Plus = createLucideIcon("plus", __iconNode$c);
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15087,12 +15132,10 @@ const Plus = createLucideIcon("plus", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
 ];
-const RefreshCw = createLucideIcon("refresh-cw", __iconNode$b);
+const Search = createLucideIcon("search", __iconNode$b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15100,17 +15143,6 @@ const RefreshCw = createLucideIcon("refresh-cw", __iconNode$b);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$a = [
-  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-];
-const Search = createLucideIcon("search", __iconNode$a);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$9 = [
   [
     "path",
     {
@@ -15120,7 +15152,18 @@ const __iconNode$9 = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Settings = createLucideIcon("settings", __iconNode$9);
+const Settings = createLucideIcon("settings", __iconNode$a);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [
+  ["rect", { width: "14", height: "20", x: "5", y: "2", rx: "2", ry: "2", key: "1yt0o3" }],
+  ["path", { d: "M12 18h.01", key: "mhygvu" }]
+];
+const Smartphone = createLucideIcon("smartphone", __iconNode$9);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15602,10 +15645,17 @@ function EditorsPicks() {
     "aside",
     {
       className: "flex flex-col gap-4",
-      style: { borderLeft: "1px solid #2d2d2d", paddingLeft: "1.5rem" },
+      style: { borderLeft: "1px solid #e5e7eb", paddingLeft: "1.5rem" },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm font-bold uppercase tracking-widest text-white", children: "সম্পাদকের পছন্দ" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "h2",
+            {
+              className: "text-sm font-bold uppercase tracking-widest shrink-0",
+              style: { color: "#111827" },
+              children: "সম্পাদকের পছন্দ"
+            }
+          ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "div",
             {
@@ -15655,8 +15705,15 @@ function EditorsPicks() {
                     children: pick.category
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-white leading-snug line-clamp-2 group-hover:text-news-red transition-colors", children: pick.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs mt-1", style: { color: "#9c9c9c" }, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "h3",
+                  {
+                    className: "text-sm font-semibold leading-snug line-clamp-2 group-hover:text-news-red transition-colors",
+                    style: { color: "#111827" },
+                    children: pick.title
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs mt-1", style: { color: "#9ca3af" }, children: [
                   pick.author,
                   " · ",
                   pick.time
@@ -16310,7 +16367,11 @@ function NewsCard({ item, onClick, index: index2 }) {
       type: "button",
       "data-ocid": `external_news.item.${index2}`,
       className: "relative flex flex-col gap-0 rounded-md cursor-pointer transition-all duration-200 border group w-full text-left overflow-hidden",
-      style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+      style: {
+        backgroundColor: "#ffffff",
+        borderColor: "#e5e7eb",
+        boxShadow: "0 1px 4px rgba(0,0,0,0.08)"
+      },
       onClick: () => onClick(item),
       "aria-label": `সংবাদ পড়ুন: ${item.title}`,
       children: [
@@ -16354,13 +16415,13 @@ function NewsCard({ item, onClick, index: index2 }) {
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "h3",
             {
-              className: "text-sm font-bold text-white leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity",
-              style: { minHeight: "2.5rem" },
+              className: "text-sm font-bold leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity",
+              style: { color: "#111827", minHeight: "2.5rem" },
               children: item.title
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mt-auto", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px]", style: { color: "#6b6b6b" }, children: item.publishedAt }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px]", style: { color: "#6b7280" }, children: item.publishedAt }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "span",
               {
@@ -16408,7 +16469,11 @@ function NewsModal({ item, onClose }) {
         "div",
         {
           className: "relative w-full max-w-xl rounded-lg shadow-2xl overflow-hidden",
-          style: { backgroundColor: "#111111", border: "1px solid #2d2d2d" },
+          style: {
+            backgroundColor: "#ffffff",
+            border: "1px solid #e5e7eb",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.2)"
+          },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
@@ -16460,7 +16525,7 @@ function NewsModal({ item, onClose }) {
               "div",
               {
                 className: "flex items-start px-5 pt-4 pb-3 gap-3",
-                style: { borderBottom: "1px solid #2d2d2d" },
+                style: { borderBottom: "1px solid #e5e7eb" },
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "div",
@@ -16476,7 +16541,8 @@ function NewsModal({ item, onClose }) {
                     "h2",
                     {
                       id: "ext-news-modal-title",
-                      className: "text-base font-bold text-white leading-snug",
+                      className: "text-base font-bold leading-snug",
+                      style: { color: "#111827" },
                       children: item.title
                     }
                   )
@@ -16489,20 +16555,20 @@ function NewsModal({ item, onClose }) {
                   "p",
                   {
                     className: "text-xs font-bold uppercase tracking-widest mb-2",
-                    style: { color: "#6b6b6b" },
+                    style: { color: "#6b7280" },
                     children: "সারসংক্ষেপ"
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed", style: { color: "#c8c8c8" }, children: item.summary })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed", style: { color: "#374151" }, children: item.summary })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
                   className: "flex items-center justify-between pt-3 border-t flex-wrap gap-3",
-                  style: { borderColor: "#2d2d2d" },
+                  style: { borderColor: "#e5e7eb" },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "#6b6b6b" }, children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "#6b7280" }, children: [
                         "সূত্র:",
                         /* @__PURE__ */ jsxRuntimeExports.jsx(
                           "span",
@@ -16513,7 +16579,7 @@ function NewsModal({ item, onClose }) {
                           }
                         )
                       ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs mt-0.5", style: { color: "#6b6b6b" }, children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs mt-0.5", style: { color: "#6b7280" }, children: [
                         "ক্যাটাগরি: ",
                         item.category,
                         " · ",
@@ -16526,7 +16592,7 @@ function NewsModal({ item, onClose }) {
                           target: "_blank",
                           rel: "noopener noreferrer",
                           className: "text-xs mt-1 block underline underline-offset-2 break-all",
-                          style: { color: "#7ba7c7" },
+                          style: { color: "#2563eb" },
                           children: item.sourceUrl
                         }
                       )
@@ -16602,7 +16668,8 @@ function ExternalNewsSection() {
         "h2",
         {
           id: "external-news-heading",
-          className: "text-base font-bold uppercase tracking-widest text-white shrink-0",
+          className: "text-base font-bold uppercase tracking-widest shrink-0",
+          style: { color: "#111827" },
           children: "জাতীয় ও আন্তর্জাতিক সংবাদ"
         }
       ),
@@ -16610,13 +16677,13 @@ function ExternalNewsSection() {
         "div",
         {
           className: "flex-1 h-px min-w-[20px]",
-          style: { backgroundColor: "#2d2d2d" }
+          style: { backgroundColor: "#e5e7eb" }
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 ml-auto", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", style: { color: "#6b7280" }, children: [
           "শেষ আপডেট: ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#9c9c9c" }, children: lastRefreshed })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#374151" }, children: lastRefreshed })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "button",
@@ -16643,7 +16710,11 @@ function ExternalNewsSection() {
       "div",
       {
         className: "flex items-center gap-1 mb-6 p-1 rounded-lg w-full sm:w-auto",
-        style: { backgroundColor: "#111111", border: "1px solid #2d2d2d" },
+        style: {
+          backgroundColor: "#ffffff",
+          border: "1px solid #e5e7eb",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.2)"
+        },
         role: "tablist",
         "aria-label": "সংবাদ উৎস গ্রুপ",
         children: Object.keys(TAB_LABELS).map((tab) => /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -16659,8 +16730,8 @@ function ExternalNewsSection() {
               backgroundColor: "oklch(0.4764 0.2183 22.8)",
               color: "#ffffff"
             } : {
-              backgroundColor: "transparent",
-              color: "#9c9c9c"
+              backgroundColor: "#f9fafb",
+              color: "#6b7280"
             },
             children: TAB_LABELS[tab]
           },
@@ -16673,7 +16744,7 @@ function ExternalNewsSection() {
       {
         "data-ocid": "external_news.loading_state",
         className: "flex items-center justify-center gap-2 py-6 rounded mb-4",
-        style: { backgroundColor: "#141414" },
+        style: { backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             RefreshCw,
@@ -16683,7 +16754,7 @@ function ExternalNewsSection() {
               style: { color: "oklch(0.4764 0.2183 22.8)" }
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", style: { color: "#9c9c9c" }, children: "সংবাদ আপডেট হচ্ছে..." })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", style: { color: "#6b7280" }, children: "সংবাদ আপডেট হচ্ছে..." })
         ]
       }
     ),
@@ -16702,7 +16773,8 @@ function ExternalNewsSection() {
             "h3",
             {
               id: `ext-cat-${category}`,
-              className: "text-sm font-bold uppercase tracking-widest text-white shrink-0",
+              className: "text-sm font-bold uppercase tracking-widest shrink-0",
+              style: { color: "#111827" },
               children: category
             }
           ),
@@ -16710,10 +16782,10 @@ function ExternalNewsSection() {
             "div",
             {
               className: "flex-1 h-px",
-              style: { backgroundColor: "#2d2d2d" }
+              style: { backgroundColor: "#e5e7eb" }
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", style: { color: "#6b7280" }, children: [
             items.length,
             " টি সংবাদ"
           ] })
@@ -17230,7 +17302,12 @@ function IconBtn({
     }
   );
 }
-function Header({ onPostClick, onSettingsClick }) {
+function Header({
+  onPostClick,
+  onSettingsClick,
+  previewMode = "desktop",
+  onPreviewChange
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = reactExports.useState(false);
   const [searchOpen, setSearchOpen] = reactExports.useState(false);
   const [activeNav, setActiveNav] = reactExports.useState("হোম");
@@ -17372,19 +17449,64 @@ function Header({ onPostClick, onSettingsClick }) {
               {
                 className: "max-w-[1200px] mx-auto px-4 sm:px-6",
                 "aria-label": "Primary navigation",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center", children: navLinks.map((link) => {
-                  const isActive = activeNav === link.label;
-                  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    NavLink,
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center flex-1 overflow-x-auto", children: navLinks.map((link) => {
+                    const isActive = activeNav === link.label;
+                    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      NavLink,
+                      {
+                        label: link.label,
+                        href: link.href,
+                        isActive,
+                        onClick: () => setActiveNav(link.label)
+                      },
+                      link.label
+                    );
+                  }) }),
+                  onPreviewChange && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
                     {
-                      label: link.label,
-                      href: link.href,
-                      isActive,
-                      onClick: () => setActiveNav(link.label)
-                    },
-                    link.label
-                  );
-                }) })
+                      className: "flex items-center gap-1 ml-2 pl-3 shrink-0",
+                      style: { borderLeft: "1px solid #e5e7eb" },
+                      "data-ocid": "header.preview_switch.toggle",
+                      "aria-label": "ডিভাইস ভিউ সুইচ",
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": "header.preview_mobile.button",
+                            "aria-label": "মোবাইল ভিউ",
+                            title: "মোবাইল ভিউ",
+                            onClick: () => onPreviewChange("mobile"),
+                            className: "p-1.5 rounded transition-all duration-200",
+                            style: {
+                              backgroundColor: previewMode === "mobile" ? "#dc2626" : "#f3f4f6",
+                              color: previewMode === "mobile" ? "#ffffff" : "#6b7280"
+                            },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Smartphone, { size: 15 })
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": "header.preview_desktop.button",
+                            "aria-label": "ডেস্কটপ ভিউ",
+                            title: "ডেস্কটপ ভিউ",
+                            onClick: () => onPreviewChange("desktop"),
+                            className: "p-1.5 rounded transition-all duration-200",
+                            style: {
+                              backgroundColor: previewMode === "desktop" ? "#dc2626" : "#f3f4f6",
+                              color: previewMode === "desktop" ? "#ffffff" : "#6b7280"
+                            },
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Monitor, { size: 15 })
+                          }
+                        )
+                      ]
+                    }
+                  )
+                ] })
               }
             )
           }
@@ -17850,11 +17972,12 @@ function LatestNews({ articles }) {
         "h2",
         {
           id: "latest-news-heading",
-          className: "text-base font-bold uppercase tracking-widest text-white shrink-0",
+          className: "text-base font-bold uppercase tracking-widest shrink-0",
+          style: { color: "#111827" },
           children: "সর্বশেষ খবর"
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-px", style: { backgroundColor: "#2d2d2d" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-px", style: { backgroundColor: "#e5e7eb" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "div",
         {
           className: "w-24 h-full",
@@ -17867,7 +17990,7 @@ function LatestNews({ articles }) {
       {
         "data-ocid": "latest_news.empty_state",
         className: "text-center py-16",
-        style: { color: "#6b6b6b" },
+        style: { color: "#6b7280" },
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm", children: "এখনো কোনো সংবাদ নেই" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs mt-1", children: "সংবাদ পোস্ট করতে উপরের বোতাম ব্যবহার করুন" })
@@ -17881,7 +18004,11 @@ function LatestNews({ articles }) {
           type: "button",
           "data-ocid": `latest_news.item.${i + 1}`,
           className: "flex gap-3 p-3 rounded cursor-pointer card-hover border text-left w-full",
-          style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+          style: {
+            backgroundColor: "#ffffff",
+            borderColor: "#e5e7eb",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.08)"
+          },
           onClick: () => setSelectedItem({
             title: article.title,
             summary: article.summary,
@@ -17908,7 +18035,7 @@ function LatestNews({ articles }) {
                   "div",
                   {
                     className: "w-full h-full flex items-center justify-center",
-                    style: { backgroundColor: "#2d2d2d" },
+                    style: { backgroundColor: "#f3f4f6" },
                     children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "span",
                       {
@@ -17930,12 +18057,19 @@ function LatestNews({ articles }) {
                   children: article.category
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors", children: article.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "h3",
+                {
+                  className: "text-sm font-semibold leading-snug line-clamp-2 hover:text-news-red transition-colors",
+                  style: { color: "#111827" },
+                  children: article.title
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "p",
                 {
                   className: "text-xs mt-1 line-clamp-1",
-                  style: { color: "#9c9c9c" },
+                  style: { color: "#6b7280" },
                   children: article.summary
                 }
               ),
@@ -17943,7 +18077,7 @@ function LatestNews({ articles }) {
                 "p",
                 {
                   className: "text-[11px] mt-1.5",
-                  style: { color: "#6b6b6b" },
+                  style: { color: "#9ca3af" },
                   children: [
                     article.author,
                     " ·",
@@ -17962,7 +18096,11 @@ function LatestNews({ articles }) {
           type: "button",
           "data-ocid": `latest_news.item.${i + 1}`,
           className: "flex gap-3 p-3 rounded cursor-pointer card-hover border text-left w-full",
-          style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+          style: {
+            backgroundColor: "#ffffff",
+            borderColor: "#e5e7eb",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.08)"
+          },
           onClick: () => setSelectedItem({
             title: item.title,
             summary: item.excerpt,
@@ -17999,12 +18137,19 @@ function LatestNews({ articles }) {
                   children: item.category
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "h3",
+                {
+                  className: "text-sm font-semibold leading-snug line-clamp-2 hover:text-news-red transition-colors",
+                  style: { color: "#111827" },
+                  children: item.title
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "p",
                 {
                   className: "text-xs mt-1 line-clamp-1",
-                  style: { color: "#9c9c9c" },
+                  style: { color: "#6b7280" },
                   children: item.excerpt
                 }
               ),
@@ -18012,7 +18157,7 @@ function LatestNews({ articles }) {
                 "p",
                 {
                   className: "text-[11px] mt-1.5",
-                  style: { color: "#6b6b6b" },
+                  style: { color: "#9ca3af" },
                   children: [
                     item.author,
                     " · ",
@@ -33036,6 +33181,9 @@ function WeatherSection() {
 function AppContent() {
   const [showPostModal, setShowPostModal] = reactExports.useState(false);
   const [showSettingsModal, setShowSettingsModal] = reactExports.useState(false);
+  const [previewMode, setPreviewMode] = reactExports.useState(
+    "desktop"
+  );
   const { data: allArticles, refetch: refetchArticles } = useGetAllArticles();
   const articles = allArticles ?? [];
   const sortedArticles = [...articles].sort((a2, b2) => {
@@ -33045,32 +33193,64 @@ function AppContent() {
   });
   const latestSix = sortedArticles.slice(0, 6);
   const hasBackendArticles = allArticles !== void 0;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen", style: { backgroundColor: "#0b0b0b" }, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Header,
-      {
-        onPostClick: () => setShowPostModal(true),
-        onSettingsClick: () => setShowSettingsModal(true)
-      }
-    ),
+  const mainContent = /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { backgroundColor: "#f8f9fa" }, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(BreakingNewsTicker, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col lg:flex-row gap-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSlider, {}) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:w-[320px] shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(EditorsPicks, {}) })
       ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#e5e7eb" } }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LatestNews, { articles: hasBackendArticles ? latestSix : void 0 }) }),
       hasBackendArticles && articles.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#e5e7eb" } }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CategoryNewsSection, { articles }) })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#e5e7eb" } }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(WeatherSection, {}) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#e5e7eb" } }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalNewsSection, {}) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
+  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen", style: { backgroundColor: "#f0f2f5" }, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Header,
+      {
+        onPostClick: () => setShowPostModal(true),
+        onSettingsClick: () => setShowSettingsModal(true),
+        previewMode,
+        onPreviewChange: setPreviewMode
+      }
+    ),
+    previewMode === "mobile" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        style: {
+          padding: "0",
+          backgroundColor: "#d1d5db",
+          minHeight: "100vh"
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              style: {
+                textAlign: "center",
+                padding: "10px 0 6px",
+                fontSize: "11px",
+                fontWeight: 600,
+                color: "#6b7280",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase"
+              },
+              children: "📱 মোবাইল ভিউ"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mobile-preview-frame", children: mainContent })
+        ]
+      }
+    ) : mainContent,
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       NewsPostModal,
       {

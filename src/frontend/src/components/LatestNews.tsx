@@ -125,11 +125,12 @@ export function LatestNews({ articles }: LatestNewsProps) {
       <div className="flex items-center gap-4 mb-6">
         <h2
           id="latest-news-heading"
-          className="text-base font-bold uppercase tracking-widest text-white shrink-0"
+          className="text-base font-bold uppercase tracking-widest shrink-0"
+          style={{ color: "#111827" }}
         >
           সর্বশেষ খবর
         </h2>
-        <div className="flex-1 h-px" style={{ backgroundColor: "#2d2d2d" }}>
+        <div className="flex-1 h-px" style={{ backgroundColor: "#e5e7eb" }}>
           <div
             className="w-24 h-full"
             style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
@@ -142,7 +143,7 @@ export function LatestNews({ articles }: LatestNewsProps) {
         <div
           data-ocid="latest_news.empty_state"
           className="text-center py-16"
-          style={{ color: "#6b6b6b" }}
+          style={{ color: "#6b7280" }}
         >
           <p className="text-sm">এখনো কোনো সংবাদ নেই</p>
           <p className="text-xs mt-1">সংবাদ পোস্ট করতে উপরের বোতাম ব্যবহার করুন</p>
@@ -157,7 +158,11 @@ export function LatestNews({ articles }: LatestNewsProps) {
                   key={article.id.toString()}
                   data-ocid={`latest_news.item.${i + 1}`}
                   className="flex gap-3 p-3 rounded cursor-pointer card-hover border text-left w-full"
-                  style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
+                  style={{
+                    backgroundColor: "#ffffff",
+                    borderColor: "#e5e7eb",
+                    boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
+                  }}
                   onClick={() =>
                     setSelectedItem({
                       title: article.title,
@@ -184,7 +189,7 @@ export function LatestNews({ articles }: LatestNewsProps) {
                     ) : (
                       <div
                         className="w-full h-full flex items-center justify-center"
-                        style={{ backgroundColor: "#2d2d2d" }}
+                        style={{ backgroundColor: "#f3f4f6" }}
                       >
                         <span
                           className="text-[10px] font-bold uppercase"
@@ -204,18 +209,21 @@ export function LatestNews({ articles }: LatestNewsProps) {
                     >
                       {article.category}
                     </span>
-                    <h3 className="text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors">
+                    <h3
+                      className="text-sm font-semibold leading-snug line-clamp-2 hover:text-news-red transition-colors"
+                      style={{ color: "#111827" }}
+                    >
                       {article.title}
                     </h3>
                     <p
                       className="text-xs mt-1 line-clamp-1"
-                      style={{ color: "#9c9c9c" }}
+                      style={{ color: "#6b7280" }}
                     >
                       {article.summary}
                     </p>
                     <p
                       className="text-[11px] mt-1.5"
-                      style={{ color: "#6b6b6b" }}
+                      style={{ color: "#9ca3af" }}
                     >
                       {article.author} ·{" "}
                       {formatPublishedAt(article.publishedAt)}
@@ -229,7 +237,11 @@ export function LatestNews({ articles }: LatestNewsProps) {
                   key={item.id}
                   data-ocid={`latest_news.item.${i + 1}`}
                   className="flex gap-3 p-3 rounded cursor-pointer card-hover border text-left w-full"
-                  style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
+                  style={{
+                    backgroundColor: "#ffffff",
+                    borderColor: "#e5e7eb",
+                    boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
+                  }}
                   onClick={() =>
                     setSelectedItem({
                       title: item.title,
@@ -264,18 +276,21 @@ export function LatestNews({ articles }: LatestNewsProps) {
                     >
                       {item.category}
                     </span>
-                    <h3 className="text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors">
+                    <h3
+                      className="text-sm font-semibold leading-snug line-clamp-2 hover:text-news-red transition-colors"
+                      style={{ color: "#111827" }}
+                    >
                       {item.title}
                     </h3>
                     <p
                       className="text-xs mt-1 line-clamp-1"
-                      style={{ color: "#9c9c9c" }}
+                      style={{ color: "#6b7280" }}
                     >
                       {item.excerpt}
                     </p>
                     <p
                       className="text-[11px] mt-1.5"
-                      style={{ color: "#6b6b6b" }}
+                      style={{ color: "#9ca3af" }}
                     >
                       {item.author} · {item.time}
                     </p>

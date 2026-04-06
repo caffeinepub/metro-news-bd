@@ -1,4 +1,12 @@
-import { Menu, PenSquare, Search, Settings, X } from "lucide-react";
+import {
+  Menu,
+  Monitor,
+  PenSquare,
+  Search,
+  Settings,
+  Smartphone,
+  X,
+} from "lucide-react";
 import { useState } from "react";
 import { useSiteSettings } from "../context/SiteSettingsContext";
 
@@ -22,6 +30,8 @@ const navLinks = [
 interface HeaderProps {
   onPostClick?: () => void;
   onSettingsClick?: () => void;
+  previewMode?: "desktop" | "mobile";
+  onPreviewChange?: (mode: "desktop" | "mobile") => void;
 }
 
 function IconBtn({
@@ -55,7 +65,12 @@ function IconBtn({
   );
 }
 
-export function Header({ onPostClick, onSettingsClick }: HeaderProps) {
+export function Header({
+  onPostClick,
+  onSettingsClick,
+  previewMode = "desktop",
+  onPreviewChange,
+}: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("হোম");
@@ -193,18 +208,62 @@ export function Header({ onPostClick, onSettingsClick }: HeaderProps) {
           aria-label="Primary navigation"
         >
           <div className="flex items-center">
-            {navLinks.map((link) => {
-              const isActive = activeNav === link.label;
-              return (
-                <NavLink
-                  key={link.label}
-                  label={link.label}
-                  href={link.href}
-                  isActive={isActive}
-                  onClick={() => setActiveNav(link.label)}
-                />
-              );
-            })}
+            {/* Nav links */}
+            <div className="flex items-center flex-1 overflow-x-auto">
+              {navLinks.map((link) => {
+                const isActive = activeNav === link.label;
+                return (
+                  <NavLink
+                    key={link.label}
+                    label={link.label}
+                    href={link.href}
+                    isActive={isActive}
+                    onClick={() => setActiveNav(link.label)}
+                  />
+                );
+              })}
+            </div>
+
+            {/* Device Preview Switch — right end of nav bar */}
+            {onPreviewChange && (
+              <div
+                className="flex items-center gap-1 ml-2 pl-3 shrink-0"
+                style={{ borderLeft: "1px solid #e5e7eb" }}
+                data-ocid="header.preview_switch.toggle"
+                aria-label="ডিভাইস ভিউ সুইচ"
+              >
+                <button
+                  type="button"
+                  data-ocid="header.preview_mobile.button"
+                  aria-label="মোবাইল ভিউ"
+                  title="মোবাইল ভিউ"
+                  onClick={() => onPreviewChange("mobile")}
+                  className="p-1.5 rounded transition-all duration-200"
+                  style={{
+                    backgroundColor:
+                      previewMode === "mobile" ? "#dc2626" : "#f3f4f6",
+                    color: previewMode === "mobile" ? "#ffffff" : "#6b7280",
+                  }}
+                >
+                  <Smartphone size={15} />
+                </button>
+                <button
+                  type="button"
+                  data-ocid="header.preview_desktop.button"
+                  aria-label="ডেস্কটপ ভিউ"
+                  title="ডেস্কটপ ভিউ"
+                  onClick={() => onPreviewChange("desktop")}
+                  className="p-1.5 rounded transition-all duration-200"
+                  style={{
+                    backgroundColor:
+                      previewMode === "desktop" ? "#dc2626" : "#f3f4f6",
+                    color: previewMode === "desktop" ? "#ffffff" : "#6b7280",
+                  }}
+                >
+                  <Monitor size={15} />
+                </button>
+              </div>
+            )}
           </div>
         </nav>
       </div>

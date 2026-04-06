@@ -58,11 +58,14 @@ export function EditorsPicks() {
   return (
     <aside
       className="flex flex-col gap-4"
-      style={{ borderLeft: "1px solid #2d2d2d", paddingLeft: "1.5rem" }}
+      style={{ borderLeft: "1px solid #e5e7eb", paddingLeft: "1.5rem" }}
     >
       {/* Heading */}
       <div className="flex items-center gap-3">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-white">
+        <h2
+          className="text-sm font-bold uppercase tracking-widest shrink-0"
+          style={{ color: "#111827" }}
+        >
           সম্পাদকের পছন্দ
         </h2>
         <div
@@ -112,10 +115,13 @@ export function EditorsPicks() {
               >
                 {pick.category}
               </span>
-              <h3 className="text-sm font-semibold text-white leading-snug line-clamp-2 group-hover:text-news-red transition-colors">
+              <h3
+                className="text-sm font-semibold leading-snug line-clamp-2 group-hover:text-news-red transition-colors"
+                style={{ color: "#111827" }}
+              >
                 {pick.title}
               </h3>
-              <p className="text-xs mt-1" style={{ color: "#9c9c9c" }}>
+              <p className="text-xs mt-1" style={{ color: "#9ca3af" }}>
                 {pick.author} · {pick.time}
               </p>
             </div>

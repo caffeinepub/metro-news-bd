@@ -742,7 +742,11 @@ function NewsCard({ item, onClick, index }: NewsCardProps) {
       type="button"
       data-ocid={`external_news.item.${index}`}
       className="relative flex flex-col gap-0 rounded-md cursor-pointer transition-all duration-200 border group w-full text-left overflow-hidden"
-      style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
+      style={{
+        backgroundColor: "#ffffff",
+        borderColor: "#e5e7eb",
+        boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
+      }}
       onClick={() => onClick(item)}
       aria-label={`সংবাদ পড়ুন: ${item.title}`}
     >
@@ -773,13 +777,13 @@ function NewsCard({ item, onClick, index }: NewsCardProps) {
       </div>
       <div className="flex flex-col gap-2 p-3">
         <h3
-          className="text-sm font-bold text-white leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity"
-          style={{ minHeight: "2.5rem" }}
+          className="text-sm font-bold leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity"
+          style={{ color: "#111827", minHeight: "2.5rem" }}
         >
           {item.title}
         </h3>
         <div className="flex items-center justify-between mt-auto">
-          <p className="text-[11px]" style={{ color: "#6b6b6b" }}>
+          <p className="text-[11px]" style={{ color: "#6b7280" }}>
             {item.publishedAt}
           </p>
           <span
@@ -827,7 +831,11 @@ function NewsModal({ item, onClose }: NewsModalProps) {
     >
       <div
         className="relative w-full max-w-xl rounded-lg shadow-2xl overflow-hidden"
-        style={{ backgroundColor: "#111111", border: "1px solid #2d2d2d" }}
+        style={{
+          backgroundColor: "#ffffff",
+          border: "1px solid #e5e7eb",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.2)",
+        }}
       >
         <div
           className="relative w-full overflow-hidden"
@@ -865,7 +873,7 @@ function NewsModal({ item, onClose }: NewsModalProps) {
 
         <div
           className="flex items-start px-5 pt-4 pb-3 gap-3"
-          style={{ borderBottom: "1px solid #2d2d2d" }}
+          style={{ borderBottom: "1px solid #e5e7eb" }}
         >
           <div
             className="w-1 shrink-0 rounded-sm mt-1"
@@ -876,7 +884,8 @@ function NewsModal({ item, onClose }: NewsModalProps) {
           />
           <h2
             id="ext-news-modal-title"
-            className="text-base font-bold text-white leading-snug"
+            className="text-base font-bold leading-snug"
+            style={{ color: "#111827" }}
           >
             {item.title}
           </h2>
@@ -886,21 +895,21 @@ function NewsModal({ item, onClose }: NewsModalProps) {
           <div>
             <p
               className="text-xs font-bold uppercase tracking-widest mb-2"
-              style={{ color: "#6b6b6b" }}
+              style={{ color: "#6b7280" }}
             >
               সারসংক্ষেপ
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: "#c8c8c8" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
               {item.summary}
             </p>
           </div>
 
           <div
             className="flex items-center justify-between pt-3 border-t flex-wrap gap-3"
-            style={{ borderColor: "#2d2d2d" }}
+            style={{ borderColor: "#e5e7eb" }}
           >
             <div>
-              <p className="text-xs" style={{ color: "#6b6b6b" }}>
+              <p className="text-xs" style={{ color: "#6b7280" }}>
                 সূত্র:
                 <span
                   className="font-semibold ml-1"
@@ -909,7 +918,7 @@ function NewsModal({ item, onClose }: NewsModalProps) {
                   {item.sourceName}
                 </span>
               </p>
-              <p className="text-xs mt-0.5" style={{ color: "#6b6b6b" }}>
+              <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>
                 ক্যাটাগরি: {item.category} · {item.publishedAt}
               </p>
               <a
@@ -917,7 +926,7 @@ function NewsModal({ item, onClose }: NewsModalProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs mt-1 block underline underline-offset-2 break-all"
-                style={{ color: "#7ba7c7" }}
+                style={{ color: "#2563eb" }}
               >
                 {item.sourceUrl}
               </a>
@@ -996,17 +1005,18 @@ export function ExternalNewsSection() {
         />
         <h2
           id="external-news-heading"
-          className="text-base font-bold uppercase tracking-widest text-white shrink-0"
+          className="text-base font-bold uppercase tracking-widest shrink-0"
+          style={{ color: "#111827" }}
         >
           জাতীয় ও আন্তর্জাতিক সংবাদ
         </h2>
         <div
           className="flex-1 h-px min-w-[20px]"
-          style={{ backgroundColor: "#2d2d2d" }}
+          style={{ backgroundColor: "#e5e7eb" }}
         />
         <div className="flex items-center gap-3 ml-auto">
-          <span className="text-xs" style={{ color: "#6b6b6b" }}>
-            শেষ আপডেট: <span style={{ color: "#9c9c9c" }}>{lastRefreshed}</span>
+          <span className="text-xs" style={{ color: "#6b7280" }}>
+            শেষ আপডেট: <span style={{ color: "#374151" }}>{lastRefreshed}</span>
           </span>
           <button
             type="button"
@@ -1035,7 +1045,11 @@ export function ExternalNewsSection() {
       {/* Source Group Tabs */}
       <div
         className="flex items-center gap-1 mb-6 p-1 rounded-lg w-full sm:w-auto"
-        style={{ backgroundColor: "#111111", border: "1px solid #2d2d2d" }}
+        style={{
+          backgroundColor: "#ffffff",
+          border: "1px solid #e5e7eb",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.2)",
+        }}
         role="tablist"
         aria-label="সংবাদ উৎস গ্রুপ"
       >
@@ -1055,8 +1069,8 @@ export function ExternalNewsSection() {
                     color: "#ffffff",
                   }
                 : {
-                    backgroundColor: "transparent",
-                    color: "#9c9c9c",
+                    backgroundColor: "#f9fafb",
+                    color: "#6b7280",
                   }
             }
           >
@@ -1070,14 +1084,14 @@ export function ExternalNewsSection() {
         <div
           data-ocid="external_news.loading_state"
           className="flex items-center justify-center gap-2 py-6 rounded mb-4"
-          style={{ backgroundColor: "#141414" }}
+          style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
         >
           <RefreshCw
             size={16}
             className="animate-spin"
             style={{ color: "oklch(0.4764 0.2183 22.8)" }}
           />
-          <span className="text-sm" style={{ color: "#9c9c9c" }}>
+          <span className="text-sm" style={{ color: "#6b7280" }}>
             সংবাদ আপডেট হচ্ছে...
           </span>
         </div>
@@ -1097,15 +1111,16 @@ export function ExternalNewsSection() {
                   />
                   <h3
                     id={`ext-cat-${category}`}
-                    className="text-sm font-bold uppercase tracking-widest text-white shrink-0"
+                    className="text-sm font-bold uppercase tracking-widest shrink-0"
+                    style={{ color: "#111827" }}
                   >
                     {category}
                   </h3>
                   <div
                     className="flex-1 h-px"
-                    style={{ backgroundColor: "#2d2d2d" }}
+                    style={{ backgroundColor: "#e5e7eb" }}
                   />
-                  <span className="text-xs" style={{ color: "#6b6b6b" }}>
+                  <span className="text-xs" style={{ color: "#6b7280" }}>
                     {items.length} টি সংবাদ
                   </span>
                 </div>
