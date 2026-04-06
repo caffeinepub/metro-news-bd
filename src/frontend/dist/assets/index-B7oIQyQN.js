@@ -18244,7 +18244,7 @@ function HeroSlider() {
                 }
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-end md:items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 md:p-10 max-w-[600px]", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-end", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 md:p-10 max-w-[600px] w-full", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "span",
                 {

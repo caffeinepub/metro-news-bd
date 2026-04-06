@@ -3485,10 +3485,6 @@ video {
     flex-direction: row;
   }
 
-  .md\:items-center {
-    align-items: center;
-  }
-
   .md\:gap-1\.5 {
     gap: 0.375rem;
   }

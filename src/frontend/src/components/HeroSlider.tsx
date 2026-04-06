@@ -122,9 +122,9 @@ export function HeroSlider() {
             }}
           />
 
-          {/* Content */}
-          <div className="absolute inset-0 flex items-end md:items-center">
-            <div className="p-6 md:p-10 max-w-[600px]">
+          {/* Content — aligned to bottom so headline sits just above the red button */}
+          <div className="absolute inset-0 flex items-end">
+            <div className="p-6 md:p-10 max-w-[600px] w-full">
               <span
                 className="inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest text-white mb-3"
                 style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
