@@ -147,6 +147,148 @@ function AppContent() {
         </div>
       </main>
 
+      {/* About Section */}
+      <div
+        id="about-section"
+        className="max-w-[1200px] mx-auto px-4 py-10"
+        style={{ borderTop: "1px solid #e5e7eb" }}
+      >
+        <div className="flex items-center gap-3 mb-6">
+          <div
+            className="w-1 h-7 rounded-sm shrink-0"
+            style={{ backgroundColor: "#dc2626" }}
+          />
+          <h2
+            className="text-base font-bold uppercase tracking-widest"
+            style={{ color: "#111827" }}
+          >
+            আমাদের সম্পর্কে
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <p
+              className="text-sm leading-relaxed mb-3"
+              style={{ color: "#374151" }}
+            >
+              <strong style={{ color: "#111827" }}>বালীগাঁও নিউজ</strong> বালিগাঁও,
+              লাখাই, হবিগঞ্জ এবং হাওর অঞ্চলের স্থানীয় ও জাতীয় সংবাদের একটি বিশ্বস্ত ডিজিটাল
+              মাধ্যম। আমরা স্থানীয় মানুষের কথা, তাদের সুখ-দুঃখ এবং সংগ্রামের গল্প প্রামাণিকভাবে
+              তুলে ধরি।
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
+              জাতীয় ও আন্তর্জাতিক সংবাদের পাশাপাশি কৃষি, শিক্ষা, স্বাস্থ্য, খেলাধুলা এবং সংস্কৃতি
+              বিষয়ক সংবাদ পরিবেশন করা আমাদের লক্ষ্য। তথ্যপ্রযুক্তির সাহায্যে স্থানীয় সংবাদকে
+              ব্লকচেইনে স্থায়ীভাবে সংরক্ষণ করা আমাদের অনন্য বৈশিষ্ট্য।
+            </p>
+          </div>
+          <div>
+            <div
+              className="rounded-lg p-4"
+              style={{
+                backgroundColor: "#f9fafb",
+                border: "1px solid #e5e7eb",
+              }}
+            >
+              <p
+                className="text-xs font-semibold uppercase tracking-wider mb-3"
+                style={{ color: "#6b7280" }}
+              >
+                সম্পাদকীয় তথ্য
+              </p>
+              <p className="text-sm mb-1" style={{ color: "#374151" }}>
+                <span style={{ color: "#6b7280" }}>সম্পাদক:</span>{" "}
+                <strong style={{ color: "#111827" }}>এম.ডি ব্রাইট</strong>
+              </p>
+              <p className="text-sm mb-1" style={{ color: "#374151" }}>
+                <span style={{ color: "#6b7280" }}>প্রকাশনা:</span>{" "}
+                <strong style={{ color: "#111827" }}>বালিগাঁও, লাখাই, হবিগঞ্জ</strong>
+              </p>
+              <p className="text-sm" style={{ color: "#374151" }}>
+                <span style={{ color: "#6b7280" }}>ইমেইল:</span>{" "}
+                <a
+                  href="mailto:baligawnews@gmail.com"
+                  style={{ color: "#dc2626" }}
+                >
+                  baligawnews@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Section */}
+      <div
+        id="contact-section"
+        className="max-w-[1200px] mx-auto px-4 py-10"
+        style={{ borderTop: "1px solid #e5e7eb" }}
+      >
+        <div className="flex items-center gap-3 mb-6">
+          <div
+            className="w-1 h-7 rounded-sm shrink-0"
+            style={{ backgroundColor: "#dc2626" }}
+          />
+          <h2
+            className="text-base font-bold uppercase tracking-widest"
+            style={{ color: "#111827" }}
+          >
+            যোগাযোগ
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            className="rounded-lg p-5"
+            style={{ backgroundColor: "#fef2f2", border: "1px solid #fecaca" }}
+          >
+            <p
+              className="text-xs font-bold uppercase tracking-wider mb-2"
+              style={{ color: "#dc2626" }}
+            >
+              ইমেইল
+            </p>
+            <a
+              href="mailto:baligawnews@gmail.com"
+              className="text-sm font-medium"
+              style={{ color: "#111827" }}
+            >
+              baligawnews@gmail.com
+            </a>
+          </div>
+          <div
+            className="rounded-lg p-5"
+            style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
+          >
+            <p
+              className="text-xs font-bold uppercase tracking-wider mb-2"
+              style={{ color: "#6b7280" }}
+            >
+              ঠিকানা
+            </p>
+            <p className="text-sm font-medium" style={{ color: "#111827" }}>
+              বালিগাঁও, লাখাই, হবিগঞ্জ
+            </p>
+          </div>
+          <div
+            className="rounded-lg p-5"
+            style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
+          >
+            <p
+              className="text-xs font-bold uppercase tracking-wider mb-2"
+              style={{ color: "#6b7280" }}
+            >
+              সম্পাদক
+            </p>
+            <p className="text-sm font-medium" style={{ color: "#111827" }}>
+              এম.ডি ব্রাইট
+            </p>
+          </div>
+        </div>
+        <p className="text-xs mt-6 text-center" style={{ color: "#9ca3af" }}>
+          সংবাদ পাঠাতে বা বিজ্ঞাপনের জন্য উপরের ইমেইলে যোগাযোগ করুন।
+        </p>
+      </div>
+
       {/* Footer */}
       <Footer />
     </div>

@@ -28,12 +28,20 @@ const navLinks: {
   { label: "স্বাস্থ্য", href: "#external-news-section", category: "স্বাস্থ্য" },
   { label: "কৃষি", href: "#external-news-section", category: "কৃষি" },
   { label: "খেলাধুলা", href: "#external-news-section", category: "ক্রীড়া" },
-  { label: "ধর্মীয় অনুষ্ঠান", href: "#religion" },
-  { label: "ফিচার স্টোরি", href: "#feature" },
-  { label: "মাল্টিমিডিয়া", href: "#multimedia" },
+  {
+    label: "ধর্মীয় অনুষ্ঠান",
+    href: "#external-news-section",
+    category: "ধর্মীয় অনুষ্ঠান",
+  },
+  {
+    label: "ফিচার স্টোরি",
+    href: "#external-news-section",
+    category: "ফিচার স্টোরি",
+  },
+  { label: "মাল্টিমিডিয়া", href: "#external-news-section", category: "মাল্টিমিডিয়া" },
   { label: "আবহাওয়া", href: "#weather" },
-  { label: "আমাদের সম্পর্কে", href: "#about" },
-  { label: "যোগাযোগ", href: "#contact" },
+  { label: "আমাদের সম্পর্কে", href: "#about-section" },
+  { label: "যোগাযোগ", href: "#contact-section" },
 ];
 
 interface HeaderProps {
