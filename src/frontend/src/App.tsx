@@ -10,6 +10,7 @@ import { HeroSlider } from "./components/HeroSlider";
 import { LatestNews } from "./components/LatestNews";
 import { NewsPostModal } from "./components/NewsPostModal";
 import { SettingsModal } from "./components/SettingsModal";
+import { WeatherSection } from "./components/WeatherSection";
 import { SiteSettingsProvider } from "./context/SiteSettingsContext";
 import { useGetAllArticles } from "./hooks/useQueries";
 
@@ -84,6 +85,16 @@ function AppContent() {
             </div>
           </>
         )}
+
+        {/* Divider before weather */}
+        <div className="max-w-[1200px] mx-auto px-4">
+          <div className="h-px" style={{ backgroundColor: "#2d2d2d" }} />
+        </div>
+
+        {/* Weather Section */}
+        <div className="max-w-[1200px] mx-auto px-4 py-8">
+          <WeatherSection />
+        </div>
 
         {/* Divider before external news */}
         <div className="max-w-[1200px] mx-auto px-4">

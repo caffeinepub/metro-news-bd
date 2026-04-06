@@ -14896,16 +14896,103 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$l = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$l);
+const __iconNode$r = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$k = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$k);
+const __iconNode$q = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$q);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$p = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$p);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$o = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$o);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$n = [
+  [
+    "path",
+    {
+      d: "M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z",
+      key: "1ptgy4"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97",
+      key: "1sl1rz"
+    }
+  ]
+];
+const Droplets = createLucideIcon("droplets", __iconNode$n);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$m = [
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+];
+const ExternalLink = createLucideIcon("external-link", __iconNode$m);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$l = [
+  [
+    "path",
+    {
+      d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
+      key: "1nclc0"
+    }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+];
+const Eye = createLucideIcon("eye", __iconNode$l);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$k = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("globe", __iconNode$k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14913,22 +15000,19 @@ const ChevronRight = createLucideIcon("chevron-right", __iconNode$k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$j = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$j);
+const Image = createLucideIcon("image", __iconNode$j);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$i = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$i);
+const __iconNode$i = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14936,11 +15020,10 @@ const CircleCheck = createLucideIcon("circle-check", __iconNode$i);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$h = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
-  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const ExternalLink = createLucideIcon("external-link", __iconNode$h);
+const Mail = createLucideIcon("mail", __iconNode$h);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14948,49 +15031,6 @@ const ExternalLink = createLucideIcon("external-link", __iconNode$h);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$g = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
-];
-const Globe = createLucideIcon("globe", __iconNode$g);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$f = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
-];
-const Image = createLucideIcon("image", __iconNode$f);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$e = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$e);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$d = [
-  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
-  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
-];
-const Mail = createLucideIcon("mail", __iconNode$d);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$c = [
   [
     "path",
     {
@@ -15000,7 +15040,59 @@ const __iconNode$c = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$c);
+const MapPin = createLucideIcon("map-pin", __iconNode$g);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 18h16", key: "19g7jn" }],
+  ["path", { d: "M4 6h16", key: "1o0s65" }]
+];
+const Menu = createLucideIcon("menu", __iconNode$f);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$e = [
+  [
+    "path",
+    {
+      d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
+      key: "9njp5v"
+    }
+  ]
+];
+const Phone = createLucideIcon("phone", __iconNode$e);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$d = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$d);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$c = [
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+];
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15008,11 +15100,10 @@ const MapPin = createLucideIcon("map-pin", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 18h16", key: "19g7jn" }],
-  ["path", { d: "M4 6h16", key: "1o0s65" }]
+  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
 ];
-const Menu = createLucideIcon("menu", __iconNode$b);
+const Search = createLucideIcon("search", __iconNode$b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15023,12 +15114,13 @@ const __iconNode$a = [
   [
     "path",
     {
-      d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
-      key: "9njp5v"
+      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z",
+      key: "1qme2f"
     }
-  ]
+  ],
+  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Phone = createLucideIcon("phone", __iconNode$a);
+const Settings = createLucideIcon("settings", __iconNode$a);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15036,58 +15128,6 @@ const Phone = createLucideIcon("phone", __iconNode$a);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$9 = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-];
-const Plus = createLucideIcon("plus", __iconNode$9);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$8 = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
-];
-const RefreshCw = createLucideIcon("refresh-cw", __iconNode$8);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$7 = [
-  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-];
-const Search = createLucideIcon("search", __iconNode$7);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$6 = [
-  [
-    "path",
-    {
-      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z",
-      key: "1qme2f"
-    }
-  ],
-  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-];
-const Settings = createLucideIcon("settings", __iconNode$6);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$5 = [
   ["path", { d: "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7", key: "1m0v6g" }],
   [
     "path",
@@ -15097,7 +15137,65 @@ const __iconNode$5 = [
     }
   ]
 ];
-const SquarePen = createLucideIcon("square-pen", __iconNode$5);
+const SquarePen = createLucideIcon("square-pen", __iconNode$9);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$8 = [
+  ["path", { d: "M12 2v8", key: "1q4o3n" }],
+  ["path", { d: "m4.93 10.93 1.41 1.41", key: "2a7f42" }],
+  ["path", { d: "M2 18h2", key: "j10viu" }],
+  ["path", { d: "M20 18h2", key: "wocana" }],
+  ["path", { d: "m19.07 10.93-1.41 1.41", key: "15zs5n" }],
+  ["path", { d: "M22 22H2", key: "19qnx5" }],
+  ["path", { d: "m8 6 4-4 4 4", key: "ybng9g" }],
+  ["path", { d: "M16 18a4 4 0 0 0-8 0", key: "1lzouq" }]
+];
+const Sunrise = createLucideIcon("sunrise", __iconNode$8);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$7 = [
+  ["path", { d: "M12 10V2", key: "16sf7g" }],
+  ["path", { d: "m4.93 10.93 1.41 1.41", key: "2a7f42" }],
+  ["path", { d: "M2 18h2", key: "j10viu" }],
+  ["path", { d: "M20 18h2", key: "wocana" }],
+  ["path", { d: "m19.07 10.93-1.41 1.41", key: "15zs5n" }],
+  ["path", { d: "M22 22H2", key: "19qnx5" }],
+  ["path", { d: "m16 6-4 4-4-4", key: "6wukr" }],
+  ["path", { d: "M16 18a4 4 0 0 0-8 0", key: "1lzouq" }]
+];
+const Sunset = createLucideIcon("sunset", __iconNode$7);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$6 = [
+  ["path", { d: "M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z", key: "17jzev" }]
+];
+const Thermometer = createLucideIcon("thermometer", __iconNode$6);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$5 = [
+  ["path", { d: "M3 6h18", key: "d0wm0j" }],
+  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
+  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
+  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
+  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
+];
+const Trash2 = createLucideIcon("trash-2", __iconNode$5);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15105,13 +15203,10 @@ const SquarePen = createLucideIcon("square-pen", __iconNode$5);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$4 = [
-  ["path", { d: "M3 6h18", key: "d0wm0j" }],
-  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
-  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
-  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
-  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
+  ["path", { d: "m17 2-5 5-5-5", key: "16satq" }],
+  ["rect", { width: "20", height: "15", x: "2", y: "7", rx: "2", key: "1e6viu" }]
 ];
-const Trash2 = createLucideIcon("trash-2", __iconNode$4);
+const Tv = createLucideIcon("tv", __iconNode$4);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15119,10 +15214,11 @@ const Trash2 = createLucideIcon("trash-2", __iconNode$4);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$3 = [
-  ["path", { d: "m17 2-5 5-5-5", key: "16satq" }],
-  ["rect", { width: "20", height: "15", x: "2", y: "7", rx: "2", key: "1e6viu" }]
+  ["path", { d: "M12 3v12", key: "1x0j5s" }],
+  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
 ];
-const Tv = createLucideIcon("tv", __iconNode$3);
+const Upload = createLucideIcon("upload", __iconNode$3);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15130,11 +15226,10 @@ const Tv = createLucideIcon("tv", __iconNode$3);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$2 = [
-  ["path", { d: "M12 3v12", key: "1x0j5s" }],
-  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
+  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
+  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
 ];
-const Upload = createLucideIcon("upload", __iconNode$2);
+const User = createLucideIcon("user", __iconNode$2);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15142,10 +15237,11 @@ const Upload = createLucideIcon("upload", __iconNode$2);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1 = [
-  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
-  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
+  ["path", { d: "M12.8 19.6A2 2 0 1 0 14 16H2", key: "148xed" }],
+  ["path", { d: "M17.5 8a2.5 2.5 0 1 1 2 4H2", key: "1u4tom" }],
+  ["path", { d: "M9.8 4.4A2 2 0 1 1 11 8H2", key: "75valh" }]
 ];
-const User = createLucideIcon("user", __iconNode$1);
+const Wind = createLucideIcon("wind", __iconNode$1);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -31928,6 +32024,551 @@ function SettingsModal({ isOpen, onClose }) {
     }
   );
 }
+const BN_DIGITS = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+function toBengali(n) {
+  return String(n).replace(/[0-9]/g, (d2) => BN_DIGITS[Number(d2)]);
+}
+function weatherDescription(code) {
+  if (code === 0) return "পরিষ্কার আকাশ";
+  if (code === 1 || code === 2) return "আংশিক মেঘলা";
+  if (code === 3) return "মেঘাচ্ছন্ন";
+  if (code === 45 || code === 48) return "কুয়াশা";
+  if (code >= 51 && code <= 55) return "হালকা গুঁড়ি বৃষ্টি";
+  if (code >= 61 && code <= 65) return "বৃষ্টি";
+  if (code >= 71 && code <= 75) return "তুষারপাত";
+  if (code >= 80 && code <= 82) return "ঝরনা বৃষ্টি";
+  if (code === 95 || code === 96 || code === 99) return "বজ্রসহ বৃষ্টি";
+  return "মেঘলা";
+}
+function weatherEmoji(code) {
+  if (code === 0) return "☀️";
+  if (code === 1 || code === 2) return "⛅";
+  if (code === 3) return "☁️";
+  if (code === 45 || code === 48) return "🌫️";
+  if (code >= 51 && code <= 55) return "🌦️";
+  if (code >= 61 && code <= 65) return "🌧️";
+  if (code >= 71 && code <= 75) return "❄️";
+  if (code >= 80 && code <= 82) return "🌧️";
+  if (code === 95 || code === 96 || code === 99) return "⛈️";
+  return "🌥️";
+}
+function windDirection(deg) {
+  if (deg <= 22 || deg > 337) return "উত্তর";
+  if (deg <= 67) return "উত্তর-পূর্ব";
+  if (deg <= 112) return "পূর্ব";
+  if (deg <= 157) return "দক্ষিণ-পূর্ব";
+  if (deg <= 202) return "দক্ষিণ";
+  if (deg <= 247) return "দক্ষিণ-পশ্চিম";
+  if (deg <= 292) return "পশ্চিম";
+  return "উত্তর-পশ্চিম";
+}
+function aqiInfo(aqi) {
+  if (aqi <= 20) return { label: "ভালো", color: "#22c55e", bg: "#14532d33" };
+  if (aqi <= 40)
+    return { label: "সন্তোষজনক", color: "#eab308", bg: "#71350633" };
+  if (aqi <= 60) return { label: "মাঝারি", color: "#f97316", bg: "#7c2d1233" };
+  if (aqi <= 80)
+    return { label: "অস্বাস্থ্যকর", color: "#ef4444", bg: "#7f1d1d33" };
+  if (aqi <= 100)
+    return { label: "খুব অস্বাস্থ্যকর", color: "#a855f7", bg: "#3b0764aa" };
+  return { label: "বিপজ্জনক", color: "#be123c", bg: "#4c041533" };
+}
+function timeToBengali(isoOrTime) {
+  const timePart = isoOrTime.includes("T") ? isoOrTime.split("T")[1] : isoOrTime;
+  const [hStr, mStr] = timePart.split(":");
+  const h2 = Number.parseInt(hStr, 10);
+  const m2 = Number.parseInt(mStr, 10);
+  let period;
+  if (h2 >= 0 && h2 <= 4) period = "রাত";
+  else if (h2 <= 7) period = "ভোর";
+  else if (h2 <= 11) period = "সকাল";
+  else if (h2 === 12) period = "দুপুর";
+  else if (h2 <= 16) period = "বিকেল";
+  else if (h2 <= 19) period = "সন্ধ্যা";
+  else period = "রাত";
+  const display12 = h2 === 0 ? 12 : h2 > 12 ? h2 - 12 : h2;
+  const minStr = m2 === 0 ? "" : ` ${toBengali(m2)}মি`;
+  return `${period} ${toBengali(display12)}টা${minStr}`;
+}
+function hourLabel(isoDatetime) {
+  return timeToBengali(isoDatetime);
+}
+function nowBengali() {
+  const now2 = /* @__PURE__ */ new Date();
+  const bd = new Intl.DateTimeFormat("bn-BD", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+    timeZone: "Asia/Dhaka"
+  }).format(now2);
+  return bd;
+}
+const WEATHER_URL = "https://api.open-meteo.com/v1/forecast?latitude=24.12&longitude=91.22&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,precipitation_probability,weather_code&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,wind_speed_10m,wind_direction_10m,weather_code&daily=sunrise,sunset&timezone=Asia%2FDhaka&forecast_days=1";
+const AQI_URL = "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=24.12&longitude=91.22&current=pm2_5,pm10,european_aqi&timezone=Asia%2FDhaka";
+const AUTO_REFRESH_INTERVAL = 12 * 60 * 60 * 1e3;
+const SKELETON_STAT_KEYS = ["humidity", "wind-speed", "wind-dir", "rain"];
+const SKELETON_HOURLY_KEYS = ["h1", "h2", "h3", "h4", "h5", "h6"];
+function SkeletonBlock({ className }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: `rounded animate-pulse ${className ?? ""}`,
+      style: { backgroundColor: "#2d2d2d" }
+    }
+  );
+}
+function LoadingSkeleton() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "rounded-lg p-5 border",
+        style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-4 items-start mb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonBlock, { className: "w-20 h-10" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonBlock, { className: "w-32 h-6 mt-2" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 md:grid-cols-4 gap-3", children: SKELETON_STAT_KEYS.map((k2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonBlock, { className: "h-16" }, k2)) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 mt-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonBlock, { className: "w-28 h-7" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonBlock, { className: "w-24 h-7" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonBlock, { className: "w-24 h-7" })
+          ] })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-3 overflow-hidden", children: SKELETON_HOURLY_KEYS.map((k2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonBlock, { className: "w-24 h-28 shrink-0" }, k2)) })
+  ] });
+}
+function StatTile({
+  icon,
+  label,
+  value
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "flex flex-col gap-1.5 rounded-md px-3 py-3",
+      style: { backgroundColor: "#111111", border: "1px solid #2d2d2d" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5", style: { color: "#6b6b6b" }, children: [
+          icon,
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] uppercase tracking-wide font-semibold", children: label })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-white", children: value })
+      ]
+    }
+  );
+}
+function HourlyCard({
+  time,
+  temp,
+  rainPct,
+  windSpeed,
+  code,
+  isCurrent
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "flex flex-col items-center gap-1.5 rounded-lg px-3 py-3 shrink-0 w-24 border transition-colors",
+      style: {
+        backgroundColor: isCurrent ? "#1f1f1f" : "#141414",
+        borderColor: isCurrent ? "oklch(0.4764 0.2183 22.8)" : "#2d2d2d",
+        minHeight: "7rem"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: "text-[10px] font-semibold",
+            style: { color: isCurrent ? "oklch(0.6 0.18 22.8)" : "#6b6b6b" },
+            children: time
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-lg leading-none", children: weatherEmoji(code) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-white", children: [
+          toBengali(Math.round(temp)),
+          "°"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center gap-0.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[9px]", style: { color: "#6b6b6b" }, children: [
+            "💧 ",
+            toBengali(rainPct),
+            "%"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[9px]", style: { color: "#6b6b6b" }, children: [
+            "💨 ",
+            toBengali(Math.round(windSpeed))
+          ] })
+        ] })
+      ]
+    }
+  );
+}
+function WeatherSection() {
+  const [data, setData] = reactExports.useState(null);
+  const [loading, setLoading] = reactExports.useState(true);
+  const [error, setError] = reactExports.useState(false);
+  const intervalRef = reactExports.useRef(null);
+  const fetchWeather = reactExports.useCallback(async () => {
+    setLoading(true);
+    setError(false);
+    try {
+      const [weatherRes, aqiRes] = await Promise.all([
+        fetch(WEATHER_URL),
+        fetch(AQI_URL)
+      ]);
+      if (!weatherRes.ok || !aqiRes.ok) throw new Error("fetch failed");
+      const weatherJson = await weatherRes.json();
+      const aqiJson = await aqiRes.json();
+      setData({
+        current: weatherJson.current,
+        hourly: weatherJson.hourly,
+        daily: weatherJson.daily,
+        aqi: Math.round(aqiJson.current.european_aqi ?? 0),
+        fetchedAt: nowBengali()
+      });
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+  reactExports.useEffect(() => {
+    fetchWeather();
+    intervalRef.current = setInterval(fetchWeather, AUTO_REFRESH_INTERVAL);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [fetchWeather]);
+  const getCurrentHourIndex = (times) => {
+    const nowHour = new Date(
+      (/* @__PURE__ */ new Date()).toLocaleString("en-US", { timeZone: "Asia/Dhaka" })
+    ).getHours();
+    return times.findIndex((t) => {
+      var _a3;
+      const h2 = Number.parseInt(((_a3 = t.split("T")[1]) == null ? void 0 : _a3.split(":")[0]) ?? "0", 10);
+      return h2 === nowHour;
+    });
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "aria-labelledby": "weather-section-heading", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-3 mb-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "w-1 h-7 rounded-sm shrink-0",
+          style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "h2",
+        {
+          id: "weather-section-heading",
+          className: "text-base font-bold uppercase tracking-widest text-white shrink-0",
+          children: "আবহাওয়া"
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "flex-1 h-px min-w-[20px]",
+          style: { backgroundColor: "#2d2d2d" }
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 ml-auto", children: [
+        data && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: [
+          "শেষ আপডেট:",
+          " ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#9c9c9c" }, children: data.fetchedAt })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "data-ocid": "weather.refresh.button",
+            onClick: fetchWeather,
+            disabled: loading,
+            className: "inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80 disabled:opacity-50",
+            style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+            "aria-label": "আবহাওয়া রিফ্রেশ করুন",
+            children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { size: 13, className: "animate-spin" }),
+              "আপডেট হচ্ছে..."
+            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { size: 13 }),
+              "রিফ্রেশ করুন"
+            ] })
+          }
+        )
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 mb-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        MapPin,
+        {
+          size: 14,
+          style: { color: "oklch(0.4764 0.2183 22.8)" },
+          "aria-hidden": "true"
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-semibold", style: { color: "#c8c8c8" }, children: "বালীগাঁও, লাখাই, হবিগঞ্জ" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: "(২৪.১২°উ, ৯১.২২°পূ)" })
+    ] }),
+    loading && !data && /* @__PURE__ */ jsxRuntimeExports.jsx(LoadingSkeleton, {}),
+    error && !loading && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "flex flex-col items-center justify-center gap-4 py-12 rounded-lg border",
+        "data-ocid": "weather.error_state",
+        style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-3xl", children: "⛅" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-center", style: { color: "#c8c8c8" }, children: "আবহাওয়ার তথ্য লোড করা যায়নি। পুনরায় চেষ্টা করুন।" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              type: "button",
+              "data-ocid": "weather.retry.button",
+              onClick: fetchWeather,
+              className: "inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80",
+              style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { size: 13 }),
+                "পুনরায় চেষ্টা করুন"
+              ]
+            }
+          )
+        ]
+      }
+    ),
+    !loading && !error && data && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-5", "data-ocid": "weather.section", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "rounded-lg p-5 border",
+          style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+          "data-ocid": "weather.card",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-start gap-4 mb-5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-end gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: "text-5xl font-black text-white leading-none",
+                  style: { letterSpacing: "-0.02em" },
+                  children: [
+                    toBengali(Math.round(data.current.temperature_2m)),
+                    "°সে"
+                  ]
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1 mt-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl leading-none", children: weatherEmoji(data.current.weather_code) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "text-sm font-semibold",
+                    style: { color: "#c8c8c8" },
+                    children: weatherDescription(data.current.weather_code)
+                  }
+                )
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatTile,
+                {
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Droplets, { size: 12 }),
+                  label: "আর্দ্রতা",
+                  value: `${toBengali(data.current.relative_humidity_2m)}%`
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatTile,
+                {
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Wind, { size: 12 }),
+                  label: "বাতাসের গতি",
+                  value: `${toBengali(Math.round(data.current.wind_speed_10m))} কি.মি/ঘ`
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatTile,
+                {
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Wind, { size: 12 }),
+                  label: "বাতাসের দিক",
+                  value: windDirection(data.current.wind_direction_10m)
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatTile,
+                {
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Thermometer, { size: 12 }),
+                  label: "বৃষ্টির সম্ভাবনা",
+                  value: `${toBengali(data.current.precipitation_probability)}%`
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-3", children: [
+              (() => {
+                const info = aqiInfo(data.aqi);
+                return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-center gap-2 px-3 py-1.5 rounded-md border text-xs font-bold",
+                    style: {
+                      backgroundColor: info.bg,
+                      borderColor: info.color,
+                      color: info.color
+                    },
+                    "data-ocid": "weather.aqi.panel",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { size: 12 }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                        "বায়ু মান (AQI): ",
+                        toBengali(data.aqi)
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          className: "px-1.5 py-0.5 rounded text-white text-[10px]",
+                          style: { backgroundColor: info.color },
+                          children: info.label
+                        }
+                      )
+                    ]
+                  }
+                );
+              })(),
+              data.daily.sunrise[0] && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs border",
+                  style: {
+                    backgroundColor: "#111111",
+                    borderColor: "#2d2d2d",
+                    color: "#c8c8c8"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Sunrise,
+                      {
+                        size: 13,
+                        style: { color: "#f59e0b" },
+                        "aria-hidden": "true"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold", style: { color: "#f59e0b" }, children: "সূর্যোদয়:" }),
+                    timeToBengali(data.daily.sunrise[0])
+                  ]
+                }
+              ),
+              data.daily.sunset[0] && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs border",
+                  style: {
+                    backgroundColor: "#111111",
+                    borderColor: "#2d2d2d",
+                    color: "#c8c8c8"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Sunset,
+                      {
+                        size: 13,
+                        style: { color: "#f97316" },
+                        "aria-hidden": "true"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold", style: { color: "#f97316" }, children: "সূর্যাস্ত:" }),
+                    timeToBengali(data.daily.sunset[0])
+                  ]
+                }
+              )
+            ] })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "w-0.5 h-4 rounded-sm shrink-0",
+              style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              className: "text-xs font-bold uppercase tracking-widest",
+              style: { color: "#9c9c9c" },
+              children: "২৪ ঘন্টার পূর্বাভাস"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "ul",
+          {
+            className: "flex gap-2 overflow-x-auto pb-2 list-none m-0 p-0",
+            style: {
+              scrollbarWidth: "thin",
+              scrollbarColor: "#2d2d2d transparent"
+            },
+            "aria-label": "প্রতি ঘন্টার আবহাওয়া",
+            children: (() => {
+              const currentIdx = getCurrentHourIndex(data.hourly.time);
+              const start = currentIdx >= 0 ? currentIdx : 0;
+              const slots = data.hourly.time.slice(start, start + 24);
+              return slots.map((isoTime, i) => {
+                const idx = start + i;
+                return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "li",
+                  {
+                    "data-ocid": `weather.item.${i + 1}`,
+                    className: "shrink-0",
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      HourlyCard,
+                      {
+                        time: i === 0 ? "এখন" : hourLabel(isoTime),
+                        temp: data.hourly.temperature_2m[idx],
+                        rainPct: data.hourly.precipitation_probability[idx],
+                        windSpeed: data.hourly.wind_speed_10m[idx],
+                        code: data.hourly.weather_code[idx],
+                        isCurrent: i === 0
+                      }
+                    )
+                  },
+                  isoTime
+                );
+              });
+            })()
+          }
+        )
+      ] })
+    ] }),
+    loading && data && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "flex items-center justify-center gap-2 py-4 rounded mt-4",
+        style: { backgroundColor: "#141414" },
+        "data-ocid": "weather.loading_state",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            RefreshCw,
+            {
+              size: 14,
+              className: "animate-spin",
+              style: { color: "oklch(0.4764 0.2183 22.8)" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", style: { color: "#9c9c9c" }, children: "আবহাওয়ার তথ্য আপডেট হচ্ছে..." })
+        ]
+      }
+    )
+  ] });
+}
 function AppContent() {
   const [showPostModal, setShowPostModal] = reactExports.useState(false);
   const [showSettingsModal, setShowSettingsModal] = reactExports.useState(false);
@@ -31960,6 +32601,8 @@ function AppContent() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CategoryNewsSection, { articles }) })
       ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(WeatherSection, {}) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalNewsSection, {}) })
     ] }),
