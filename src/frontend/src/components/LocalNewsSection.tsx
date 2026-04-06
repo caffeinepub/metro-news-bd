@@ -356,7 +356,15 @@ export function LocalNewsSection() {
 
   // ---- Load articles from blockchain ----
   const loadArticles = useCallback(async () => {
-    if (!actor || actorFetching) return;
+    // If actor is still being fetched, show loading but don't bail out
+    if (actorFetching) {
+      setIsLoading(true);
+      return;
+    }
+    if (!actor) {
+      setIsLoading(true);
+      return;
+    }
     setIsLoading(true);
     setLoadError("");
     try {
@@ -368,9 +376,9 @@ export function LocalNewsSection() {
       });
       setArticles(sorted);
 
-      // Migration: check localStorage for old articles
+      // Migration: always check localStorage for articles not yet on blockchain
       const raw = localStorage.getItem("localNews");
-      if (raw && result.length === 0) {
+      if (raw) {
         let legacy: LegacyLocalArticle[] = [];
         try {
           legacy = JSON.parse(raw);
@@ -378,57 +386,113 @@ export function LocalNewsSection() {
           legacy = [];
         }
         if (legacy.length > 0) {
-          setMigrating(true);
-          const migrated: LocalNewsArticle[] = [];
-          for (const old of legacy) {
-            try {
-              const newId = await actor.addLocalNews(
-                old.title,
-                old.summary,
-                old.category,
-                old.imageBase64 || "",
-                old.author || "বালীগাঁও নিউজ",
-                old.sourceName || "নিজস্ব প্রতিবেদক",
-                old.sourceUrl || "",
-              );
-              migrated.push({
-                id: newId,
-                title: old.title,
-                summary: old.summary,
-                category: old.category,
-                imageBase64: old.imageBase64 || "",
-                author: old.author || "বালীগাঁও নিউজ",
-                sourceName: old.sourceName || "নিজস্ব প্রতিবেদক",
-                sourceUrl: old.sourceUrl || "",
-                publishedAt: BigInt(old.publishedAt) * 1_000_000n,
-              });
-            } catch (err) {
-              console.error("Migration error for article:", old.title, err);
+          // Find which legacy articles are not yet in blockchain (match by title+publishedAt)
+          const blockchainTitles = new Set(result.map((r) => r.title));
+          const toMigrate = legacy.filter(
+            (old) => !blockchainTitles.has(old.title),
+          );
+          if (toMigrate.length > 0) {
+            setMigrating(true);
+            const migrated: LocalNewsArticle[] = [];
+            for (const old of toMigrate) {
+              try {
+                const newId = await actor.addLocalNews(
+                  old.title,
+                  old.summary,
+                  old.category,
+                  old.imageBase64 || "",
+                  old.author || "বালীগাঁও নিউজ",
+                  old.sourceName || "নিজস্ব প্রতিবেদক",
+                  old.sourceUrl || "",
+                );
+                migrated.push({
+                  id: newId,
+                  title: old.title,
+                  summary: old.summary,
+                  category: old.category,
+                  imageBase64: old.imageBase64 || "",
+                  author: old.author || "বালীগাঁও নিউজ",
+                  sourceName: old.sourceName || "নিজস্ব প্রতিবেদক",
+                  sourceUrl: old.sourceUrl || "",
+                  publishedAt: BigInt(old.publishedAt) * 1_000_000n,
+                });
+              } catch (err) {
+                console.error("Migration error for article:", old.title, err);
+              }
             }
-          }
-          if (migrated.length > 0) {
+            if (migrated.length > 0) {
+              localStorage.removeItem("localNews");
+              // Reload from blockchain to get all articles including newly migrated
+              try {
+                const freshResult = await actor.getAllLocalNews();
+                const freshSorted = [...freshResult].sort((a, b) => {
+                  return (
+                    toDisplayMs(b.publishedAt) - toDisplayMs(a.publishedAt)
+                  );
+                });
+                setArticles(freshSorted);
+              } catch {
+                // fallback: merge migrated with existing
+                const allArticles = [...sorted, ...migrated];
+                const deduped = allArticles.filter(
+                  (a, i, arr) => arr.findIndex((x) => x.id === a.id) === i,
+                );
+                deduped.sort(
+                  (a, b) =>
+                    toDisplayMs(b.publishedAt) - toDisplayMs(a.publishedAt),
+                );
+                setArticles(deduped);
+              }
+            } else {
+              localStorage.removeItem("localNews");
+            }
+            setMigrating(false);
+          } else {
+            // All legacy articles already in blockchain, clean up localStorage
             localStorage.removeItem("localNews");
-            const migSorted = [...migrated].sort((a, b) => {
-              return toDisplayMs(b.publishedAt) - toDisplayMs(a.publishedAt);
-            });
-            setArticles(migSorted);
           }
-          setMigrating(false);
         }
       }
     } catch (err) {
       console.error("Failed to load articles:", err);
-      setLoadError("ব্লকচেইন থেকে সংবাদ লোড করতে সমস্যা হয়েছে।");
+      setLoadError("ব্লকচেইন থেকে সংবাদ লোড করতে সমস্যা হয়েছে। পুনরায় চেষ্টা করছি...");
+      // Retry after 5 seconds on error
+      setTimeout(() => {
+        setLoadError("");
+        loadArticles();
+      }, 5000);
     } finally {
       setIsLoading(false);
     }
   }, [actor, actorFetching]);
 
   useEffect(() => {
-    if (actor && !actorFetching) {
+    // Load when actor becomes available
+    if (!actorFetching) {
       loadArticles();
     }
-  }, [actor, actorFetching, loadArticles]);
+  }, [actorFetching, loadArticles]);
+
+  // Auto-refresh from blockchain every 30 seconds to stay in sync across devices
+  useEffect(() => {
+    if (!actor || actorFetching) return;
+    const interval = setInterval(() => {
+      if (actor && !actorFetching) {
+        actor
+          .getAllLocalNews()
+          .then((result) => {
+            const sorted = [...result].sort((a, b) => {
+              return toDisplayMs(b.publishedAt) - toDisplayMs(a.publishedAt);
+            });
+            setArticles(sorted);
+          })
+          .catch(() => {
+            // Silent fail on background refresh
+          });
+      }
+    }, 30_000);
+    return () => clearInterval(interval);
+  }, [actor, actorFetching]);
 
   // On mount: check URL for ?news=<id> and auto-open that article
   useEffect(() => {
