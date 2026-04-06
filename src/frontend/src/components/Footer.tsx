@@ -13,23 +13,31 @@ import {
 import { useSiteSettings } from "../context/SiteSettingsContext";
 
 const sectionLinks = [
-  "স্থানীয়",
-  "জাতীয়",
-  "বিশ্ব",
-  "রাজনীতি",
-  "ব্যবসা",
-  "খেলাধুলা",
-  "বিনোদন",
-  "মতামত",
+  { label: "স্থানীয়", href: "#local-news" },
+  { label: "জাতীয়", href: "#external-news-section" },
+  { label: "বিশ্ব", href: "#external-news-section" },
+  { label: "রাজনীতি", href: "#external-news-section" },
+  { label: "ব্যবসা", href: "#external-news-section" },
+  { label: "খেলাধুলা", href: "#external-news-section" },
+  { label: "বিনোদন", href: "#external-news-section" },
+  { label: "মতামত", href: "#external-news-section" },
 ];
 
 const quickLinks = [
-  { label: "যোগাযোগ", href: "#contact" },
-  { label: "আমাদের সম্পর্কে", href: "#about" },
-  { label: "বিজ্ঞাপন দিন", href: "#advertise" },
-  { label: "গোপনীয়তা নীতি", href: "#privacy" },
-  { label: "শর্তাবলী", href: "#terms" },
+  { label: "যোগাযোগ", href: "#contact-section" },
+  { label: "আমাদের সম্পর্কে", href: "#about-section" },
+  { label: "বিজ্ঞাপন দিন", href: "#advertise-section" },
+  { label: "গোপনীয়তা নীতি", href: "#privacy-section" },
+  { label: "শর্তাবলী", href: "#terms-section" },
 ];
+
+function scrollToSection(href: string) {
+  const id = href.startsWith("#") ? href.slice(1) : href;
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 
 function getPlatformIcon(platform: string) {
   const p = platform.toLowerCase();
@@ -202,18 +210,23 @@ export function Footer() {
               বিভাগ
             </h3>
             <ul className="space-y-2">
-              {sectionLinks.map((link) => (
-                <li key={link}>
+              {sectionLinks.map((item) => (
+                <li key={item.label}>
                   <a
-                    href="#content"
-                    className="text-xs transition-colors hover:text-white flex items-center gap-1.5 group"
+                    href={item.href}
+                    data-ocid="footer.section.link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.href);
+                    }}
+                    className="text-xs transition-colors hover:text-white flex items-center gap-1.5 group cursor-pointer"
                     style={{ color: "#9ca3af" }}
                   >
                     <span
                       className="w-1 h-1 rounded-full shrink-0 group-hover:bg-red-500 transition-colors"
                       style={{ backgroundColor: "#4b5563" }}
                     />
-                    {link}
+                    {item.label}
                   </a>
                 </li>
               ))}
@@ -233,8 +246,12 @@ export function Footer() {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    data-ocid={`footer.quick.${item.label}.link`}
-                    className="text-xs transition-colors hover:text-white flex items-center gap-1.5 group"
+                    data-ocid="footer.quick.link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.href);
+                    }}
+                    className="text-xs transition-colors hover:text-white flex items-center gap-1.5 group cursor-pointer"
                     style={{ color: "#9ca3af" }}
                   >
                     <span
@@ -347,29 +364,35 @@ export function Footer() {
               className="flex items-center flex-wrap justify-center gap-1 text-xs"
               style={{ color: "#6b7280" }}
             >
-              <a
-                href="#contact"
+              <button
+                type="button"
                 data-ocid="footer.bottom.contact.link"
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors cursor-pointer bg-transparent border-0 p-0 text-xs"
+                style={{ color: "#6b7280" }}
+                onClick={() => scrollToSection("#contact-section")}
               >
                 যোগাযোগ
-              </a>
+              </button>
               <span className="opacity-40">|</span>
-              <a
-                href="#privacy"
+              <button
+                type="button"
                 data-ocid="footer.bottom.privacy.link"
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors cursor-pointer bg-transparent border-0 p-0 text-xs"
+                style={{ color: "#6b7280" }}
+                onClick={() => scrollToSection("#privacy-section")}
               >
                 গোপনীয়তা নীতি
-              </a>
+              </button>
               <span className="opacity-40">|</span>
-              <a
-                href="#terms"
+              <button
+                type="button"
                 data-ocid="footer.bottom.terms.link"
-                className="hover:text-white transition-colors"
+                className="hover:text-white transition-colors cursor-pointer bg-transparent border-0 p-0 text-xs"
+                style={{ color: "#6b7280" }}
+                onClick={() => scrollToSection("#terms-section")}
               >
                 শর্তাবলী
-              </a>
+              </button>
             </div>
 
             {/* Right: caffeine attribution */}

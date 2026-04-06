@@ -79,18 +79,43 @@ actor {
     http_request : HttpRequest -> async HttpResponse;
   } = actor ("aaaaa-aa");
 
-  // ── State ──────────────────────────────────────────────────────────────────────────
+  // ── Stable storage for local news (survives upgrades) ─────────────────────────
+  stable var stableLocalNews : [(Nat, LocalNewsArticle)] = [];
+  stable var stableNextLocalNewsId : Nat = 1;
+
+  // ── Runtime state ──────────────────────────────────────────────────────────────────
   let admins = Map.empty<Principal, Bool>();
   let articles = Map.empty<Nat, Article>();
   let breakingNewsItems = Map.empty<Nat, BreakingNews>();
   var externalNewsItems = Map.empty<Nat, ExternalNews>();
-  let localNewsItems = Map.empty<Nat, LocalNewsArticle>();
+
+  // Local news runtime map — populated from stable storage on upgrade
+  var localNewsItems = Map.empty<Nat, LocalNewsArticle>();
 
   var nextArticleId = 1;
   var nextBreakingNewsId = 1;
   var nextExternalNewsId = 1;
-  var nextLocalNewsId = 1;
+  var nextLocalNewsId = stableNextLocalNewsId;
   var lastFetchedAt : ?Time.Time = null;
+
+  // ── Restore local news from stable storage on canister init/upgrade ──────────
+  for ((k, v) in stableLocalNews.vals()) {
+    localNewsItems.add(k, v);
+  };
+
+  // ── Pre/post upgrade hooks to persist local news ─────────────────────────────
+  system func preupgrade() {
+    stableLocalNews := localNewsItems.entries().toArray();
+    stableNextLocalNewsId := nextLocalNewsId;
+  };
+
+  system func postupgrade() {
+    // Re-populate runtime map from stable storage after upgrade
+    for ((k, v) in stableLocalNews.vals()) {
+      localNewsItems.add(k, v);
+    };
+    nextLocalNewsId := stableNextLocalNewsId;
+  };
 
   // ── Transform function (strips headers for consensus) ────────────────────────
   public query func transform(args : TransformArgs) : async HttpResponse {
@@ -401,6 +426,9 @@ actor {
       publishedAt = Time.now();
     };
     localNewsItems.add(newsId, news);
+    // Persist to stable storage immediately
+    stableLocalNews := localNewsItems.entries().toArray();
+    stableNextLocalNewsId := nextLocalNewsId;
     newsId;
   };
 
@@ -419,6 +447,9 @@ actor {
       case null { false };
       case (?_) {
         ignore localNewsItems.remove(id);
+        // Persist deletion to stable storage
+        stableLocalNews := localNewsItems.entries().toArray();
+        stableNextLocalNewsId := nextLocalNewsId;
         true;
       };
     };
