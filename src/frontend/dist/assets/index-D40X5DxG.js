@@ -14776,8 +14776,8 @@ function BreakingNewsTicker() {
           style: {
             display: "flex",
             alignItems: "stretch",
-            /* Taller bar so Bengali ascenders/descenders always fit */
-            minHeight: "68px"
+            /* Reduced overall bar height so red label appears shorter */
+            minHeight: "60px"
           },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14835,10 +14835,10 @@ function BreakingNewsTicker() {
                   overflowY: "visible",
                   position: "relative",
                   backgroundColor: "#111111",
-                  /* Large vertical padding so Bengali matras above/below characters
+                  /* Increased vertical padding so Bengali matras above/below characters
                      are never clipped by the container boundary */
-                  paddingTop: "18px",
-                  paddingBottom: "18px"
+                  paddingTop: "26px",
+                  paddingBottom: "26px"
                 },
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
