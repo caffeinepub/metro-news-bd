@@ -50,39 +50,35 @@ export function BreakingNewsTicker() {
     <div
       className="w-full"
       style={{
-        backgroundColor: "oklch(0.4764 0.2183 22.8)",
-        paddingTop: "16px",
-        paddingBottom: "16px",
+        backgroundColor: "#111111",
+        /* No overflow clipping on the outer wrapper so Bengali diacritics are never cut */
         overflow: "visible",
-        height: "auto",
       }}
       aria-label="ব্রেকিং নিউজ"
     >
       <div
         style={{
           display: "flex",
-          alignItems: "center",
-          minHeight: "72px",
+          alignItems: "stretch",
+          /* Taller bar so Bengali ascenders/descenders always fit */
+          minHeight: "68px",
         }}
       >
-        {/* Label */}
+        {/* Label — red box */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: "6px",
-            padding: "10px 16px",
-            backgroundColor: "oklch(0.34 0.2183 22.8)",
+            padding: "0 16px",
+            backgroundColor: "#cc0000",
             color: "#ffffff",
             fontWeight: 700,
             fontSize: "12px",
             textTransform: "uppercase",
             letterSpacing: "0.08em",
-            lineHeight: "2.2",
             flexShrink: 0,
             whiteSpace: "nowrap",
-            overflow: "visible",
-            alignSelf: "stretch",
           }}
         >
           <span
@@ -103,20 +99,26 @@ export function BreakingNewsTicker() {
         <div
           style={{
             width: "2px",
-            alignSelf: "stretch",
-            backgroundColor: "oklch(0.38 0.2183 22.8)",
+            backgroundColor: "#333333",
             flexShrink: 0,
           }}
         />
 
-        {/* Scrolling content wrapper */}
+        {/* Scrolling content — black box.
+            Key fix: clip-path is avoided; overflow:hidden is set only on x-axis
+            so the container scrolls horizontally while giving vertical breathing
+            room via generous paddingTop/paddingBottom. */}
         <div
           style={{
             flex: 1,
-            overflow: "visible",
+            overflowX: "hidden",
+            overflowY: "visible",
             position: "relative",
-            paddingTop: "10px",
-            paddingBottom: "10px",
+            backgroundColor: "#111111",
+            /* Large vertical padding so Bengali matras above/below characters
+               are never clipped by the container boundary */
+            paddingTop: "18px",
+            paddingBottom: "18px",
           }}
         >
           <div
@@ -125,7 +127,6 @@ export function BreakingNewsTicker() {
               display: "flex",
               alignItems: "center",
               whiteSpace: "nowrap",
-              overflow: "visible",
             }}
           >
             {tickerContent.map((item, idx) => (
@@ -137,17 +138,17 @@ export function BreakingNewsTicker() {
                   alignItems: "center",
                   gap: "12px",
                   color: "#ffffff",
-                  fontSize: "12px",
+                  fontSize: "14px",
                   fontWeight: 600,
+                  /* lineHeight > 2 gives enough room for Bengali diacritics */
                   lineHeight: "2.2",
                 }}
               >
                 <span
                   style={{
-                    margin: "0 32px",
+                    margin: "0 28px",
                     color: "rgba(254,202,202,0.8)",
-                    fontSize: "12px",
-                    lineHeight: "2.2",
+                    fontSize: "11px",
                   }}
                 >
                   ◆
