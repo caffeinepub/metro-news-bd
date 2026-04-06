@@ -1,4 +1,6 @@
+import { useState } from "react";
 import type { Article } from "../backend";
+import { type NewsDetailItem, NewsDetailModal } from "./NewsDetailModal";
 
 interface NewsItem {
   id: number;
@@ -16,7 +18,7 @@ const staticLatestNews: NewsItem[] = [
     category: "প্রযুক্তি",
     title: "দেশে প্রথমবার ৫জি নেটওয়ার্ক চালু, গতি বেড়েছে দশগুণ",
     excerpt:
-      "টেলিযোগাযোগ বিভাগ জানিয়েছে, এই বছরের মধ্যে সারা দেশে ৫জি কভারেজ নিশ্চিত করা হবে।",
+      "টেলিযোগাযোগ বিভাগ জানিয়েছে, এই বছরের মধ্যে সারা দেশে ৫জি কভারেজ নিশ্চিত করা হবে। ৫জি প্রযুক্তি চালু হলে ডাউনলোড গতি ১ গিগাবিট পর্যন্ত পৌঁছাবে, যা বর্তমান ৪জি-র তুলনায় দশ গুণ বেশি। শিল্প বিশেষজ্ঞরা বলছেন এটি দেশের ডিজিটাল রূপান্তরে মাইলফলক হয়ে উঠবে।",
     author: "কামরুল ইসলাম",
     time: "১ ঘন্টা আগে",
     image: "/assets/generated/thumb-tech.dim_300x200.jpg",
@@ -25,7 +27,8 @@ const staticLatestNews: NewsItem[] = [
     id: 2,
     category: "অর্থনীতি",
     title: "দেশীয় শিল্পে বিনিয়োগ বৃদ্ধিতে নতুন প্রণোদনা প্যাকেজ ঘোষণা",
-    excerpt: "সরকার ঘরোয়া বিনিয়োগ বাড়াতে বিশেষ কর ছাড় ও ঋণ সুবিধার ঘোষণা দিয়েছে।",
+    excerpt:
+      "সরকার ঘরোয়া বিনিয়োগ বাড়াতে বিশেষ কর ছাড় ও ঋণ সুবিধার ঘোষণা দিয়েছে। নতুন প্যাকেজের আওতায় ক্ষুদ্র ও মাঝারি উদ্যোক্তারা সহজ শর্তে ঋণ পাবেন এবং করমুক্ত সুবিধা ভোগ করবেন। অর্থনীতিবিদরা বলছেন এই পদক্ষেপ কর্মসংস্থান বৃদ্ধিতে সহায়ক হবে।",
     author: "শাহানা পারভীন",
     time: "২ ঘন্টা আগে",
     image: "/assets/generated/thumb-business.dim_300x200.jpg",
@@ -34,7 +37,8 @@ const staticLatestNews: NewsItem[] = [
     id: 3,
     category: "ত্রাণ",
     title: "বন্যা দুর্গত এলাকায় ত্রাণ বিতরণ অব্যাহত, উদ্ধার কার্যক্রম চলছে",
-    excerpt: "সেনাবাহিনী ও স্বেচ্ছাসেবীরা বন্যাকবলিত অঞ্চলে সাহায্য পৌঁছে দিচ্ছেন।",
+    excerpt:
+      "সেনাবাহিনী ও স্বেচ্ছাসেবীরা বন্যাকবলিত অঞ্চলে সাহায্য পৌঁছে দিচ্ছেন। গত ৪৮ ঘণ্টায় ১০ হাজারেরও বেশি পরিবারকে নিরাপদ স্থানে সরিয়ে নেওয়া হয়েছে। খাদ্য, বিশুদ্ধ পানি ও চিকিৎসা সরবরাহ চলমান রয়েছে।",
     author: "আশরাফ উদ্দিন",
     time: "৩ ঘন্টা আগে",
     image: "/assets/generated/thumb-flood.dim_300x200.jpg",
@@ -44,7 +48,7 @@ const staticLatestNews: NewsItem[] = [
     category: "খেলাধুলা",
     title: "জাতীয় ফুটবল লিগে নতুন দলের যোগদান, উত্তেজনা বাড়ছে সমর্থকদের মধ্যে",
     excerpt:
-      "এবারের সিজনে তিনটি নতুন দল লিগে অংশ নিচ্ছে, যা প্রতিযোগিতাকে আরও তীব্র করে তুলবে।",
+      "এবারের সিজনে তিনটি নতুন দল লিগে অংশ নিচ্ছে, যা প্রতিযোগিতাকে আরও তীব্র করে তুলবে। নতুন দলগুলোর মধ্যে রয়েছে ঢাকা সিটি এফসি, চট্টগ্রাম পোর্ট ও সিলেট স্টার। বাফুফে জানিয়েছে এ বছর দর্শক উপস্থিতি ৩০% বাড়বে বলে আশা করা হচ্ছে।",
     author: "মিজানুর রহমান",
     time: "৪ ঘন্টা আগে",
     image: "/assets/generated/thumb-sports.dim_300x200.jpg",
@@ -54,7 +58,7 @@ const staticLatestNews: NewsItem[] = [
     category: "সংস্কৃতি",
     title: "আন্তর্জাতিক বইমেলায় বাংলাদেশ প্যাভিলিয়নে ব্যাপক সাড়া",
     excerpt:
-      "ফ্রাঙ্কফুর্ট বইমেলায় বাংলাদেশের প্যাভিলিয়ন প্রশংসিত হয়েছে বিদেশি দর্শনার্থীদের কাছে।",
+      "ফ্রাঙ্কফুর্ট বইমেলায় বাংলাদেশের প্যাভিলিয়ন প্রশংসিত হয়েছে বিদেশি দর্শনার্থীদের কাছে। ৫০টিরও বেশি বাংলাদেশি প্রকাশনা সংস্থা এতে অংশ নিয়েছে। বাংলা সাহিত্যের বেশ কয়েকটি বই ইংরেজিতে অনুবাদের আগ্রহ দেখিয়েছেন আন্তর্জাতিক প্রকাশকরা।",
     author: "নিলুফার হোসেন",
     time: "৫ ঘন্টা আগে",
     image: "/assets/generated/thumb-culture.dim_300x200.jpg",
@@ -64,7 +68,7 @@ const staticLatestNews: NewsItem[] = [
     category: "শিক্ষা",
     title: "পাবলিক বিশ্ববিদ্যালয়ে গবেষণা তহবিল দ্বিগুণ করার সিদ্ধান্ত",
     excerpt:
-      "বিশ্ববিদ্যালয় মঞ্জুরি কমিশন সারা দেশের পাবলিক বিশ্ববিদ্যালয়গুলোর গবেষণা বাজেট বাড়ানোর পরিকল্পনা ঘোষণা করেছে।",
+      "বিশ্ববিদ্যালয় মঞ্জুরি কমিশন সারা দেশের পাবলিক বিশ্ববিদ্যালয়গুলোর গবেষণা বাজেট বাড়ানোর পরিকল্পনা ঘোষণা করেছে। আগামী দুই বছরে এই তহবিল থেকে বিজ্ঞান, প্রকৌশল ও সামাজিক গবেষণায় ৫০০ কোটি টাকা বরাদ্দ করা হবে।",
     author: "হামিদ উল্লাহ",
     time: "৬ ঘন্টা আগে",
     image: "/assets/generated/thumb-education.dim_300x200.jpg",
@@ -98,6 +102,7 @@ interface LatestNewsProps {
 }
 
 export function LatestNews({ articles }: LatestNewsProps) {
+  const [selectedItem, setSelectedItem] = useState<NewsDetailItem | null>(null);
   const useBackendArticles = articles !== undefined;
 
   return (
@@ -133,11 +138,22 @@ export function LatestNews({ articles }: LatestNewsProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {useBackendArticles
             ? articles.map((article, i) => (
-                <article
+                <button
+                  type="button"
                   key={article.id.toString()}
                   data-ocid={`latest_news.item.${i + 1}`}
-                  className="flex gap-3 p-3 rounded cursor-pointer card-hover border"
+                  className="flex gap-3 p-3 rounded cursor-pointer card-hover border text-left w-full"
                   style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
+                  onClick={() =>
+                    setSelectedItem({
+                      title: article.title,
+                      summary: article.summary,
+                      category: article.category,
+                      author: article.author,
+                      time: formatPublishedAt(article.publishedAt),
+                      image: article.imageUrl || undefined,
+                    })
+                  }
                 >
                   {/* Thumbnail */}
                   <div
@@ -191,14 +207,25 @@ export function LatestNews({ articles }: LatestNewsProps) {
                       {formatPublishedAt(article.publishedAt)}
                     </p>
                   </div>
-                </article>
+                </button>
               ))
             : staticLatestNews.map((item, i) => (
-                <article
+                <button
+                  type="button"
                   key={item.id}
                   data-ocid={`latest_news.item.${i + 1}`}
-                  className="flex gap-3 p-3 rounded cursor-pointer card-hover border"
+                  className="flex gap-3 p-3 rounded cursor-pointer card-hover border text-left w-full"
                   style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
+                  onClick={() =>
+                    setSelectedItem({
+                      title: item.title,
+                      summary: item.excerpt,
+                      category: item.category,
+                      author: item.author,
+                      time: item.time,
+                      image: item.image,
+                    })
+                  }
                 >
                   {/* Thumbnail */}
                   <div
@@ -237,10 +264,15 @@ export function LatestNews({ articles }: LatestNewsProps) {
                       {item.author} · {item.time}
                     </p>
                   </div>
-                </article>
+                </button>
               ))}
         </div>
       )}
+
+      <NewsDetailModal
+        item={selectedItem}
+        onClose={() => setSelectedItem(null)}
+      />
     </section>
   );
 }

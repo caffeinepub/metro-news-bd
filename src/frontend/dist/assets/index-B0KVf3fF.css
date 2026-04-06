@@ -702,6 +702,9 @@ video {
 .z-\[200\] {
   z-index: 200;
 }
+.z-\[300\] {
+  z-index: 300;
+}
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -1393,6 +1396,10 @@ video {
 .rounded-r-md {
   border-top-right-radius: calc(var(--radius) - 2px);
   border-bottom-right-radius: calc(var(--radius) - 2px);
+}
+.rounded-t-lg {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 .rounded-tl-sm {
   border-top-left-radius: calc(var(--radius) - 4px);
