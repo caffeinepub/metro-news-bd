@@ -23,13 +23,12 @@ const sectionLinks = [
   "মতামত",
 ];
 
-const resourceLinks = [
-  "আমাদের সম্পর্কে",
-  "যোগাযোগ",
-  "বিজ্ঞাপন দিন",
-  "গোপনীয়তা নীতি",
-  "শর্তাবলী",
-  "আর্কাইভ",
+const quickLinks = [
+  { label: "যোগাযোগ", href: "#contact" },
+  { label: "আমাদের সম্পর্কে", href: "#about" },
+  { label: "বিজ্ঞাপন দিন", href: "#advertise" },
+  { label: "গোপনীয়তা নীতি", href: "#privacy" },
+  { label: "শর্তাবলী", href: "#terms" },
 ];
 
 function getPlatformIcon(platform: string) {
@@ -46,6 +45,20 @@ function getPlatformIcon(platform: string) {
   return <Globe size={16} />;
 }
 
+function getPlatformColor(platform: string): string {
+  const p = platform.toLowerCase();
+  if (p === "facebook") return "#1877f2";
+  if (p === "youtube") return "#ff0000";
+  if (p === "x" || p === "twitter") return "#000000";
+  if (p === "instagram") return "#e1306c";
+  if (p === "tiktok") return "#010101";
+  if (p === "linkedin") return "#0a66c2";
+  if (p === "whatsapp") return "#25d366";
+  if (p === "telegram") return "#229ed9";
+  if (p === "pinterest") return "#bd081c";
+  return "#dc2626";
+}
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const hostname =
@@ -55,18 +68,34 @@ export function Footer() {
   return (
     <footer
       className="w-full mt-12"
-      style={{ backgroundColor: "#0a0a0a", borderTop: "1px solid #2d2d2d" }}
+      style={{
+        background: "linear-gradient(to bottom, #0f0f0f, #0a0a0a)",
+        borderTop: "3px solid #dc2626",
+      }}
     >
-      <div className="max-w-[1200px] mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* About column */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
+      {/* Top decorative accent bar */}
+      <div
+        className="w-full h-0.5"
+        style={{
+          background:
+            "linear-gradient(to right, #dc2626, #1d4ed8, #d97706, #dc2626)",
+        }}
+      />
+
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-10 sm:py-12">
+        {/* 4-column grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {/* === Column 1: Branding + Contact === */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            {/* Logo + Site name */}
+            <div className="flex items-center gap-3 mb-4">
               <div
-                className="flex items-center justify-center w-8 h-8 rounded overflow-hidden font-bold text-base"
+                className="flex items-center justify-center shrink-0 rounded-md overflow-hidden"
                 style={{
-                  backgroundColor: "#1a1a1a",
-                  border: "1px solid #2d2d2d",
+                  width: 42,
+                  height: 42,
+                  border: "2px solid #dc2626",
+                  background: "#1a0000",
                 }}
               >
                 {settings.logoBase64 ? (
@@ -76,37 +105,60 @@ export function Footer() {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <>
-                    <span className="text-white">বা</span>
-                    <span className="news-red">নি</span>
-                  </>
+                  <span
+                    className="font-bold select-none"
+                    style={{ color: "#dc2626", fontSize: 18, lineHeight: 1 }}
+                  >
+                    বা
+                  </span>
                 )}
               </div>
-              <span className="text-white font-bold text-sm uppercase tracking-widest">
-                {settings.siteName}
-              </span>
-            </div>
-            <p
-              className="text-xs leading-relaxed mb-4"
-              style={{ color: "#9c9c9c" }}
-            >
-              {settings.aboutText}
-            </p>
-            {/* Contact Info */}
-            <div className="flex flex-col gap-2">
-              {settings.email && (
+              <div>
                 <div
-                  className="flex items-center gap-2"
-                  style={{ color: "#9c9c9c" }}
+                  className="font-bold text-white"
+                  style={{ fontSize: "1.05rem", letterSpacing: "0.04em" }}
+                >
+                  {settings.siteName}
+                </div>
+                <div
+                  className="text-xs uppercase"
+                  style={{
+                    color: "#d97706",
+                    letterSpacing: "0.1em",
+                    fontWeight: 500,
+                    marginTop: 1,
+                  }}
+                >
+                  {settings.tagline || "Voice of Truth & Freedom"}
+                </div>
+              </div>
+            </div>
+
+            {settings.aboutText && (
+              <p
+                className="text-xs leading-relaxed mb-4"
+                style={{ color: "#9ca3af" }}
+              >
+                {settings.aboutText}
+              </p>
+            )}
+
+            {/* Contact Info */}
+            <div className="flex flex-col gap-2 mt-2">
+              {settings.email && (
+                <a
+                  href={`mailto:${settings.email}`}
+                  className="flex items-center gap-2 hover:text-white transition-colors"
+                  style={{ color: "#9ca3af" }}
                 >
                   <Mail size={12} className="shrink-0" />
                   <span className="text-xs">{settings.email}</span>
-                </div>
+                </a>
               )}
               {settings.phone && (
                 <div
                   className="flex items-center gap-2"
-                  style={{ color: "#9c9c9c" }}
+                  style={{ color: "#9ca3af" }}
                 >
                   <Phone size={12} className="shrink-0" />
                   <span className="text-xs">{settings.phone}</span>
@@ -115,7 +167,7 @@ export function Footer() {
               {settings.address && (
                 <div
                   className="flex items-start gap-2"
-                  style={{ color: "#9c9c9c" }}
+                  style={{ color: "#9ca3af" }}
                 >
                   <MapPin size={12} className="shrink-0 mt-0.5" />
                   <span className="text-xs">{settings.address}</span>
@@ -124,7 +176,7 @@ export function Footer() {
               {settings.editorName && (
                 <div
                   className="flex items-center gap-2"
-                  style={{ color: "#9c9c9c" }}
+                  style={{ color: "#9ca3af" }}
                 >
                   <User size={12} className="shrink-0" />
                   <span className="text-xs">সম্পাদক: {settings.editorName}</span>
@@ -133,7 +185,7 @@ export function Footer() {
               {settings.establishedYear && (
                 <div
                   className="flex items-center gap-2"
-                  style={{ color: "#9c9c9c" }}
+                  style={{ color: "#6b7280" }}
                 >
                   <span className="text-xs">
                     প্রতিষ্ঠা: {settings.establishedYear}
@@ -143,9 +195,12 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Sections column */}
+          {/* === Column 2: বিভাগ === */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
+            <h3
+              className="text-xs font-bold uppercase tracking-widest mb-4"
+              style={{ color: "#d97706" }}
+            >
               বিভাগ
             </h3>
             <ul className="space-y-2">
@@ -153,9 +208,13 @@ export function Footer() {
                 <li key={link}>
                   <a
                     href="#content"
-                    className="text-xs transition-colors hover:text-white"
-                    style={{ color: "#9c9c9c" }}
+                    className="text-xs transition-colors hover:text-white flex items-center gap-1.5 group"
+                    style={{ color: "#9ca3af" }}
                   >
+                    <span
+                      className="w-1 h-1 rounded-full shrink-0 group-hover:bg-red-500 transition-colors"
+                      style={{ backgroundColor: "#4b5563" }}
+                    />
                     {link}
                   </a>
                 </li>
@@ -163,73 +222,112 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources column */}
+          {/* === Column 3: দ্রুত লিংক (5 legal/info links) === */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
-              রিসোর্স
+            <h3
+              className="text-xs font-bold uppercase tracking-widest mb-4"
+              style={{ color: "#d97706" }}
+            >
+              দ্রুত লিংক
             </h3>
             <ul className="space-y-2">
-              {resourceLinks.map((link) => (
-                <li key={link}>
+              {quickLinks.map((item) => (
+                <li key={item.label}>
                   <a
-                    href="#content"
-                    className="text-xs transition-colors hover:text-white"
-                    style={{ color: "#9c9c9c" }}
+                    href={item.href}
+                    data-ocid={`footer.quick.${item.label}.link`}
+                    className="text-xs transition-colors hover:text-white flex items-center gap-1.5 group"
+                    style={{ color: "#9ca3af" }}
                   >
-                    {link}
+                    <span
+                      className="w-1 h-1 rounded-full shrink-0 group-hover:bg-red-500 transition-colors"
+                      style={{ backgroundColor: "#4b5563" }}
+                    />
+                    {item.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Social media column */}
+          {/* === Column 4: সোশ্যাল মিডিয়া (icon-only circular buttons) === */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
+            <h3
+              className="text-xs font-bold uppercase tracking-widest mb-4"
+              style={{ color: "#d97706" }}
+            >
               সোশ্যাল মিডিয়া
             </h3>
-            <div className="flex flex-col gap-3">
-              {settings.socialLinks.map((link, idx) => (
-                <a
-                  key={link.id}
-                  href={link.url}
-                  data-ocid={`footer.social.link.${idx + 1}`}
-                  className="flex items-center gap-2.5 text-xs transition-colors group"
-                  style={{ color: "#9c9c9c" }}
-                  aria-label={link.platform}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="group-hover:text-white transition-colors">
-                    {getPlatformIcon(link.platform)}
-                  </span>
-                  <span className="group-hover:text-white transition-colors">
-                    {link.handle || link.platform}
-                  </span>
-                </a>
-              ))}
-              {settings.socialLinks.length === 0 && (
-                <p className="text-xs" style={{ color: "#6b6b6b" }}>
-                  কোনো সোশ্যাল মিডিয়া যোগ করা হয়নি
+            {settings.socialLinks.length > 0 ? (
+              <>
+                <div className="flex flex-wrap gap-2">
+                  {settings.socialLinks.map((link, idx) => (
+                    <a
+                      key={link.id}
+                      href={link.url}
+                      data-ocid={`footer.social.link.${idx + 1}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.platform}
+                      title={link.platform}
+                      className="flex items-center justify-center rounded-full transition-all duration-200 hover:scale-110 hover:shadow-lg"
+                      style={{
+                        width: 38,
+                        height: 38,
+                        backgroundColor: "#1f1f1f",
+                        border: "1px solid #2d2d2d",
+                        color: "#9ca3af",
+                      }}
+                      onMouseEnter={(e) => {
+                        const el = e.currentTarget as HTMLAnchorElement;
+                        el.style.backgroundColor = getPlatformColor(
+                          link.platform,
+                        );
+                        el.style.color = "#ffffff";
+                        el.style.border = `1px solid ${getPlatformColor(link.platform)}`;
+                      }}
+                      onMouseLeave={(e) => {
+                        const el = e.currentTarget as HTMLAnchorElement;
+                        el.style.backgroundColor = "#1f1f1f";
+                        el.style.color = "#9ca3af";
+                        el.style.border = "1px solid #2d2d2d";
+                      }}
+                    >
+                      {getPlatformIcon(link.platform)}
+                    </a>
+                  ))}
+                </div>
+                <p className="text-xs mt-4" style={{ color: "#6b7280" }}>
+                  আমাদের সাথে যুক্ত থাকুন
                 </p>
-              )}
-            </div>
+              </>
+            ) : (
+              <p className="text-xs" style={{ color: "#6b7280" }}>
+                কোনো সোশ্যাল মিডিয়া যোগ করা হয়নি
+              </p>
+            )}
           </div>
         </div>
 
-        {/* Journalists section if any */}
+        {/* === Journalists section === */}
         {settings.journalists.length > 0 && (
-          <div className="mt-8 pt-6" style={{ borderTop: "1px solid #2d2d2d" }}>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
+          <div
+            className="mt-10 pt-6"
+            style={{ borderTop: "1px solid #1f1f1f" }}
+          >
+            <h3
+              className="text-xs font-bold uppercase tracking-widest mb-4"
+              style={{ color: "#d97706" }}
+            >
               আমাদের সাংবাদিক দল
             </h3>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 sm:gap-6">
               {settings.journalists.map((j) => (
                 <div key={j.id} className="flex flex-col gap-0.5">
                   <span className="text-xs font-medium text-white">
                     {j.name}
                   </span>
-                  <span className="text-xs" style={{ color: "#6b6b6b" }}>
+                  <span className="text-xs" style={{ color: "#6b7280" }}>
                     {j.role}
                   </span>
                 </div>
@@ -238,25 +336,58 @@ export function Footer() {
           </div>
         )}
 
-        {/* Bottom bar */}
-        <div
-          className="mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
-          style={{ borderTop: "1px solid #2d2d2d", color: "#6b6b6b" }}
-        >
-          <p>
-            © {currentYear} {settings.siteName}। সকল স্বত্ব সংরক্ষিত।
-          </p>
-          <p>
-            Built with ❤️ using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
-              className="hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
+        {/* === Bottom bar === */}
+        <div className="mt-10 pt-5" style={{ borderTop: "1px solid #1f1f1f" }}>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            {/* Left: copyright */}
+            <p className="text-xs" style={{ color: "#6b7280" }}>
+              © {currentYear} {settings.siteName}। সকল স্বত্ব সংরক্ষিত।
+            </p>
+
+            {/* Center: inline legal links */}
+            <div
+              className="flex items-center flex-wrap justify-center gap-1 text-xs"
+              style={{ color: "#6b7280" }}
             >
-              caffeine.ai
-            </a>
-          </p>
+              <a
+                href="#contact"
+                data-ocid="footer.bottom.contact.link"
+                className="hover:text-white transition-colors"
+              >
+                যোগাযোগ
+              </a>
+              <span className="opacity-40">|</span>
+              <a
+                href="#privacy"
+                data-ocid="footer.bottom.privacy.link"
+                className="hover:text-white transition-colors"
+              >
+                গোপনীয়তা নীতি
+              </a>
+              <span className="opacity-40">|</span>
+              <a
+                href="#terms"
+                data-ocid="footer.bottom.terms.link"
+                className="hover:text-white transition-colors"
+              >
+                শর্তাবলী
+              </a>
+            </div>
+
+            {/* Right: caffeine attribution */}
+            <p className="text-xs" style={{ color: "#6b7280" }}>
+              Built with ❤️ using{" "}
+              <a
+                href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
+                className="hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#d97706" }}
+              >
+                caffeine.ai
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

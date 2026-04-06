@@ -1,40 +1,37 @@
 # বালীগাঁও নিউজ
 
 ## Current State
-- Sticky header with white background, minimalist design, logo on left, site name and tagline
-- Desktop nav bar (horizontal) below the header with 14 nav links
-- Mobile hamburger menu drawer
-- Breaking news ticker (red scrolling bar)
-- Hero slider, Editor's Picks, Latest News grid (dark cards on dark background)
-- Weather section, External News section (3 tabs: national, online, international)
-- Settings modal, News Post modal
-- Footer
-- Dark background (#0b0b0b) for main content with dark cards
+- Footer exists with dark (#0a0a0a) background, 4-column grid: branding/contact, sections, resources, social media
+- Footer has resourceLinks list with যোগাযোগ, আমাদের সম্পর্কে, বিজ্ঞাপন দিন, গোপনীয়তা নীতি, শর্তাবলী — but they are not visually prominent
+- Social media icons in footer are text-based with icons, but not styled as icon-only buttons
+- Header has desktop/mobile preview switch in the nav bar
+- Interface is mostly responsive but footer and some sections could be improved on mobile landscape
+- All functionality (news posting, settings, weather, aggregated news, modals) intact
 
 ## Requested Changes (Diff)
 
 ### Add
-- Device preview switch button in the nav bar area: Mobile icon = show mobile-width preview, Desktop icon = show full-width layout. This is a toggle switch that simulates device width.
-- Breaking news section redesigned as highlighted scrolling ticker OR highlighted cards at the top (improve visual presentation)
-- Each news card should show: image, title, short excerpt/summary
-- Clicking a card opens a modal with detailed summary and source link below
+- Footer: dedicated section with clearly labeled links for যোগাযোগ, আমাদের সম্পর্কে, বিজ্ঞাপন দিন, গোপনীয়তা নীতি, শর্তাবলী as clickable buttons/links
+- Footer: social media icons displayed as circular/rounded icon buttons (not text + icon)
+- Mobile/Desktop switch button prominently accessible — ensure it works on both mobile and desktop views
+- Full responsive support for mobile portrait, mobile landscape, and desktop
 
 ### Modify
-- Navigation: Desktop = horizontal nav bar (already exists, keep), Mobile = hamburger icon (already exists, keep). Ensure they work cleanly.
-- Add device preview switch button next to the nav bar (desktop/mobile toggle icons) — in the header or nav bar row.
-- Breaking news ticker: upgrade to be more visually prominent — either animated scrolling ticker with red highlight or highlighted card layout.
-- News cards (LatestNews, HeroSlider, ExternalNews, EditorsPicks): ensure each card shows image + title + short excerpt. Currently many cards have dark backgrounds (#1a1a1a); update to white/light card style with shadow to match the minimalist white+dark-gray theme.
-- App.tsx main background: change from #0b0b0b (dark) to white/light gray to match the updated white theme from header.
-- Section headings and dividers: update from dark theme colors to light theme colors.
+- Footer redesign: modern, professional layout with white/light background or attractive dark theme; distinct sections for contact info, about/legal links, and social icons
+- Footer social media: icon-only circular buttons with hover effects, visible branding colors
+- Footer bottom bar: copyright + legal links in a clean bottom strip
+- Ensure mobile/desktop preview switch is visible and functional in header nav bar on all screen sizes
+- Responsive breakpoints: fine-tune padding, font sizes, grid columns for mobile portrait (320-480px), mobile landscape (480-768px), tablet (768-1024px), desktop (1024px+)
 
 ### Remove
-- Dark background on main content area (was #0b0b0b)
-- Dark card styles (#1a1a1a background) — replace with white cards with shadows
+- Nothing removed — all functionality preserved
 
 ## Implementation Plan
-1. Update App.tsx: change background from #0b0b0b to #f8f9fa (light gray), update dividers to light colors
-2. Update Header.tsx: Add device preview switch button (Mobile icon / Desktop icon toggle) next to or in the nav bar. When mobile mode active, wrap main content in a constrained width container.
-3. Update BreakingNewsTicker.tsx: Enhance with better visual design — larger height, bolder label, smoother animation
-4. Update LatestNews.tsx: change card style from dark (#1a1a1a) to white with shadow; ensure image + title + excerpt visible on card
-5. Update HeroSlider, EditorsPicks, ExternalNewsSection: same card style update to light theme
-6. Ensure device preview switch in App.tsx wraps content when mobile mode is active (e.g., max-width: 390px centered)
+1. Redesign Footer.tsx:
+   - Update layout to have a clear top section with: branding+contact, quick links (sections), legal links (যোগাযোগ, আমাদের সম্পর্কে, বিজ্ঞাপন দিন, গোপনীয়তা নীতি, শর্তাবলী), social icons row
+   - Social media: render as icon-only circular buttons in a row/grid with hover color effects
+   - Bottom bar: copyright text + legal quick links
+   - Responsive: 1 col mobile, 2 col tablet, 4 col desktop
+2. Ensure Header device preview switch is usable on all screen sizes (already in desktop nav; consider adding to mobile menu too)
+3. Review and improve responsive breakpoints across the layout
+4. All existing settings context (SiteSettingsContext) data still used in footer

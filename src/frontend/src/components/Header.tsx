@@ -370,6 +370,56 @@ export function Header({
                 label="সংবাদ পোস্ট করুন"
               />
             )}
+
+            {/* Device Preview Switch — visible in mobile drawer */}
+            {onPreviewChange && (
+              <div
+                className="flex items-center gap-2 px-3 py-2.5 mt-1"
+                data-ocid="mobile.preview_switch.toggle"
+              >
+                <span style={{ color: "#6b7280", fontSize: 12 }}>ভিউ:</span>
+                <button
+                  type="button"
+                  data-ocid="mobile.preview_mobile.button"
+                  aria-label="মোবাইল ভিউ"
+                  title="মোবাইল ভিউ"
+                  onClick={() => onPreviewChange("mobile")}
+                  className="flex items-center gap-1 px-2.5 py-1.5 rounded text-xs font-medium transition-all duration-200"
+                  style={{
+                    backgroundColor:
+                      previewMode === "mobile" ? "#dc2626" : "#f3f4f6",
+                    color: previewMode === "mobile" ? "#ffffff" : "#6b7280",
+                    border:
+                      previewMode === "mobile"
+                        ? "1px solid #dc2626"
+                        : "1px solid #e5e7eb",
+                  }}
+                >
+                  <Smartphone size={13} />
+                  <span>মোবাইল</span>
+                </button>
+                <button
+                  type="button"
+                  data-ocid="mobile.preview_desktop.button"
+                  aria-label="ডেস্কটপ ভিউ"
+                  title="ডেস্কটপ ভিউ"
+                  onClick={() => onPreviewChange("desktop")}
+                  className="flex items-center gap-1 px-2.5 py-1.5 rounded text-xs font-medium transition-all duration-200"
+                  style={{
+                    backgroundColor:
+                      previewMode === "desktop" ? "#dc2626" : "#f3f4f6",
+                    color: previewMode === "desktop" ? "#ffffff" : "#6b7280",
+                    border:
+                      previewMode === "desktop"
+                        ? "1px solid #dc2626"
+                        : "1px solid #e5e7eb",
+                  }}
+                >
+                  <Monitor size={13} />
+                  <span>ডেস্কটপ</span>
+                </button>
+              </div>
+            )}
           </div>
         </nav>
       )}

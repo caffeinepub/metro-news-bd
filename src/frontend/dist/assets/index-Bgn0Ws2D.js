@@ -17046,13 +17046,12 @@ const sectionLinks = [
   "বিনোদন",
   "মতামত"
 ];
-const resourceLinks = [
-  "আমাদের সম্পর্কে",
-  "যোগাযোগ",
-  "বিজ্ঞাপন দিন",
-  "গোপনীয়তা নীতি",
-  "শর্তাবলী",
-  "আর্কাইভ"
+const quickLinks = [
+  { label: "যোগাযোগ", href: "#contact" },
+  { label: "আমাদের সম্পর্কে", href: "#about" },
+  { label: "বিজ্ঞাপন দিন", href: "#advertise" },
+  { label: "গোপনীয়তা নীতি", href: "#privacy" },
+  { label: "শর্তাবলী", href: "#terms" }
 ];
 function getPlatformIcon$1(platform) {
   const p2 = platform.toLowerCase();
@@ -17067,197 +17066,357 @@ function getPlatformIcon$1(platform) {
   if (p2 === "pinterest") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiPinterest, { size: 16 });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 16 });
 }
+function getPlatformColor(platform) {
+  const p2 = platform.toLowerCase();
+  if (p2 === "facebook") return "#1877f2";
+  if (p2 === "youtube") return "#ff0000";
+  if (p2 === "x" || p2 === "twitter") return "#000000";
+  if (p2 === "instagram") return "#e1306c";
+  if (p2 === "tiktok") return "#010101";
+  if (p2 === "linkedin") return "#0a66c2";
+  if (p2 === "whatsapp") return "#25d366";
+  if (p2 === "telegram") return "#229ed9";
+  if (p2 === "pinterest") return "#bd081c";
+  return "#dc2626";
+}
 function Footer() {
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
   const hostname = typeof window !== "undefined" ? window.location.hostname : "";
   const { settings } = useSiteSettings();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "footer",
     {
       className: "w-full mt-12",
-      style: { backgroundColor: "#0a0a0a", borderTop: "1px solid #2d2d2d" },
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-10", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "div",
-                {
-                  className: "flex items-center justify-center w-8 h-8 rounded overflow-hidden font-bold text-base",
-                  style: {
-                    backgroundColor: "#1a1a1a",
-                    border: "1px solid #2d2d2d"
-                  },
-                  children: settings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "img",
-                    {
-                      src: settings.logoBase64,
-                      alt: settings.siteName,
-                      className: "w-full h-full object-cover"
-                    }
-                  ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
-                  ] })
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-bold text-sm uppercase tracking-widest", children: settings.siteName })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "p",
-              {
-                className: "text-xs leading-relaxed mb-4",
-                style: { color: "#9c9c9c" },
-                children: settings.aboutText
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2", children: [
-              settings.email && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-center gap-2",
-                  style: { color: "#9c9c9c" },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { size: 12, className: "shrink-0" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.email })
-                  ]
-                }
-              ),
-              settings.phone && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-center gap-2",
-                  style: { color: "#9c9c9c" },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { size: 12, className: "shrink-0" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.phone })
-                  ]
-                }
-              ),
-              settings.address && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-start gap-2",
-                  style: { color: "#9c9c9c" },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { size: 12, className: "shrink-0 mt-0.5" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.address })
-                  ]
-                }
-              ),
-              settings.editorName && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-center gap-2",
-                  style: { color: "#9c9c9c" },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 12, className: "shrink-0" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", children: [
-                      "সম্পাদক: ",
-                      settings.editorName
-                    ] })
-                  ]
-                }
-              ),
-              settings.establishedYear && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "div",
-                {
-                  className: "flex items-center gap-2",
-                  style: { color: "#9c9c9c" },
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", children: [
-                    "প্রতিষ্ঠা: ",
-                    settings.establishedYear
-                  ] })
-                }
-              )
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "বিভাগ" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: sectionLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "a",
-              {
-                href: "#content",
-                className: "text-xs transition-colors hover:text-white",
-                style: { color: "#9c9c9c" },
-                children: link
-              }
-            ) }, link)) })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "রিসোর্স" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: resourceLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "a",
-              {
-                href: "#content",
-                className: "text-xs transition-colors hover:text-white",
-                style: { color: "#9c9c9c" },
-                children: link
-              }
-            ) }, link)) })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "সোশ্যাল মিডিয়া" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3", children: [
-              settings.socialLinks.map((link, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: link.url,
-                  "data-ocid": `footer.social.link.${idx + 1}`,
-                  className: "flex items-center gap-2.5 text-xs transition-colors group",
-                  style: { color: "#9c9c9c" },
-                  "aria-label": link.platform,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: getPlatformIcon$1(link.platform) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: link.handle || link.platform })
-                  ]
-                },
-                link.id
-              )),
-              settings.socialLinks.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "#6b6b6b" }, children: "কোনো সোশ্যাল মিডিয়া যোগ করা হয়নি" })
-            ] })
-          ] })
-        ] }),
-        settings.journalists.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 pt-6", style: { borderTop: "1px solid #2d2d2d" }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "আমাদের সাংবাদিক দল" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-4", children: settings.journalists.map((j2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-white", children: j2.name }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: j2.role })
-          ] }, j2.id)) })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      style: {
+        background: "linear-gradient(to bottom, #0f0f0f, #0a0a0a)",
+        borderTop: "3px solid #dc2626"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs",
-            style: { borderTop: "1px solid #2d2d2d", color: "#6b6b6b" },
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-                "© ",
-                currentYear,
-                " ",
-                settings.siteName,
-                "। সকল স্বত্ব সংরক্ষিত।"
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-                "Built with ❤️ using",
-                " ",
+            className: "w-full h-0.5",
+            style: {
+              background: "linear-gradient(to right, #dc2626, #1d4ed8, #d97706, #dc2626)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 sm:px-6 py-10 sm:py-12", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sm:col-span-2 lg:col-span-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-4", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "flex items-center justify-center shrink-0 rounded-md overflow-hidden",
+                    style: {
+                      width: 42,
+                      height: 42,
+                      border: "2px solid #dc2626",
+                      background: "#1a0000"
+                    },
+                    children: settings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "img",
+                      {
+                        src: settings.logoBase64,
+                        alt: settings.siteName,
+                        className: "w-full h-full object-cover"
+                      }
+                    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "font-bold select-none",
+                        style: { color: "#dc2626", fontSize: 18, lineHeight: 1 },
+                        children: "বা"
+                      }
+                    )
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "font-bold text-white",
+                      style: { fontSize: "1.05rem", letterSpacing: "0.04em" },
+                      children: settings.siteName
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "text-xs uppercase",
+                      style: {
+                        color: "#d97706",
+                        letterSpacing: "0.1em",
+                        fontWeight: 500,
+                        marginTop: 1
+                      },
+                      children: settings.tagline || "Voice of Truth & Freedom"
+                    }
+                  )
+                ] })
+              ] }),
+              settings.aboutText && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "p",
+                {
+                  className: "text-xs leading-relaxed mb-4",
+                  style: { color: "#9ca3af" },
+                  children: settings.aboutText
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2 mt-2", children: [
+                settings.email && /* @__PURE__ */ jsxRuntimeExports.jsxs(
                   "a",
                   {
-                    href: `https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`,
-                    className: "hover:text-white transition-colors",
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "caffeine.ai"
+                    href: `mailto:${settings.email}`,
+                    className: "flex items-center gap-2 hover:text-white transition-colors",
+                    style: { color: "#9ca3af" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { size: 12, className: "shrink-0" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.email })
+                    ]
+                  }
+                ),
+                settings.phone && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-center gap-2",
+                    style: { color: "#9ca3af" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { size: 12, className: "shrink-0" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.phone })
+                    ]
+                  }
+                ),
+                settings.address && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-start gap-2",
+                    style: { color: "#9ca3af" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { size: 12, className: "shrink-0 mt-0.5" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.address })
+                    ]
+                  }
+                ),
+                settings.editorName && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-center gap-2",
+                    style: { color: "#9ca3af" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 12, className: "shrink-0" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", children: [
+                        "সম্পাদক: ",
+                        settings.editorName
+                      ] })
+                    ]
+                  }
+                ),
+                settings.establishedYear && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "flex items-center gap-2",
+                    style: { color: "#6b7280" },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", children: [
+                      "প্রতিষ্ঠা: ",
+                      settings.establishedYear
+                    ] })
                   }
                 )
               ] })
-            ]
-          }
-        )
-      ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "h3",
+                {
+                  className: "text-xs font-bold uppercase tracking-widest mb-4",
+                  style: { color: "#d97706" },
+                  children: "বিভাগ"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: sectionLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: "#content",
+                  className: "text-xs transition-colors hover:text-white flex items-center gap-1.5 group",
+                  style: { color: "#9ca3af" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "w-1 h-1 rounded-full shrink-0 group-hover:bg-red-500 transition-colors",
+                        style: { backgroundColor: "#4b5563" }
+                      }
+                    ),
+                    link
+                  ]
+                }
+              ) }, link)) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "h3",
+                {
+                  className: "text-xs font-bold uppercase tracking-widest mb-4",
+                  style: { color: "#d97706" },
+                  children: "দ্রুত লিংক"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: quickLinks.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: item.href,
+                  "data-ocid": `footer.quick.${item.label}.link`,
+                  className: "text-xs transition-colors hover:text-white flex items-center gap-1.5 group",
+                  style: { color: "#9ca3af" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "w-1 h-1 rounded-full shrink-0 group-hover:bg-red-500 transition-colors",
+                        style: { backgroundColor: "#4b5563" }
+                      }
+                    ),
+                    item.label
+                  ]
+                }
+              ) }, item.label)) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "h3",
+                {
+                  className: "text-xs font-bold uppercase tracking-widest mb-4",
+                  style: { color: "#d97706" },
+                  children: "সোশ্যাল মিডিয়া"
+                }
+              ),
+              settings.socialLinks.length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: settings.socialLinks.map((link, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "a",
+                  {
+                    href: link.url,
+                    "data-ocid": `footer.social.link.${idx + 1}`,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    "aria-label": link.platform,
+                    title: link.platform,
+                    className: "flex items-center justify-center rounded-full transition-all duration-200 hover:scale-110 hover:shadow-lg",
+                    style: {
+                      width: 38,
+                      height: 38,
+                      backgroundColor: "#1f1f1f",
+                      border: "1px solid #2d2d2d",
+                      color: "#9ca3af"
+                    },
+                    onMouseEnter: (e) => {
+                      const el = e.currentTarget;
+                      el.style.backgroundColor = getPlatformColor(
+                        link.platform
+                      );
+                      el.style.color = "#ffffff";
+                      el.style.border = `1px solid ${getPlatformColor(link.platform)}`;
+                    },
+                    onMouseLeave: (e) => {
+                      const el = e.currentTarget;
+                      el.style.backgroundColor = "#1f1f1f";
+                      el.style.color = "#9ca3af";
+                      el.style.border = "1px solid #2d2d2d";
+                    },
+                    children: getPlatformIcon$1(link.platform)
+                  },
+                  link.id
+                )) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs mt-4", style: { color: "#6b7280" }, children: "আমাদের সাথে যুক্ত থাকুন" })
+              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "#6b7280" }, children: "কোনো সোশ্যাল মিডিয়া যোগ করা হয়নি" })
+            ] })
+          ] }),
+          settings.journalists.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "mt-10 pt-6",
+              style: { borderTop: "1px solid #1f1f1f" },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "h3",
+                  {
+                    className: "text-xs font-bold uppercase tracking-widest mb-4",
+                    style: { color: "#d97706" },
+                    children: "আমাদের সাংবাদিক দল"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-4 sm:gap-6", children: settings.journalists.map((j2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-white", children: j2.name }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#6b7280" }, children: j2.role })
+                ] }, j2.id)) })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 pt-5", style: { borderTop: "1px solid #1f1f1f" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-between gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "#6b7280" }, children: [
+              "© ",
+              currentYear,
+              " ",
+              settings.siteName,
+              "। সকল স্বত্ব সংরক্ষিত।"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "flex items-center flex-wrap justify-center gap-1 text-xs",
+                style: { color: "#6b7280" },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "a",
+                    {
+                      href: "#contact",
+                      "data-ocid": "footer.bottom.contact.link",
+                      className: "hover:text-white transition-colors",
+                      children: "যোগাযোগ"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "opacity-40", children: "|" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "a",
+                    {
+                      href: "#privacy",
+                      "data-ocid": "footer.bottom.privacy.link",
+                      className: "hover:text-white transition-colors",
+                      children: "গোপনীয়তা নীতি"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "opacity-40", children: "|" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "a",
+                    {
+                      href: "#terms",
+                      "data-ocid": "footer.bottom.terms.link",
+                      className: "hover:text-white transition-colors",
+                      children: "শর্তাবলী"
+                    }
+                  )
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "#6b7280" }, children: [
+              "Built with ❤️ using",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "a",
+                {
+                  href: `https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`,
+                  className: "hover:text-white transition-colors",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  style: { color: "#d97706" },
+                  children: "caffeine.ai"
+                }
+              )
+            ] })
+          ] }) })
+        ] })
+      ]
     }
   );
 }
@@ -17613,6 +17772,56 @@ function Header({
                     ocid: "mobile.post_news.button",
                     className: "w-full justify-center mt-1",
                     label: "সংবাদ পোস্ট করুন"
+                  }
+                ),
+                onPreviewChange && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-center gap-2 px-3 py-2.5 mt-1",
+                    "data-ocid": "mobile.preview_switch.toggle",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#6b7280", fontSize: 12 }, children: "ভিউ:" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "button",
+                        {
+                          type: "button",
+                          "data-ocid": "mobile.preview_mobile.button",
+                          "aria-label": "মোবাইল ভিউ",
+                          title: "মোবাইল ভিউ",
+                          onClick: () => onPreviewChange("mobile"),
+                          className: "flex items-center gap-1 px-2.5 py-1.5 rounded text-xs font-medium transition-all duration-200",
+                          style: {
+                            backgroundColor: previewMode === "mobile" ? "#dc2626" : "#f3f4f6",
+                            color: previewMode === "mobile" ? "#ffffff" : "#6b7280",
+                            border: previewMode === "mobile" ? "1px solid #dc2626" : "1px solid #e5e7eb"
+                          },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(Smartphone, { size: 13 }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "মোবাইল" })
+                          ]
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "button",
+                        {
+                          type: "button",
+                          "data-ocid": "mobile.preview_desktop.button",
+                          "aria-label": "ডেস্কটপ ভিউ",
+                          title: "ডেস্কটপ ভিউ",
+                          onClick: () => onPreviewChange("desktop"),
+                          className: "flex items-center gap-1 px-2.5 py-1.5 rounded text-xs font-medium transition-all duration-200",
+                          style: {
+                            backgroundColor: previewMode === "desktop" ? "#dc2626" : "#f3f4f6",
+                            color: previewMode === "desktop" ? "#ffffff" : "#6b7280",
+                            border: previewMode === "desktop" ? "1px solid #dc2626" : "1px solid #e5e7eb"
+                          },
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(Monitor, { size: 13 }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "ডেস্কটপ" })
+                          ]
+                        }
+                      )
+                    ]
                   }
                 )
               ] })
