@@ -16,6 +16,7 @@ import { SiteSettingsProvider } from "./context/SiteSettingsContext";
 import { useGetAllArticles } from "./hooks/useQueries";
 
 type NewsTabCategory = "national" | "online" | "international" | null;
+type CategoryFilter = string | null;
 
 function AppContent() {
   const [showPostModal, setShowPostModal] = useState(false);
@@ -24,6 +25,8 @@ function AppContent() {
     "desktop",
   );
   const [activeNewsTab, setActiveNewsTab] = useState<NewsTabCategory>(null);
+  const [activeCategoryFilter, setActiveCategoryFilter] =
+    useState<CategoryFilter>(null);
 
   const { data: allArticles, refetch: refetchArticles } = useGetAllArticles();
 
@@ -42,9 +45,18 @@ function AppContent() {
   // All articles for category grouping
   const hasBackendArticles = allArticles !== undefined;
 
-  // Handle nav category click — set tab and scroll to external news section
-  function handleCategoryNav(tab: "national" | "online" | "international") {
-    setActiveNewsTab(tab);
+  // Handle nav category click — set tab/category filter and scroll to external news section
+  function handleCategoryNav(
+    tab: "national" | "online" | "international" | null,
+    category?: string,
+  ) {
+    if (tab) {
+      setActiveNewsTab(tab);
+      setActiveCategoryFilter(null);
+    } else if (category) {
+      setActiveCategoryFilter(category);
+      setActiveNewsTab(null);
+    }
     setTimeout(() => {
       const el = document.getElementById("external-news-section");
       if (el) {
@@ -128,7 +140,10 @@ function AppContent() {
           id="external-news-section"
           className="max-w-[1200px] mx-auto px-4 py-8"
         >
-          <ExternalNewsSection initialTab={activeNewsTab ?? "national"} />
+          <ExternalNewsSection
+            initialTab={activeNewsTab}
+            categoryFilter={activeCategoryFilter}
+          />
         </div>
       </main>
 

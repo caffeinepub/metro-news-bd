@@ -14,6 +14,7 @@ const navLinks: {
   label: string;
   href: string;
   tab?: "national" | "online" | "international";
+  category?: string;
 }[] = [
   { label: "হোম", href: "#home" },
   { label: "স্থানীয় খবর", href: "#local-news" },
@@ -23,10 +24,10 @@ const navLinks: {
     href: "#external-news-section",
     tab: "international",
   },
-  { label: "শিক্ষা", href: "#education" },
-  { label: "স্বাস্থ্য", href: "#health" },
-  { label: "কৃষি", href: "#agriculture" },
-  { label: "খেলাধুলা", href: "#sports" },
+  { label: "শিক্ষা", href: "#external-news-section", category: "শিক্ষা" },
+  { label: "স্বাস্থ্য", href: "#external-news-section", category: "স্বাস্থ্য" },
+  { label: "কৃষি", href: "#external-news-section", category: "কৃষি" },
+  { label: "খেলাধুলা", href: "#external-news-section", category: "ক্রীড়া" },
   { label: "ধর্মীয় অনুষ্ঠান", href: "#religion" },
   { label: "ফিচার স্টোরি", href: "#feature" },
   { label: "মাল্টিমিডিয়া", href: "#multimedia" },
@@ -36,7 +37,10 @@ const navLinks: {
 ];
 
 interface HeaderProps {
-  onCategoryNav?: (tab: "national" | "online" | "international") => void;
+  onCategoryNav?: (
+    tab: "national" | "online" | "international" | null,
+    category?: string,
+  ) => void;
   onPostClick?: () => void;
   onSettingsClick?: () => void;
   previewMode?: "desktop" | "mobile";
@@ -297,6 +301,8 @@ export function Header({
                       setActiveNav(link.label);
                       if (link.tab && onCategoryNav) {
                         onCategoryNav(link.tab);
+                      } else if (link.category && onCategoryNav) {
+                        onCategoryNav(null, link.category);
                       }
                     }}
                   />
@@ -414,6 +420,8 @@ export function Header({
                     setMobileMenuOpen(false);
                     if (link.tab && onCategoryNav) {
                       onCategoryNav(link.tab);
+                    } else if (link.category && onCategoryNav) {
+                      onCategoryNav(null, link.category);
                     }
                   }}
                   className="px-3 py-2.5 text-sm font-medium rounded-md transition-colors"

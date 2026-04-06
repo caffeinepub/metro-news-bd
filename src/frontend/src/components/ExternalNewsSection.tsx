@@ -951,7 +951,11 @@ function NewsModal({ item, onClose }: NewsModalProps) {
 
 export function ExternalNewsSection({
   initialTab,
-}: { initialTab?: "national" | "online" | "international" }) {
+  categoryFilter,
+}: {
+  initialTab?: "national" | "online" | "international" | null;
+  categoryFilter?: string | null;
+}) {
   const [selectedItem, setSelectedItem] = useState<NewsItem | null>(null);
   const [refreshCount, setRefreshCount] = useState(0);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -964,6 +968,9 @@ export function ExternalNewsSection({
   useEffect(() => {
     if (initialTab) setActiveTab(initialTab);
   }, [initialTab]);
+
+  // When categoryFilter is set, we show all news filtered by category across all source groups
+  const isCategoryMode = !!categoryFilter && !initialTab;
 
   // Auto-refresh every 6 hours
   useEffect(() => {
@@ -989,8 +996,10 @@ export function ExternalNewsSection({
     ...ALL_NEWS.filter((n) => !extraNews.find((e) => e.id === n.id)),
   ];
 
-  // Filter by active tab
-  const tabNews = allCurrentNews.filter((n) => n.sourceGroup === activeTab);
+  // Filter by active tab OR by category
+  const tabNews = isCategoryMode
+    ? allCurrentNews.filter((n) => n.category === categoryFilter)
+    : allCurrentNews.filter((n) => n.sourceGroup === activeTab);
 
   const grouped = groupByCategory(tabNews);
   const sortedCategories = getSortedCategories(grouped);
@@ -1017,7 +1026,7 @@ export function ExternalNewsSection({
           className="text-base font-bold uppercase tracking-widest shrink-0"
           style={{ color: "#111827" }}
         >
-          জাতীয় ও আন্তর্জাতিক সংবাদ
+          {isCategoryMode ? `${categoryFilter} সংবাদ` : "জাতীয় ও আন্তর্জাতিক সংবাদ"}
         </h2>
         <div
           className="flex-1 h-px min-w-[20px]"
