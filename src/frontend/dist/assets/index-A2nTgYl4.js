@@ -14896,28 +14896,16 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$r = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$r);
+const __iconNode$q = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$q = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$q);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$p = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$p);
+const __iconNode$p = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14926,9 +14914,10 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$p);
  */
 const __iconNode$o = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
 ];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$o);
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14936,6 +14925,17 @@ const CircleCheck = createLucideIcon("circle-check", __iconNode$o);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$n = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$n);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$m = [
   [
     "path",
     {
@@ -14951,19 +14951,7 @@ const __iconNode$n = [
     }
   ]
 ];
-const Droplets = createLucideIcon("droplets", __iconNode$n);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$m = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
-  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
-];
-const ExternalLink = createLucideIcon("external-link", __iconNode$m);
+const Droplets = createLucideIcon("droplets", __iconNode$m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14971,6 +14959,18 @@ const ExternalLink = createLucideIcon("external-link", __iconNode$m);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$l = [
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+];
+const ExternalLink = createLucideIcon("external-link", __iconNode$l);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$k = [
   [
     "path",
     {
@@ -14980,19 +14980,7 @@ const __iconNode$l = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$l);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$k = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
-];
-const Globe = createLucideIcon("globe", __iconNode$k);
+const Eye = createLucideIcon("eye", __iconNode$k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15000,30 +14988,31 @@ const Globe = createLucideIcon("globe", __iconNode$k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$j = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("globe", __iconNode$j);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$i = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
   ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
 ];
-const Image = createLucideIcon("image", __iconNode$j);
+const Image = createLucideIcon("image", __iconNode$i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$i = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$i);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$h = [
-  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
-  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
-];
-const Mail = createLucideIcon("mail", __iconNode$h);
+const __iconNode$h = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$h);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15031,6 +15020,17 @@ const Mail = createLucideIcon("mail", __iconNode$h);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$g = [
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
+];
+const Mail = createLucideIcon("mail", __iconNode$g);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
   [
     "path",
     {
@@ -15040,19 +15040,7 @@ const __iconNode$g = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$g);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$f = [
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 18h16", key: "19g7jn" }],
-  ["path", { d: "M4 6h16", key: "1o0s65" }]
-];
-const Menu = createLucideIcon("menu", __iconNode$f);
+const MapPin = createLucideIcon("map-pin", __iconNode$f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15060,6 +15048,18 @@ const Menu = createLucideIcon("menu", __iconNode$f);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$e = [
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 18h16", key: "19g7jn" }],
+  ["path", { d: "M4 6h16", key: "1o0s65" }]
+];
+const Menu = createLucideIcon("menu", __iconNode$e);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$d = [
   [
     "path",
     {
@@ -15068,18 +15068,7 @@ const __iconNode$e = [
     }
   ]
 ];
-const Phone = createLucideIcon("phone", __iconNode$e);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$d = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-];
-const Plus = createLucideIcon("plus", __iconNode$d);
+const Phone = createLucideIcon("phone", __iconNode$d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15087,12 +15076,10 @@ const Plus = createLucideIcon("plus", __iconNode$d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$c = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
 ];
-const RefreshCw = createLucideIcon("refresh-cw", __iconNode$c);
+const Plus = createLucideIcon("plus", __iconNode$c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15100,10 +15087,12 @@ const RefreshCw = createLucideIcon("refresh-cw", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
 ];
-const Search = createLucideIcon("search", __iconNode$b);
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15111,6 +15100,17 @@ const Search = createLucideIcon("search", __iconNode$b);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$a = [
+  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
+];
+const Search = createLucideIcon("search", __iconNode$a);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [
   [
     "path",
     {
@@ -15120,14 +15120,14 @@ const __iconNode$a = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Settings = createLucideIcon("settings", __iconNode$a);
+const Settings = createLucideIcon("settings", __iconNode$9);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$9 = [
+const __iconNode$8 = [
   ["path", { d: "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7", key: "1m0v6g" }],
   [
     "path",
@@ -15137,14 +15137,14 @@ const __iconNode$9 = [
     }
   ]
 ];
-const SquarePen = createLucideIcon("square-pen", __iconNode$9);
+const SquarePen = createLucideIcon("square-pen", __iconNode$8);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$8 = [
+const __iconNode$7 = [
   ["path", { d: "M12 2v8", key: "1q4o3n" }],
   ["path", { d: "m4.93 10.93 1.41 1.41", key: "2a7f42" }],
   ["path", { d: "M2 18h2", key: "j10viu" }],
@@ -15154,14 +15154,14 @@ const __iconNode$8 = [
   ["path", { d: "m8 6 4-4 4 4", key: "ybng9g" }],
   ["path", { d: "M16 18a4 4 0 0 0-8 0", key: "1lzouq" }]
 ];
-const Sunrise = createLucideIcon("sunrise", __iconNode$8);
+const Sunrise = createLucideIcon("sunrise", __iconNode$7);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$7 = [
+const __iconNode$6 = [
   ["path", { d: "M12 10V2", key: "16sf7g" }],
   ["path", { d: "m4.93 10.93 1.41 1.41", key: "2a7f42" }],
   ["path", { d: "M2 18h2", key: "j10viu" }],
@@ -15171,17 +15171,7 @@ const __iconNode$7 = [
   ["path", { d: "m16 6-4 4-4-4", key: "6wukr" }],
   ["path", { d: "M16 18a4 4 0 0 0-8 0", key: "1lzouq" }]
 ];
-const Sunset = createLucideIcon("sunset", __iconNode$7);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$6 = [
-  ["path", { d: "M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z", key: "17jzev" }]
-];
-const Thermometer = createLucideIcon("thermometer", __iconNode$6);
+const Sunset = createLucideIcon("sunset", __iconNode$6);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15189,13 +15179,9 @@ const Thermometer = createLucideIcon("thermometer", __iconNode$6);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$5 = [
-  ["path", { d: "M3 6h18", key: "d0wm0j" }],
-  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
-  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
-  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
-  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
+  ["path", { d: "M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z", key: "17jzev" }]
 ];
-const Trash2 = createLucideIcon("trash-2", __iconNode$5);
+const Thermometer = createLucideIcon("thermometer", __iconNode$5);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15203,10 +15189,13 @@ const Trash2 = createLucideIcon("trash-2", __iconNode$5);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$4 = [
-  ["path", { d: "m17 2-5 5-5-5", key: "16satq" }],
-  ["rect", { width: "20", height: "15", x: "2", y: "7", rx: "2", key: "1e6viu" }]
+  ["path", { d: "M3 6h18", key: "d0wm0j" }],
+  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
+  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
+  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
+  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
 ];
-const Tv = createLucideIcon("tv", __iconNode$4);
+const Trash2 = createLucideIcon("trash-2", __iconNode$4);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -17216,149 +17205,186 @@ const navLinks = [
   { label: "আমাদের সম্পর্কে", href: "#about" },
   { label: "যোগাযোগ", href: "#contact" }
 ];
+function IconBtn({
+  onClick,
+  ariaLabel,
+  children,
+  ocid
+}) {
+  const [hovered, setHovered] = reactExports.useState(false);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "button",
+    {
+      type: "button",
+      "data-ocid": ocid,
+      onClick,
+      "aria-label": ariaLabel,
+      onMouseEnter: () => setHovered(true),
+      onMouseLeave: () => setHovered(false),
+      className: "p-2 rounded-md transition-colors",
+      style: {
+        color: "#6b7280",
+        backgroundColor: hovered ? "#f3f4f6" : "transparent"
+      },
+      children
+    }
+  );
+}
 function Header({ onPostClick, onSettingsClick }) {
   const [mobileMenuOpen, setMobileMenuOpen] = reactExports.useState(false);
   const [searchOpen, setSearchOpen] = reactExports.useState(false);
   const [activeNav, setActiveNav] = reactExports.useState("হোম");
+  const [searchFocused, setSearchFocused] = reactExports.useState(false);
   const { settings } = useSiteSettings();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "header",
     {
       className: "sticky top-0 z-50 w-full",
-      style: { backgroundColor: "#050505", borderBottom: "1px solid #2d2d2d" },
+      style: {
+        backgroundColor: "#ffffff",
+        borderBottom: "1px solid #e5e7eb",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.06)"
+      },
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between gap-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: "flex items-center justify-center w-10 h-10 rounded overflow-hidden font-bold text-xl",
-                style: { backgroundColor: "#1a1a1a", border: "1px solid #2d2d2d" },
-                children: settings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "img",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 sm:px-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "flex items-center justify-between gap-4",
+            style: { height: 64 },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 sm:gap-4 min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
                   {
-                    src: settings.logoBase64,
-                    alt: settings.siteName,
-                    className: "w-full h-full object-cover"
+                    className: "flex items-center justify-center shrink-0 rounded-md overflow-hidden",
+                    style: {
+                      width: 44,
+                      height: 44,
+                      border: "2px solid #dc2626",
+                      background: "#fef2f2"
+                    },
+                    children: settings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "img",
+                      {
+                        src: settings.logoBase64,
+                        alt: settings.siteName,
+                        className: "w-full h-full object-cover"
+                      }
+                    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "font-bold select-none",
+                        style: {
+                          color: "#dc2626",
+                          fontSize: 18,
+                          lineHeight: 1
+                        },
+                        children: "বা"
+                      }
+                    )
                   }
-                ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "leading-tight min-w-0", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "font-bold truncate",
+                      style: {
+                        color: "#111827",
+                        fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+                        letterSpacing: "0.03em"
+                      },
+                      children: settings.siteName
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "hidden sm:block text-xs uppercase truncate",
+                      style: {
+                        color: "#9ca3af",
+                        letterSpacing: "0.08em",
+                        fontWeight: 500,
+                        marginTop: 2
+                      },
+                      children: settings.tagline
+                    }
+                  )
                 ] })
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "leading-tight", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-bold text-lg tracking-widest uppercase", children: settings.siteName }),
+              ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
-                  className: "text-xs tracking-wider uppercase",
-                  style: { color: "#9c9c9c" },
-                  children: settings.tagline
+                  className: "hidden lg:block flex-1 mx-4 h-px",
+                  style: { backgroundColor: "#f3f4f6" }
                 }
-              )
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "div",
-              {
-                className: "hidden sm:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide",
-                style: { color: "#9c9c9c" },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Tv, { size: 13 }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "লাইভ টিভি" })
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.search_input",
-                onClick: () => setSearchOpen(!searchOpen),
-                className: "p-2 text-gray-400 hover:text-white transition-colors rounded",
-                "aria-label": "সার্চ করুন",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { size: 18 })
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.settings.button",
-                onClick: onSettingsClick,
-                className: "p-2 text-gray-400 hover:text-white transition-colors rounded",
-                "aria-label": "সেটিংস",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, { size: 18 })
-              }
-            ),
-            onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.post_news.button",
-                onClick: onPostClick,
-                className: "hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-widest rounded transition-all hover:opacity-90",
-                style: {
-                  border: "1.5px solid oklch(0.4764 0.2183 22.8)",
-                  color: "oklch(0.4764 0.2183 22.8)",
-                  backgroundColor: "transparent"
-                },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 13 }),
-                  "সংবাদ পোস্ট"
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.subscribe.button",
-                className: "hidden sm:inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80",
-                style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-                children: "সাবস্ক্রাইব"
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.mobile_menu.toggle",
-                className: "lg:hidden p-2 text-gray-400 hover:text-white transition-colors",
-                onClick: () => setMobileMenuOpen(!mobileMenuOpen),
-                "aria-label": "মেনু",
-                children: mobileMenuOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 22 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { size: 22 })
-              }
-            )
-          ] })
-        ] }),
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  IconBtn,
+                  {
+                    ocid: "header.search_input",
+                    ariaLabel: "সার্চ",
+                    onClick: () => setSearchOpen(!searchOpen),
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { size: 18 })
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  IconBtn,
+                  {
+                    ocid: "header.settings.button",
+                    ariaLabel: "সেটিংস",
+                    onClick: onSettingsClick,
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, { size: 18 })
+                  }
+                ),
+                onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  PostBtn,
+                  {
+                    onClick: onPostClick,
+                    ocid: "header.post_news.button",
+                    className: "hidden sm:inline-flex"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    "data-ocid": "header.mobile_menu.toggle",
+                    className: "lg:hidden p-2 rounded-md transition-colors",
+                    style: { color: "#374151" },
+                    onClick: () => setMobileMenuOpen(!mobileMenuOpen),
+                    "aria-label": "মেনু",
+                    children: mobileMenuOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 21 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { size: 21 })
+                  }
+                )
+              ] })
+            ]
+          }
+        ) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "hidden lg:block border-t w-full",
-            style: { backgroundColor: "#0d0d0d", borderColor: "#2d2d2d" },
+            className: "hidden lg:block border-t",
+            style: { backgroundColor: "#f9fafb", borderColor: "#e5e7eb" },
             children: /* @__PURE__ */ jsxRuntimeExports.jsx(
               "nav",
               {
-                className: "max-w-[1200px] mx-auto px-4",
+                className: "max-w-[1200px] mx-auto px-4 sm:px-6",
                 "aria-label": "Primary navigation",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center flex-wrap", children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "a",
-                  {
-                    href: link.href,
-                    "data-ocid": `nav.${link.label}.link`,
-                    onClick: () => setActiveNav(link.label),
-                    className: `px-3 py-3 text-[12px] font-medium tracking-wide whitespace-nowrap transition-colors border-b-2 ${activeNav === link.label ? "text-white" : "text-gray-400 hover:text-white border-transparent"}`,
-                    style: activeNav === link.label ? {
-                      borderBottomColor: "oklch(0.4764 0.2183 22.8)",
-                      color: "oklch(0.4764 0.2183 22.8)"
-                    } : { borderBottomColor: "transparent" },
-                    children: link.label
-                  },
-                  link.label
-                )) })
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center", children: navLinks.map((link) => {
+                  const isActive = activeNav === link.label;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    NavLink,
+                    {
+                      label: link.label,
+                      href: link.href,
+                      isActive,
+                      onClick: () => setActiveNav(link.label)
+                    },
+                    link.label
+                  );
+                }) })
               }
             )
           }
@@ -17367,13 +17393,14 @@ function Header({ onPostClick, onSettingsClick }) {
           "div",
           {
             className: "border-t",
-            style: { backgroundColor: "#0a0a0a", borderColor: "#2d2d2d" },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+            style: { backgroundColor: "#f9fafb", borderColor: "#e5e7eb" },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 sm:px-6 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 Search,
                 {
-                  size: 16,
-                  className: "absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                  size: 15,
+                  className: "absolute left-3 top-1/2 -translate-y-1/2",
+                  style: { color: "#9ca3af" }
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -17381,90 +17408,148 @@ function Header({ onPostClick, onSettingsClick }) {
                 {
                   type: "text",
                   placeholder: "খবর খুঁজুন...",
-                  className: "w-full bg-transparent border rounded pl-9 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none",
-                  style: { borderColor: "#2d2d2d" },
-                  "data-ocid": "header.search_field.input"
+                  className: "w-full border rounded-md pl-9 pr-4 py-2.5 text-sm focus:outline-none transition-colors",
+                  style: {
+                    backgroundColor: "#ffffff",
+                    borderColor: searchFocused ? "#dc2626" : "#d1d5db",
+                    color: "#111827"
+                  },
+                  "data-ocid": "header.search_field.input",
+                  onFocus: () => setSearchFocused(true),
+                  onBlur: () => setSearchFocused(false)
                 }
               )
             ] }) })
           }
         ),
-        mobileMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+        mobileMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "nav",
           {
             className: "lg:hidden border-t",
-            style: { backgroundColor: "#0a0a0a", borderColor: "#2d2d2d" },
+            style: { backgroundColor: "#ffffff", borderColor: "#e5e7eb" },
             "aria-label": "Mobile navigation",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-3 flex flex-col gap-1", children: [
-              navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "a",
-                {
-                  href: link.href,
-                  "data-ocid": `mobile.nav.${link.label}.link`,
-                  onClick: () => {
-                    setActiveNav(link.label);
-                    setMobileMenuOpen(false);
-                  },
-                  className: `px-3 py-2.5 text-sm font-medium tracking-wide rounded transition-colors ${activeNav === link.label ? "text-white" : "text-gray-300 hover:text-white"}`,
-                  style: activeNav === link.label ? {
-                    backgroundColor: "oklch(0.4764 0.2183 22.8 / 0.2)",
-                    color: "oklch(0.4764 0.2183 22.8)"
-                  } : {},
-                  children: link.label
-                },
-                link.label
-              )),
-              onSettingsClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "button",
-                {
-                  type: "button",
-                  "data-ocid": "mobile.settings.button",
-                  onClick: () => {
-                    setMobileMenuOpen(false);
-                    onSettingsClick();
-                  },
-                  className: "mt-1 flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded hover:text-white transition-colors",
-                  style: { color: "#9c9c9c" },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, { size: 15 }),
-                    "⚙ সেটিংস"
-                  ]
-                }
-              ),
-              onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "button",
-                {
-                  type: "button",
-                  "data-ocid": "mobile.post_news.button",
-                  onClick: () => {
-                    setMobileMenuOpen(false);
-                    onPostClick();
-                  },
-                  className: "mt-1 flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-bold uppercase tracking-widest rounded hover:opacity-80 transition-opacity",
-                  style: {
-                    border: "1.5px solid oklch(0.4764 0.2183 22.8)",
-                    color: "oklch(0.4764 0.2183 22.8)",
-                    backgroundColor: "transparent"
-                  },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 15 }),
-                    "সংবাদ পোস্ট করুন"
-                  ]
-                }
-              ),
+            children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
+                "div",
                 {
-                  type: "button",
-                  "data-ocid": "mobile.subscribe.button",
-                  className: "mt-1 text-center px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-white rounded hover:opacity-80 transition-opacity",
-                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-                  children: "সাবস্ক্রাইব"
+                  className: "px-5 pt-3 pb-1 text-xs uppercase sm:hidden",
+                  style: {
+                    color: "#9ca3af",
+                    letterSpacing: "0.08em",
+                    fontWeight: 500
+                  },
+                  children: settings.tagline
                 }
-              )
-            ] })
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-3 pb-4 flex flex-col gap-0.5", children: [
+                navLinks.map((link) => {
+                  const isActive = activeNav === link.label;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "a",
+                    {
+                      href: link.href,
+                      "data-ocid": `mobile.nav.${link.label}.link`,
+                      onClick: () => {
+                        setActiveNav(link.label);
+                        setMobileMenuOpen(false);
+                      },
+                      className: "px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
+                      style: {
+                        color: isActive ? "#dc2626" : "#374151",
+                        backgroundColor: isActive ? "#fef2f2" : "transparent"
+                      },
+                      children: link.label
+                    },
+                    link.label
+                  );
+                }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-2 h-px", style: { backgroundColor: "#f3f4f6" } }),
+                onSettingsClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    "data-ocid": "mobile.settings.button",
+                    onClick: () => {
+                      setMobileMenuOpen(false);
+                      onSettingsClick();
+                    },
+                    className: "flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
+                    style: { color: "#6b7280" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, { size: 15 }),
+                      "সেটিংস"
+                    ]
+                  }
+                ),
+                onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  PostBtn,
+                  {
+                    onClick: () => {
+                      setMobileMenuOpen(false);
+                      onPostClick();
+                    },
+                    ocid: "mobile.post_news.button",
+                    className: "w-full justify-center mt-1",
+                    label: "সংবাদ পোস্ট করুন"
+                  }
+                )
+              ] })
+            ]
           }
         )
+      ]
+    }
+  );
+}
+function NavLink({
+  label,
+  href,
+  isActive,
+  onClick
+}) {
+  const [hovered, setHovered] = reactExports.useState(false);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "a",
+    {
+      href,
+      "data-ocid": `nav.${label}.link`,
+      onClick,
+      onMouseEnter: () => setHovered(true),
+      onMouseLeave: () => setHovered(false),
+      className: "px-3 py-3 text-[12px] font-medium whitespace-nowrap transition-colors border-b-2",
+      style: {
+        color: isActive ? "#dc2626" : hovered ? "#111827" : "#374151",
+        borderBottomColor: isActive ? "#dc2626" : "transparent",
+        letterSpacing: "0.01em"
+      },
+      children: label
+    }
+  );
+}
+function PostBtn({
+  onClick,
+  ocid,
+  className = "",
+  label = "সংবাদ পোস্ট"
+}) {
+  const [hovered, setHovered] = reactExports.useState(false);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "button",
+    {
+      type: "button",
+      "data-ocid": ocid,
+      onClick,
+      onMouseEnter: () => setHovered(true),
+      onMouseLeave: () => setHovered(false),
+      className: `inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${className}`,
+      style: {
+        border: "1.5px solid #dc2626",
+        color: hovered ? "#fff" : "#dc2626",
+        backgroundColor: hovered ? "#dc2626" : "transparent"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 13 }),
+        label
       ]
     }
   );

@@ -1,4 +1,4 @@
-import { Menu, PenSquare, Search, Settings, Tv, X } from "lucide-react";
+import { Menu, PenSquare, Search, Settings, X } from "lucide-react";
 import { useState } from "react";
 import { useSiteSettings } from "../context/SiteSettingsContext";
 
@@ -24,222 +24,266 @@ interface HeaderProps {
   onSettingsClick?: () => void;
 }
 
+function IconBtn({
+  onClick,
+  ariaLabel,
+  children,
+  ocid,
+}: {
+  onClick?: () => void;
+  ariaLabel: string;
+  children: React.ReactNode;
+  ocid?: string;
+}) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <button
+      type="button"
+      data-ocid={ocid}
+      onClick={onClick}
+      aria-label={ariaLabel}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="p-2 rounded-md transition-colors"
+      style={{
+        color: "#6b7280",
+        backgroundColor: hovered ? "#f3f4f6" : "transparent",
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+
 export function Header({ onPostClick, onSettingsClick }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("হোম");
+  const [searchFocused, setSearchFocused] = useState(false);
   const { settings } = useSiteSettings();
 
   return (
     <header
       className="sticky top-0 z-50 w-full"
-      style={{ backgroundColor: "#050505", borderBottom: "1px solid #2d2d2d" }}
+      style={{
+        backgroundColor: "#ffffff",
+        borderBottom: "1px solid #e5e7eb",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
+      }}
     >
       {/* Main header row */}
-      <div className="max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between gap-4">
-        {/* Logo */}
-        <div className="flex items-center gap-3 shrink-0">
-          <div
-            className="flex items-center justify-center w-10 h-10 rounded overflow-hidden font-bold text-xl"
-            style={{ backgroundColor: "#1a1a1a", border: "1px solid #2d2d2d" }}
-          >
-            {settings.logoBase64 ? (
-              <img
-                src={settings.logoBase64}
-                alt={settings.siteName}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <>
-                <span className="text-white">বা</span>
-                <span className="news-red">নি</span>
-              </>
-            )}
-          </div>
-          <div className="leading-tight">
-            <div className="text-white font-bold text-lg tracking-widest uppercase">
-              {settings.siteName}
-            </div>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <div
+          className="flex items-center justify-between gap-4"
+          style={{ height: 64 }}
+        >
+          {/* === LEFT: Logo + Site Name + Tagline === */}
+          <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+            {/* Logo box */}
             <div
-              className="text-xs tracking-wider uppercase"
-              style={{ color: "#9c9c9c" }}
-            >
-              {settings.tagline}
-            </div>
-          </div>
-        </div>
-
-        {/* Right utility actions */}
-        <div className="flex items-center gap-3 shrink-0">
-          {/* Live TV */}
-          <div
-            className="hidden sm:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide"
-            style={{ color: "#9c9c9c" }}
-          >
-            <Tv size={13} />
-            <span>লাইভ টিভি</span>
-          </div>
-
-          {/* Search */}
-          <button
-            type="button"
-            data-ocid="header.search_input"
-            onClick={() => setSearchOpen(!searchOpen)}
-            className="p-2 text-gray-400 hover:text-white transition-colors rounded"
-            aria-label="সার্চ করুন"
-          >
-            <Search size={18} />
-          </button>
-
-          {/* Settings */}
-          <button
-            type="button"
-            data-ocid="header.settings.button"
-            onClick={onSettingsClick}
-            className="p-2 text-gray-400 hover:text-white transition-colors rounded"
-            aria-label="সেটিংস"
-          >
-            <Settings size={18} />
-          </button>
-
-          {/* Post News button */}
-          {onPostClick && (
-            <button
-              type="button"
-              data-ocid="header.post_news.button"
-              onClick={onPostClick}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-widest rounded transition-all hover:opacity-90"
+              className="flex items-center justify-center shrink-0 rounded-md overflow-hidden"
               style={{
-                border: "1.5px solid oklch(0.4764 0.2183 22.8)",
-                color: "oklch(0.4764 0.2183 22.8)",
-                backgroundColor: "transparent",
+                width: 44,
+                height: 44,
+                border: "2px solid #dc2626",
+                background: "#fef2f2",
               }}
             >
-              <PenSquare size={13} />
-              সংবাদ পোস্ট
+              {settings.logoBase64 ? (
+                <img
+                  src={settings.logoBase64}
+                  alt={settings.siteName}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span
+                  className="font-bold select-none"
+                  style={{
+                    color: "#dc2626",
+                    fontSize: 18,
+                    lineHeight: 1,
+                  }}
+                >
+                  বা
+                </span>
+              )}
+            </div>
+
+            {/* Site name + tagline */}
+            <div className="leading-tight min-w-0">
+              <div
+                className="font-bold truncate"
+                style={{
+                  color: "#111827",
+                  fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+                  letterSpacing: "0.03em",
+                }}
+              >
+                {settings.siteName}
+              </div>
+              <div
+                className="hidden sm:block text-xs uppercase truncate"
+                style={{
+                  color: "#9ca3af",
+                  letterSpacing: "0.08em",
+                  fontWeight: 500,
+                  marginTop: 2,
+                }}
+              >
+                {settings.tagline}
+              </div>
+            </div>
+          </div>
+
+          {/* === CENTER: accent rule (desktop) === */}
+          <div
+            className="hidden lg:block flex-1 mx-4 h-px"
+            style={{ backgroundColor: "#f3f4f6" }}
+          />
+
+          {/* === RIGHT: Action buttons === */}
+          <div className="flex items-center gap-1 shrink-0">
+            <IconBtn
+              ocid="header.search_input"
+              ariaLabel="সার্চ"
+              onClick={() => setSearchOpen(!searchOpen)}
+            >
+              <Search size={18} />
+            </IconBtn>
+
+            <IconBtn
+              ocid="header.settings.button"
+              ariaLabel="সেটিংস"
+              onClick={onSettingsClick}
+            >
+              <Settings size={18} />
+            </IconBtn>
+
+            {/* Post News button — desktop */}
+            {onPostClick && (
+              <PostBtn
+                onClick={onPostClick}
+                ocid="header.post_news.button"
+                className="hidden sm:inline-flex"
+              />
+            )}
+
+            {/* Mobile menu toggle */}
+            <button
+              type="button"
+              data-ocid="header.mobile_menu.toggle"
+              className="lg:hidden p-2 rounded-md transition-colors"
+              style={{ color: "#374151" }}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="মেনু"
+            >
+              {mobileMenuOpen ? <X size={21} /> : <Menu size={21} />}
             </button>
-          )}
-
-          {/* Subscribe */}
-          <button
-            type="button"
-            data-ocid="header.subscribe.button"
-            className="hidden sm:inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80"
-            style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
-          >
-            সাবস্ক্রাইব
-          </button>
-
-          {/* Mobile menu toggle */}
-          <button
-            type="button"
-            data-ocid="header.mobile_menu.toggle"
-            className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="মেনু"
-          >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          </div>
         </div>
       </div>
 
-      {/* Desktop Nav Bar (full-width below logo row) */}
+      {/* ===== Desktop Nav Bar ===== */}
       <div
-        className="hidden lg:block border-t w-full"
-        style={{ backgroundColor: "#0d0d0d", borderColor: "#2d2d2d" }}
+        className="hidden lg:block border-t"
+        style={{ backgroundColor: "#f9fafb", borderColor: "#e5e7eb" }}
       >
         <nav
-          className="max-w-[1200px] mx-auto px-4"
+          className="max-w-[1200px] mx-auto px-4 sm:px-6"
           aria-label="Primary navigation"
         >
-          <div className="flex items-center flex-wrap">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                data-ocid={`nav.${link.label}.link`}
-                onClick={() => setActiveNav(link.label)}
-                className={`px-3 py-3 text-[12px] font-medium tracking-wide whitespace-nowrap transition-colors border-b-2 ${
-                  activeNav === link.label
-                    ? "text-white"
-                    : "text-gray-400 hover:text-white border-transparent"
-                }`}
-                style={
-                  activeNav === link.label
-                    ? {
-                        borderBottomColor: "oklch(0.4764 0.2183 22.8)",
-                        color: "oklch(0.4764 0.2183 22.8)",
-                      }
-                    : { borderBottomColor: "transparent" }
-                }
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="flex items-center">
+            {navLinks.map((link) => {
+              const isActive = activeNav === link.label;
+              return (
+                <NavLink
+                  key={link.label}
+                  label={link.label}
+                  href={link.href}
+                  isActive={isActive}
+                  onClick={() => setActiveNav(link.label)}
+                />
+              );
+            })}
           </div>
         </nav>
       </div>
 
-      {/* Search bar (expandable) */}
+      {/* ===== Search Bar ===== */}
       {searchOpen && (
         <div
           className="border-t"
-          style={{ backgroundColor: "#0a0a0a", borderColor: "#2d2d2d" }}
+          style={{ backgroundColor: "#f9fafb", borderColor: "#e5e7eb" }}
         >
-          <div className="max-w-[1200px] mx-auto px-4 py-3">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3">
             <div className="relative">
               <Search
-                size={16}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                size={15}
+                className="absolute left-3 top-1/2 -translate-y-1/2"
+                style={{ color: "#9ca3af" }}
               />
               <input
                 type="text"
                 placeholder="খবর খুঁজুন..."
-                className="w-full bg-transparent border rounded pl-9 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none"
-                style={{ borderColor: "#2d2d2d" }}
+                className="w-full border rounded-md pl-9 pr-4 py-2.5 text-sm focus:outline-none transition-colors"
+                style={{
+                  backgroundColor: "#ffffff",
+                  borderColor: searchFocused ? "#dc2626" : "#d1d5db",
+                  color: "#111827",
+                }}
                 data-ocid="header.search_field.input"
+                onFocus={() => setSearchFocused(true)}
+                onBlur={() => setSearchFocused(false)}
               />
             </div>
           </div>
         </div>
       )}
 
-      {/* Mobile nav */}
+      {/* ===== Mobile Nav Drawer ===== */}
       {mobileMenuOpen && (
         <nav
           className="lg:hidden border-t"
-          style={{ backgroundColor: "#0a0a0a", borderColor: "#2d2d2d" }}
+          style={{ backgroundColor: "#ffffff", borderColor: "#e5e7eb" }}
           aria-label="Mobile navigation"
         >
-          <div className="max-w-[1200px] mx-auto px-4 py-3 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                data-ocid={`mobile.nav.${link.label}.link`}
-                onClick={() => {
-                  setActiveNav(link.label);
-                  setMobileMenuOpen(false);
-                }}
-                className={`px-3 py-2.5 text-sm font-medium tracking-wide rounded transition-colors ${
-                  activeNav === link.label
-                    ? "text-white"
-                    : "text-gray-300 hover:text-white"
-                }`}
-                style={
-                  activeNav === link.label
-                    ? {
-                        backgroundColor: "oklch(0.4764 0.2183 22.8 / 0.2)",
-                        color: "oklch(0.4764 0.2183 22.8)",
-                      }
-                    : {}
-                }
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* tagline visible on mobile */}
+          <div
+            className="px-5 pt-3 pb-1 text-xs uppercase sm:hidden"
+            style={{
+              color: "#9ca3af",
+              letterSpacing: "0.08em",
+              fontWeight: 500,
+            }}
+          >
+            {settings.tagline}
+          </div>
 
-            {/* Mobile: Settings button */}
+          <div className="max-w-[1200px] mx-auto px-3 pb-4 flex flex-col gap-0.5">
+            {navLinks.map((link) => {
+              const isActive = activeNav === link.label;
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  data-ocid={`mobile.nav.${link.label}.link`}
+                  onClick={() => {
+                    setActiveNav(link.label);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="px-3 py-2.5 text-sm font-medium rounded-md transition-colors"
+                  style={{
+                    color: isActive ? "#dc2626" : "#374151",
+                    backgroundColor: isActive ? "#fef2f2" : "transparent",
+                  }}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+
+            <div className="my-2 h-px" style={{ backgroundColor: "#f3f4f6" }} />
+
             {onSettingsClick && (
               <button
                 type="button"
@@ -248,45 +292,93 @@ export function Header({ onPostClick, onSettingsClick }: HeaderProps) {
                   setMobileMenuOpen(false);
                   onSettingsClick();
                 }}
-                className="mt-1 flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded hover:text-white transition-colors"
-                style={{ color: "#9c9c9c" }}
+                className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-md transition-colors"
+                style={{ color: "#6b7280" }}
               >
-                <Settings size={15} />⚙ সেটিংস
+                <Settings size={15} />
+                সেটিংস
               </button>
             )}
 
-            {/* Mobile: Post News button */}
             {onPostClick && (
-              <button
-                type="button"
-                data-ocid="mobile.post_news.button"
+              <PostBtn
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onPostClick();
                 }}
-                className="mt-1 flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-bold uppercase tracking-widest rounded hover:opacity-80 transition-opacity"
-                style={{
-                  border: "1.5px solid oklch(0.4764 0.2183 22.8)",
-                  color: "oklch(0.4764 0.2183 22.8)",
-                  backgroundColor: "transparent",
-                }}
-              >
-                <PenSquare size={15} />
-                সংবাদ পোস্ট করুন
-              </button>
+                ocid="mobile.post_news.button"
+                className="w-full justify-center mt-1"
+                label="সংবাদ পোস্ট করুন"
+              />
             )}
-
-            <button
-              type="button"
-              data-ocid="mobile.subscribe.button"
-              className="mt-1 text-center px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-white rounded hover:opacity-80 transition-opacity"
-              style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
-            >
-              সাবস্ক্রাইব
-            </button>
           </div>
         </nav>
       )}
     </header>
+  );
+}
+
+// ---- Small sub-components to avoid inline handler assignments ----
+
+function NavLink({
+  label,
+  href,
+  isActive,
+  onClick,
+}: {
+  label: string;
+  href: string;
+  isActive: boolean;
+  onClick: () => void;
+}) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      data-ocid={`nav.${label}.link`}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="px-3 py-3 text-[12px] font-medium whitespace-nowrap transition-colors border-b-2"
+      style={{
+        color: isActive ? "#dc2626" : hovered ? "#111827" : "#374151",
+        borderBottomColor: isActive ? "#dc2626" : "transparent",
+        letterSpacing: "0.01em",
+      }}
+    >
+      {label}
+    </a>
+  );
+}
+
+function PostBtn({
+  onClick,
+  ocid,
+  className = "",
+  label = "সংবাদ পোস্ট",
+}: {
+  onClick: () => void;
+  ocid?: string;
+  className?: string;
+  label?: string;
+}) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <button
+      type="button"
+      data-ocid={ocid}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${className}`}
+      style={{
+        border: "1.5px solid #dc2626",
+        color: hovered ? "#fff" : "#dc2626",
+        backgroundColor: hovered ? "#dc2626" : "transparent",
+      }}
+    >
+      <PenSquare size={13} />
+      {label}
+    </button>
   );
 }
