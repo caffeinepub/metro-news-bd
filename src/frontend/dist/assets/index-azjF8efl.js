@@ -14766,9 +14766,19 @@ function BreakingNewsTicker() {
       className: "w-full",
       style: {
         backgroundColor: "oklch(0.4764 0.2183 22.8)",
-        /* Extra vertical padding so Bengali diacritics have full room */
-        paddingTop: "10px",
-        paddingBottom: "10px"
+        /*
+         * Generous vertical padding so Bengali vowel marks (মাত্রা/স্বরচিহ্ন)
+         * that extend above the cap-height are never cropped.
+         */
+        paddingTop: "14px",
+        paddingBottom: "14px",
+        /*
+         * overflow: clip on the OUTER shell hides horizontal overflow without
+         * creating a scroll container and — crucially — does NOT force the
+         * perpendicular axis (overflow-y) to become "auto"/"hidden".
+         * This is the key difference vs overflow:hidden which forces both axes.
+         */
+        overflow: "clip"
       },
       "aria-label": "ব্রেকিং নিউজ",
       children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14777,7 +14787,13 @@ function BreakingNewsTicker() {
           style: {
             display: "flex",
             alignItems: "center",
-            minHeight: "40px"
+            /*
+             * minHeight must accommodate: line-height × font-size + vertical padding
+             * Bengali diacritics add ~0.3em above the cap height, so lineHeight:2
+             * on 14px text ≈ 28px; 12px×2 = 24px for the label.
+             * 56px is a safe lower bound.
+             */
+            minHeight: "64px"
           },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14787,7 +14803,7 @@ function BreakingNewsTicker() {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
-                  padding: "6px 16px",
+                  padding: "10px 16px",
                   backgroundColor: "oklch(0.34 0.2183 22.8)",
                   color: "#ffffff",
                   fontWeight: 700,
@@ -14797,8 +14813,9 @@ function BreakingNewsTicker() {
                   lineHeight: "2",
                   flexShrink: 0,
                   whiteSpace: "nowrap",
-                  /* Ensure label does not clip its own text */
-                  overflow: "visible"
+                  /* Never clip this label's own text either */
+                  overflow: "visible",
+                  alignSelf: "stretch"
                 },
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14835,12 +14852,12 @@ function BreakingNewsTicker() {
               {
                 style: {
                   flex: 1,
-                  /* clip horizontally without touching vertical overflow */
-                  clipPath: "inset(0 0 0 0)",
+                  /* MUST be visible — no clip here — parent already clips x-axis */
+                  overflow: "visible",
                   position: "relative",
-                  /* Extra vertical room for diacritics */
-                  paddingTop: "4px",
-                  paddingBottom: "4px"
+                  /* Room for Bengali vowel marks above the cap-height */
+                  paddingTop: "6px",
+                  paddingBottom: "6px"
                 },
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
@@ -14849,7 +14866,9 @@ function BreakingNewsTicker() {
                     style: {
                       display: "flex",
                       alignItems: "center",
-                      whiteSpace: "nowrap"
+                      whiteSpace: "nowrap",
+                      /* Also visible here — clipping is handled by the outermost shell */
+                      overflow: "visible"
                     },
                     children: tickerContent.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
                       "span",
@@ -14859,10 +14878,13 @@ function BreakingNewsTicker() {
                           alignItems: "center",
                           gap: "12px",
                           color: "#ffffff",
-                          fontSize: "14px",
+                          fontSize: "12px",
                           fontWeight: 600,
-                          /* lineHeight:2 gives Bengali vowel marks (মাত্রা) plenty of
-                             space above and below the baseline */
+                          /*
+                           * lineHeight:2 gives Bengali vowel marks (মাত্রা) plenty of
+                           * vertical space. Without this, ascenders get clipped even
+                           * when overflow is visible because the line-box itself is tight.
+                           */
                           lineHeight: "2"
                         },
                         children: [
@@ -17619,70 +17641,141 @@ function Header({
           "div",
           {
             className: "flex items-center justify-between gap-4",
-            style: { minHeight: 64, paddingTop: 8, paddingBottom: 8 },
+            style: {
+              /*
+               * FIX: Increased minHeight from 64→72px and vertical padding
+               * from 8→14px so Bengali vowel marks (মাত্রা) that extend above
+               * the cap-height have room and are never clipped by the row boundary.
+               */
+              minHeight: 72,
+              paddingTop: 14,
+              paddingBottom: 14
+            },
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 sm:gap-4 min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "div",
-                  {
-                    className: "flex items-center justify-center shrink-0 rounded-md overflow-hidden",
-                    style: {
-                      width: 44,
-                      height: 44,
-                      border: "2px solid #dc2626",
-                      background: "#fef2f2"
-                    },
-                    children: settings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "img",
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-3 sm:gap-4",
+                  style: { minWidth: 0 },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
                       {
-                        src: settings.logoBase64,
-                        alt: settings.siteName,
-                        className: "w-full h-full object-cover"
-                      }
-                    ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "span",
-                      {
-                        className: "font-bold select-none",
+                        className: "flex items-center justify-center shrink-0 rounded-md",
                         style: {
-                          color: "#dc2626",
-                          fontSize: 18,
-                          lineHeight: "1.3"
+                          width: 44,
+                          height: 44,
+                          border: "2px solid #dc2626",
+                          background: "#fef2f2",
+                          /*
+                           * overflow:hidden is OK here because we are clipping an IMAGE
+                           * (not Bengali text). The logo box just needs rounded corners.
+                           */
+                          overflow: "hidden",
+                          flexShrink: 0
                         },
-                        children: "বা"
+                        children: settings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "img",
+                          {
+                            src: settings.logoBase64,
+                            alt: settings.siteName,
+                            className: "w-full h-full object-cover"
+                          }
+                        ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "font-bold select-none",
+                            style: {
+                              color: "#dc2626",
+                              fontSize: 18,
+                              /*
+                               * lineHeight:1.6 rather than "normal" so the single Bengali
+                               * syllable "বা" is not clipped inside the logo box.
+                               */
+                              lineHeight: "1.6"
+                            },
+                            children: "বা"
+                          }
+                        )
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        style: {
+                          /*
+                           * FIX: NO overflow:hidden here.
+                           * Tailwind's `truncate` shorthand sets both `overflow:hidden`
+                           * AND `text-overflow:ellipsis`. Setting overflow:hidden on a
+                           * text container clips Bengali diacritics that sit above the
+                           * normal line-box, making the top of the text invisible.
+                           *
+                           * Instead we use maxWidth + text-overflow:ellipsis on the
+                           * inner spans, while keeping overflow:visible on this wrapper.
+                           */
+                          overflow: "visible",
+                          minWidth: 0,
+                          lineHeight: "normal"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              style: {
+                                color: "#111827",
+                                fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+                                letterSpacing: "0.03em",
+                                /*
+                                 * FIX: lineHeight must be ≥1.6 for Bengali.
+                                 * Bengali vowel marks sit ~0.3em above the cap-height;
+                                 * a tight lineHeight (e.g. 1.2) would clip them.
+                                 */
+                                lineHeight: "1.7",
+                                fontWeight: 700,
+                                /*
+                                 * FIX: overflow:visible instead of truncate/overflow:hidden.
+                                 * If the name is very long, use ellipsis only in the text
+                                 * direction, NOT by hiding vertical overflow.
+                                 */
+                                overflow: "visible",
+                                whiteSpace: "nowrap",
+                                textOverflow: "ellipsis",
+                                maxWidth: "clamp(120px, 30vw, 300px)"
+                              },
+                              children: settings.siteName
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              className: "hidden sm:block text-xs uppercase",
+                              style: {
+                                color: "#9ca3af",
+                                letterSpacing: "0.08em",
+                                fontWeight: 500,
+                                marginTop: 2,
+                                /*
+                                 * FIX: lineHeight 1.7 here too — the tagline may contain
+                                 * Bengali characters with vowel diacritics.
+                                 */
+                                lineHeight: "1.7",
+                                /*
+                                 * FIX: overflow:visible — do NOT clip tagline text vertically.
+                                 */
+                                overflow: "visible",
+                                whiteSpace: "nowrap",
+                                textOverflow: "ellipsis",
+                                maxWidth: "clamp(120px, 30vw, 300px)"
+                              },
+                              children: settings.tagline
+                            }
+                          )
+                        ]
                       }
                     )
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", style: { lineHeight: "normal" }, children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "div",
-                    {
-                      className: "font-bold truncate",
-                      style: {
-                        color: "#111827",
-                        fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
-                        letterSpacing: "0.03em",
-                        lineHeight: "1.4"
-                      },
-                      children: settings.siteName
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "div",
-                    {
-                      className: "hidden sm:block text-xs uppercase truncate",
-                      style: {
-                        color: "#9ca3af",
-                        letterSpacing: "0.08em",
-                        fontWeight: 500,
-                        marginTop: 2,
-                        lineHeight: "1.4"
-                      },
-                      children: settings.tagline
-                    }
-                  )
-                ] })
-              ] }),
+                  ]
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
@@ -17854,7 +17947,8 @@ function Header({
                     color: "#9ca3af",
                     letterSpacing: "0.08em",
                     fontWeight: 500,
-                    lineHeight: "1.6"
+                    lineHeight: "1.7",
+                    overflow: "visible"
                   },
                   children: settings.tagline
                 }
@@ -17875,7 +17969,8 @@ function Header({
                       style: {
                         color: isActive ? "#dc2626" : "#374151",
                         backgroundColor: isActive ? "#fef2f2" : "transparent",
-                        lineHeight: "1.6"
+                        lineHeight: "1.7",
+                        overflow: "visible"
                       },
                       children: link.label
                     },
@@ -17893,7 +17988,11 @@ function Header({
                       onSettingsClick();
                     },
                     className: "flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
-                    style: { color: "#6b7280", lineHeight: "1.6" },
+                    style: {
+                      color: "#6b7280",
+                      lineHeight: "1.7",
+                      overflow: "visible"
+                    },
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, { size: 15 }),
                       "সেটিংস"
@@ -17921,7 +18020,12 @@ function Header({
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         "span",
                         {
-                          style: { color: "#6b7280", fontSize: 12, lineHeight: "1.4" },
+                          style: {
+                            color: "#6b7280",
+                            fontSize: 12,
+                            lineHeight: "1.7",
+                            overflow: "visible"
+                          },
                           children: "ভিউ:"
                         }
                       ),
@@ -17938,7 +18042,8 @@ function Header({
                             backgroundColor: previewMode === "mobile" ? "#dc2626" : "#f3f4f6",
                             color: previewMode === "mobile" ? "#ffffff" : "#6b7280",
                             border: previewMode === "mobile" ? "1px solid #dc2626" : "1px solid #e5e7eb",
-                            lineHeight: "1.4"
+                            lineHeight: "1.7",
+                            overflow: "visible"
                           },
                           children: [
                             /* @__PURE__ */ jsxRuntimeExports.jsx(Smartphone, { size: 13 }),
@@ -17959,7 +18064,8 @@ function Header({
                             backgroundColor: previewMode === "desktop" ? "#dc2626" : "#f3f4f6",
                             color: previewMode === "desktop" ? "#ffffff" : "#6b7280",
                             border: previewMode === "desktop" ? "1px solid #dc2626" : "1px solid #e5e7eb",
-                            lineHeight: "1.4"
+                            lineHeight: "1.7",
+                            overflow: "visible"
                           },
                           children: [
                             /* @__PURE__ */ jsxRuntimeExports.jsx(Monitor, { size: 13 }),
@@ -17998,7 +18104,8 @@ function NavLink({
         color: isActive ? "#dc2626" : hovered ? "#111827" : "#374151",
         borderBottomColor: isActive ? "#dc2626" : "transparent",
         letterSpacing: "0.01em",
-        lineHeight: "1.6"
+        lineHeight: "1.7",
+        overflow: "visible"
       },
       children: label
     }
@@ -18024,7 +18131,8 @@ function PostBtn({
         border: "1.5px solid #dc2626",
         color: hovered ? "#fff" : "#dc2626",
         backgroundColor: hovered ? "#dc2626" : "transparent",
-        lineHeight: "1.4"
+        lineHeight: "1.7",
+        overflow: "visible"
       },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 13 }),

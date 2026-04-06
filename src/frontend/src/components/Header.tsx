@@ -90,18 +90,36 @@ export function Header({
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div
           className="flex items-center justify-between gap-4"
-          style={{ minHeight: 64, paddingTop: 8, paddingBottom: 8 }}
+          style={{
+            /*
+             * FIX: Increased minHeight from 64→72px and vertical padding
+             * from 8→14px so Bengali vowel marks (মাত্রা) that extend above
+             * the cap-height have room and are never clipped by the row boundary.
+             */
+            minHeight: 72,
+            paddingTop: 14,
+            paddingBottom: 14,
+          }}
         >
           {/* === LEFT: Logo + Site Name + Tagline === */}
-          <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+          <div
+            className="flex items-center gap-3 sm:gap-4"
+            style={{ minWidth: 0 }}
+          >
             {/* Logo box */}
             <div
-              className="flex items-center justify-center shrink-0 rounded-md overflow-hidden"
+              className="flex items-center justify-center shrink-0 rounded-md"
               style={{
                 width: 44,
                 height: 44,
                 border: "2px solid #dc2626",
                 background: "#fef2f2",
+                /*
+                 * overflow:hidden is OK here because we are clipping an IMAGE
+                 * (not Bengali text). The logo box just needs rounded corners.
+                 */
+                overflow: "hidden",
+                flexShrink: 0,
               }}
             >
               {settings.logoBase64 ? (
@@ -116,7 +134,11 @@ export function Header({
                   style={{
                     color: "#dc2626",
                     fontSize: 18,
-                    lineHeight: "1.3",
+                    /*
+                     * lineHeight:1.6 rather than "normal" so the single Bengali
+                     * syllable "বা" is not clipped inside the logo box.
+                     */
+                    lineHeight: "1.6",
                   }}
                 >
                   বা
@@ -125,26 +147,67 @@ export function Header({
             </div>
 
             {/* Site name + tagline */}
-            <div className="min-w-0" style={{ lineHeight: "normal" }}>
+            <div
+              style={{
+                /*
+                 * FIX: NO overflow:hidden here.
+                 * Tailwind's `truncate` shorthand sets both `overflow:hidden`
+                 * AND `text-overflow:ellipsis`. Setting overflow:hidden on a
+                 * text container clips Bengali diacritics that sit above the
+                 * normal line-box, making the top of the text invisible.
+                 *
+                 * Instead we use maxWidth + text-overflow:ellipsis on the
+                 * inner spans, while keeping overflow:visible on this wrapper.
+                 */
+                overflow: "visible",
+                minWidth: 0,
+                lineHeight: "normal",
+              }}
+            >
               <div
-                className="font-bold truncate"
                 style={{
                   color: "#111827",
                   fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
                   letterSpacing: "0.03em",
-                  lineHeight: "1.4",
+                  /*
+                   * FIX: lineHeight must be ≥1.6 for Bengali.
+                   * Bengali vowel marks sit ~0.3em above the cap-height;
+                   * a tight lineHeight (e.g. 1.2) would clip them.
+                   */
+                  lineHeight: "1.7",
+                  fontWeight: 700,
+                  /*
+                   * FIX: overflow:visible instead of truncate/overflow:hidden.
+                   * If the name is very long, use ellipsis only in the text
+                   * direction, NOT by hiding vertical overflow.
+                   */
+                  overflow: "visible",
+                  whiteSpace: "nowrap",
+                  textOverflow: "ellipsis",
+                  maxWidth: "clamp(120px, 30vw, 300px)",
                 }}
               >
                 {settings.siteName}
               </div>
               <div
-                className="hidden sm:block text-xs uppercase truncate"
+                className="hidden sm:block text-xs uppercase"
                 style={{
                   color: "#9ca3af",
                   letterSpacing: "0.08em",
                   fontWeight: 500,
                   marginTop: 2,
-                  lineHeight: "1.4",
+                  /*
+                   * FIX: lineHeight 1.7 here too — the tagline may contain
+                   * Bengali characters with vowel diacritics.
+                   */
+                  lineHeight: "1.7",
+                  /*
+                   * FIX: overflow:visible — do NOT clip tagline text vertically.
+                   */
+                  overflow: "visible",
+                  whiteSpace: "nowrap",
+                  textOverflow: "ellipsis",
+                  maxWidth: "clamp(120px, 30vw, 300px)",
                 }}
               >
                 {settings.tagline}
@@ -316,7 +379,8 @@ export function Header({
               color: "#9ca3af",
               letterSpacing: "0.08em",
               fontWeight: 500,
-              lineHeight: "1.6",
+              lineHeight: "1.7",
+              overflow: "visible",
             }}
           >
             {settings.tagline}
@@ -338,7 +402,8 @@ export function Header({
                   style={{
                     color: isActive ? "#dc2626" : "#374151",
                     backgroundColor: isActive ? "#fef2f2" : "transparent",
-                    lineHeight: "1.6",
+                    lineHeight: "1.7",
+                    overflow: "visible",
                   }}
                 >
                   {link.label}
@@ -357,7 +422,11 @@ export function Header({
                   onSettingsClick();
                 }}
                 className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-md transition-colors"
-                style={{ color: "#6b7280", lineHeight: "1.6" }}
+                style={{
+                  color: "#6b7280",
+                  lineHeight: "1.7",
+                  overflow: "visible",
+                }}
               >
                 <Settings size={15} />
                 সেটিংস
@@ -383,7 +452,12 @@ export function Header({
                 data-ocid="mobile.preview_switch.toggle"
               >
                 <span
-                  style={{ color: "#6b7280", fontSize: 12, lineHeight: "1.4" }}
+                  style={{
+                    color: "#6b7280",
+                    fontSize: 12,
+                    lineHeight: "1.7",
+                    overflow: "visible",
+                  }}
                 >
                   ভিউ:
                 </span>
@@ -402,7 +476,8 @@ export function Header({
                       previewMode === "mobile"
                         ? "1px solid #dc2626"
                         : "1px solid #e5e7eb",
-                    lineHeight: "1.4",
+                    lineHeight: "1.7",
+                    overflow: "visible",
                   }}
                 >
                   <Smartphone size={13} />
@@ -423,7 +498,8 @@ export function Header({
                       previewMode === "desktop"
                         ? "1px solid #dc2626"
                         : "1px solid #e5e7eb",
-                    lineHeight: "1.4",
+                    lineHeight: "1.7",
+                    overflow: "visible",
                   }}
                 >
                   <Monitor size={13} />
@@ -464,7 +540,8 @@ function NavLink({
         color: isActive ? "#dc2626" : hovered ? "#111827" : "#374151",
         borderBottomColor: isActive ? "#dc2626" : "transparent",
         letterSpacing: "0.01em",
-        lineHeight: "1.6",
+        lineHeight: "1.7",
+        overflow: "visible",
       }}
     >
       {label}
@@ -496,7 +573,8 @@ function PostBtn({
         border: "1.5px solid #dc2626",
         color: hovered ? "#fff" : "#dc2626",
         backgroundColor: hovered ? "#dc2626" : "transparent",
-        lineHeight: "1.4",
+        lineHeight: "1.7",
+        overflow: "visible",
       }}
     >
       <PenSquare size={13} />

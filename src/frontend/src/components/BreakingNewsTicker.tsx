@@ -51,9 +51,19 @@ export function BreakingNewsTicker() {
       className="w-full"
       style={{
         backgroundColor: "oklch(0.4764 0.2183 22.8)",
-        /* Extra vertical padding so Bengali diacritics have full room */
-        paddingTop: "10px",
-        paddingBottom: "10px",
+        /*
+         * Generous vertical padding so Bengali vowel marks (মাত্রা/স্বরচিহ্ন)
+         * that extend above the cap-height are never cropped.
+         */
+        paddingTop: "14px",
+        paddingBottom: "14px",
+        /*
+         * overflow: clip on the OUTER shell hides horizontal overflow without
+         * creating a scroll container and — crucially — does NOT force the
+         * perpendicular axis (overflow-y) to become "auto"/"hidden".
+         * This is the key difference vs overflow:hidden which forces both axes.
+         */
+        overflow: "clip",
       }}
       aria-label="ব্রেকিং নিউজ"
     >
@@ -61,7 +71,13 @@ export function BreakingNewsTicker() {
         style={{
           display: "flex",
           alignItems: "center",
-          minHeight: "40px",
+          /*
+           * minHeight must accommodate: line-height × font-size + vertical padding
+           * Bengali diacritics add ~0.3em above the cap height, so lineHeight:2
+           * on 14px text ≈ 28px; 12px×2 = 24px for the label.
+           * 56px is a safe lower bound.
+           */
+          minHeight: "64px",
         }}
       >
         {/* Label */}
@@ -70,7 +86,7 @@ export function BreakingNewsTicker() {
             display: "flex",
             alignItems: "center",
             gap: "6px",
-            padding: "6px 16px",
+            padding: "10px 16px",
             backgroundColor: "oklch(0.34 0.2183 22.8)",
             color: "#ffffff",
             fontWeight: 700,
@@ -80,8 +96,9 @@ export function BreakingNewsTicker() {
             lineHeight: "2",
             flexShrink: 0,
             whiteSpace: "nowrap",
-            /* Ensure label does not clip its own text */
+            /* Never clip this label's own text either */
             overflow: "visible",
+            alignSelf: "stretch",
           }}
         >
           <span
@@ -110,20 +127,27 @@ export function BreakingNewsTicker() {
 
         {/*
           Scrolling content wrapper.
-          IMPORTANT: We use clip-path instead of overflow:hidden to mask
-          horizontal overflow, because setting overflow-x:hidden forces
-          overflow-y to become "auto" in all browsers — which clips Bengali
-          diacritics above the line. clip-path does not trigger that behaviour.
+
+          KEY FIX:
+          We removed clipPath: "inset(0 0 0 0)" which was clipping ALL four
+          sides — including the top — and cutting off Bengali vowel marks.
+
+          The outer shell already uses `overflow: clip` which handles
+          horizontal containment. This inner div just needs `overflow: visible`
+          so Bengali diacritics that sit above the normal line-box are not cut.
+
+          Extra paddingTop/paddingBottom give the diacritics room even when the
+          parent's overflow:clip edge coincides with the content boundary.
         */}
         <div
           style={{
             flex: 1,
-            /* clip horizontally without touching vertical overflow */
-            clipPath: "inset(0 0 0 0)",
+            /* MUST be visible — no clip here — parent already clips x-axis */
+            overflow: "visible",
             position: "relative",
-            /* Extra vertical room for diacritics */
-            paddingTop: "4px",
-            paddingBottom: "4px",
+            /* Room for Bengali vowel marks above the cap-height */
+            paddingTop: "6px",
+            paddingBottom: "6px",
           }}
         >
           <div
@@ -132,6 +156,8 @@ export function BreakingNewsTicker() {
               display: "flex",
               alignItems: "center",
               whiteSpace: "nowrap",
+              /* Also visible here — clipping is handled by the outermost shell */
+              overflow: "visible",
             }}
           >
             {tickerContent.map((item, idx) => (
@@ -143,10 +169,13 @@ export function BreakingNewsTicker() {
                   alignItems: "center",
                   gap: "12px",
                   color: "#ffffff",
-                  fontSize: "14px",
+                  fontSize: "12px",
                   fontWeight: 600,
-                  /* lineHeight:2 gives Bengali vowel marks (মাত্রা) plenty of
-                     space above and below the baseline */
+                  /*
+                   * lineHeight:2 gives Bengali vowel marks (মাত্রা) plenty of
+                   * vertical space. Without this, ascenders get clipped even
+                   * when overflow is visible because the line-box itself is tight.
+                   */
                   lineHeight: "2",
                 }}
               >
