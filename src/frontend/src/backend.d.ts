@@ -23,12 +23,24 @@ export interface Article {
     isFeatured: boolean;
     category: string;
 }
+export interface ExternalNews {
+    id: bigint;
+    title: string;
+    summary: string;
+    sourceUrl: string;
+    sourceName: string;
+    category: string;
+    fetchedAt: Time;
+}
 export interface backendInterface {
     addAdmin(admin: Principal): Promise<void>;
     createArticle(title: string, summary: string, category: string, imageUrl: string, author: string, isFeatured: boolean): Promise<bigint>;
     createBreakingNews(text: string): Promise<bigint>;
+    fetchExternalNews(): Promise<bigint>;
     getAllArticles(): Promise<Array<Article>>;
     getAllBreakingNews(): Promise<Array<BreakingNews>>;
     getArticle(id: bigint): Promise<Article>;
+    getExternalNews(): Promise<Array<ExternalNews>>;
     getFeaturedArticles(): Promise<Array<Article>>;
+    getLastFetchedTime(): Promise<[] | [Time]>;
 }

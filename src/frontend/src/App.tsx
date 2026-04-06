@@ -3,6 +3,7 @@ import type { Article } from "./backend";
 import { BreakingNewsTicker } from "./components/BreakingNewsTicker";
 import { CategoryNewsSection } from "./components/CategoryNewsSection";
 import { EditorsPicks } from "./components/EditorsPicks";
+import { ExternalNewsSection } from "./components/ExternalNewsSection";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { HeroSlider } from "./components/HeroSlider";
@@ -77,6 +78,16 @@ export default function App() {
             </div>
           </>
         )}
+
+        {/* Divider before external news */}
+        <div className="max-w-[1200px] mx-auto px-4">
+          <div className="h-px" style={{ backgroundColor: "#2d2d2d" }} />
+        </div>
+
+        {/* External News Section - national & international headlines */}
+        <div className="max-w-[1200px] mx-auto px-4 py-8">
+          <ExternalNewsSection />
+        </div>
       </main>
 
       {/* Footer */}

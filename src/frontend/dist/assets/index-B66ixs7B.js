@@ -14811,7 +14811,7 @@ function formatPublishedAt$1(publishedAt) {
     return "";
   }
 }
-function groupByCategory(articles) {
+function groupByCategory$1(articles) {
   const map = /* @__PURE__ */ new Map();
   for (const article of articles) {
     const existing = map.get(article.category) ?? [];
@@ -14831,7 +14831,7 @@ function groupByCategory(articles) {
 }
 function CategoryNewsSection({ articles }) {
   if (!articles || articles.length === 0) return null;
-  const grouped = groupByCategory(articles);
+  const grouped = groupByCategory$1(articles);
   const sortedCategories = Array.from(grouped.keys()).sort(
     (a2, b2) => a2.localeCompare(b2, "bn")
   );
@@ -15131,16 +15131,39 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$e = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$e);
+const __iconNode$g = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$g);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$d = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$d);
+const __iconNode$f = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$f);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$e = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$e);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$d = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15148,11 +15171,11 @@ const ChevronRight = createLucideIcon("chevron-right", __iconNode$d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$c = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$c);
+const ExternalLink = createLucideIcon("external-link", __iconNode$c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15160,30 +15183,30 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$b);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$a = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
   ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
   ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
 ];
-const Image = createLucideIcon("image", __iconNode$a);
+const Image = createLucideIcon("image", __iconNode$b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$9 = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$9);
+const __iconNode$a = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$a);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
+];
+const Mail = createLucideIcon("mail", __iconNode$9);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15191,17 +15214,6 @@ const LoaderCircle = createLucideIcon("loader-circle", __iconNode$9);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$8 = [
-  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
-  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
-];
-const Mail = createLucideIcon("mail", __iconNode$8);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$7 = [
   [
     "path",
     {
@@ -15211,7 +15223,19 @@ const __iconNode$7 = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$7);
+const MapPin = createLucideIcon("map-pin", __iconNode$8);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$7 = [
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 18h16", key: "19g7jn" }],
+  ["path", { d: "M4 6h16", key: "1o0s65" }]
+];
+const Menu = createLucideIcon("menu", __iconNode$7);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15219,11 +15243,12 @@ const MapPin = createLucideIcon("map-pin", __iconNode$7);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$6 = [
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 18h16", key: "19g7jn" }],
-  ["path", { d: "M4 6h16", key: "1o0s65" }]
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
 ];
-const Menu = createLucideIcon("menu", __iconNode$6);
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$6);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15297,1016 +15322,6 @@ const __iconNode = [
   ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
 ];
 const X$1 = createLucideIcon("x", __iconNode);
-var DefaultContext = {
-  color: void 0,
-  size: void 0,
-  className: void 0,
-  style: void 0,
-  attr: void 0
-};
-var IconContext = React$2.createContext && /* @__PURE__ */ React$2.createContext(DefaultContext);
-var _excluded = ["attr", "size", "title"];
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  for (var key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      if (excluded.indexOf(key) >= 0) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _extends() {
-  _extends = Object.assign ? Object.assign.bind() : function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends.apply(this, arguments);
-}
-function ownKeys(e, r2) {
-  var t = Object.keys(e);
-  if (Object.getOwnPropertySymbols) {
-    var o2 = Object.getOwnPropertySymbols(e);
-    r2 && (o2 = o2.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e, r3).enumerable;
-    })), t.push.apply(t, o2);
-  }
-  return t;
-}
-function _objectSpread(e) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys(Object(t), true).forEach(function(r3) {
-      _defineProperty(e, r3, t[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r3) {
-      Object.defineProperty(e, r3, Object.getOwnPropertyDescriptor(t, r3));
-    });
-  }
-  return e;
-}
-function _defineProperty(obj, key, value) {
-  key = _toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey(t) {
-  var i = _toPrimitive(t, "string");
-  return "symbol" == typeof i ? i : i + "";
-}
-function _toPrimitive(t, r2) {
-  if ("object" != typeof t || !t) return t;
-  var e = t[Symbol.toPrimitive];
-  if (void 0 !== e) {
-    var i = e.call(t, r2);
-    if ("object" != typeof i) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r2 ? String : Number)(t);
-}
-function Tree2Element(tree) {
-  return tree && tree.map((node, i) => /* @__PURE__ */ React$2.createElement(node.tag, _objectSpread({
-    key: i
-  }, node.attr), Tree2Element(node.child)));
-}
-function GenIcon(data) {
-  return (props) => /* @__PURE__ */ React$2.createElement(IconBase, _extends({
-    attr: _objectSpread({}, data.attr)
-  }, props), Tree2Element(data.child));
-}
-function IconBase(props) {
-  var elem = (conf) => {
-    var {
-      attr,
-      size,
-      title
-    } = props, svgProps = _objectWithoutProperties(props, _excluded);
-    var computedSize = size || conf.size || "1em";
-    var className;
-    if (conf.className) className = conf.className;
-    if (props.className) className = (className ? className + " " : "") + props.className;
-    return /* @__PURE__ */ React$2.createElement("svg", _extends({
-      stroke: "currentColor",
-      fill: "currentColor",
-      strokeWidth: "0"
-    }, conf.attr, attr, svgProps, {
-      className,
-      style: _objectSpread(_objectSpread({
-        color: props.color || conf.color
-      }, conf.style), props.style),
-      height: computedSize,
-      width: computedSize,
-      xmlns: "http://www.w3.org/2000/svg"
-    }), title && /* @__PURE__ */ React$2.createElement("title", null, title), props.children);
-  };
-  return IconContext !== void 0 ? /* @__PURE__ */ React$2.createElement(IconContext.Consumer, null, (conf) => elem(conf)) : elem(DefaultContext);
-}
-function SiFacebook(props) {
-  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" }, "child": [] }] })(props);
-}
-function SiInstagram(props) {
-  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" }, "child": [] }] })(props);
-}
-function SiX(props) {
-  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" }, "child": [] }] })(props);
-}
-function SiYoutube(props) {
-  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" }, "child": [] }] })(props);
-}
-const sectionLinks = [
-  "স্থানীয়",
-  "জাতীয়",
-  "বিশ্ব",
-  "রাজনীতি",
-  "ব্যবসা",
-  "খেলাধুলা",
-  "বিনোদন",
-  "মতামত"
-];
-const resourceLinks = [
-  "আমাদের সম্পর্কে",
-  "যোগাযোগ",
-  "বিজ্ঞাপন দিন",
-  "গোপনীয়তা নীতি",
-  "শর্তাবলী",
-  "আর্কাইভ"
-];
-function Footer() {
-  const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-  const hostname = typeof window !== "undefined" ? window.location.hostname : "";
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "footer",
-    {
-      className: "w-full mt-12",
-      style: { backgroundColor: "#0a0a0a", borderTop: "1px solid #2d2d2d" },
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-10", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-center justify-center w-8 h-8 rounded font-bold text-base",
-                  style: {
-                    backgroundColor: "#1a1a1a",
-                    border: "1px solid #2d2d2d"
-                  },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-bold text-sm uppercase tracking-widest", children: "বালীগাঁও নিউজ" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "p",
-              {
-                className: "text-xs leading-relaxed mb-4",
-                style: { color: "#9c9c9c" },
-                children: "বালীগাঁও নিউজ বালিগাঁও, লাখাই, হবিগঞ্জ-এর একটি নির্ভরযোগ্য স্থানীয় সংবাদ মাধ্যম। আমরা প্রতিদিন সর্বশেষ, নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।"
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-center gap-2",
-                  style: { color: "#9c9c9c" },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { size: 12, className: "shrink-0" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "baligawnews@gmail.com" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-start gap-2",
-                  style: { color: "#9c9c9c" },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { size: 12, className: "shrink-0 mt-0.5" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "বালিগাঁও, লাখাই, হবিগঞ্জ" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "flex items-center gap-2",
-                  style: { color: "#9c9c9c" },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 12, className: "shrink-0" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "সম্পাদক: এম.ডি ব্রাইট" })
-                  ]
-                }
-              )
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "বিভাগ" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: sectionLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "a",
-              {
-                href: "#content",
-                className: "text-xs transition-colors hover:text-white",
-                style: { color: "#9c9c9c" },
-                children: link
-              }
-            ) }, link)) })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "রিসোর্স" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: resourceLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "a",
-              {
-                href: "#content",
-                className: "text-xs transition-colors hover:text-white",
-                style: { color: "#9c9c9c" },
-                children: link
-              }
-            ) }, link)) })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "সোশ্যাল মিডিয়া" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: "https://facebook.com/baligawnews",
-                  "data-ocid": "footer.facebook.link",
-                  className: "flex items-center gap-2.5 text-xs transition-colors group",
-                  style: { color: "#9c9c9c" },
-                  "aria-label": "Facebook",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      SiFacebook,
-                      {
-                        size: 16,
-                        className: "group-hover:text-white transition-colors"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: "https://x.com/baligawnews",
-                  "data-ocid": "footer.twitter.link",
-                  className: "flex items-center gap-2.5 text-xs transition-colors group",
-                  style: { color: "#9c9c9c" },
-                  "aria-label": "X (Twitter)",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      SiX,
-                      {
-                        size: 14,
-                        className: "group-hover:text-white transition-colors"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: "https://youtube.com/@baligawnews",
-                  "data-ocid": "footer.youtube.link",
-                  className: "flex items-center gap-2.5 text-xs transition-colors group",
-                  style: { color: "#9c9c9c" },
-                  "aria-label": "YouTube",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      SiYoutube,
-                      {
-                        size: 16,
-                        className: "group-hover:text-white transition-colors"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "বালীগাঁও নিউজ" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: "https://instagram.com/baligawnews",
-                  "data-ocid": "footer.instagram.link",
-                  className: "flex items-center gap-2.5 text-xs transition-colors group",
-                  style: { color: "#9c9c9c" },
-                  "aria-label": "Instagram",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      SiInstagram,
-                      {
-                        size: 16,
-                        className: "group-hover:text-white transition-colors"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
-                  ]
-                }
-              )
-            ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "div",
-          {
-            className: "mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs",
-            style: { borderTop: "1px solid #2d2d2d", color: "#6b6b6b" },
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-                "© ",
-                currentYear,
-                " বালীগাঁও নিউজ। সকল স্বত্ব সংরক্ষিত।"
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
-                "Built with ❤️ using",
-                " ",
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "a",
-                  {
-                    href: `https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`,
-                    className: "hover:text-white transition-colors",
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "caffeine.ai"
-                  }
-                )
-              ] })
-            ]
-          }
-        )
-      ] })
-    }
-  );
-}
-const navLinks = [
-  { label: "হোম", href: "#home" },
-  { label: "স্থানীয় খবর", href: "#local" },
-  { label: "জাতীয় খবর", href: "#national" },
-  { label: "আন্তর্জাতিক খবর", href: "#international" },
-  { label: "শিক্ষা", href: "#education" },
-  { label: "স্বাস্থ্য", href: "#health" },
-  { label: "কৃষি", href: "#agriculture" },
-  { label: "খেলাধুলা", href: "#sports" },
-  { label: "ধর্মীয় অনুষ্ঠান", href: "#religion" },
-  { label: "ফিচার স্টোরি", href: "#feature" },
-  { label: "মাল্টিমিডিয়া", href: "#multimedia" },
-  { label: "আমাদের সম্পর্কে", href: "#about" },
-  { label: "যোগাযোগ", href: "#contact" }
-];
-function Header({ onPostClick }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = reactExports.useState(false);
-  const [searchOpen, setSearchOpen] = reactExports.useState(false);
-  const [activeNav, setActiveNav] = reactExports.useState("হোম");
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "header",
-    {
-      className: "sticky top-0 z-50 w-full",
-      style: { backgroundColor: "#050505", borderBottom: "1px solid #2d2d2d" },
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between gap-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "div",
-              {
-                className: "flex items-center justify-center w-10 h-10 rounded font-bold text-xl",
-                style: { backgroundColor: "#1a1a1a", border: "1px solid #2d2d2d" },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "leading-tight", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-bold text-lg tracking-widest uppercase", children: "বালীগাঁও নিউজ" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "div",
-                {
-                  className: "text-xs tracking-wider uppercase",
-                  style: { color: "#9c9c9c" },
-                  children: "Voice of Truth & Freedom"
-                }
-              )
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "div",
-              {
-                className: "hidden sm:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide",
-                style: { color: "#9c9c9c" },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Tv, { size: 13 }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "লাইভ টিভি" })
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.search_input",
-                onClick: () => setSearchOpen(!searchOpen),
-                className: "p-2 text-gray-400 hover:text-white transition-colors rounded",
-                "aria-label": "সার্চ করুন",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { size: 18 })
-              }
-            ),
-            onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.post_news.button",
-                onClick: onPostClick,
-                className: "hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-widest rounded transition-all hover:opacity-90",
-                style: {
-                  border: "1.5px solid oklch(0.4764 0.2183 22.8)",
-                  color: "oklch(0.4764 0.2183 22.8)",
-                  backgroundColor: "transparent"
-                },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 13 }),
-                  "সংবাদ পোস্ট"
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.subscribe.button",
-                className: "hidden sm:inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80",
-                style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-                children: "সাবস্ক্রাইব"
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "header.mobile_menu.toggle",
-                className: "lg:hidden p-2 text-gray-400 hover:text-white transition-colors",
-                onClick: () => setMobileMenuOpen(!mobileMenuOpen),
-                "aria-label": "মেনু",
-                children: mobileMenuOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 22 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { size: 22 })
-              }
-            )
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "hidden lg:block border-t w-full",
-            style: { backgroundColor: "#0d0d0d", borderColor: "#2d2d2d" },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "nav",
-              {
-                className: "max-w-[1200px] mx-auto px-4",
-                "aria-label": "Primary navigation",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center flex-wrap", children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "a",
-                  {
-                    href: link.href,
-                    "data-ocid": `nav.${link.label}.link`,
-                    onClick: () => setActiveNav(link.label),
-                    className: `px-3 py-3 text-[12px] font-medium tracking-wide whitespace-nowrap transition-colors border-b-2 ${activeNav === link.label ? "text-white" : "text-gray-400 hover:text-white border-transparent"}`,
-                    style: activeNav === link.label ? {
-                      borderBottomColor: "oklch(0.4764 0.2183 22.8)",
-                      color: "oklch(0.4764 0.2183 22.8)"
-                    } : { borderBottomColor: "transparent" },
-                    children: link.label
-                  },
-                  link.label
-                )) })
-              }
-            )
-          }
-        ),
-        searchOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "border-t",
-            style: { backgroundColor: "#0a0a0a", borderColor: "#2d2d2d" },
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Search,
-                {
-                  size: 16,
-                  className: "absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "input",
-                {
-                  type: "text",
-                  placeholder: "খবর খুঁজুন...",
-                  className: "w-full bg-transparent border rounded pl-9 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none",
-                  style: { borderColor: "#2d2d2d" },
-                  "data-ocid": "header.search_input"
-                }
-              )
-            ] }) })
-          }
-        ),
-        mobileMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "nav",
-          {
-            className: "lg:hidden border-t",
-            style: { backgroundColor: "#0a0a0a", borderColor: "#2d2d2d" },
-            "aria-label": "Mobile navigation",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-3 flex flex-col gap-1", children: [
-              navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "a",
-                {
-                  href: link.href,
-                  "data-ocid": `mobile.nav.${link.label}.link`,
-                  onClick: () => {
-                    setActiveNav(link.label);
-                    setMobileMenuOpen(false);
-                  },
-                  className: `px-3 py-2.5 text-sm font-medium tracking-wide rounded transition-colors ${activeNav === link.label ? "text-white" : "text-gray-300 hover:text-white"}`,
-                  style: activeNav === link.label ? {
-                    backgroundColor: "oklch(0.4764 0.2183 22.8 / 0.2)",
-                    color: "oklch(0.4764 0.2183 22.8)"
-                  } : {},
-                  children: link.label
-                },
-                link.label
-              )),
-              onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "button",
-                {
-                  type: "button",
-                  "data-ocid": "mobile.post_news.button",
-                  onClick: () => {
-                    setMobileMenuOpen(false);
-                    onPostClick();
-                  },
-                  className: "mt-1 flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-bold uppercase tracking-widest rounded hover:opacity-80 transition-opacity",
-                  style: {
-                    border: "1.5px solid oklch(0.4764 0.2183 22.8)",
-                    color: "oklch(0.4764 0.2183 22.8)",
-                    backgroundColor: "transparent"
-                  },
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 15 }),
-                    "সংবাদ পোস্ট করুন"
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  "data-ocid": "mobile.subscribe.button",
-                  className: "mt-1 text-center px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-white rounded hover:opacity-80 transition-opacity",
-                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-                  children: "সাবস্ক্রাইব"
-                }
-              )
-            ] })
-          }
-        )
-      ]
-    }
-  );
-}
-const slides = [
-  {
-    id: 1,
-    category: "স্থানীয়",
-    headline: "রাজধানীর যানজট নিরসনে নতুন মেট্রোরেল লাইন চালু হচ্ছে আগামী মাসে",
-    excerpt: "ঢাকা মেট্রোপলিটান কর্তৃপক্ষ জানিয়েছে, নতুন মেট্রোরেল লাইন চালু হলে প্রতিদিন প্রায় পাঁচ লক্ষ যাত্রী পরিবহন করা সম্ভব হবে।",
-    author: "আহমেদ রহমান",
-    time: "২ ঘন্টা আগে",
-    image: "/assets/generated/hero-city-news.dim_800x450.jpg"
-  },
-  {
-    id: 2,
-    category: "রাজনীতি",
-    headline: "জাতীয় সংসদের বিশেষ অধিবেশনে নতুন আর্থিক নীতিমালা অনুমোদন",
-    excerpt: "আজ জাতীয় সংসদের বিশেষ অধিবেশনে দেশের অর্থনৈতিক উন্নয়নে একটি যুগান্তকারী আর্থিক নীতিমালা সর্বসম্মতিক্রমে পাস হয়েছে।",
-    author: "ফারহান হোসেন",
-    time: "৪ ঘন্টা আগে",
-    image: "/assets/generated/hero-politics.dim_800x450.jpg"
-  },
-  {
-    id: 3,
-    category: "অর্থনীতি",
-    headline: "দেশের কৃষিপণ্য রফতানিতে নতুন রেকর্ড, আয় বেড়েছে ৩০ শতাংশ",
-    excerpt: "চলতি অর্থবছরে বাংলাদেশের কৃষিপণ্য রফতানি গত বছরের তুলনায় ৩০ শতাংশ বৃদ্ধি পেয়ে নতুন মাইলফলক স্পর্শ করেছে।",
-    author: "সুমাইয়া বেগম",
-    time: "৬ ঘন্টা আগে",
-    image: "/assets/generated/hero-market.dim_800x450.jpg"
-  }
-];
-function HeroSlider() {
-  const [current, setCurrent] = reactExports.useState(0);
-  const [isAnimating, setIsAnimating] = reactExports.useState(false);
-  const goTo = reactExports.useCallback(
-    (index2) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setCurrent((index2 + slides.length) % slides.length);
-      setTimeout(() => setIsAnimating(false), 500);
-    },
-    [isAnimating]
-  );
-  const next = reactExports.useCallback(() => goTo(current + 1), [current, goTo]);
-  const prev = reactExports.useCallback(() => goTo(current - 1), [current, goTo]);
-  reactExports.useEffect(() => {
-    const timer = setInterval(next, 5e3);
-    return () => clearInterval(timer);
-  }, [next]);
-  const slide = slides[current];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "section",
-    {
-      className: "relative w-full overflow-hidden rounded",
-      style: { backgroundColor: "#111111" },
-      "aria-label": "শীর্ষ খবর স্লাইডার",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", style: { aspectRatio: "16/7" }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
-            {
-              src: slide.image,
-              alt: slide.headline,
-              className: "absolute inset-0 w-full h-full object-cover hero-slide-animate"
-            },
-            slide.id
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: "absolute inset-0",
-              style: {
-                background: "linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 100%)"
-              }
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: "absolute inset-0",
-              style: {
-                background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)"
-              }
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-end md:items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 md:p-10 max-w-[600px]", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "span",
-              {
-                className: "inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest text-white mb-3",
-                style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-                children: slide.category
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3", children: slide.headline }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm md:text-base text-gray-300 mb-4 leading-relaxed hidden sm:block", children: slide.excerpt }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "span",
-                {
-                  className: "text-xs font-medium",
-                  style: { color: "#9c9c9c" },
-                  children: slide.author
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#2d2d2d" }, children: "•" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#9c9c9c" }, children: slide.time })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                type: "button",
-                "data-ocid": "hero.read_full.button",
-                className: "inline-flex items-center px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-80",
-                style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-                children: "বিস্তারিত পড়ুন"
-              }
-            )
-          ] }) })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "button",
-          {
-            type: "button",
-            "data-ocid": "hero.slider.pagination_prev",
-            onClick: prev,
-            className: "absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80 z-10",
-            style: { backgroundColor: "rgba(0,0,0,0.5)" },
-            "aria-label": "আগের স্লাইড",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { size: 20 })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "button",
-          {
-            type: "button",
-            "data-ocid": "hero.slider.pagination_next",
-            onClick: next,
-            className: "absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80 z-10",
-            style: { backgroundColor: "rgba(0,0,0,0.5)" },
-            "aria-label": "পরের স্লাইড",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 20 })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10", children: slides.map((s2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "button",
-          {
-            type: "button",
-            "data-ocid": `hero.dot.${i + 1}`,
-            onClick: () => goTo(i),
-            className: "rounded-full transition-all",
-            style: {
-              width: i === current ? "20px" : "8px",
-              height: "8px",
-              backgroundColor: i === current ? "oklch(0.4764 0.2183 22.8)" : "rgba(255,255,255,0.4)"
-            },
-            "aria-label": `স্লাইড ${i + 1}`
-          },
-          s2.id
-        )) })
-      ]
-    }
-  );
-}
-const staticLatestNews = [
-  {
-    id: 1,
-    category: "প্রযুক্তি",
-    title: "দেশে প্রথমবার ৫জি নেটওয়ার্ক চালু, গতি বেড়েছে দশগুণ",
-    excerpt: "টেলিযোগাযোগ বিভাগ জানিয়েছে, এই বছরের মধ্যে সারা দেশে ৫জি কভারেজ নিশ্চিত করা হবে।",
-    author: "কামরুল ইসলাম",
-    time: "১ ঘন্টা আগে",
-    image: "/assets/generated/thumb-tech.dim_300x200.jpg"
-  },
-  {
-    id: 2,
-    category: "অর্থনীতি",
-    title: "দেশীয় শিল্পে বিনিয়োগ বৃদ্ধিতে নতুন প্রণোদনা প্যাকেজ ঘোষণা",
-    excerpt: "সরকার ঘরোয়া বিনিয়োগ বাড়াতে বিশেষ কর ছাড় ও ঋণ সুবিধার ঘোষণা দিয়েছে।",
-    author: "শাহানা পারভীন",
-    time: "২ ঘন্টা আগে",
-    image: "/assets/generated/thumb-business.dim_300x200.jpg"
-  },
-  {
-    id: 3,
-    category: "ত্রাণ",
-    title: "বন্যা দুর্গত এলাকায় ত্রাণ বিতরণ অব্যাহত, উদ্ধার কার্যক্রম চলছে",
-    excerpt: "সেনাবাহিনী ও স্বেচ্ছাসেবীরা বন্যাকবলিত অঞ্চলে সাহায্য পৌঁছে দিচ্ছেন।",
-    author: "আশরাফ উদ্দিন",
-    time: "৩ ঘন্টা আগে",
-    image: "/assets/generated/thumb-flood.dim_300x200.jpg"
-  },
-  {
-    id: 4,
-    category: "খেলাধুলা",
-    title: "জাতীয় ফুটবল লিগে নতুন দলের যোগদান, উত্তেজনা বাড়ছে সমর্থকদের মধ্যে",
-    excerpt: "এবারের সিজনে তিনটি নতুন দল লিগে অংশ নিচ্ছে, যা প্রতিযোগিতাকে আরও তীব্র করে তুলবে।",
-    author: "মিজানুর রহমান",
-    time: "৪ ঘন্টা আগে",
-    image: "/assets/generated/thumb-sports.dim_300x200.jpg"
-  },
-  {
-    id: 5,
-    category: "সংস্কৃতি",
-    title: "আন্তর্জাতিক বইমেলায় বাংলাদেশ প্যাভিলিয়নে ব্যাপক সাড়া",
-    excerpt: "ফ্রাঙ্কফুর্ট বইমেলায় বাংলাদেশের প্যাভিলিয়ন প্রশংসিত হয়েছে বিদেশি দর্শনার্থীদের কাছে।",
-    author: "নিলুফার হোসেন",
-    time: "৫ ঘন্টা আগে",
-    image: "/assets/generated/thumb-culture.dim_300x200.jpg"
-  },
-  {
-    id: 6,
-    category: "শিক্ষা",
-    title: "পাবলিক বিশ্ববিদ্যালয়ে গবেষণা তহবিল দ্বিগুণ করার সিদ্ধান্ত",
-    excerpt: "বিশ্ববিদ্যালয় মঞ্জুরি কমিশন সারা দেশের পাবলিক বিশ্ববিদ্যালয়গুলোর গবেষণা বাজেট বাড়ানোর পরিকল্পনা ঘোষণা করেছে।",
-    author: "হামিদ উল্লাহ",
-    time: "৬ ঘন্টা আগে",
-    image: "/assets/generated/thumb-education.dim_300x200.jpg"
-  }
-];
-function formatPublishedAt(publishedAt) {
-  try {
-    const ms = Number(publishedAt / BigInt(1e6));
-    const date = new Date(ms);
-    const now2 = Date.now();
-    const diff = now2 - ms;
-    if (diff < 6e4) return "এইমাত্র";
-    if (diff < 36e5) {
-      const mins = Math.floor(diff / 6e4);
-      return `${mins} মিনিট আগে`;
-    }
-    if (diff < 864e5) {
-      const hours = Math.floor(diff / 36e5);
-      return `${hours} ঘন্টা আগে`;
-    }
-    return date.toLocaleDateString("bn-BD");
-  } catch {
-    return "";
-  }
-}
-function LatestNews({ articles }) {
-  const useBackendArticles = articles !== void 0;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "aria-labelledby": "latest-news-heading", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "h2",
-        {
-          id: "latest-news-heading",
-          className: "text-base font-bold uppercase tracking-widest text-white shrink-0",
-          children: "সর্বশেষ খবর"
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-px", style: { backgroundColor: "#2d2d2d" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          className: "w-24 h-full",
-          style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
-        }
-      ) })
-    ] }),
-    useBackendArticles && articles.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "div",
-      {
-        "data-ocid": "latest_news.empty_state",
-        className: "text-center py-16",
-        style: { color: "#6b6b6b" },
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm", children: "এখনো কোনো সংবাদ নেই" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs mt-1", children: "সংবাদ পোস্ট করতে উপরের বোতাম ব্যবহার করুন" })
-        ]
-      }
-    ) : (
-      /* News Grid */
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4", children: useBackendArticles ? articles.map((article, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "article",
-        {
-          "data-ocid": `latest_news.item.${i + 1}`,
-          className: "flex gap-3 p-3 rounded cursor-pointer card-hover border",
-          style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: "shrink-0 overflow-hidden rounded",
-                style: { width: "90px", height: "70px" },
-                children: article.imageUrl ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "img",
-                  {
-                    src: article.imageUrl,
-                    alt: article.title,
-                    className: "w-full h-full object-cover",
-                    loading: "lazy"
-                  }
-                ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "div",
-                  {
-                    className: "w-full h-full flex items-center justify-center",
-                    style: { backgroundColor: "#2d2d2d" },
-                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "span",
-                      {
-                        className: "text-[10px] font-bold uppercase",
-                        style: { color: "oklch(0.4764 0.2183 22.8)" },
-                        children: article.category.charAt(0)
-                      }
-                    )
-                  }
-                )
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "span",
-                {
-                  className: "inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white mb-1.5",
-                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-                  children: article.category
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors", children: article.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "p",
-                {
-                  className: "text-xs mt-1 line-clamp-1",
-                  style: { color: "#9c9c9c" },
-                  children: article.summary
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "p",
-                {
-                  className: "text-[11px] mt-1.5",
-                  style: { color: "#6b6b6b" },
-                  children: [
-                    article.author,
-                    " ·",
-                    " ",
-                    formatPublishedAt(article.publishedAt)
-                  ]
-                }
-              )
-            ] })
-          ]
-        },
-        article.id.toString()
-      )) : staticLatestNews.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "article",
-        {
-          "data-ocid": `latest_news.item.${i + 1}`,
-          className: "flex gap-3 p-3 rounded cursor-pointer card-hover border",
-          style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: "shrink-0 overflow-hidden rounded",
-                style: { width: "90px", height: "70px" },
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "img",
-                  {
-                    src: item.image,
-                    alt: item.title,
-                    className: "w-full h-full object-cover",
-                    loading: "lazy"
-                  }
-                )
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "span",
-                {
-                  className: "inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white mb-1.5",
-                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
-                  children: item.category
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "p",
-                {
-                  className: "text-xs mt-1 line-clamp-1",
-                  style: { color: "#9c9c9c" },
-                  children: item.excerpt
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "p",
-                {
-                  className: "text-[11px] mt-1.5",
-                  style: { color: "#6b6b6b" },
-                  children: [
-                    item.author,
-                    " · ",
-                    item.time
-                  ]
-                }
-              )
-            ] })
-          ]
-        },
-        item.id
-      )) })
-    )
-  ] });
-}
 var ReplicaRejectCode;
 (function(ReplicaRejectCode2) {
   ReplicaRejectCode2[ReplicaRejectCode2["SysFatal"] = 1] = "SysFatal";
@@ -29219,6 +28234,1486 @@ function useCreateArticle() {
     }
   });
 }
+function useGetExternalNews() {
+  const { actor, isFetching } = useActor();
+  return useQuery({
+    queryKey: ["external-news"],
+    queryFn: async () => {
+      if (!actor) return [];
+      return actor.getExternalNews();
+    },
+    enabled: !!actor && !isFetching,
+    refetchInterval: 6 * 60 * 60 * 1e3
+  });
+}
+function useGetLastFetchedTime() {
+  const { actor, isFetching } = useActor();
+  return useQuery({
+    queryKey: ["last-fetched-time"],
+    queryFn: async () => {
+      if (!actor) return [];
+      return actor.getLastFetchedTime();
+    },
+    enabled: !!actor && !isFetching
+  });
+}
+function useFetchExternalNews() {
+  const { actor } = useActor();
+  const queryClient2 = useQueryClient();
+  return useMutation({
+    mutationFn: async () => {
+      if (!actor) throw new Error("Actor not available");
+      return actor.fetchExternalNews();
+    },
+    onSuccess: () => {
+      queryClient2.invalidateQueries({ queryKey: ["external-news"] });
+      queryClient2.invalidateQueries({ queryKey: ["last-fetched-time"] });
+    }
+  });
+}
+const CATEGORY_ORDER = [
+  "রাজনৈতিক",
+  "অর্থনৈতিক",
+  "ক্রীড়া",
+  "জাতীয় খবর",
+  "আন্তর্জাতিক খবর",
+  "শিক্ষা",
+  "স্বাস্থ্য",
+  "কৃষি",
+  "সাধারণ খবর"
+];
+const SKELETON_IDS = ["sk-1", "sk-2", "sk-3", "sk-4", "sk-5", "sk-6"];
+function formatFetchedAt(fetchedAt) {
+  const ms = Number(fetchedAt / BigInt(1e6));
+  const diff = Date.now() - ms;
+  if (diff < 6e4) return "এইমাত্র";
+  if (diff < 36e5) return `${Math.floor(diff / 6e4)} মিনিট আগে`;
+  if (diff < 864e5) return `${Math.floor(diff / 36e5)} ঘন্টা আগে`;
+  return new Date(ms).toLocaleDateString("bn-BD");
+}
+function formatLastFetchedTime(time) {
+  const ms = Number(time / BigInt(1e6));
+  const diff = Date.now() - ms;
+  if (diff < 6e4) return "এইমাত্র";
+  if (diff < 36e5) return `${Math.floor(diff / 6e4)} মিনিট আগে`;
+  if (diff < 864e5) return `${Math.floor(diff / 36e5)} ঘন্টা আগে`;
+  return new Date(ms).toLocaleString("bn-BD");
+}
+function groupByCategory(items) {
+  const map = /* @__PURE__ */ new Map();
+  for (const item of items) {
+    const existing = map.get(item.category) ?? [];
+    map.set(item.category, [...existing, item]);
+  }
+  return map;
+}
+function getSortedCategories(map) {
+  const ordered = [];
+  for (const cat of CATEGORY_ORDER) {
+    if (map.has(cat)) ordered.push(cat);
+  }
+  for (const cat of map.keys()) {
+    if (!CATEGORY_ORDER.includes(cat)) ordered.push(cat);
+  }
+  return ordered;
+}
+function NewsCard({ item, onClick, index: index2 }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "button",
+    {
+      type: "button",
+      "data-ocid": `external_news.item.${index2}`,
+      className: "relative flex flex-col gap-3 p-4 rounded-md cursor-pointer transition-all duration-200 border group w-full text-left",
+      style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+      onClick: () => onClick(item),
+      "aria-label": `সংবাদ পড়ুন: ${item.title}`,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: "absolute top-3 right-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white rounded-sm max-w-[120px] truncate",
+            style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+            title: item.sourceName,
+            children: item.sourceName
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "h3",
+          {
+            className: "text-sm font-bold text-white leading-snug line-clamp-2 pr-24 group-hover:opacity-80 transition-opacity",
+            style: { minHeight: "2.5rem" },
+            children: item.title
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] mt-auto", style: { color: "#6b6b6b" }, children: formatFetchedAt(item.fetchedAt) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300 rounded-b-md",
+            style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
+          }
+        )
+      ]
+    }
+  );
+}
+function NewsModal({ item, onClose }) {
+  var _a3;
+  if (!item) return null;
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) onClose();
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === "Escape") onClose();
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: "fixed inset-0 z-[200] flex items-center justify-center p-4",
+      style: { backgroundColor: "rgba(0,0,0,0.88)" },
+      "data-ocid": "external_news.modal",
+      "aria-modal": "true",
+      "aria-labelledby": "ext-news-modal-title",
+      onClick: handleBackdropClick,
+      onKeyDown: handleKeyDown,
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "relative w-full max-w-xl rounded-lg shadow-2xl",
+          style: { backgroundColor: "#111111", border: "1px solid #2d2d2d" },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "flex items-start justify-between px-6 py-4 border-b gap-4",
+                style: { borderColor: "#2d2d2d" },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3 flex-1 min-w-0", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "w-1 shrink-0 rounded-sm mt-1",
+                        style: {
+                          backgroundColor: "oklch(0.4764 0.2183 22.8)",
+                          minHeight: "1.25rem"
+                        }
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "h2",
+                      {
+                        id: "ext-news-modal-title",
+                        className: "text-base font-bold text-white leading-snug",
+                        children: item.title
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      "data-ocid": "external_news.close_button",
+                      onClick: onClose,
+                      className: "shrink-0 p-1.5 rounded text-gray-400 hover:text-white transition-colors",
+                      "aria-label": "বন্ধ করুন",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 18 })
+                    }
+                  )
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-6 py-5 flex flex-col gap-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "p",
+                  {
+                    className: "text-xs font-bold uppercase tracking-widest mb-2",
+                    style: { color: "#6b6b6b" },
+                    children: "সারসংক্ষেপ"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm leading-relaxed", style: { color: "#c8c8c8" }, children: ((_a3 = item.summary) == null ? void 0 : _a3.trim()) ? item.summary : "সারসংক্ষেপ পাওয়া যায়নি" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center justify-between pt-3 border-t",
+                  style: { borderColor: "#2d2d2d" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs", style: { color: "#6b6b6b" }, children: [
+                        "সূত্র:",
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "font-semibold ml-1",
+                            style: { color: "oklch(0.4764 0.2183 22.8)" },
+                            children: item.sourceName
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs mt-0.5", style: { color: "#6b6b6b" }, children: [
+                        "ক্যাটাগরি: ",
+                        item.category,
+                        " · ",
+                        formatFetchedAt(item.fetchedAt)
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "a",
+                      {
+                        href: item.sourceUrl,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        "data-ocid": "external_news.link",
+                        className: "inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80",
+                        style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { size: 13 }),
+                          "সংবাদটি পড়ুন"
+                        ]
+                      }
+                    )
+                  ]
+                }
+              )
+            ] })
+          ]
+        }
+      )
+    }
+  );
+}
+function SkeletonCard() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "flex flex-col gap-3 p-4 rounded-md border",
+      style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "h-3 w-20 rounded animate-pulse ml-auto",
+            style: { backgroundColor: "#2d2d2d" }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "h-4 w-full rounded animate-pulse",
+            style: { backgroundColor: "#2d2d2d" }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "h-4 w-3/4 rounded animate-pulse",
+            style: { backgroundColor: "#2d2d2d" }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "h-3 w-16 rounded animate-pulse mt-1",
+            style: { backgroundColor: "#232323" }
+          }
+        )
+      ]
+    }
+  );
+}
+function ExternalNewsSection() {
+  const [selectedItem, setSelectedItem] = reactExports.useState(null);
+  const { data: externalNews, isLoading, isFetched } = useGetExternalNews();
+  const { data: lastFetchedTime } = useGetLastFetchedTime();
+  const fetchMutation = useFetchExternalNews();
+  const newsList = externalNews ?? [];
+  const grouped = groupByCategory(newsList);
+  const sortedCategories = getSortedCategories(grouped);
+  const hasData = newsList.length > 0;
+  const hasFetchedOnce = isFetched;
+  const isFetching = fetchMutation.isPending;
+  let lastFetchedLabel = "কখনো নয়";
+  if (lastFetchedTime && lastFetchedTime.length > 0 && lastFetchedTime[0] !== void 0) {
+    lastFetchedLabel = formatLastFetchedTime(lastFetchedTime[0]);
+  }
+  const handleRefresh = () => {
+    fetchMutation.mutate();
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "aria-labelledby": "external-news-heading", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-3 mb-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "w-1 h-7 rounded-sm shrink-0",
+          style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "h2",
+        {
+          id: "external-news-heading",
+          className: "text-base font-bold uppercase tracking-widest text-white shrink-0",
+          children: "জাতীয় ও আন্তর্জাতিক সংবাদ"
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "flex-1 h-px min-w-[20px]",
+          style: { backgroundColor: "#2d2d2d" }
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 ml-auto", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: [
+          "শেষ আপডেট:",
+          " ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#9c9c9c" }, children: lastFetchedLabel })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "data-ocid": "external_news.refresh.button",
+            onClick: handleRefresh,
+            disabled: isFetching,
+            className: "inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80 disabled:opacity-50",
+            style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+            "aria-label": "সংবাদ রিফ্রেশ করুন",
+            children: isFetching ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { size: 13, className: "animate-spin" }),
+              "আপডেট হচ্ছে..."
+            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { size: 13 }),
+              "Refresh"
+            ] })
+          }
+        )
+      ] })
+    ] }),
+    isLoading && !hasData && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4", children: SKELETON_IDS.map((id) => /* @__PURE__ */ jsxRuntimeExports.jsx(SkeletonCard, {}, id)) }),
+    !isLoading && !hasData && !hasFetchedOnce && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "flex flex-col items-center justify-center py-12 rounded-lg border",
+        style: { backgroundColor: "#141414", borderColor: "#2d2d2d" },
+        "data-ocid": "external_news.empty_state",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm mb-4", style: { color: "#9c9c9c" }, children: "সংবাদ এখনো লোড হয়নি। নিচের বাটনে ক্লিক করুন।" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              type: "button",
+              "data-ocid": "external_news.primary_button",
+              onClick: handleRefresh,
+              disabled: isFetching,
+              className: "inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80 disabled:opacity-50",
+              style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+              children: isFetching ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { size: 14, className: "animate-spin" }),
+                "লোড হচ্ছে..."
+              ] }) : "সংবাদ লোড করুন"
+            }
+          )
+        ]
+      }
+    ),
+    !isLoading && hasFetchedOnce && !hasData && !isFetching && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "flex flex-col items-center justify-center py-12 rounded-lg border",
+        style: { backgroundColor: "#141414", borderColor: "#2d2d2d" },
+        "data-ocid": "external_news.empty_state",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm", style: { color: "#9c9c9c" }, children: "কোনো সংবাদ পাওয়া যায়নি" })
+      }
+    ),
+    hasData && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-10", children: sortedCategories.map((category) => {
+      const items = grouped.get(category) ?? [];
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "aria-labelledby": `ext-cat-${category}`, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "w-1 h-5 rounded-sm shrink-0",
+              style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "h3",
+            {
+              id: `ext-cat-${category}`,
+              className: "text-sm font-bold uppercase tracking-widest text-white shrink-0",
+              children: category
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "flex-1 h-px",
+              style: { backgroundColor: "#2d2d2d" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: [
+            items.length,
+            " টি সংবাদ"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4", children: items.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          NewsCard,
+          {
+            item,
+            onClick: setSelectedItem,
+            index: i + 1
+          },
+          item.id.toString()
+        )) })
+      ] }, category);
+    }) }),
+    isFetching && hasData && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "flex items-center justify-center gap-2 py-4 mt-4 rounded",
+        style: { backgroundColor: "#141414" },
+        "data-ocid": "external_news.loading_state",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            LoaderCircle,
+            {
+              size: 16,
+              className: "animate-spin",
+              style: { color: "oklch(0.4764 0.2183 22.8)" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm", style: { color: "#9c9c9c" }, children: "সংবাদ আপডেট হচ্ছে..." })
+        ]
+      }
+    ),
+    fetchMutation.isError && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "flex items-center gap-2 px-4 py-3 rounded mt-4",
+        style: {
+          backgroundColor: "rgba(220,38,38,0.08)",
+          border: "1px solid rgba(220,38,38,0.25)"
+        },
+        "data-ocid": "external_news.error_state",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-red-400", children: "সংবাদ আপডেট করতে সমস্যা হয়েছে। আবার চেষ্টা করুন।" })
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(NewsModal, { item: selectedItem, onClose: () => setSelectedItem(null) })
+  ] });
+}
+var DefaultContext = {
+  color: void 0,
+  size: void 0,
+  className: void 0,
+  style: void 0,
+  attr: void 0
+};
+var IconContext = React$2.createContext && /* @__PURE__ */ React$2.createContext(DefaultContext);
+var _excluded = ["attr", "size", "title"];
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+function ownKeys(e, r2) {
+  var t = Object.keys(e);
+  if (Object.getOwnPropertySymbols) {
+    var o2 = Object.getOwnPropertySymbols(e);
+    r2 && (o2 = o2.filter(function(r3) {
+      return Object.getOwnPropertyDescriptor(e, r3).enumerable;
+    })), t.push.apply(t, o2);
+  }
+  return t;
+}
+function _objectSpread(e) {
+  for (var r2 = 1; r2 < arguments.length; r2++) {
+    var t = null != arguments[r2] ? arguments[r2] : {};
+    r2 % 2 ? ownKeys(Object(t), true).forEach(function(r3) {
+      _defineProperty(e, r3, t[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r3) {
+      Object.defineProperty(e, r3, Object.getOwnPropertyDescriptor(t, r3));
+    });
+  }
+  return e;
+}
+function _defineProperty(obj, key, value) {
+  key = _toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function _toPropertyKey(t) {
+  var i = _toPrimitive(t, "string");
+  return "symbol" == typeof i ? i : i + "";
+}
+function _toPrimitive(t, r2) {
+  if ("object" != typeof t || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r2);
+    if ("object" != typeof i) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r2 ? String : Number)(t);
+}
+function Tree2Element(tree) {
+  return tree && tree.map((node, i) => /* @__PURE__ */ React$2.createElement(node.tag, _objectSpread({
+    key: i
+  }, node.attr), Tree2Element(node.child)));
+}
+function GenIcon(data) {
+  return (props) => /* @__PURE__ */ React$2.createElement(IconBase, _extends({
+    attr: _objectSpread({}, data.attr)
+  }, props), Tree2Element(data.child));
+}
+function IconBase(props) {
+  var elem = (conf) => {
+    var {
+      attr,
+      size,
+      title
+    } = props, svgProps = _objectWithoutProperties(props, _excluded);
+    var computedSize = size || conf.size || "1em";
+    var className;
+    if (conf.className) className = conf.className;
+    if (props.className) className = (className ? className + " " : "") + props.className;
+    return /* @__PURE__ */ React$2.createElement("svg", _extends({
+      stroke: "currentColor",
+      fill: "currentColor",
+      strokeWidth: "0"
+    }, conf.attr, attr, svgProps, {
+      className,
+      style: _objectSpread(_objectSpread({
+        color: props.color || conf.color
+      }, conf.style), props.style),
+      height: computedSize,
+      width: computedSize,
+      xmlns: "http://www.w3.org/2000/svg"
+    }), title && /* @__PURE__ */ React$2.createElement("title", null, title), props.children);
+  };
+  return IconContext !== void 0 ? /* @__PURE__ */ React$2.createElement(IconContext.Consumer, null, (conf) => elem(conf)) : elem(DefaultContext);
+}
+function SiFacebook(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" }, "child": [] }] })(props);
+}
+function SiInstagram(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" }, "child": [] }] })(props);
+}
+function SiX(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" }, "child": [] }] })(props);
+}
+function SiYoutube(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" }, "child": [] }] })(props);
+}
+const sectionLinks = [
+  "স্থানীয়",
+  "জাতীয়",
+  "বিশ্ব",
+  "রাজনীতি",
+  "ব্যবসা",
+  "খেলাধুলা",
+  "বিনোদন",
+  "মতামত"
+];
+const resourceLinks = [
+  "আমাদের সম্পর্কে",
+  "যোগাযোগ",
+  "বিজ্ঞাপন দিন",
+  "গোপনীয়তা নীতি",
+  "শর্তাবলী",
+  "আর্কাইভ"
+];
+function Footer() {
+  const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+  const hostname = typeof window !== "undefined" ? window.location.hostname : "";
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "footer",
+    {
+      className: "w-full mt-12",
+      style: { backgroundColor: "#0a0a0a", borderTop: "1px solid #2d2d2d" },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-10", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center justify-center w-8 h-8 rounded font-bold text-base",
+                  style: {
+                    backgroundColor: "#1a1a1a",
+                    border: "1px solid #2d2d2d"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-bold text-sm uppercase tracking-widest", children: "বালীগাঁও নিউজ" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "p",
+              {
+                className: "text-xs leading-relaxed mb-4",
+                style: { color: "#9c9c9c" },
+                children: "বালীগাঁও নিউজ বালিগাঁও, লাখাই, হবিগঞ্জ-এর একটি নির্ভরযোগ্য স্থানীয় সংবাদ মাধ্যম। আমরা প্রতিদিন সর্বশেষ, নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-2",
+                  style: { color: "#9c9c9c" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { size: 12, className: "shrink-0" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "baligawnews@gmail.com" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-start gap-2",
+                  style: { color: "#9c9c9c" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { size: 12, className: "shrink-0 mt-0.5" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "বালিগাঁও, লাখাই, হবিগঞ্জ" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-2",
+                  style: { color: "#9c9c9c" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 12, className: "shrink-0" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "সম্পাদক: এম.ডি ব্রাইট" })
+                  ]
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "বিভাগ" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: sectionLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "a",
+              {
+                href: "#content",
+                className: "text-xs transition-colors hover:text-white",
+                style: { color: "#9c9c9c" },
+                children: link
+              }
+            ) }, link)) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "রিসোর্স" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: resourceLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "a",
+              {
+                href: "#content",
+                className: "text-xs transition-colors hover:text-white",
+                style: { color: "#9c9c9c" },
+                children: link
+              }
+            ) }, link)) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "সোশ্যাল মিডিয়া" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: "https://facebook.com/baligawnews",
+                  "data-ocid": "footer.facebook.link",
+                  className: "flex items-center gap-2.5 text-xs transition-colors group",
+                  style: { color: "#9c9c9c" },
+                  "aria-label": "Facebook",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      SiFacebook,
+                      {
+                        size: 16,
+                        className: "group-hover:text-white transition-colors"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: "https://x.com/baligawnews",
+                  "data-ocid": "footer.twitter.link",
+                  className: "flex items-center gap-2.5 text-xs transition-colors group",
+                  style: { color: "#9c9c9c" },
+                  "aria-label": "X (Twitter)",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      SiX,
+                      {
+                        size: 14,
+                        className: "group-hover:text-white transition-colors"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: "https://youtube.com/@baligawnews",
+                  "data-ocid": "footer.youtube.link",
+                  className: "flex items-center gap-2.5 text-xs transition-colors group",
+                  style: { color: "#9c9c9c" },
+                  "aria-label": "YouTube",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      SiYoutube,
+                      {
+                        size: 16,
+                        className: "group-hover:text-white transition-colors"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "বালীগাঁও নিউজ" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: "https://instagram.com/baligawnews",
+                  "data-ocid": "footer.instagram.link",
+                  className: "flex items-center gap-2.5 text-xs transition-colors group",
+                  style: { color: "#9c9c9c" },
+                  "aria-label": "Instagram",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      SiInstagram,
+                      {
+                        size: 16,
+                        className: "group-hover:text-white transition-colors"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
+                  ]
+                }
+              )
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs",
+            style: { borderTop: "1px solid #2d2d2d", color: "#6b6b6b" },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+                "© ",
+                currentYear,
+                " বালীগাঁও নিউজ। সকল স্বত্ব সংরক্ষিত।"
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+                "Built with ❤️ using",
+                " ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "a",
+                  {
+                    href: `https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`,
+                    className: "hover:text-white transition-colors",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "caffeine.ai"
+                  }
+                )
+              ] })
+            ]
+          }
+        )
+      ] })
+    }
+  );
+}
+const navLinks = [
+  { label: "হোম", href: "#home" },
+  { label: "স্থানীয় খবর", href: "#local" },
+  { label: "জাতীয় খবর", href: "#national" },
+  { label: "আন্তর্জাতিক খবর", href: "#international" },
+  { label: "শিক্ষা", href: "#education" },
+  { label: "স্বাস্থ্য", href: "#health" },
+  { label: "কৃষি", href: "#agriculture" },
+  { label: "খেলাধুলা", href: "#sports" },
+  { label: "ধর্মীয় অনুষ্ঠান", href: "#religion" },
+  { label: "ফিচার স্টোরি", href: "#feature" },
+  { label: "মাল্টিমিডিয়া", href: "#multimedia" },
+  { label: "আমাদের সম্পর্কে", href: "#about" },
+  { label: "যোগাযোগ", href: "#contact" }
+];
+function Header({ onPostClick }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = reactExports.useState(false);
+  const [searchOpen, setSearchOpen] = reactExports.useState(false);
+  const [activeNav, setActiveNav] = reactExports.useState("হোম");
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "header",
+    {
+      className: "sticky top-0 z-50 w-full",
+      style: { backgroundColor: "#050505", borderBottom: "1px solid #2d2d2d" },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between gap-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "flex items-center justify-center w-10 h-10 rounded font-bold text-xl",
+                style: { backgroundColor: "#1a1a1a", border: "1px solid #2d2d2d" },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "leading-tight", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-bold text-lg tracking-widest uppercase", children: "বালীগাঁও নিউজ" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "text-xs tracking-wider uppercase",
+                  style: { color: "#9c9c9c" },
+                  children: "Voice of Truth & Freedom"
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "hidden sm:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide",
+                style: { color: "#9c9c9c" },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Tv, { size: 13 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "লাইভ টিভি" })
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "header.search_input",
+                onClick: () => setSearchOpen(!searchOpen),
+                className: "p-2 text-gray-400 hover:text-white transition-colors rounded",
+                "aria-label": "সার্চ করুন",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { size: 18 })
+              }
+            ),
+            onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "header.post_news.button",
+                onClick: onPostClick,
+                className: "hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-widest rounded transition-all hover:opacity-90",
+                style: {
+                  border: "1.5px solid oklch(0.4764 0.2183 22.8)",
+                  color: "oklch(0.4764 0.2183 22.8)",
+                  backgroundColor: "transparent"
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 13 }),
+                  "সংবাদ পোস্ট"
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "header.subscribe.button",
+                className: "hidden sm:inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white rounded transition-opacity hover:opacity-80",
+                style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                children: "সাবস্ক্রাইব"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "header.mobile_menu.toggle",
+                className: "lg:hidden p-2 text-gray-400 hover:text-white transition-colors",
+                onClick: () => setMobileMenuOpen(!mobileMenuOpen),
+                "aria-label": "মেনু",
+                children: mobileMenuOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 22 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { size: 22 })
+              }
+            )
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "hidden lg:block border-t w-full",
+            style: { backgroundColor: "#0d0d0d", borderColor: "#2d2d2d" },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "nav",
+              {
+                className: "max-w-[1200px] mx-auto px-4",
+                "aria-label": "Primary navigation",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center flex-wrap", children: navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "a",
+                  {
+                    href: link.href,
+                    "data-ocid": `nav.${link.label}.link`,
+                    onClick: () => setActiveNav(link.label),
+                    className: `px-3 py-3 text-[12px] font-medium tracking-wide whitespace-nowrap transition-colors border-b-2 ${activeNav === link.label ? "text-white" : "text-gray-400 hover:text-white border-transparent"}`,
+                    style: activeNav === link.label ? {
+                      borderBottomColor: "oklch(0.4764 0.2183 22.8)",
+                      color: "oklch(0.4764 0.2183 22.8)"
+                    } : { borderBottomColor: "transparent" },
+                    children: link.label
+                  },
+                  link.label
+                )) })
+              }
+            )
+          }
+        ),
+        searchOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "border-t",
+            style: { backgroundColor: "#0a0a0a", borderColor: "#2d2d2d" },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Search,
+                {
+                  size: 16,
+                  className: "absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  type: "text",
+                  placeholder: "খবর খুঁজুন...",
+                  className: "w-full bg-transparent border rounded pl-9 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none",
+                  style: { borderColor: "#2d2d2d" },
+                  "data-ocid": "header.search_input"
+                }
+              )
+            ] }) })
+          }
+        ),
+        mobileMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "nav",
+          {
+            className: "lg:hidden border-t",
+            style: { backgroundColor: "#0a0a0a", borderColor: "#2d2d2d" },
+            "aria-label": "Mobile navigation",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-3 flex flex-col gap-1", children: [
+              navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "a",
+                {
+                  href: link.href,
+                  "data-ocid": `mobile.nav.${link.label}.link`,
+                  onClick: () => {
+                    setActiveNav(link.label);
+                    setMobileMenuOpen(false);
+                  },
+                  className: `px-3 py-2.5 text-sm font-medium tracking-wide rounded transition-colors ${activeNav === link.label ? "text-white" : "text-gray-300 hover:text-white"}`,
+                  style: activeNav === link.label ? {
+                    backgroundColor: "oklch(0.4764 0.2183 22.8 / 0.2)",
+                    color: "oklch(0.4764 0.2183 22.8)"
+                  } : {},
+                  children: link.label
+                },
+                link.label
+              )),
+              onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  "data-ocid": "mobile.post_news.button",
+                  onClick: () => {
+                    setMobileMenuOpen(false);
+                    onPostClick();
+                  },
+                  className: "mt-1 flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-bold uppercase tracking-widest rounded hover:opacity-80 transition-opacity",
+                  style: {
+                    border: "1.5px solid oklch(0.4764 0.2183 22.8)",
+                    color: "oklch(0.4764 0.2183 22.8)",
+                    backgroundColor: "transparent"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { size: 15 }),
+                    "সংবাদ পোস্ট করুন"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  "data-ocid": "mobile.subscribe.button",
+                  className: "mt-1 text-center px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-white rounded hover:opacity-80 transition-opacity",
+                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                  children: "সাবস্ক্রাইব"
+                }
+              )
+            ] })
+          }
+        )
+      ]
+    }
+  );
+}
+const slides = [
+  {
+    id: 1,
+    category: "স্থানীয়",
+    headline: "রাজধানীর যানজট নিরসনে নতুন মেট্রোরেল লাইন চালু হচ্ছে আগামী মাসে",
+    excerpt: "ঢাকা মেট্রোপলিটান কর্তৃপক্ষ জানিয়েছে, নতুন মেট্রোরেল লাইন চালু হলে প্রতিদিন প্রায় পাঁচ লক্ষ যাত্রী পরিবহন করা সম্ভব হবে।",
+    author: "আহমেদ রহমান",
+    time: "২ ঘন্টা আগে",
+    image: "/assets/generated/hero-city-news.dim_800x450.jpg"
+  },
+  {
+    id: 2,
+    category: "রাজনীতি",
+    headline: "জাতীয় সংসদের বিশেষ অধিবেশনে নতুন আর্থিক নীতিমালা অনুমোদন",
+    excerpt: "আজ জাতীয় সংসদের বিশেষ অধিবেশনে দেশের অর্থনৈতিক উন্নয়নে একটি যুগান্তকারী আর্থিক নীতিমালা সর্বসম্মতিক্রমে পাস হয়েছে।",
+    author: "ফারহান হোসেন",
+    time: "৪ ঘন্টা আগে",
+    image: "/assets/generated/hero-politics.dim_800x450.jpg"
+  },
+  {
+    id: 3,
+    category: "অর্থনীতি",
+    headline: "দেশের কৃষিপণ্য রফতানিতে নতুন রেকর্ড, আয় বেড়েছে ৩০ শতাংশ",
+    excerpt: "চলতি অর্থবছরে বাংলাদেশের কৃষিপণ্য রফতানি গত বছরের তুলনায় ৩০ শতাংশ বৃদ্ধি পেয়ে নতুন মাইলফলক স্পর্শ করেছে।",
+    author: "সুমাইয়া বেগম",
+    time: "৬ ঘন্টা আগে",
+    image: "/assets/generated/hero-market.dim_800x450.jpg"
+  }
+];
+function HeroSlider() {
+  const [current, setCurrent] = reactExports.useState(0);
+  const [isAnimating, setIsAnimating] = reactExports.useState(false);
+  const goTo = reactExports.useCallback(
+    (index2) => {
+      if (isAnimating) return;
+      setIsAnimating(true);
+      setCurrent((index2 + slides.length) % slides.length);
+      setTimeout(() => setIsAnimating(false), 500);
+    },
+    [isAnimating]
+  );
+  const next = reactExports.useCallback(() => goTo(current + 1), [current, goTo]);
+  const prev = reactExports.useCallback(() => goTo(current - 1), [current, goTo]);
+  reactExports.useEffect(() => {
+    const timer = setInterval(next, 5e3);
+    return () => clearInterval(timer);
+  }, [next]);
+  const slide = slides[current];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "section",
+    {
+      className: "relative w-full overflow-hidden rounded",
+      style: { backgroundColor: "#111111" },
+      "aria-label": "শীর্ষ খবর স্লাইডার",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", style: { aspectRatio: "16/7" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src: slide.image,
+              alt: slide.headline,
+              className: "absolute inset-0 w-full h-full object-cover hero-slide-animate"
+            },
+            slide.id
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0",
+              style: {
+                background: "linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 100%)"
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0",
+              style: {
+                background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)"
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-end md:items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 md:p-10 max-w-[600px]", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: "inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest text-white mb-3",
+                style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                children: slide.category
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3", children: slide.headline }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm md:text-base text-gray-300 mb-4 leading-relaxed hidden sm:block", children: slide.excerpt }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: "text-xs font-medium",
+                  style: { color: "#9c9c9c" },
+                  children: slide.author
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#2d2d2d" }, children: "•" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#9c9c9c" }, children: slide.time })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "hero.read_full.button",
+                className: "inline-flex items-center px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition-opacity hover:opacity-80",
+                style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                children: "বিস্তারিত পড়ুন"
+              }
+            )
+          ] }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "data-ocid": "hero.slider.pagination_prev",
+            onClick: prev,
+            className: "absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80 z-10",
+            style: { backgroundColor: "rgba(0,0,0,0.5)" },
+            "aria-label": "আগের স্লাইড",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { size: 20 })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "data-ocid": "hero.slider.pagination_next",
+            onClick: next,
+            className: "absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full text-white transition-opacity hover:opacity-80 z-10",
+            style: { backgroundColor: "rgba(0,0,0,0.5)" },
+            "aria-label": "পরের স্লাইড",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 20 })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10", children: slides.map((s2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "data-ocid": `hero.dot.${i + 1}`,
+            onClick: () => goTo(i),
+            className: "rounded-full transition-all",
+            style: {
+              width: i === current ? "20px" : "8px",
+              height: "8px",
+              backgroundColor: i === current ? "oklch(0.4764 0.2183 22.8)" : "rgba(255,255,255,0.4)"
+            },
+            "aria-label": `স্লাইড ${i + 1}`
+          },
+          s2.id
+        )) })
+      ]
+    }
+  );
+}
+const staticLatestNews = [
+  {
+    id: 1,
+    category: "প্রযুক্তি",
+    title: "দেশে প্রথমবার ৫জি নেটওয়ার্ক চালু, গতি বেড়েছে দশগুণ",
+    excerpt: "টেলিযোগাযোগ বিভাগ জানিয়েছে, এই বছরের মধ্যে সারা দেশে ৫জি কভারেজ নিশ্চিত করা হবে।",
+    author: "কামরুল ইসলাম",
+    time: "১ ঘন্টা আগে",
+    image: "/assets/generated/thumb-tech.dim_300x200.jpg"
+  },
+  {
+    id: 2,
+    category: "অর্থনীতি",
+    title: "দেশীয় শিল্পে বিনিয়োগ বৃদ্ধিতে নতুন প্রণোদনা প্যাকেজ ঘোষণা",
+    excerpt: "সরকার ঘরোয়া বিনিয়োগ বাড়াতে বিশেষ কর ছাড় ও ঋণ সুবিধার ঘোষণা দিয়েছে।",
+    author: "শাহানা পারভীন",
+    time: "২ ঘন্টা আগে",
+    image: "/assets/generated/thumb-business.dim_300x200.jpg"
+  },
+  {
+    id: 3,
+    category: "ত্রাণ",
+    title: "বন্যা দুর্গত এলাকায় ত্রাণ বিতরণ অব্যাহত, উদ্ধার কার্যক্রম চলছে",
+    excerpt: "সেনাবাহিনী ও স্বেচ্ছাসেবীরা বন্যাকবলিত অঞ্চলে সাহায্য পৌঁছে দিচ্ছেন।",
+    author: "আশরাফ উদ্দিন",
+    time: "৩ ঘন্টা আগে",
+    image: "/assets/generated/thumb-flood.dim_300x200.jpg"
+  },
+  {
+    id: 4,
+    category: "খেলাধুলা",
+    title: "জাতীয় ফুটবল লিগে নতুন দলের যোগদান, উত্তেজনা বাড়ছে সমর্থকদের মধ্যে",
+    excerpt: "এবারের সিজনে তিনটি নতুন দল লিগে অংশ নিচ্ছে, যা প্রতিযোগিতাকে আরও তীব্র করে তুলবে।",
+    author: "মিজানুর রহমান",
+    time: "৪ ঘন্টা আগে",
+    image: "/assets/generated/thumb-sports.dim_300x200.jpg"
+  },
+  {
+    id: 5,
+    category: "সংস্কৃতি",
+    title: "আন্তর্জাতিক বইমেলায় বাংলাদেশ প্যাভিলিয়নে ব্যাপক সাড়া",
+    excerpt: "ফ্রাঙ্কফুর্ট বইমেলায় বাংলাদেশের প্যাভিলিয়ন প্রশংসিত হয়েছে বিদেশি দর্শনার্থীদের কাছে।",
+    author: "নিলুফার হোসেন",
+    time: "৫ ঘন্টা আগে",
+    image: "/assets/generated/thumb-culture.dim_300x200.jpg"
+  },
+  {
+    id: 6,
+    category: "শিক্ষা",
+    title: "পাবলিক বিশ্ববিদ্যালয়ে গবেষণা তহবিল দ্বিগুণ করার সিদ্ধান্ত",
+    excerpt: "বিশ্ববিদ্যালয় মঞ্জুরি কমিশন সারা দেশের পাবলিক বিশ্ববিদ্যালয়গুলোর গবেষণা বাজেট বাড়ানোর পরিকল্পনা ঘোষণা করেছে।",
+    author: "হামিদ উল্লাহ",
+    time: "৬ ঘন্টা আগে",
+    image: "/assets/generated/thumb-education.dim_300x200.jpg"
+  }
+];
+function formatPublishedAt(publishedAt) {
+  try {
+    const ms = Number(publishedAt / BigInt(1e6));
+    const date = new Date(ms);
+    const now2 = Date.now();
+    const diff = now2 - ms;
+    if (diff < 6e4) return "এইমাত্র";
+    if (diff < 36e5) {
+      const mins = Math.floor(diff / 6e4);
+      return `${mins} মিনিট আগে`;
+    }
+    if (diff < 864e5) {
+      const hours = Math.floor(diff / 36e5);
+      return `${hours} ঘন্টা আগে`;
+    }
+    return date.toLocaleDateString("bn-BD");
+  } catch {
+    return "";
+  }
+}
+function LatestNews({ articles }) {
+  const useBackendArticles = articles !== void 0;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { "aria-labelledby": "latest-news-heading", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "h2",
+        {
+          id: "latest-news-heading",
+          className: "text-base font-bold uppercase tracking-widest text-white shrink-0",
+          children: "সর্বশেষ খবর"
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-px", style: { backgroundColor: "#2d2d2d" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: "w-24 h-full",
+          style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
+        }
+      ) })
+    ] }),
+    useBackendArticles && articles.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        "data-ocid": "latest_news.empty_state",
+        className: "text-center py-16",
+        style: { color: "#6b6b6b" },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm", children: "এখনো কোনো সংবাদ নেই" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs mt-1", children: "সংবাদ পোস্ট করতে উপরের বোতাম ব্যবহার করুন" })
+        ]
+      }
+    ) : (
+      /* News Grid */
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4", children: useBackendArticles ? articles.map((article, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "article",
+        {
+          "data-ocid": `latest_news.item.${i + 1}`,
+          className: "flex gap-3 p-3 rounded cursor-pointer card-hover border",
+          style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "shrink-0 overflow-hidden rounded",
+                style: { width: "90px", height: "70px" },
+                children: article.imageUrl ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "img",
+                  {
+                    src: article.imageUrl,
+                    alt: article.title,
+                    className: "w-full h-full object-cover",
+                    loading: "lazy"
+                  }
+                ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "w-full h-full flex items-center justify-center",
+                    style: { backgroundColor: "#2d2d2d" },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: "text-[10px] font-bold uppercase",
+                        style: { color: "oklch(0.4764 0.2183 22.8)" },
+                        children: article.category.charAt(0)
+                      }
+                    )
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: "inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white mb-1.5",
+                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                  children: article.category
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors", children: article.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "p",
+                {
+                  className: "text-xs mt-1 line-clamp-1",
+                  style: { color: "#9c9c9c" },
+                  children: article.summary
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "p",
+                {
+                  className: "text-[11px] mt-1.5",
+                  style: { color: "#6b6b6b" },
+                  children: [
+                    article.author,
+                    " ·",
+                    " ",
+                    formatPublishedAt(article.publishedAt)
+                  ]
+                }
+              )
+            ] })
+          ]
+        },
+        article.id.toString()
+      )) : staticLatestNews.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "article",
+        {
+          "data-ocid": `latest_news.item.${i + 1}`,
+          className: "flex gap-3 p-3 rounded cursor-pointer card-hover border",
+          style: { backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "shrink-0 overflow-hidden rounded",
+                style: { width: "90px", height: "70px" },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "img",
+                  {
+                    src: item.image,
+                    alt: item.title,
+                    className: "w-full h-full object-cover",
+                    loading: "lazy"
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: "inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white mb-1.5",
+                  style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                  children: item.category
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "p",
+                {
+                  className: "text-xs mt-1 line-clamp-1",
+                  style: { color: "#9c9c9c" },
+                  children: item.excerpt
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "p",
+                {
+                  className: "text-[11px] mt-1.5",
+                  style: { color: "#6b6b6b" },
+                  children: [
+                    item.author,
+                    " · ",
+                    item.time
+                  ]
+                }
+              )
+            ] })
+          ]
+        },
+        item.id
+      )) })
+    )
+  ] });
+}
 const NEWS_CATEGORIES = [
   "রাজনৈতিক",
   "ক্রীড়া",
@@ -29793,7 +30288,9 @@ function App() {
       hasBackendArticles && articles.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CategoryNewsSection, { articles }) })
-      ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px", style: { backgroundColor: "#2d2d2d" } }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalNewsSection, {}) })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
