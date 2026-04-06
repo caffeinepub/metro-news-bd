@@ -62,7 +62,7 @@ export function BreakingNewsTicker() {
           minHeight: "44px",
         }}
       >
-        {/* Label — red box: compact height */}
+        {/* Label — red box: compact height, unchanged */}
         <div
           style={{
             display: "flex",
@@ -77,7 +77,7 @@ export function BreakingNewsTicker() {
             letterSpacing: "0.08em",
             flexShrink: 0,
             whiteSpace: "nowrap",
-            /* Fixed small height for red label */
+            /* Fixed small height for red label — do not change */
             minHeight: "36px",
             maxHeight: "36px",
             alignSelf: "center",
@@ -107,7 +107,8 @@ export function BreakingNewsTicker() {
         />
 
         {/* Scrolling content — black box.
-            paddingTop/Bottom just enough so Bengali diacritics are fully visible. */}
+            paddingTop increased so Bengali diacritics above baseline are fully visible.
+            alignItems: flex-end pushes text toward the bottom of the container. */}
         <div
           style={{
             flex: 1,
@@ -115,15 +116,15 @@ export function BreakingNewsTicker() {
             overflowY: "visible",
             position: "relative",
             backgroundColor: "#111111",
-            paddingTop: "10px",
-            paddingBottom: "10px",
+            paddingTop: "16px",
+            paddingBottom: "8px",
           }}
         >
           <div
             className="ticker-animation"
             style={{
               display: "flex",
-              alignItems: "center",
+              alignItems: "flex-end",
               whiteSpace: "nowrap",
             }}
           >
@@ -133,12 +134,12 @@ export function BreakingNewsTicker() {
                 key={`ticker-${item.id}-${idx}`}
                 style={{
                   display: "inline-flex",
-                  alignItems: "center",
+                  alignItems: "flex-end",
                   gap: "12px",
                   color: "#ffffff",
                   fontSize: "14px",
                   fontWeight: 600,
-                  lineHeight: "1.8",
+                  lineHeight: "2",
                 }}
               >
                 <span
@@ -150,14 +151,14 @@ export function BreakingNewsTicker() {
                 >
                   ◆
                 </span>
-                <span style={{ lineHeight: "1.8" }}>{item.text}</span>
+                <span style={{ lineHeight: "2" }}>{item.text}</span>
                 <span
                   style={{
                     color: "rgba(254,202,202,0.9)",
                     fontSize: "12px",
                     fontWeight: 400,
                     marginLeft: "4px",
-                    lineHeight: "1.8",
+                    lineHeight: "2",
                   }}
                 >
                   ({item.time})
