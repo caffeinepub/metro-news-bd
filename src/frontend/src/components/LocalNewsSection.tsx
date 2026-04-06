@@ -356,8 +356,9 @@ export function LocalNewsSection() {
 
   // ---- Load articles from blockchain ----
   const loadArticles = useCallback(async () => {
-    // If actor is still being fetched or not yet available, wait
-    if (actorFetching || !actor) {
+    if (!actor) {
+      setLoadError("ব্লকচেইন সংযোগ স্থাপিত হয়নি। পুনরায় চেষ্টা করুন।");
+      setIsLoading(false);
       return;
     }
     setIsLoading(true);
@@ -454,15 +455,31 @@ export function LocalNewsSection() {
     } finally {
       setIsLoading(false);
     }
-  }, [actor, actorFetching]);
+  }, [actor]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: intentionally excludes loadArticles to prevent infinite loop
+  const hasLoaded = useRef(false);
+
   useEffect(() => {
-    // Load when actor becomes available
-    if (!actorFetching && actor) {
+    if (actor && !hasLoaded.current) {
+      hasLoaded.current = true;
       loadArticles();
     }
-  }, [actorFetching, actor]);
+  }, [actor, loadArticles]);
+
+  // If actor is still null after 5 seconds, show connection message
+  useEffect(() => {
+    if (!actor) {
+      const timer = setTimeout(() => {
+        if (!actor) {
+          setIsLoading(false);
+          setLoadError(
+            "ব্লকচেইন সংযোগ হচ্ছে... পেজ রিফ্রেশ করুন অথবা একটু অপেক্ষা করুন।",
+          );
+        }
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [actor]);
 
   // Auto-refresh from blockchain every 30 seconds to stay in sync across devices
   useEffect(() => {
