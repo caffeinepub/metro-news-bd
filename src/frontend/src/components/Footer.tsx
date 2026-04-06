@@ -1,5 +1,16 @@
-import { Mail, MapPin, User } from "lucide-react";
-import { SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
+import { Globe, Mail, MapPin, Phone, User } from "lucide-react";
+import {
+  SiFacebook,
+  SiInstagram,
+  SiLinkedin,
+  SiPinterest,
+  SiTelegram,
+  SiTiktok,
+  SiWhatsapp,
+  SiX,
+  SiYoutube,
+} from "react-icons/si";
+import { useSiteSettings } from "../context/SiteSettingsContext";
 
 const sectionLinks = [
   "স্থানীয়",
@@ -21,10 +32,25 @@ const resourceLinks = [
   "আর্কাইভ",
 ];
 
+function getPlatformIcon(platform: string) {
+  const p = platform.toLowerCase();
+  if (p === "facebook") return <SiFacebook size={16} />;
+  if (p === "youtube") return <SiYoutube size={16} />;
+  if (p === "x" || p === "twitter") return <SiX size={14} />;
+  if (p === "instagram") return <SiInstagram size={16} />;
+  if (p === "tiktok") return <SiTiktok size={16} />;
+  if (p === "linkedin") return <SiLinkedin size={16} />;
+  if (p === "whatsapp") return <SiWhatsapp size={16} />;
+  if (p === "telegram") return <SiTelegram size={16} />;
+  if (p === "pinterest") return <SiPinterest size={16} />;
+  return <Globe size={16} />;
+}
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const hostname =
     typeof window !== "undefined" ? window.location.hostname : "";
+  const { settings } = useSiteSettings();
 
   return (
     <footer
@@ -37,49 +63,83 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div
-                className="flex items-center justify-center w-8 h-8 rounded font-bold text-base"
+                className="flex items-center justify-center w-8 h-8 rounded overflow-hidden font-bold text-base"
                 style={{
                   backgroundColor: "#1a1a1a",
                   border: "1px solid #2d2d2d",
                 }}
               >
-                <span className="text-white">বা</span>
-                <span className="news-red">নি</span>
+                {settings.logoBase64 ? (
+                  <img
+                    src={settings.logoBase64}
+                    alt={settings.siteName}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <>
+                    <span className="text-white">বা</span>
+                    <span className="news-red">নি</span>
+                  </>
+                )}
               </div>
               <span className="text-white font-bold text-sm uppercase tracking-widest">
-                বালীগাঁও নিউজ
+                {settings.siteName}
               </span>
             </div>
             <p
               className="text-xs leading-relaxed mb-4"
               style={{ color: "#9c9c9c" }}
             >
-              বালীগাঁও নিউজ বালিগাঁও, লাখাই, হবিগঞ্জ-এর একটি নির্ভরযোগ্য স্থানীয় সংবাদ মাধ্যম।
-              আমরা প্রতিদিন সর্বশেষ, নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।
+              {settings.aboutText}
             </p>
             {/* Contact Info */}
             <div className="flex flex-col gap-2">
-              <div
-                className="flex items-center gap-2"
-                style={{ color: "#9c9c9c" }}
-              >
-                <Mail size={12} className="shrink-0" />
-                <span className="text-xs">baligawnews@gmail.com</span>
-              </div>
-              <div
-                className="flex items-start gap-2"
-                style={{ color: "#9c9c9c" }}
-              >
-                <MapPin size={12} className="shrink-0 mt-0.5" />
-                <span className="text-xs">বালিগাঁও, লাখাই, হবিগঞ্জ</span>
-              </div>
-              <div
-                className="flex items-center gap-2"
-                style={{ color: "#9c9c9c" }}
-              >
-                <User size={12} className="shrink-0" />
-                <span className="text-xs">সম্পাদক: এম.ডি ব্রাইট</span>
-              </div>
+              {settings.email && (
+                <div
+                  className="flex items-center gap-2"
+                  style={{ color: "#9c9c9c" }}
+                >
+                  <Mail size={12} className="shrink-0" />
+                  <span className="text-xs">{settings.email}</span>
+                </div>
+              )}
+              {settings.phone && (
+                <div
+                  className="flex items-center gap-2"
+                  style={{ color: "#9c9c9c" }}
+                >
+                  <Phone size={12} className="shrink-0" />
+                  <span className="text-xs">{settings.phone}</span>
+                </div>
+              )}
+              {settings.address && (
+                <div
+                  className="flex items-start gap-2"
+                  style={{ color: "#9c9c9c" }}
+                >
+                  <MapPin size={12} className="shrink-0 mt-0.5" />
+                  <span className="text-xs">{settings.address}</span>
+                </div>
+              )}
+              {settings.editorName && (
+                <div
+                  className="flex items-center gap-2"
+                  style={{ color: "#9c9c9c" }}
+                >
+                  <User size={12} className="shrink-0" />
+                  <span className="text-xs">সম্পাদক: {settings.editorName}</span>
+                </div>
+              )}
+              {settings.establishedYear && (
+                <div
+                  className="flex items-center gap-2"
+                  style={{ color: "#9c9c9c" }}
+                >
+                  <span className="text-xs">
+                    প্রতিষ্ঠা: {settings.establishedYear}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 
@@ -129,76 +189,63 @@ export function Footer() {
               সোশ্যাল মিডিয়া
             </h3>
             <div className="flex flex-col gap-3">
-              <a
-                href="https://facebook.com/baligawnews"
-                data-ocid="footer.facebook.link"
-                className="flex items-center gap-2.5 text-xs transition-colors group"
-                style={{ color: "#9c9c9c" }}
-                aria-label="Facebook"
-              >
-                <SiFacebook
-                  size={16}
-                  className="group-hover:text-white transition-colors"
-                />
-                <span className="group-hover:text-white transition-colors">
-                  @baligawnews
-                </span>
-              </a>
-              <a
-                href="https://x.com/baligawnews"
-                data-ocid="footer.twitter.link"
-                className="flex items-center gap-2.5 text-xs transition-colors group"
-                style={{ color: "#9c9c9c" }}
-                aria-label="X (Twitter)"
-              >
-                <SiX
-                  size={14}
-                  className="group-hover:text-white transition-colors"
-                />
-                <span className="group-hover:text-white transition-colors">
-                  @baligawnews
-                </span>
-              </a>
-              <a
-                href="https://youtube.com/@baligawnews"
-                data-ocid="footer.youtube.link"
-                className="flex items-center gap-2.5 text-xs transition-colors group"
-                style={{ color: "#9c9c9c" }}
-                aria-label="YouTube"
-              >
-                <SiYoutube
-                  size={16}
-                  className="group-hover:text-white transition-colors"
-                />
-                <span className="group-hover:text-white transition-colors">
-                  বালীগাঁও নিউজ
-                </span>
-              </a>
-              <a
-                href="https://instagram.com/baligawnews"
-                data-ocid="footer.instagram.link"
-                className="flex items-center gap-2.5 text-xs transition-colors group"
-                style={{ color: "#9c9c9c" }}
-                aria-label="Instagram"
-              >
-                <SiInstagram
-                  size={16}
-                  className="group-hover:text-white transition-colors"
-                />
-                <span className="group-hover:text-white transition-colors">
-                  @baligawnews
-                </span>
-              </a>
+              {settings.socialLinks.map((link, idx) => (
+                <a
+                  key={link.id}
+                  href={link.url}
+                  data-ocid={`footer.social.link.${idx + 1}`}
+                  className="flex items-center gap-2.5 text-xs transition-colors group"
+                  style={{ color: "#9c9c9c" }}
+                  aria-label={link.platform}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="group-hover:text-white transition-colors">
+                    {getPlatformIcon(link.platform)}
+                  </span>
+                  <span className="group-hover:text-white transition-colors">
+                    {link.handle || link.platform}
+                  </span>
+                </a>
+              ))}
+              {settings.socialLinks.length === 0 && (
+                <p className="text-xs" style={{ color: "#6b6b6b" }}>
+                  কোনো সোশ্যাল মিডিয়া যোগ করা হয়নি
+                </p>
+              )}
             </div>
           </div>
         </div>
+
+        {/* Journalists section if any */}
+        {settings.journalists.length > 0 && (
+          <div className="mt-8 pt-6" style={{ borderTop: "1px solid #2d2d2d" }}>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
+              আমাদের সাংবাদিক দল
+            </h3>
+            <div className="flex flex-wrap gap-4">
+              {settings.journalists.map((j) => (
+                <div key={j.id} className="flex flex-col gap-0.5">
+                  <span className="text-xs font-medium text-white">
+                    {j.name}
+                  </span>
+                  <span className="text-xs" style={{ color: "#6b6b6b" }}>
+                    {j.role}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Bottom bar */}
         <div
           className="mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
           style={{ borderTop: "1px solid #2d2d2d", color: "#6b6b6b" }}
         >
-          <p>© {currentYear} বালীগাঁও নিউজ। সকল স্বত্ব সংরক্ষিত।</p>
+          <p>
+            © {currentYear} {settings.siteName}। সকল স্বত্ব সংরক্ষিত।
+          </p>
           <p>
             Built with ❤️ using{" "}
             <a

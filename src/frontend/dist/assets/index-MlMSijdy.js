@@ -15131,28 +15131,83 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$g = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$g);
+const __iconNode$l = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$l);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$f = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$f);
+const __iconNode$k = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$e = [
+const __iconNode$j = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
   ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$e);
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$j);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$i = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$i);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$h = [
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+];
+const ExternalLink = createLucideIcon("external-link", __iconNode$h);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$g = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("globe", __iconNode$g);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+];
+const Image = createLucideIcon("image", __iconNode$f);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$e = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15160,10 +15215,10 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$e);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$d = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$d);
+const Mail = createLucideIcon("mail", __iconNode$d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15171,49 +15226,6 @@ const CircleCheck = createLucideIcon("circle-check", __iconNode$d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$c = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
-  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
-];
-const ExternalLink = createLucideIcon("external-link", __iconNode$c);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$b = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
-];
-const Image = createLucideIcon("image", __iconNode$b);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$a = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$a);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$9 = [
-  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
-  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
-];
-const Mail = createLucideIcon("mail", __iconNode$9);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$8 = [
   [
     "path",
     {
@@ -15223,7 +15235,59 @@ const __iconNode$8 = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$8);
+const MapPin = createLucideIcon("map-pin", __iconNode$c);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$b = [
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 18h16", key: "19g7jn" }],
+  ["path", { d: "M4 6h16", key: "1o0s65" }]
+];
+const Menu = createLucideIcon("menu", __iconNode$b);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$a = [
+  [
+    "path",
+    {
+      d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
+      key: "9njp5v"
+    }
+  ]
+];
+const Phone = createLucideIcon("phone", __iconNode$a);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$9);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$8 = [
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+];
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$8);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15231,11 +15295,10 @@ const MapPin = createLucideIcon("map-pin", __iconNode$8);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$7 = [
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 18h16", key: "19g7jn" }],
-  ["path", { d: "M4 6h16", key: "1o0s65" }]
+  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
 ];
-const Menu = createLucideIcon("menu", __iconNode$7);
+const Search = createLucideIcon("search", __iconNode$7);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15243,12 +15306,16 @@ const Menu = createLucideIcon("menu", __iconNode$7);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$6 = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+  [
+    "path",
+    {
+      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z",
+      key: "1qme2f"
+    }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const RefreshCw = createLucideIcon("refresh-cw", __iconNode$6);
+const Settings = createLucideIcon("settings", __iconNode$6);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -15256,17 +15323,6 @@ const RefreshCw = createLucideIcon("refresh-cw", __iconNode$6);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$5 = [
-  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
-];
-const Search = createLucideIcon("search", __iconNode$5);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$4 = [
   ["path", { d: "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7", key: "1m0v6g" }],
   [
     "path",
@@ -15276,7 +15332,21 @@ const __iconNode$4 = [
     }
   ]
 ];
-const SquarePen = createLucideIcon("square-pen", __iconNode$4);
+const SquarePen = createLucideIcon("square-pen", __iconNode$5);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$4 = [
+  ["path", { d: "M3 6h18", key: "d0wm0j" }],
+  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
+  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
+  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
+  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
+];
+const Trash2 = createLucideIcon("trash-2", __iconNode$4);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -28840,11 +28910,101 @@ function SiFacebook(props) {
 function SiInstagram(props) {
   return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" }, "child": [] }] })(props);
 }
+function SiLinkedin(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" }, "child": [] }] })(props);
+}
+function SiPinterest(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" }, "child": [] }] })(props);
+}
+function SiTelegram(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" }, "child": [] }] })(props);
+}
+function SiTiktok(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" }, "child": [] }] })(props);
+}
+function SiWhatsapp(props) {
+  return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" }, "child": [] }] })(props);
+}
 function SiX(props) {
   return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" }, "child": [] }] })(props);
 }
 function SiYoutube(props) {
   return GenIcon({ "attr": { "role": "img", "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" }, "child": [] }] })(props);
+}
+const DEFAULT_SETTINGS = {
+  siteName: "বালীগাঁও নিউজ",
+  tagline: "Voice of Truth & Freedom",
+  email: "baligawnews@gmail.com",
+  address: "বালিগাঁও, লাখাই, হবিগঞ্জ",
+  editorName: "এম.ডি ব্রাইট",
+  aboutText: "বালীগাঁও নিউজ বালিগাঁও, লাখাই, হবিগঞ্জ-এর একটি নির্ভরযোগ্য স্থানীয় সংবাদ মাধ্যম। আমরা প্রতিদিন সর্বশেষ, নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।",
+  phone: "",
+  establishedYear: "",
+  logoBase64: "",
+  journalists: [],
+  socialLinks: [
+    {
+      id: "1",
+      platform: "Facebook",
+      url: "https://facebook.com/baligawnews",
+      handle: "@baligawnews"
+    },
+    {
+      id: "2",
+      platform: "X",
+      url: "https://x.com/baligawnews",
+      handle: "@baligawnews"
+    },
+    {
+      id: "3",
+      platform: "YouTube",
+      url: "https://youtube.com/@baligawnews",
+      handle: "বালীগাঁও নিউজ"
+    },
+    {
+      id: "4",
+      platform: "Instagram",
+      url: "https://instagram.com/baligawnews",
+      handle: "@baligawnews"
+    }
+  ]
+};
+const STORAGE_KEY = "baligaon_site_settings";
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return DEFAULT_SETTINGS;
+    const parsed = JSON.parse(raw);
+    return { ...DEFAULT_SETTINGS, ...parsed };
+  } catch {
+    return DEFAULT_SETTINGS;
+  }
+}
+function saveToStorage(settings) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+  } catch {
+  }
+}
+const SiteSettingsContext = reactExports.createContext({
+  settings: DEFAULT_SETTINGS,
+  updateSettings: () => {
+  }
+});
+function SiteSettingsProvider({
+  children
+}) {
+  const [settings, setSettings] = reactExports.useState(loadFromStorage);
+  reactExports.useEffect(() => {
+    saveToStorage(settings);
+  }, [settings]);
+  const updateSettings = (partial) => {
+    setSettings((prev) => ({ ...prev, ...partial }));
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(SiteSettingsContext.Provider, { value: { settings, updateSettings }, children });
+}
+function useSiteSettings() {
+  return reactExports.useContext(SiteSettingsContext);
 }
 const sectionLinks = [
   "স্থানীয়",
@@ -28864,9 +29024,23 @@ const resourceLinks = [
   "শর্তাবলী",
   "আর্কাইভ"
 ];
+function getPlatformIcon$1(platform) {
+  const p2 = platform.toLowerCase();
+  if (p2 === "facebook") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiFacebook, { size: 16 });
+  if (p2 === "youtube") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiYoutube, { size: 16 });
+  if (p2 === "x" || p2 === "twitter") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiX, { size: 14 });
+  if (p2 === "instagram") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiInstagram, { size: 16 });
+  if (p2 === "tiktok") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiTiktok, { size: 16 });
+  if (p2 === "linkedin") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiLinkedin, { size: 16 });
+  if (p2 === "whatsapp") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiWhatsapp, { size: 16 });
+  if (p2 === "telegram") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiTelegram, { size: 16 });
+  if (p2 === "pinterest") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiPinterest, { size: 16 });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 16 });
+}
 function Footer() {
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
   const hostname = typeof window !== "undefined" ? window.location.hostname : "";
+  const { settings } = useSiteSettings();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "footer",
     {
@@ -28876,62 +29050,94 @@ function Footer() {
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
-                  className: "flex items-center justify-center w-8 h-8 rounded font-bold text-base",
+                  className: "flex items-center justify-center w-8 h-8 rounded overflow-hidden font-bold text-base",
                   style: {
                     backgroundColor: "#1a1a1a",
                     border: "1px solid #2d2d2d"
                   },
-                  children: [
+                  children: settings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "img",
+                    {
+                      src: settings.logoBase64,
+                      alt: settings.siteName,
+                      className: "w-full h-full object-cover"
+                    }
+                  ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
-                  ]
+                  ] })
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-bold text-sm uppercase tracking-widest", children: "বালীগাঁও নিউজ" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-bold text-sm uppercase tracking-widest", children: settings.siteName })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               "p",
               {
                 className: "text-xs leading-relaxed mb-4",
                 style: { color: "#9c9c9c" },
-                children: "বালীগাঁও নিউজ বালিগাঁও, লাখাই, হবিগঞ্জ-এর একটি নির্ভরযোগ্য স্থানীয় সংবাদ মাধ্যম। আমরা প্রতিদিন সর্বশেষ, নিরপেক্ষ ও তথ্যভিত্তিক সংবাদ পরিবেশন করে থাকি।"
+                children: settings.aboutText
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              settings.email && /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
                   className: "flex items-center gap-2",
                   style: { color: "#9c9c9c" },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { size: 12, className: "shrink-0" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "baligawnews@gmail.com" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.email })
                   ]
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              settings.phone && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center gap-2",
+                  style: { color: "#9c9c9c" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { size: 12, className: "shrink-0" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.phone })
+                  ]
+                }
+              ),
+              settings.address && /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
                   className: "flex items-start gap-2",
                   style: { color: "#9c9c9c" },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { size: 12, className: "shrink-0 mt-0.5" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "বালিগাঁও, লাখাই, হবিগঞ্জ" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: settings.address })
                   ]
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              settings.editorName && /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
                   className: "flex items-center gap-2",
                   style: { color: "#9c9c9c" },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(User, { size: 12, className: "shrink-0" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "সম্পাদক: এম.ডি ব্রাইট" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", children: [
+                      "সম্পাদক: ",
+                      settings.editorName
+                    ] })
                   ]
+                }
+              ),
+              settings.establishedYear && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "flex items-center gap-2",
+                  style: { color: "#9c9c9c" },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs", children: [
+                    "প্রতিষ্ঠা: ",
+                    settings.establishedYear
+                  ] })
                 }
               )
             ] })
@@ -28963,88 +29169,33 @@ function Footer() {
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "সোশ্যাল মিডিয়া" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              settings.socialLinks.map((link, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "a",
                 {
-                  href: "https://facebook.com/baligawnews",
-                  "data-ocid": "footer.facebook.link",
+                  href: link.url,
+                  "data-ocid": `footer.social.link.${idx + 1}`,
                   className: "flex items-center gap-2.5 text-xs transition-colors group",
                   style: { color: "#9c9c9c" },
-                  "aria-label": "Facebook",
+                  "aria-label": link.platform,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
                   children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      SiFacebook,
-                      {
-                        size: 16,
-                        className: "group-hover:text-white transition-colors"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: getPlatformIcon$1(link.platform) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: link.handle || link.platform })
                   ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: "https://x.com/baligawnews",
-                  "data-ocid": "footer.twitter.link",
-                  className: "flex items-center gap-2.5 text-xs transition-colors group",
-                  style: { color: "#9c9c9c" },
-                  "aria-label": "X (Twitter)",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      SiX,
-                      {
-                        size: 14,
-                        className: "group-hover:text-white transition-colors"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: "https://youtube.com/@baligawnews",
-                  "data-ocid": "footer.youtube.link",
-                  className: "flex items-center gap-2.5 text-xs transition-colors group",
-                  style: { color: "#9c9c9c" },
-                  "aria-label": "YouTube",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      SiYoutube,
-                      {
-                        size: 16,
-                        className: "group-hover:text-white transition-colors"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "বালীগাঁও নিউজ" })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: "https://instagram.com/baligawnews",
-                  "data-ocid": "footer.instagram.link",
-                  className: "flex items-center gap-2.5 text-xs transition-colors group",
-                  style: { color: "#9c9c9c" },
-                  "aria-label": "Instagram",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      SiInstagram,
-                      {
-                        size: 16,
-                        className: "group-hover:text-white transition-colors"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "group-hover:text-white transition-colors", children: "@baligawnews" })
-                  ]
-                }
-              )
+                },
+                link.id
+              )),
+              settings.socialLinks.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "#6b6b6b" }, children: "কোনো সোশ্যাল মিডিয়া যোগ করা হয়নি" })
             ] })
           ] })
+        ] }),
+        settings.journalists.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 pt-6", style: { borderTop: "1px solid #2d2d2d" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-bold uppercase tracking-widest text-white mb-4", children: "আমাদের সাংবাদিক দল" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-4", children: settings.journalists.map((j2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-white", children: j2.name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: j2.role })
+          ] }, j2.id)) })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
@@ -29055,7 +29206,9 @@ function Footer() {
               /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
                 "© ",
                 currentYear,
-                " বালীগাঁও নিউজ। সকল স্বত্ব সংরক্ষিত।"
+                " ",
+                settings.siteName,
+                "। সকল স্বত্ব সংরক্ষিত।"
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
                 "Built with ❤️ using",
@@ -29093,10 +29246,11 @@ const navLinks = [
   { label: "আমাদের সম্পর্কে", href: "#about" },
   { label: "যোগাযোগ", href: "#contact" }
 ];
-function Header({ onPostClick }) {
+function Header({ onPostClick, onSettingsClick }) {
   const [mobileMenuOpen, setMobileMenuOpen] = reactExports.useState(false);
   const [searchOpen, setSearchOpen] = reactExports.useState(false);
   const [activeNav, setActiveNav] = reactExports.useState("হোম");
+  const { settings } = useSiteSettings();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "header",
     {
@@ -29105,25 +29259,32 @@ function Header({ onPostClick }) {
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between gap-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
               "div",
               {
-                className: "flex items-center justify-center w-10 h-10 rounded font-bold text-xl",
+                className: "flex items-center justify-center w-10 h-10 rounded overflow-hidden font-bold text-xl",
                 style: { backgroundColor: "#1a1a1a", border: "1px solid #2d2d2d" },
-                children: [
+                children: settings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "img",
+                  {
+                    src: settings.logoBase64,
+                    alt: settings.siteName,
+                    className: "w-full h-full object-cover"
+                  }
+                ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white", children: "বা" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "news-red", children: "নি" })
-                ]
+                ] })
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "leading-tight", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-bold text-lg tracking-widest uppercase", children: "বালীগাঁও নিউজ" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-white font-bold text-lg tracking-widest uppercase", children: settings.siteName }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
                   className: "text-xs tracking-wider uppercase",
                   style: { color: "#9c9c9c" },
-                  children: "Voice of Truth & Freedom"
+                  children: settings.tagline
                 }
               )
             ] })
@@ -29149,6 +29310,17 @@ function Header({ onPostClick }) {
                 className: "p-2 text-gray-400 hover:text-white transition-colors rounded",
                 "aria-label": "সার্চ করুন",
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { size: 18 })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                "data-ocid": "header.settings.button",
+                onClick: onSettingsClick,
+                className: "p-2 text-gray-400 hover:text-white transition-colors rounded",
+                "aria-label": "সেটিংস",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, { size: 18 })
               }
             ),
             onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -29241,7 +29413,7 @@ function Header({ onPostClick }) {
                   placeholder: "খবর খুঁজুন...",
                   className: "w-full bg-transparent border rounded pl-9 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none",
                   style: { borderColor: "#2d2d2d" },
-                  "data-ocid": "header.search_input"
+                  "data-ocid": "header.search_field.input"
                 }
               )
             ] }) })
@@ -29272,6 +29444,23 @@ function Header({ onPostClick }) {
                 },
                 link.label
               )),
+              onSettingsClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  "data-ocid": "mobile.settings.button",
+                  onClick: () => {
+                    setMobileMenuOpen(false);
+                    onSettingsClick();
+                  },
+                  className: "mt-1 flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded hover:text-white transition-colors",
+                  style: { color: "#9c9c9c" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, { size: 15 }),
+                    "⚙ সেটিংস"
+                  ]
+                }
+              ),
               onPostClick && /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "button",
                 {
@@ -30264,8 +30453,1000 @@ function NewsPostModal({
     }
   );
 }
-function App() {
+const JOURNALIST_ROLES = [
+  "সম্পাদক",
+  "সহ-সম্পাদক",
+  "প্রতিবেদক",
+  "ফটোগ্রাফার",
+  "ক্যামেরাম্যান",
+  "বিজ্ঞাপন ব্যবস্থাপক"
+];
+const SOCIAL_PLATFORMS = [
+  "Facebook",
+  "YouTube",
+  "X",
+  "Instagram",
+  "TikTok",
+  "LinkedIn",
+  "WhatsApp",
+  "Telegram",
+  "Pinterest",
+  "Other"
+];
+function getPlatformIcon(platform) {
+  const p2 = platform.toLowerCase();
+  if (p2 === "facebook") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiFacebook, { size: 14 });
+  if (p2 === "youtube") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiYoutube, { size: 14 });
+  if (p2 === "x" || p2 === "twitter") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiX, { size: 13 });
+  if (p2 === "instagram") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiInstagram, { size: 14 });
+  if (p2 === "tiktok") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiTiktok, { size: 14 });
+  if (p2 === "linkedin") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiLinkedin, { size: 14 });
+  if (p2 === "whatsapp") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiWhatsapp, { size: 14 });
+  if (p2 === "telegram") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiTelegram, { size: 14 });
+  if (p2 === "pinterest") return /* @__PURE__ */ jsxRuntimeExports.jsx(SiPinterest, { size: 14 });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { size: 14 });
+}
+const inputStyle = {
+  backgroundColor: "#1a1a1a",
+  border: "1px solid #2d2d2d",
+  color: "white"
+};
+const lbl = "text-xs font-bold uppercase tracking-widest text-[#9c9c9c] mb-1 block";
+function SettingsModal({ isOpen, onClose }) {
+  const { settings, updateSettings } = useSiteSettings();
+  const [activeTab, setActiveTab] = reactExports.useState("site");
+  const [saveSuccess, setSaveSuccess] = reactExports.useState(false);
+  const [localSettings, setLocalSettings] = reactExports.useState({ ...settings });
+  const [showJournalistForm, setShowJournalistForm] = reactExports.useState(false);
+  const [editingJournalistId, setEditingJournalistId] = reactExports.useState(
+    null
+  );
+  const [journalistForm, setJournalistForm] = reactExports.useState({
+    name: "",
+    email: "",
+    role: JOURNALIST_ROLES[0],
+    phone: ""
+  });
+  const [showSocialForm, setShowSocialForm] = reactExports.useState(false);
+  const [editingSocialId, setEditingSocialId] = reactExports.useState(null);
+  const [socialForm, setSocialForm] = reactExports.useState({
+    platform: "Facebook",
+    url: "",
+    handle: ""
+  });
+  const logoInputRef = reactExports.useRef(null);
+  if (!isOpen) return null;
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setLocalSettings({ ...settings });
+  };
+  const handleSave = () => {
+    updateSettings(localSettings);
+    setSaveSuccess(true);
+    setTimeout(() => setSaveSuccess(false), 2500);
+  };
+  const handleLogoFileChange = (e) => {
+    var _a3;
+    const file = (_a3 = e.target.files) == null ? void 0 : _a3[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setLocalSettings((prev) => ({
+        ...prev,
+        logoBase64: reader.result
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+  const startAddJournalist = () => {
+    setEditingJournalistId(null);
+    setJournalistForm({
+      name: "",
+      email: "",
+      role: JOURNALIST_ROLES[0],
+      phone: ""
+    });
+    setShowJournalistForm(true);
+  };
+  const startEditJournalist = (j2) => {
+    setEditingJournalistId(j2.id);
+    setJournalistForm({
+      name: j2.name,
+      email: j2.email,
+      role: j2.role,
+      phone: j2.phone
+    });
+    setShowJournalistForm(true);
+  };
+  const saveJournalist = () => {
+    if (!journalistForm.name.trim()) return;
+    if (editingJournalistId) {
+      setLocalSettings((prev) => ({
+        ...prev,
+        journalists: prev.journalists.map(
+          (j2) => j2.id === editingJournalistId ? { id: j2.id, ...journalistForm } : j2
+        )
+      }));
+    } else {
+      const newId = crypto.randomUUID();
+      setLocalSettings((prev) => ({
+        ...prev,
+        journalists: [...prev.journalists, { id: newId, ...journalistForm }]
+      }));
+    }
+    setShowJournalistForm(false);
+    setEditingJournalistId(null);
+  };
+  const deleteJournalist = (id) => {
+    setLocalSettings((prev) => ({
+      ...prev,
+      journalists: prev.journalists.filter((j2) => j2.id !== id)
+    }));
+  };
+  const startAddSocial = () => {
+    setEditingSocialId(null);
+    setSocialForm({ platform: "Facebook", url: "", handle: "" });
+    setShowSocialForm(true);
+  };
+  const startEditSocial = (s2) => {
+    setEditingSocialId(s2.id);
+    setSocialForm({ platform: s2.platform, url: s2.url, handle: s2.handle });
+    setShowSocialForm(true);
+  };
+  const saveSocial = () => {
+    if (!socialForm.url.trim()) return;
+    if (editingSocialId) {
+      setLocalSettings((prev) => ({
+        ...prev,
+        socialLinks: prev.socialLinks.map(
+          (s2) => s2.id === editingSocialId ? { id: s2.id, ...socialForm } : s2
+        )
+      }));
+    } else {
+      const newId = crypto.randomUUID();
+      setLocalSettings((prev) => ({
+        ...prev,
+        socialLinks: [...prev.socialLinks, { id: newId, ...socialForm }]
+      }));
+    }
+    setShowSocialForm(false);
+    setEditingSocialId(null);
+  };
+  const deleteSocial = (id) => {
+    setLocalSettings((prev) => ({
+      ...prev,
+      socialLinks: prev.socialLinks.filter((s2) => s2.id !== id)
+    }));
+  };
+  const tabs = [
+    { id: "site", label: "সাইটের তথ্য" },
+    { id: "logo", label: "লোগো" },
+    { id: "journalists", label: "সাংবাদিক" },
+    { id: "social", label: "সোশ্যাল মিডিয়া" }
+  ];
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: "fixed inset-0 z-[200] flex items-start justify-center p-4 overflow-y-auto",
+      style: { backgroundColor: "rgba(0,0,0,0.92)" },
+      "data-ocid": "settings.modal",
+      role: "presentation",
+      onClick: (e) => {
+        if (e.target === e.currentTarget) onClose();
+      },
+      onKeyDown: (e) => {
+        if (e.key === "Escape") onClose();
+      },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "relative w-full max-w-2xl my-8 rounded-lg shadow-2xl",
+          style: { backgroundColor: "#111111", border: "1px solid #2d2d2d" },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "flex items-center justify-between px-6 py-4 border-b",
+                style: { borderColor: "#2d2d2d" },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "w-1 h-6 rounded-sm",
+                        style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" }
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-lg font-bold text-white uppercase tracking-widest", children: "সেটিংস" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      "data-ocid": "settings.close_button",
+                      onClick: onClose,
+                      className: "p-1.5 text-gray-400 hover:text-white rounded transition-colors",
+                      "aria-label": "বন্ধ করুন",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { size: 20 })
+                    }
+                  )
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "flex border-b overflow-x-auto",
+                style: { borderColor: "#2d2d2d" },
+                children: tabs.map((tab) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    "data-ocid": `settings.${tab.id}.tab`,
+                    onClick: () => handleTabChange(tab.id),
+                    className: "px-5 py-3 text-xs font-bold uppercase tracking-widest whitespace-nowrap transition-colors border-b-2",
+                    style: {
+                      color: activeTab === tab.id ? "oklch(0.4764 0.2183 22.8)" : "#9c9c9c",
+                      borderBottomColor: activeTab === tab.id ? "oklch(0.4764 0.2183 22.8)" : "transparent",
+                      backgroundColor: "transparent"
+                    },
+                    children: tab.label
+                  },
+                  tab.id
+                ))
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-6 py-5 min-h-[300px]", children: [
+              activeTab === "site" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-sitename", className: lbl, children: "সাইটের নাম" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        id: "s-sitename",
+                        type: "text",
+                        "data-ocid": "settings.site_name.input",
+                        value: localSettings.siteName,
+                        onChange: (e) => setLocalSettings((p2) => ({
+                          ...p2,
+                          siteName: e.target.value
+                        })),
+                        className: "w-full px-3 py-2.5 rounded text-sm placeholder-gray-600 focus:outline-none",
+                        style: inputStyle,
+                        placeholder: "সাইটের নাম"
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-tagline", className: lbl, children: "ট্যাগলাইন" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        id: "s-tagline",
+                        type: "text",
+                        "data-ocid": "settings.tagline.input",
+                        value: localSettings.tagline,
+                        onChange: (e) => setLocalSettings((p2) => ({
+                          ...p2,
+                          tagline: e.target.value
+                        })),
+                        className: "w-full px-3 py-2.5 rounded text-sm placeholder-gray-600 focus:outline-none",
+                        style: inputStyle,
+                        placeholder: "ট্যাগলাইন"
+                      }
+                    )
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-email", className: lbl, children: "ইমেইল" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        id: "s-email",
+                        type: "email",
+                        "data-ocid": "settings.email.input",
+                        value: localSettings.email,
+                        onChange: (e) => setLocalSettings((p2) => ({ ...p2, email: e.target.value })),
+                        className: "w-full px-3 py-2.5 rounded text-sm placeholder-gray-600 focus:outline-none",
+                        style: inputStyle,
+                        placeholder: "example@gmail.com"
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-phone", className: lbl, children: "ফোন নম্বর" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        id: "s-phone",
+                        type: "tel",
+                        "data-ocid": "settings.phone.input",
+                        value: localSettings.phone,
+                        onChange: (e) => setLocalSettings((p2) => ({ ...p2, phone: e.target.value })),
+                        className: "w-full px-3 py-2.5 rounded text-sm placeholder-gray-600 focus:outline-none",
+                        style: inputStyle,
+                        placeholder: "+880 1XXX-XXXXXX"
+                      }
+                    )
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-address", className: lbl, children: "ঠিকানা" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "textarea",
+                    {
+                      id: "s-address",
+                      "data-ocid": "settings.address.textarea",
+                      value: localSettings.address,
+                      onChange: (e) => setLocalSettings((p2) => ({ ...p2, address: e.target.value })),
+                      className: "w-full px-3 py-2.5 rounded text-sm placeholder-gray-600 focus:outline-none resize-none",
+                      style: inputStyle,
+                      placeholder: "সম্পূর্ণ ঠিকানা",
+                      rows: 2
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-editor", className: lbl, children: "সম্পাদকের নাম" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        id: "s-editor",
+                        type: "text",
+                        "data-ocid": "settings.editor_name.input",
+                        value: localSettings.editorName,
+                        onChange: (e) => setLocalSettings((p2) => ({
+                          ...p2,
+                          editorName: e.target.value
+                        })),
+                        className: "w-full px-3 py-2.5 rounded text-sm placeholder-gray-600 focus:outline-none",
+                        style: inputStyle,
+                        placeholder: "সম্পাদকের নাম"
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-year", className: lbl, children: "প্রতিষ্ঠার বছর" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        id: "s-year",
+                        type: "text",
+                        "data-ocid": "settings.established_year.input",
+                        value: localSettings.establishedYear,
+                        onChange: (e) => setLocalSettings((p2) => ({
+                          ...p2,
+                          establishedYear: e.target.value
+                        })),
+                        className: "w-full px-3 py-2.5 rounded text-sm placeholder-gray-600 focus:outline-none",
+                        style: inputStyle,
+                        placeholder: "যেমন: ২০২০"
+                      }
+                    )
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-about", className: lbl, children: "আমাদের সম্পর্কে" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "textarea",
+                    {
+                      id: "s-about",
+                      "data-ocid": "settings.about_text.textarea",
+                      value: localSettings.aboutText,
+                      onChange: (e) => setLocalSettings((p2) => ({
+                        ...p2,
+                        aboutText: e.target.value
+                      })),
+                      className: "w-full px-3 py-2.5 rounded text-sm placeholder-gray-600 focus:outline-none resize-none",
+                      style: inputStyle,
+                      placeholder: "প্রতিষ্ঠান সম্পর্কে সংক্ষিপ্ত বিবরণ",
+                      rows: 3
+                    }
+                  )
+                ] })
+              ] }),
+              activeTab === "logo" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "#9c9c9c" }, children: "PNG, JPG বা SVG ফরম্যাটে লোগো আপলোড করুন। লোগো আপলোড করলে পুরো ওয়েবসাইটে স্বয়ংক্রিয়ভাবে দেখা যাবে।" }),
+                localSettings.logoBase64 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "flex items-center justify-center p-4 rounded-lg",
+                      style: {
+                        backgroundColor: "#1a1a1a",
+                        border: "1px solid #2d2d2d"
+                      },
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "img",
+                        {
+                          src: localSettings.logoBase64,
+                          alt: "লোগো প্রিভিউ",
+                          className: "max-h-32 max-w-full object-contain"
+                        }
+                      )
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "button",
+                      {
+                        type: "button",
+                        "data-ocid": "settings.logo.upload_button",
+                        onClick: () => {
+                          var _a3;
+                          return (_a3 = logoInputRef.current) == null ? void 0 : _a3.click();
+                        },
+                        className: "inline-flex items-center gap-2 px-4 py-2 rounded text-sm font-medium text-white transition-opacity hover:opacity-80",
+                        style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Upload, { size: 14 }),
+                          "লোগো পরিবর্তন করুন"
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "button",
+                      {
+                        type: "button",
+                        "data-ocid": "settings.logo.delete_button",
+                        onClick: () => setLocalSettings((p2) => ({ ...p2, logoBase64: "" })),
+                        className: "inline-flex items-center gap-2 px-4 py-2 rounded text-sm font-medium transition-colors",
+                        style: {
+                          backgroundColor: "#1a1a1a",
+                          border: "1px solid #3d3d3d",
+                          color: "#9c9c9c"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { size: 14 }),
+                          "লোগো মুছুন"
+                        ]
+                      }
+                    )
+                  ] })
+                ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    "data-ocid": "settings.logo.dropzone",
+                    className: "flex flex-col items-center justify-center gap-3 py-12 rounded-lg cursor-pointer transition-colors border-dashed border-2",
+                    style: { backgroundColor: "#1a1a1a", borderColor: "#3d3d3d" },
+                    onClick: () => {
+                      var _a3;
+                      return (_a3 = logoInputRef.current) == null ? void 0 : _a3.click();
+                    },
+                    onDragOver: (e) => e.preventDefault(),
+                    onDrop: (e) => {
+                      var _a3;
+                      e.preventDefault();
+                      const file = (_a3 = e.dataTransfer.files) == null ? void 0 : _a3[0];
+                      if (file) {
+                        const reader = new FileReader();
+                        reader.onloadend = () => {
+                          setLocalSettings((p2) => ({
+                            ...p2,
+                            logoBase64: reader.result
+                          }));
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "p-4 rounded-full",
+                          style: { backgroundColor: "#2d2d2d" },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Upload, { size: 24, style: { color: "#6b6b6b" } })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "p",
+                          {
+                            className: "text-sm font-medium",
+                            style: { color: "#9c9c9c" },
+                            children: [
+                              "লোগো টানুন বা",
+                              " ",
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "oklch(0.4764 0.2183 22.8)" }, children: "ব্রাউজ করুন" })
+                            ]
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs mt-1", style: { color: "#6b6b6b" }, children: "PNG, JPG, SVG সমর্থিত" })
+                      ] })
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "input",
+                  {
+                    ref: logoInputRef,
+                    id: "s-logo-file",
+                    type: "file",
+                    accept: "image/*",
+                    className: "hidden",
+                    onChange: handleLogoFileChange
+                  }
+                )
+              ] }),
+              activeTab === "journalists" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4", children: [
+                showJournalistForm && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "p-4 rounded-lg flex flex-col gap-3",
+                    style: {
+                      backgroundColor: "#1a1a1a",
+                      border: "1px solid #2d2d2d"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "h3",
+                        {
+                          className: "text-xs font-bold uppercase tracking-widest",
+                          style: { color: "oklch(0.4764 0.2183 22.8)" },
+                          children: editingJournalistId ? "সাংবাদিক সম্পাদনা" : "নতুন সাংবাদিক"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "j-name", className: lbl, children: "নাম *" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "input",
+                            {
+                              id: "j-name",
+                              type: "text",
+                              "data-ocid": "settings.journalist_name.input",
+                              value: journalistForm.name,
+                              onChange: (e) => setJournalistForm((p2) => ({
+                                ...p2,
+                                name: e.target.value
+                              })),
+                              className: "w-full px-3 py-2 rounded text-sm placeholder-gray-600 focus:outline-none",
+                              style: inputStyle,
+                              placeholder: "সাংবাদিকের নাম"
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "j-email", className: lbl, children: "ইমেইল" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "input",
+                            {
+                              id: "j-email",
+                              type: "email",
+                              "data-ocid": "settings.journalist_email.input",
+                              value: journalistForm.email,
+                              onChange: (e) => setJournalistForm((p2) => ({
+                                ...p2,
+                                email: e.target.value
+                              })),
+                              className: "w-full px-3 py-2 rounded text-sm placeholder-gray-600 focus:outline-none",
+                              style: inputStyle,
+                              placeholder: "email@example.com"
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "j-role", className: lbl, children: "পদবী" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "select",
+                            {
+                              id: "j-role",
+                              "data-ocid": "settings.journalist_role.select",
+                              value: journalistForm.role,
+                              onChange: (e) => setJournalistForm((p2) => ({
+                                ...p2,
+                                role: e.target.value
+                              })),
+                              className: "w-full px-3 py-2 rounded text-sm focus:outline-none appearance-none",
+                              style: { ...inputStyle, cursor: "pointer" },
+                              children: JOURNALIST_ROLES.map((role) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                "option",
+                                {
+                                  value: role,
+                                  style: { backgroundColor: "#1a1a1a" },
+                                  children: role
+                                },
+                                role
+                              ))
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "j-phone", className: lbl, children: "ফোন" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "input",
+                            {
+                              id: "j-phone",
+                              type: "tel",
+                              "data-ocid": "settings.journalist_phone.input",
+                              value: journalistForm.phone,
+                              onChange: (e) => setJournalistForm((p2) => ({
+                                ...p2,
+                                phone: e.target.value
+                              })),
+                              className: "w-full px-3 py-2 rounded text-sm placeholder-gray-600 focus:outline-none",
+                              style: inputStyle,
+                              placeholder: "ফোন নম্বর"
+                            }
+                          )
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2 justify-end pt-1", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": "settings.journalist_form.cancel_button",
+                            onClick: () => {
+                              setShowJournalistForm(false);
+                              setEditingJournalistId(null);
+                            },
+                            className: "px-4 py-1.5 rounded text-xs font-medium transition-colors",
+                            style: { backgroundColor: "#2d2d2d", color: "#9c9c9c" },
+                            children: "বাতিল"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": "settings.journalist_form.save_button",
+                            onClick: saveJournalist,
+                            className: "px-4 py-1.5 rounded text-xs font-bold text-white transition-opacity hover:opacity-80",
+                            style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                            children: "সংরক্ষণ করুন"
+                          }
+                        )
+                      ] })
+                    ]
+                  }
+                ),
+                localSettings.journalists.length === 0 && !showJournalistForm ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    "data-ocid": "settings.journalists.empty_state",
+                    className: "flex flex-col items-center justify-center py-10 text-center",
+                    style: { color: "#6b6b6b" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm mb-1", children: "কোনো সাংবাদিক যোগ করা হয়নি" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", children: "নিচের বাটনে ক্লিক করে সাংবাদিক যোগ করুন" })
+                    ]
+                  }
+                ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-2", children: localSettings.journalists.map((journalist, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    "data-ocid": `settings.journalists.item.${idx + 1}`,
+                    className: "flex items-start justify-between p-3 rounded-lg",
+                    style: {
+                      backgroundColor: "#1a1a1a",
+                      border: "1px solid #2d2d2d"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-0.5", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-semibold text-white", children: journalist.name }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "span",
+                            {
+                              className: "text-xs px-2 py-0.5 rounded-full",
+                              style: {
+                                backgroundColor: "oklch(0.4764 0.2183 22.8 / 0.2)",
+                                color: "oklch(0.4764 0.2183 22.8)"
+                              },
+                              children: journalist.role
+                            }
+                          )
+                        ] }),
+                        journalist.email && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "#9c9c9c" }, children: journalist.email }),
+                        journalist.phone && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs", style: { color: "#9c9c9c" }, children: journalist.phone })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0 ml-2", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": `settings.journalists.edit_button.${idx + 1}`,
+                            onClick: () => startEditJournalist(journalist),
+                            className: "p-1.5 rounded text-gray-400 hover:text-white transition-colors text-xs",
+                            "aria-label": "সম্পাদনা",
+                            children: "✎"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": `settings.journalists.delete_button.${idx + 1}`,
+                            onClick: () => deleteJournalist(journalist.id),
+                            className: "p-1.5 rounded text-gray-500 hover:text-red-400 transition-colors",
+                            "aria-label": "মুছে দিন",
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { size: 13 })
+                          }
+                        )
+                      ] })
+                    ]
+                  },
+                  journalist.id
+                )) }),
+                !showJournalistForm && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    "data-ocid": "settings.journalists.add_button",
+                    onClick: startAddJournalist,
+                    className: "inline-flex items-center gap-2 self-start px-4 py-2 rounded text-sm font-medium transition-colors",
+                    style: {
+                      backgroundColor: "#1a1a1a",
+                      border: "1px solid #3d3d3d",
+                      color: "#9c9c9c"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 14 }),
+                      "নতুন সাংবাদিক যোগ করুন"
+                    ]
+                  }
+                )
+              ] }),
+              activeTab === "social" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4", children: [
+                showSocialForm && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "p-4 rounded-lg flex flex-col gap-3",
+                    style: {
+                      backgroundColor: "#1a1a1a",
+                      border: "1px solid #2d2d2d"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "h3",
+                        {
+                          className: "text-xs font-bold uppercase tracking-widest",
+                          style: { color: "oklch(0.4764 0.2183 22.8)" },
+                          children: editingSocialId ? "সোশ্যাল মিডিয়া সম্পাদনা" : "নতুন সোশ্যাল মিডিয়া"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-platform", className: lbl, children: "প্ল্যাটফর্ম" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "select",
+                            {
+                              id: "s-platform",
+                              "data-ocid": "settings.social_platform.select",
+                              value: socialForm.platform,
+                              onChange: (e) => setSocialForm((p2) => ({
+                                ...p2,
+                                platform: e.target.value
+                              })),
+                              className: "w-full px-3 py-2 rounded text-sm focus:outline-none appearance-none",
+                              style: { ...inputStyle, cursor: "pointer" },
+                              children: SOCIAL_PLATFORMS.map((plat) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                "option",
+                                {
+                                  value: plat,
+                                  style: { backgroundColor: "#1a1a1a" },
+                                  children: plat
+                                },
+                                plat
+                              ))
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-handle", className: lbl, children: "হ্যান্ডেল / নাম" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "input",
+                            {
+                              id: "s-handle",
+                              type: "text",
+                              "data-ocid": "settings.social_handle.input",
+                              value: socialForm.handle,
+                              onChange: (e) => setSocialForm((p2) => ({
+                                ...p2,
+                                handle: e.target.value
+                              })),
+                              className: "w-full px-3 py-2 rounded text-sm placeholder-gray-600 focus:outline-none",
+                              style: inputStyle,
+                              placeholder: "@handle বা পেইজের নাম"
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sm:col-span-2", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "s-url", className: lbl, children: "URL *" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "input",
+                            {
+                              id: "s-url",
+                              type: "url",
+                              "data-ocid": "settings.social_url.input",
+                              value: socialForm.url,
+                              onChange: (e) => setSocialForm((p2) => ({ ...p2, url: e.target.value })),
+                              className: "w-full px-3 py-2 rounded text-sm placeholder-gray-600 focus:outline-none",
+                              style: inputStyle,
+                              placeholder: "https://facebook.com/yourpage"
+                            }
+                          )
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2 justify-end pt-1", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": "settings.social_form.cancel_button",
+                            onClick: () => {
+                              setShowSocialForm(false);
+                              setEditingSocialId(null);
+                            },
+                            className: "px-4 py-1.5 rounded text-xs font-medium transition-colors",
+                            style: { backgroundColor: "#2d2d2d", color: "#9c9c9c" },
+                            children: "বাতিল"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": "settings.social_form.save_button",
+                            onClick: saveSocial,
+                            className: "px-4 py-1.5 rounded text-xs font-bold text-white transition-opacity hover:opacity-80",
+                            style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                            children: "সংরক্ষণ করুন"
+                          }
+                        )
+                      ] })
+                    ]
+                  }
+                ),
+                localSettings.socialLinks.length === 0 && !showSocialForm ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    "data-ocid": "settings.social.empty_state",
+                    className: "flex flex-col items-center justify-center py-10 text-center",
+                    style: { color: "#6b6b6b" },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm mb-1", children: "কোনো সোশ্যাল মিডিয়া যোগ করা হয়নি" })
+                  }
+                ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-2", children: localSettings.socialLinks.map((link, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    "data-ocid": `settings.social.item.${idx + 1}`,
+                    className: "flex items-center justify-between p-3 rounded-lg",
+                    style: {
+                      backgroundColor: "#1a1a1a",
+                      border: "1px solid #2d2d2d"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#9c9c9c" }, children: getPlatformIcon(link.platform) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-semibold text-white", children: link.platform }),
+                            link.handle && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "span",
+                              {
+                                className: "text-xs",
+                                style: { color: "#9c9c9c" },
+                                children: link.handle
+                              }
+                            )
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "p",
+                            {
+                              className: "text-xs truncate",
+                              style: { color: "#6b6b6b", maxWidth: "300px" },
+                              children: link.url
+                            }
+                          )
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0 ml-2", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": `settings.social.edit_button.${idx + 1}`,
+                            onClick: () => startEditSocial(link),
+                            className: "p-1.5 rounded text-gray-400 hover:text-white transition-colors text-xs",
+                            "aria-label": "সম্পাদনা",
+                            children: "✎"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            "data-ocid": `settings.social.delete_button.${idx + 1}`,
+                            onClick: () => deleteSocial(link.id),
+                            className: "p-1.5 rounded text-gray-500 hover:text-red-400 transition-colors",
+                            "aria-label": "মুছে দিন",
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { size: 13 })
+                          }
+                        )
+                      ] })
+                    ]
+                  },
+                  link.id
+                )) }),
+                !showSocialForm && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    "data-ocid": "settings.social.add_button",
+                    onClick: startAddSocial,
+                    className: "inline-flex items-center gap-2 self-start px-4 py-2 rounded text-sm font-medium transition-colors",
+                    style: {
+                      backgroundColor: "#1a1a1a",
+                      border: "1px solid #3d3d3d",
+                      color: "#9c9c9c"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 14 }),
+                      "নতুন সোশ্যাল মিডিয়া যোগ করুন"
+                    ]
+                  }
+                )
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "flex items-center justify-between gap-3 px-6 py-4 border-t",
+                style: { borderColor: "#2d2d2d" },
+                children: [
+                  saveSuccess ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      "data-ocid": "settings.success_state",
+                      className: "text-sm font-medium",
+                      style: { color: "#4ade80" },
+                      children: "✓ সফলভাবে সংরক্ষিত হয়েছে!"
+                    }
+                  ) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", style: { color: "#6b6b6b" }, children: "পরিবর্তন সংরক্ষণ করতে বাটনে ক্লিক করুন" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        "data-ocid": "settings.cancel_button",
+                        onClick: onClose,
+                        className: "px-4 py-2 rounded text-sm font-medium transition-colors",
+                        style: {
+                          backgroundColor: "#1a1a1a",
+                          border: "1px solid #2d2d2d",
+                          color: "#9c9c9c"
+                        },
+                        children: "বন্ধ করুন"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        "data-ocid": "settings.save_button",
+                        onClick: handleSave,
+                        className: "px-5 py-2 rounded text-sm font-bold text-white transition-opacity hover:opacity-80",
+                        style: { backgroundColor: "oklch(0.4764 0.2183 22.8)" },
+                        children: "সংরক্ষণ করুন"
+                      }
+                    )
+                  ] })
+                ]
+              }
+            )
+          ]
+        }
+      )
+    }
+  );
+}
+function AppContent() {
   const [showPostModal, setShowPostModal] = reactExports.useState(false);
+  const [showSettingsModal, setShowSettingsModal] = reactExports.useState(false);
   const { data: allArticles, refetch: refetchArticles } = useGetAllArticles();
   const articles = allArticles ?? [];
   const sortedArticles = [...articles].sort((a2, b2) => {
@@ -30276,7 +31457,13 @@ function App() {
   const latestSix = sortedArticles.slice(0, 6);
   const hasBackendArticles = allArticles !== void 0;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen", style: { backgroundColor: "#0b0b0b" }, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Header, { onPostClick: () => setShowPostModal(true) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Header,
+      {
+        onPostClick: () => setShowPostModal(true),
+        onSettingsClick: () => setShowSettingsModal(true)
+      }
+    ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(BreakingNewsTicker, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-4 py-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col lg:flex-row gap-6", children: [
@@ -30303,8 +31490,18 @@ function App() {
           refetchArticles();
         }
       }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      SettingsModal,
+      {
+        isOpen: showSettingsModal,
+        onClose: () => setShowSettingsModal(false)
+      }
     )
   ] });
+}
+function App() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(SiteSettingsProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppContent, {}) });
 }
 BigInt.prototype.toJSON = function() {
   return this.toString();

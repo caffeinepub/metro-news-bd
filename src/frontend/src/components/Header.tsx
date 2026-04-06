@@ -1,5 +1,6 @@
-import { Menu, PenSquare, Search, Tv, X } from "lucide-react";
+import { Menu, PenSquare, Search, Settings, Tv, X } from "lucide-react";
 import { useState } from "react";
+import { useSiteSettings } from "../context/SiteSettingsContext";
 
 const navLinks = [
   { label: "হোম", href: "#home" },
@@ -19,12 +20,14 @@ const navLinks = [
 
 interface HeaderProps {
   onPostClick?: () => void;
+  onSettingsClick?: () => void;
 }
 
-export function Header({ onPostClick }: HeaderProps) {
+export function Header({ onPostClick, onSettingsClick }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("হোম");
+  const { settings } = useSiteSettings();
 
   return (
     <header
@@ -36,21 +39,31 @@ export function Header({ onPostClick }: HeaderProps) {
         {/* Logo */}
         <div className="flex items-center gap-3 shrink-0">
           <div
-            className="flex items-center justify-center w-10 h-10 rounded font-bold text-xl"
+            className="flex items-center justify-center w-10 h-10 rounded overflow-hidden font-bold text-xl"
             style={{ backgroundColor: "#1a1a1a", border: "1px solid #2d2d2d" }}
           >
-            <span className="text-white">বা</span>
-            <span className="news-red">নি</span>
+            {settings.logoBase64 ? (
+              <img
+                src={settings.logoBase64}
+                alt={settings.siteName}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <>
+                <span className="text-white">বা</span>
+                <span className="news-red">নি</span>
+              </>
+            )}
           </div>
           <div className="leading-tight">
             <div className="text-white font-bold text-lg tracking-widest uppercase">
-              বালীগাঁও নিউজ
+              {settings.siteName}
             </div>
             <div
               className="text-xs tracking-wider uppercase"
               style={{ color: "#9c9c9c" }}
             >
-              Voice of Truth &amp; Freedom
+              {settings.tagline}
             </div>
           </div>
         </div>
@@ -75,6 +88,17 @@ export function Header({ onPostClick }: HeaderProps) {
             aria-label="সার্চ করুন"
           >
             <Search size={18} />
+          </button>
+
+          {/* Settings */}
+          <button
+            type="button"
+            data-ocid="header.settings.button"
+            onClick={onSettingsClick}
+            className="p-2 text-gray-400 hover:text-white transition-colors rounded"
+            aria-label="সেটিংস"
+          >
+            <Settings size={18} />
           </button>
 
           {/* Post News button */}
@@ -172,7 +196,7 @@ export function Header({ onPostClick }: HeaderProps) {
                 placeholder="খবর খুঁজুন..."
                 className="w-full bg-transparent border rounded pl-9 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none"
                 style={{ borderColor: "#2d2d2d" }}
-                data-ocid="header.search_input"
+                data-ocid="header.search_field.input"
               />
             </div>
           </div>
@@ -213,6 +237,22 @@ export function Header({ onPostClick }: HeaderProps) {
                 {link.label}
               </a>
             ))}
+
+            {/* Mobile: Settings button */}
+            {onSettingsClick && (
+              <button
+                type="button"
+                data-ocid="mobile.settings.button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onSettingsClick();
+                }}
+                className="mt-1 flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded hover:text-white transition-colors"
+                style={{ color: "#9c9c9c" }}
+              >
+                <Settings size={15} />⚙ সেটিংস
+              </button>
+            )}
 
             {/* Mobile: Post News button */}
             {onPostClick && (

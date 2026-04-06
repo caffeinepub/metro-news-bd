@@ -1,46 +1,39 @@
-# বালীগাঁও নিউজ - External News Aggregator
+# বালীগাঁও নিউজ - Settings Panel
 
 ## Current State
-
-A Bengali local news website with:
-- Sticky header with 13 navigation categories
-- Breaking news ticker, Hero slider, Editor's Picks, Latest News grid, Footer
-- Backend: Motoko actor with Article & BreakingNews types; createArticle, getAllArticles, getFeaturedArticles endpoints
-- Frontend: App.tsx renders all sections; NewsPostModal for posting local news; CategoryNewsSection displays backend articles by category
-- No external news fetching or aggregation currently exists
+- Full news portal with Header, Footer, BreakingNewsTicker, HeroSlider, EditorsPicks, LatestNews, CategoryNewsSection, ExternalNewsSection components.
+- Branding is hardcoded: site name, tagline, email, address, editor.
+- Footer has hardcoded social media links (Facebook, X, YouTube, Instagram).
+- No settings panel exists.
+- Backend stores Articles, BreakingNews, ExternalNews.
+- blob-storage component is available.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Backend: New `ExternalNews` type with fields: id, title, summary, sourceUrl, sourceName, category, fetchedAt
-- Backend: HTTP outcalls (using http_request) to fetch RSS feeds from Bangladeshi national news sources (Prothom Alo, Daily Star, Bdnews24, Kaler Kantho) and international sources (BBC Bengali, DW Bengali)
-- Backend: `fetchExternalNews()` function that fetches and parses RSS XML from multiple sources, categorizes headlines into: রাজনৈতিক, অর্থনৈতিক, ক্রীড়া, শিক্ষা, স্বাস্থ্য, কৃষি, ধর্মীয় অনুষ্ঠান, আন্তর্জাতিক খবর, জাতীয় খবর
-- Backend: `getExternalNews()` query to return cached external news
-- Backend: `getLastFetchedTime()` query to return timestamp of last fetch
-- Frontend: New `ExternalNewsSection` component showing fetched headlines grouped by category
-- Frontend: Clicking a headline opens a modal/drawer with summary + source link (opens in new tab)
-- Frontend: Manual "Refresh" button that calls fetchExternalNews() and refreshes the display
-- Frontend: Auto-refresh using React Query's `refetchInterval` set to 6 hours (twice daily)
-- Frontend: Last updated timestamp shown near the Refresh button
-- Frontend: Loading skeleton while fetching
+- **Settings page/modal** accessible from a gear icon in the Header.
+- **Site Settings** form sections:
+  1. **সাইটের তথ্য (Site Info)**: site name, tagline, email, address, editor name, about text, phone number, established year.
+  2. **লোগো আপলোড (Logo)**: upload image, preview, store as base64 in localStorage/context.
+  3. **সাংবাদিক (Journalists)**: add/edit/remove journalists with fields: name, email, role/designation, phone.
+  4. **সোশ্যাল মিডিয়া (Social Media)**: add/edit/remove social media links: platform name, URL, handle.
+- **SiteSettingsContext**: React context that stores all settings in localStorage and provides them globally.
+- Header reads logo and site name/tagline from context.
+- Footer reads email, address, editor, social media links from context.
+- All changes saved via "সংরক্ষণ করুন" (Save) button; auto-persist to localStorage.
 
 ### Modify
-- App.tsx: Add ExternalNewsSection after the CategoryNewsSection
-- useQueries.ts: Add `useGetExternalNews`, `useFetchExternalNews` (mutation), `useGetLastFetchedTime` hooks
-- Header.tsx: No changes needed
+- **Header**: add Settings gear icon button; read logo/site name/tagline from SiteSettingsContext.
+- **Footer**: read contact info and social media links from SiteSettingsContext.
+- **App.tsx**: wrap with SiteSettingsProvider, wire onSettingsClick state.
 
 ### Remove
-- Nothing removed
+- Nothing removed, only enhanced.
 
 ## Implementation Plan
-
-1. Select `http-outcalls` component for backend RSS fetching capability
-2. Regenerate Motoko backend with ExternalNews type, RSS fetching from multiple Bengali news sources, category-based storage, getExternalNews and fetchExternalNews endpoints
-3. Create ExternalNewsSection React component with:
-   - Category tabs or grouped sections
-   - Headline cards with source badge
-   - Click-to-expand modal showing summary + source link
-   - Manual Refresh button with loading state
-   - "শেষ আপডেট" timestamp display
-4. Wire auto-refresh using React Query refetchInterval (6 hours)
-5. Integrate into App.tsx below existing category section
+1. Create `src/frontend/src/context/SiteSettingsContext.tsx` - defines SiteSettings type, default values, context, provider with localStorage persistence.
+2. Create `src/frontend/src/components/SettingsModal.tsx` - full-screen settings modal with 4 tabs: Site Info, Logo, Journalists, Social Media.
+3. Update `Header.tsx` - add gear icon, accept `onSettingsClick` prop, read logo/name/tagline from context.
+4. Update `Footer.tsx` - read contact info and social media from context.
+5. Update `App.tsx` - wrap with SiteSettingsProvider, add settings modal state and rendering.
+6. Validate and build.

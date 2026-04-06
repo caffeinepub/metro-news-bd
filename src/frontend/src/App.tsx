@@ -9,10 +9,13 @@ import { Header } from "./components/Header";
 import { HeroSlider } from "./components/HeroSlider";
 import { LatestNews } from "./components/LatestNews";
 import { NewsPostModal } from "./components/NewsPostModal";
+import { SettingsModal } from "./components/SettingsModal";
+import { SiteSettingsProvider } from "./context/SiteSettingsContext";
 import { useGetAllArticles } from "./hooks/useQueries";
 
-export default function App() {
+function AppContent() {
   const [showPostModal, setShowPostModal] = useState(false);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   const { data: allArticles, refetch: refetchArticles } = useGetAllArticles();
 
@@ -34,7 +37,10 @@ export default function App() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b" }}>
       {/* Sticky header */}
-      <Header onPostClick={() => setShowPostModal(true)} />
+      <Header
+        onPostClick={() => setShowPostModal(true)}
+        onSettingsClick={() => setShowSettingsModal(true)}
+      />
 
       {/* Breaking news ticker */}
       <BreakingNewsTicker />
@@ -102,6 +108,20 @@ export default function App() {
           refetchArticles();
         }}
       />
+
+      {/* Settings Modal */}
+      <SettingsModal
+        isOpen={showSettingsModal}
+        onClose={() => setShowSettingsModal(false)}
+      />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <SiteSettingsProvider>
+      <AppContent />
+    </SiteSettingsProvider>
   );
 }
