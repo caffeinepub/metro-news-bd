@@ -1,15 +1,39 @@
+import { useState } from "react";
+import type { Article } from "./backend";
 import { BreakingNewsTicker } from "./components/BreakingNewsTicker";
+import { CategoryNewsSection } from "./components/CategoryNewsSection";
 import { EditorsPicks } from "./components/EditorsPicks";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { HeroSlider } from "./components/HeroSlider";
 import { LatestNews } from "./components/LatestNews";
+import { NewsPostModal } from "./components/NewsPostModal";
+import { useGetAllArticles } from "./hooks/useQueries";
 
 export default function App() {
+  const [showPostModal, setShowPostModal] = useState(false);
+
+  const { data: allArticles, refetch: refetchArticles } = useGetAllArticles();
+
+  const articles: Article[] = allArticles ?? [];
+
+  // Sort by publishedAt descending for latest news
+  const sortedArticles = [...articles].sort((a, b) => {
+    if (b.publishedAt > a.publishedAt) return 1;
+    if (b.publishedAt < a.publishedAt) return -1;
+    return 0;
+  });
+
+  // Latest 6 articles for the main section
+  const latestSix = sortedArticles.slice(0, 6);
+
+  // All articles for category grouping
+  const hasBackendArticles = allArticles !== undefined;
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0b0b0b" }}>
       {/* Sticky header */}
-      <Header />
+      <Header onPostClick={() => setShowPostModal(true)} />
 
       {/* Breaking news ticker */}
       <BreakingNewsTicker />
@@ -38,12 +62,35 @@ export default function App() {
 
         {/* Latest News section */}
         <div className="max-w-[1200px] mx-auto px-4 py-8">
-          <LatestNews />
+          <LatestNews articles={hasBackendArticles ? latestSix : undefined} />
         </div>
+
+        {/* Category News sections (only shown when backend articles exist) */}
+        {hasBackendArticles && articles.length > 0 && (
+          <>
+            {/* Divider */}
+            <div className="max-w-[1200px] mx-auto px-4">
+              <div className="h-px" style={{ backgroundColor: "#2d2d2d" }} />
+            </div>
+            <div className="max-w-[1200px] mx-auto px-4 py-8">
+              <CategoryNewsSection articles={articles} />
+            </div>
+          </>
+        )}
       </main>
 
       {/* Footer */}
       <Footer />
+
+      {/* News Post Modal */}
+      <NewsPostModal
+        isOpen={showPostModal}
+        onClose={() => setShowPostModal(false)}
+        onSuccess={() => {
+          setShowPostModal(false);
+          refetchArticles();
+        }}
+      />
     </div>
   );
 }

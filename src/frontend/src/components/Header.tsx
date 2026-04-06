@@ -1,4 +1,4 @@
-import { Menu, Search, Tv, X } from "lucide-react";
+import { Menu, PenSquare, Search, Tv, X } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
@@ -17,7 +17,11 @@ const navLinks = [
   { label: "যোগাযোগ", href: "#contact" },
 ];
 
-export function Header() {
+interface HeaderProps {
+  onPostClick?: () => void;
+}
+
+export function Header({ onPostClick }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("হোম");
@@ -72,6 +76,24 @@ export function Header() {
           >
             <Search size={18} />
           </button>
+
+          {/* Post News button */}
+          {onPostClick && (
+            <button
+              type="button"
+              data-ocid="header.post_news.button"
+              onClick={onPostClick}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-widest rounded transition-all hover:opacity-90"
+              style={{
+                border: "1.5px solid oklch(0.4764 0.2183 22.8)",
+                color: "oklch(0.4764 0.2183 22.8)",
+                backgroundColor: "transparent",
+              }}
+            >
+              <PenSquare size={13} />
+              সংবাদ পোস্ট
+            </button>
+          )}
 
           {/* Subscribe */}
           <button
@@ -191,10 +213,32 @@ export function Header() {
                 {link.label}
               </a>
             ))}
+
+            {/* Mobile: Post News button */}
+            {onPostClick && (
+              <button
+                type="button"
+                data-ocid="mobile.post_news.button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onPostClick();
+                }}
+                className="mt-1 flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-bold uppercase tracking-widest rounded hover:opacity-80 transition-opacity"
+                style={{
+                  border: "1.5px solid oklch(0.4764 0.2183 22.8)",
+                  color: "oklch(0.4764 0.2183 22.8)",
+                  backgroundColor: "transparent",
+                }}
+              >
+                <PenSquare size={15} />
+                সংবাদ পোস্ট করুন
+              </button>
+            )}
+
             <button
               type="button"
               data-ocid="mobile.subscribe.button"
-              className="mt-2 text-center px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-white rounded hover:opacity-80 transition-opacity"
+              className="mt-1 text-center px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-white rounded hover:opacity-80 transition-opacity"
               style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
             >
               সাবস্ক্রাইব

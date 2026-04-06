@@ -1,3 +1,5 @@
+import type { Article } from "../backend";
+
 interface NewsItem {
   id: number;
   category: string;
@@ -8,7 +10,7 @@ interface NewsItem {
   image: string;
 }
 
-const latestNews: NewsItem[] = [
+const staticLatestNews: NewsItem[] = [
   {
     id: 1,
     category: "প্রযুক্তি",
@@ -69,7 +71,35 @@ const latestNews: NewsItem[] = [
   },
 ];
 
-export function LatestNews() {
+function formatPublishedAt(publishedAt: bigint): string {
+  try {
+    const ms = Number(publishedAt / BigInt(1_000_000));
+    const date = new Date(ms);
+    const now = Date.now();
+    const diff = now - ms;
+
+    if (diff < 60_000) return "এইমাত্র";
+    if (diff < 3_600_000) {
+      const mins = Math.floor(diff / 60_000);
+      return `${mins} মিনিট আগে`;
+    }
+    if (diff < 86_400_000) {
+      const hours = Math.floor(diff / 3_600_000);
+      return `${hours} ঘন্টা আগে`;
+    }
+    return date.toLocaleDateString("bn-BD");
+  } catch {
+    return "";
+  }
+}
+
+interface LatestNewsProps {
+  articles?: Article[];
+}
+
+export function LatestNews({ articles }: LatestNewsProps) {
+  const useBackendArticles = articles !== undefined;
+
   return (
     <section aria-labelledby="latest-news-heading">
       {/* Section heading */}
@@ -88,52 +118,129 @@ export function LatestNews() {
         </div>
       </div>
 
-      {/* News Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {latestNews.map((item, i) => (
-          <article
-            key={item.id}
-            data-ocid={`latest_news.item.${i + 1}`}
-            className="flex gap-3 p-3 rounded cursor-pointer card-hover border"
-            style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
-          >
-            {/* Thumbnail */}
-            <div
-              className="shrink-0 overflow-hidden rounded"
-              style={{ width: "90px", height: "70px" }}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
+      {/* Empty state when backend returns empty */}
+      {useBackendArticles && articles.length === 0 ? (
+        <div
+          data-ocid="latest_news.empty_state"
+          className="text-center py-16"
+          style={{ color: "#6b6b6b" }}
+        >
+          <p className="text-sm">এখনো কোনো সংবাদ নেই</p>
+          <p className="text-xs mt-1">সংবাদ পোস্ট করতে উপরের বোতাম ব্যবহার করুন</p>
+        </div>
+      ) : (
+        /* News Grid */
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {useBackendArticles
+            ? articles.map((article, i) => (
+                <article
+                  key={article.id.toString()}
+                  data-ocid={`latest_news.item.${i + 1}`}
+                  className="flex gap-3 p-3 rounded cursor-pointer card-hover border"
+                  style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
+                >
+                  {/* Thumbnail */}
+                  <div
+                    className="shrink-0 overflow-hidden rounded"
+                    style={{ width: "90px", height: "70px" }}
+                  >
+                    {article.imageUrl ? (
+                      <img
+                        src={article.imageUrl}
+                        alt={article.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div
+                        className="w-full h-full flex items-center justify-center"
+                        style={{ backgroundColor: "#2d2d2d" }}
+                      >
+                        <span
+                          className="text-[10px] font-bold uppercase"
+                          style={{ color: "oklch(0.4764 0.2183 22.8)" }}
+                        >
+                          {article.category.charAt(0)}
+                        </span>
+                      </div>
+                    )}
+                  </div>
 
-            {/* Text */}
-            <div className="flex-1 min-w-0">
-              <span
-                className="inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white mb-1.5"
-                style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
-              >
-                {item.category}
-              </span>
-              <h3 className="text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors">
-                {item.title}
-              </h3>
-              <p
-                className="text-xs mt-1 line-clamp-1"
-                style={{ color: "#9c9c9c" }}
-              >
-                {item.excerpt}
-              </p>
-              <p className="text-[11px] mt-1.5" style={{ color: "#6b6b6b" }}>
-                {item.author} · {item.time}
-              </p>
-            </div>
-          </article>
-        ))}
-      </div>
+                  {/* Text */}
+                  <div className="flex-1 min-w-0">
+                    <span
+                      className="inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white mb-1.5"
+                      style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
+                    >
+                      {article.category}
+                    </span>
+                    <h3 className="text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors">
+                      {article.title}
+                    </h3>
+                    <p
+                      className="text-xs mt-1 line-clamp-1"
+                      style={{ color: "#9c9c9c" }}
+                    >
+                      {article.summary}
+                    </p>
+                    <p
+                      className="text-[11px] mt-1.5"
+                      style={{ color: "#6b6b6b" }}
+                    >
+                      {article.author} ·{" "}
+                      {formatPublishedAt(article.publishedAt)}
+                    </p>
+                  </div>
+                </article>
+              ))
+            : staticLatestNews.map((item, i) => (
+                <article
+                  key={item.id}
+                  data-ocid={`latest_news.item.${i + 1}`}
+                  className="flex gap-3 p-3 rounded cursor-pointer card-hover border"
+                  style={{ backgroundColor: "#1a1a1a", borderColor: "#2d2d2d" }}
+                >
+                  {/* Thumbnail */}
+                  <div
+                    className="shrink-0 overflow-hidden rounded"
+                    style={{ width: "90px", height: "70px" }}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <div className="flex-1 min-w-0">
+                    <span
+                      className="inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white mb-1.5"
+                      style={{ backgroundColor: "oklch(0.4764 0.2183 22.8)" }}
+                    >
+                      {item.category}
+                    </span>
+                    <h3 className="text-sm font-semibold text-white leading-snug line-clamp-2 hover:text-news-red transition-colors">
+                      {item.title}
+                    </h3>
+                    <p
+                      className="text-xs mt-1 line-clamp-1"
+                      style={{ color: "#9c9c9c" }}
+                    >
+                      {item.excerpt}
+                    </p>
+                    <p
+                      className="text-[11px] mt-1.5"
+                      style={{ color: "#6b6b6b" }}
+                    >
+                      {item.author} · {item.time}
+                    </p>
+                  </div>
+                </article>
+              ))}
+        </div>
+      )}
     </section>
   );
 }

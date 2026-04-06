@@ -1,26 +1,47 @@
 # বালীগাঁও নিউজ
 
 ## Current State
-একটি বাংলা নিউজ পোর্টাল ইন্টারফেস তৈরি আছে যার নাম "মেট্রো নিউজ"। হেডারে লোগো, ট্যাগলাইন, নেভিগেশন মেনু আছে। ফুটারে সাইটের নাম, বিভাগ, রিসোর্স ও সোশ্যাল মিডিয়া লিঙ্ক আছে।
+A fully-built local news portal homepage with:
+- Sticky header with 13 nav categories, search, mobile hamburger menu
+- Breaking news ticker (static data)
+- Hero slider (static data, 3 slides)
+- Editor's picks section (static data)
+- Latest news grid (static data)
+- Footer with contact info and branding
+- Backend: Motoko actor with `createArticle`, `getAllArticles`, `getFeaturedArticles`, `createBreakingNews`, `getAllBreakingNews`, `addAdmin` methods
+- Backend data model: Article {id, title, summary, category, imageUrl, author, publishedAt, isFeatured}
 
 ## Requested Changes (Diff)
 
 ### Add
-- হেডারে ট্যাগলাইন: "Voice of Truth & Freedom"
-- ফুটারে ইমেইল: baligawnews@gmail.com
-- ফুটারে ঠিকানা: বালিগাঁও, লাখাই, হবিগঞ্জ
-- ফুটারে সম্পাদকের নাম: এম.ডি ব্রাইট
+- **News Post Form** ("সংবাদ পোস্ট করুন" button in header): A modal/panel form where user can:
+  - Write news title (শিরোনাম)
+  - Write news body/content (সংবাদ বিবরণ)
+  - Upload a news image (ছবি আপলোড)
+  - Select category from dropdown (রাজনৈতিক, ক্রীড়া, অর্থনীতি, শিক্ষা, স্বাস্থ্য, কৃষি, ধর্মীয় অনুষ্ঠান, স্থানীয় খবর, জাতীয় খবর, আন্তর্জাতিক খবর, বিনোদন, অপরাধ)
+  - Enter author name (লেখকের নাম)
+  - Publish button which calls backend `createArticle`
+- **Category Sections on Homepage**: Below latest news, display published articles grouped by category. Each category with articles shows a section heading and a grid of article cards.
+- **Dynamic latest news and hero slider**: Published articles from backend replace static data. Latest articles go to LatestNews, featured articles go to HeroSlider.
+- Image upload using blob-storage component; uploaded image URL stored in article.
 
 ### Modify
-- পোর্টালের নাম "মেট্রো নিউজ" থেকে পরিবর্তন করে "বালীগাঁও নিউজ" করা হবে সব জায়গায় (Header, Footer, App title)
-- হেডারের লোগো অক্ষর পরিবর্তন (ম+ন → ব+ন)
-- Footer এর about paragraph আপডেট করা হবে বালীগাঁও নিউজ প্রসঙ্গে
-- Copyright text আপডেট
+- **Header**: Add "সংবাদ পোস্ট করুন" button that opens the post form modal
+- **App.tsx**: Wire up backend calls, load articles on mount, pass to LatestNews/HeroSlider/CategorySections
+- **LatestNews**: Accept articles as props instead of using static data
+- **HeroSlider**: Accept slides as props, fallback to static data if empty
+- **BreakingNewsTicker**: Load from backend `getAllBreakingNews`, fallback to static
 
 ### Remove
-- কোনো কিছু সরানো হবে না
+- Static mock data from LatestNews and HeroSlider (replace with props + fallback)
 
 ## Implementation Plan
-1. Header.tsx: সাইটের নাম পরিবর্তন, লোগো আইকন আপডেট, ট্যাগলাইন "Voice of Truth & Freedom" যোগ
-2. Footer.tsx: সাইটের নাম পরিবর্তন, About paragraph আপডেট, ইমেইল, ঠিকানা ও সম্পাদকের তথ্য যোগ, copyright আপডেট
-3. index.html বা main.tsx: পেজ title আপডেট যদি থাকে
+1. Select `blob-storage` component for image uploads
+2. Create `NewsPostModal` component: form with title, content, author, category dropdown, image upload, publish button calling backend `createArticle`
+3. Update `Header` to show "সংবাদ পোস্ট করুন" button
+4. Update `App.tsx`: load articles from backend on mount; pass to child components
+5. Update `LatestNews` to accept `articles` prop
+6. Update `HeroSlider` to accept `slides` prop with fallback
+7. Update `BreakingNewsTicker` to load from backend with static fallback
+8. Add `CategoryNewsSection` component: renders article cards grouped by category
+9. Wire image upload in form using blob-storage hooks
