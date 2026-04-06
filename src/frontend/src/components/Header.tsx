@@ -134,12 +134,6 @@ export function Header({
               style={{
                 width: 44,
                 height: 44,
-                border: "2px solid #dc2626",
-                background: "#fef2f2",
-                /*
-                 * overflow:hidden is OK here because we are clipping an IMAGE
-                 * (not Bengali text). The logo box just needs rounded corners.
-                 */
                 overflow: "hidden",
                 flexShrink: 0,
               }}
