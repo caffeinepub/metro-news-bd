@@ -356,13 +356,9 @@ export function LocalNewsSection() {
 
   // ---- Load articles from blockchain ----
   const loadArticles = useCallback(async () => {
-    // If actor is still being fetched, show loading but don't bail out
-    if (actorFetching) {
-      setIsLoading(true);
-      return;
-    }
-    if (!actor) {
-      setIsLoading(true);
+    // If actor is still being fetched or not yet available, wait
+    if (actorFetching || !actor) {
+      if (articles.length === 0) setIsLoading(true);
       return;
     }
     setIsLoading(true);
@@ -455,23 +451,18 @@ export function LocalNewsSection() {
       }
     } catch (err) {
       console.error("Failed to load articles:", err);
-      setLoadError("ব্লকচেইন থেকে সংবাদ লোড করতে সমস্যা হয়েছে। পুনরায় চেষ্টা করছি...");
-      // Retry after 5 seconds on error
-      setTimeout(() => {
-        setLoadError("");
-        loadArticles();
-      }, 5000);
+      setLoadError("ব্লকচেইন থেকে সংবাদ লোড করতে সমস্যা হয়েছে। পুনরায় চেষ্টা করুন।");
     } finally {
       setIsLoading(false);
     }
-  }, [actor, actorFetching]);
+  }, [actor, actorFetching, articles.length]);
 
   useEffect(() => {
     // Load when actor becomes available
-    if (!actorFetching) {
+    if (!actorFetching && actor) {
       loadArticles();
     }
-  }, [actorFetching, loadArticles]);
+  }, [actorFetching, actor, loadArticles]);
 
   // Auto-refresh from blockchain every 30 seconds to stay in sync across devices
   useEffect(() => {
@@ -1208,14 +1199,31 @@ export function LocalNewsSection() {
       {/* Load Error */}
       {loadError && (
         <div
-          className="mb-4 px-4 py-3 rounded-lg flex items-center gap-2"
+          className="mb-4 px-4 py-3 rounded-lg flex items-center gap-2 flex-wrap"
           style={{ backgroundColor: "#fef2f2", border: "1px solid #fecaca" }}
           data-ocid="local_news.load.error_state"
         >
-          <X size={15} style={{ color: "#dc2626" }} />
-          <span className="text-sm" style={{ color: "#dc2626" }}>
+          <X size={15} style={{ color: "#dc2626", flexShrink: 0 }} />
+          <span className="text-sm flex-1" style={{ color: "#dc2626" }}>
             {loadError}
           </span>
+          <button
+            type="button"
+            onClick={() => {
+              setLoadError("");
+              loadArticles();
+            }}
+            className="text-xs font-semibold px-3 py-1 rounded"
+            style={{
+              backgroundColor: "#dc2626",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer",
+            }}
+            data-ocid="local_news.retry.button"
+          >
+            আবার চেষ্টা করুন
+          </button>
         </div>
       )}
 
