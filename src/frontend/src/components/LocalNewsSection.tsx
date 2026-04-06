@@ -25,7 +25,7 @@ interface LocalArticle {
 const CATEGORIES = [
   "স্থানীয় খবর",
   "রাজনৈতিক",
-  "ক্রীড়া",
+  "ক্রীড়া",
   "অর্থনীতি",
   "শিক্ষা",
   "স্বাস্থ্য",
@@ -58,7 +58,7 @@ function formatRelativeTime(publishedAt: number): string {
 const CATEGORY_COLORS: Record<string, string> = {
   "স্থানীয় খবর": "#dc2626",
   রাজনৈতিক: "#2563eb",
-  ক্রীড়া: "#16a34a",
+  ক্রীড়া: "#16a34a",
   অর্থনীতি: "#ca8a04",
   শিক্ষা: "#7c3aed",
   স্বাস্থ্য: "#0891b2",
@@ -83,14 +83,73 @@ function saveArticles(articles: LocalArticle[]) {
   localStorage.setItem("localNews", JSON.stringify(articles));
 }
 
+// --- Open Graph Meta Tag helpers ---
+
+function setMetaTag(selector: string, attribute: string, value: string) {
+  let el = document.querySelector<HTMLMetaElement>(selector);
+  if (!el) {
+    el = document.createElement("meta");
+    // determine whether it's property or name based meta
+    if (selector.includes("[property=")) {
+      const prop = selector.match(/\[property=["']([^"']+)["']/)?.[1];
+      if (prop) el.setAttribute("property", prop);
+    } else {
+      const name = selector.match(/\[name=["']([^"']+)["']/)?.[1];
+      if (name) el.setAttribute("name", name);
+    }
+    document.head.appendChild(el);
+  }
+  el.setAttribute(attribute, value);
+}
+
+function updateOpenGraphMeta(article: LocalArticle) {
+  const base = window.location.href.split("#")[0].split("?")[0];
+  const articleUrl = `${base}?news=${article.id}#local-news-${article.id}`;
+  const shortSummary =
+    article.summary.slice(0, 200) + (article.summary.length > 200 ? "..." : "");
+  const titleFull = `${article.title} | বালীগাঁও নিউজ`;
+
+  // Page title
+  document.title = titleFull;
+
+  // Open Graph
+  setMetaTag(`meta[property="og:title"]`, "content", titleFull);
+  setMetaTag(`meta[property="og:description"]`, "content", shortSummary);
+  setMetaTag(`meta[property="og:url"]`, "content", articleUrl);
+  setMetaTag(`meta[property="og:type"]`, "content", "article");
+  if (article.imageBase64) {
+    setMetaTag(`meta[property="og:image"]`, "content", article.imageBase64);
+  }
+
+  // Twitter Card
+  setMetaTag(`meta[name="twitter:title"]`, "content", titleFull);
+  setMetaTag(`meta[name="twitter:description"]`, "content", shortSummary);
+  if (article.imageBase64) {
+    setMetaTag(`meta[name="twitter:image"]`, "content", article.imageBase64);
+  }
+}
+
+function resetOpenGraphMeta() {
+  const siteName = "বালীগাঁও নিউজ - Voice of Truth & Freedom";
+  const siteDesc =
+    "বালীগাঁও, লাখাই, হবিগঞ্জ ও আশপাশের এলাকার সর্বশেষ স্থানীয়, জাতীয় ও আন্তর্জাতিক সংবাদ।";
+  document.title = siteName;
+  setMetaTag(`meta[property="og:title"]`, "content", siteName);
+  setMetaTag(`meta[property="og:description"]`, "content", siteDesc);
+  setMetaTag(`meta[property="og:url"]`, "content", window.location.href);
+  setMetaTag(`meta[property="og:type"]`, "content", "website");
+  setMetaTag(`meta[name="twitter:title"]`, "content", siteName);
+  setMetaTag(`meta[name="twitter:description"]`, "content", siteDesc);
+}
+
 // Social share helpers
 function getShareUrl(article: LocalArticle): string {
-  // Use current page URL with a hash anchor for the specific article
-  const base = window.location.href.split("#")[0];
-  return `${base}#local-news-${article.id}`;
+  const base = window.location.href.split("#")[0].split("?")[0];
+  return `${base}?news=${article.id}#local-news-${article.id}`;
 }
 
 function shareFacebook(article: LocalArticle) {
+  updateOpenGraphMeta(article);
   const url = encodeURIComponent(getShareUrl(article));
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${url}`,
@@ -101,11 +160,14 @@ function shareFacebook(article: LocalArticle) {
 
 function shareWhatsApp(article: LocalArticle) {
   const url = encodeURIComponent(getShareUrl(article));
-  const text = encodeURIComponent(`${article.title}\n`);
+  const text = encodeURIComponent(
+    `${article.title}\n${article.summary.slice(0, 100)}...\n`,
+  );
   window.open(`https://wa.me/?text=${text}${url}`, "_blank", "noopener");
 }
 
 function shareTwitter(article: LocalArticle) {
+  updateOpenGraphMeta(article);
   const url = encodeURIComponent(getShareUrl(article));
   const text = encodeURIComponent(article.title);
   window.open(
@@ -116,8 +178,6 @@ function shareTwitter(article: LocalArticle) {
 }
 
 function shareYouTube(article: LocalArticle) {
-  // YouTube doesn't have a direct share URL for external links;
-  // we open YouTube search with the article title as a fallback
   const query = encodeURIComponent(article.title);
   window.open(
     `https://www.youtube.com/results?search_query=${query}`,
@@ -280,12 +340,38 @@ export function LocalNewsSection() {
   >(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // On mount: check if URL has ?news=<id> and auto-open that article
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const newsId = params.get("news");
+    if (newsId) {
+      const all = loadArticles();
+      const found = all.find((a) => a.id === newsId);
+      if (found) {
+        updateOpenGraphMeta(found);
+        // Scroll to the article element
+        setTimeout(() => {
+          const el = document.getElementById(`local-news-${found.id}`);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 500);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     if (showSuccess) {
       const timer = setTimeout(() => setShowSuccess(false), 2000);
       return () => clearTimeout(timer);
     }
   }, [showSuccess]);
+
+  // Reset OG meta when modal closes
+  useEffect(() => {
+    if (!selectedItem) {
+      resetOpenGraphMeta();
+    }
+  }, [selectedItem]);
 
   function handleLogin() {
     if (passwordInput === PASSWORD) {
@@ -376,6 +462,7 @@ export function LocalNewsSection() {
   }
 
   function openArticle(article: LocalArticle) {
+    updateOpenGraphMeta(article);
     setSelectedItem({
       title: article.title,
       summary: article.summary,
@@ -632,7 +719,7 @@ export function LocalNewsSection() {
                 type="url"
                 value={sourceUrl}
                 onChange={(e) => setSourceUrl(e.target.value)}
-                placeholder="সোর্স লিংক (ঐচ্ছিক)..."
+                placeholder="সোর্স লিঙ্ক (ঐচ্ছিক)..."
                 data-ocid="local_news.source_url.input"
                 className="px-3 py-2.5 text-sm rounded-md border focus:outline-none"
                 style={{
