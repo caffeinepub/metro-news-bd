@@ -59,17 +59,16 @@ export function BreakingNewsTicker() {
         style={{
           display: "flex",
           alignItems: "stretch",
-          /* Overall bar height driven by black box padding — red label stretches to match */
           minHeight: "44px",
         }}
       >
-        {/* Label — red box: padding reduced to make it shorter */}
+        {/* Label — red box: compact height */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: "6px",
-            padding: "0 12px",
+            padding: "0 10px",
             backgroundColor: "#cc0000",
             color: "#ffffff",
             fontWeight: 700,
@@ -78,6 +77,10 @@ export function BreakingNewsTicker() {
             letterSpacing: "0.08em",
             flexShrink: 0,
             whiteSpace: "nowrap",
+            /* Fixed small height for red label */
+            minHeight: "36px",
+            maxHeight: "36px",
+            alignSelf: "center",
           }}
         >
           <span
@@ -104,8 +107,7 @@ export function BreakingNewsTicker() {
         />
 
         {/* Scrolling content — black box.
-            paddingTop/Bottom increased so Bengali diacritics are fully visible.
-            Text shifted down via marginTop on headline span. */}
+            paddingTop/Bottom just enough so Bengali diacritics are fully visible. */}
         <div
           style={{
             flex: 1,
@@ -113,15 +115,15 @@ export function BreakingNewsTicker() {
             overflowY: "visible",
             position: "relative",
             backgroundColor: "#111111",
-            paddingTop: "32px",
-            paddingBottom: "32px",
+            paddingTop: "10px",
+            paddingBottom: "10px",
           }}
         >
           <div
             className="ticker-animation"
             style={{
               display: "flex",
-              alignItems: "flex-end",
+              alignItems: "center",
               whiteSpace: "nowrap",
             }}
           >
@@ -131,14 +133,12 @@ export function BreakingNewsTicker() {
                 key={`ticker-${item.id}-${idx}`}
                 style={{
                   display: "inline-flex",
-                  alignItems: "flex-end",
+                  alignItems: "center",
                   gap: "12px",
                   color: "#ffffff",
                   fontSize: "14px",
                   fontWeight: 600,
-                  lineHeight: "2.2",
-                  /* Push headline + author/time further down */
-                  marginTop: "10px",
+                  lineHeight: "1.8",
                 }}
               >
                 <span
@@ -150,16 +150,14 @@ export function BreakingNewsTicker() {
                 >
                   ◆
                 </span>
-                <span style={{ lineHeight: "2.2" }}>{item.text}</span>
+                <span style={{ lineHeight: "1.8" }}>{item.text}</span>
                 <span
                   style={{
                     color: "rgba(254,202,202,0.9)",
                     fontSize: "12px",
                     fontWeight: 400,
                     marginLeft: "4px",
-                    lineHeight: "2.2",
-                    /* Author/time also pushed down */
-                    marginTop: "6px",
+                    lineHeight: "1.8",
                   }}
                 >
                   ({item.time})

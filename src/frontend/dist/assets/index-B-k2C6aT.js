@@ -14775,7 +14775,6 @@ function BreakingNewsTicker() {
           style: {
             display: "flex",
             alignItems: "stretch",
-            /* Overall bar height driven by black box padding — red label stretches to match */
             minHeight: "44px"
           },
           children: [
@@ -14786,7 +14785,7 @@ function BreakingNewsTicker() {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
-                  padding: "0 12px",
+                  padding: "0 10px",
                   backgroundColor: "#cc0000",
                   color: "#ffffff",
                   fontWeight: 700,
@@ -14794,7 +14793,11 @@ function BreakingNewsTicker() {
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",
                   flexShrink: 0,
-                  whiteSpace: "nowrap"
+                  whiteSpace: "nowrap",
+                  /* Fixed small height for red label */
+                  minHeight: "36px",
+                  maxHeight: "36px",
+                  alignSelf: "center"
                 },
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14834,8 +14837,8 @@ function BreakingNewsTicker() {
                   overflowY: "visible",
                   position: "relative",
                   backgroundColor: "#111111",
-                  paddingTop: "32px",
-                  paddingBottom: "32px"
+                  paddingTop: "10px",
+                  paddingBottom: "10px"
                 },
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
@@ -14843,7 +14846,7 @@ function BreakingNewsTicker() {
                     className: "ticker-animation",
                     style: {
                       display: "flex",
-                      alignItems: "flex-end",
+                      alignItems: "center",
                       whiteSpace: "nowrap"
                     },
                     children: tickerContent.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -14851,14 +14854,12 @@ function BreakingNewsTicker() {
                       {
                         style: {
                           display: "inline-flex",
-                          alignItems: "flex-end",
+                          alignItems: "center",
                           gap: "12px",
                           color: "#ffffff",
                           fontSize: "14px",
                           fontWeight: 600,
-                          lineHeight: "2.2",
-                          /* Push headline + author/time further down */
-                          marginTop: "10px"
+                          lineHeight: "1.8"
                         },
                         children: [
                           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -14872,7 +14873,7 @@ function BreakingNewsTicker() {
                               children: "◆"
                             }
                           ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { lineHeight: "2.2" }, children: item.text }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { lineHeight: "1.8" }, children: item.text }),
                           /* @__PURE__ */ jsxRuntimeExports.jsxs(
                             "span",
                             {
@@ -14881,9 +14882,7 @@ function BreakingNewsTicker() {
                                 fontSize: "12px",
                                 fontWeight: 400,
                                 marginLeft: "4px",
-                                lineHeight: "2.2",
-                                /* Author/time also pushed down */
-                                marginTop: "6px"
+                                lineHeight: "1.8"
                               },
                               children: [
                                 "(",
