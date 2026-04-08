@@ -1,5 +1,4 @@
 import { useState } from "react";
-import type { Article } from "./backend";
 import { BreakingNewsTicker } from "./components/BreakingNewsTicker";
 import { CategoryNewsSection } from "./components/CategoryNewsSection";
 import { EditorsPicks } from "./components/EditorsPicks";
@@ -14,6 +13,7 @@ import { SettingsModal } from "./components/SettingsModal";
 import { WeatherSection } from "./components/WeatherSection";
 import { SiteSettingsProvider } from "./context/SiteSettingsContext";
 import { useGetAllArticles } from "./hooks/useQueries";
+import type { Article } from "./types";
 
 type NewsTabCategory = "national" | "online" | "international" | null;
 type CategoryFilter = string | null;

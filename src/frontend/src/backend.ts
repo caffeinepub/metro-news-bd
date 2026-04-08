@@ -89,12 +89,6 @@ export class ExternalBlob {
         return this;
     }
 }
-export interface BreakingNews {
-    id: bigint;
-    createdAt: Time;
-    text: string;
-}
-export type Time = bigint;
 export interface Article {
     id: bigint;
     title: string;
@@ -105,31 +99,64 @@ export interface Article {
     isFeatured: boolean;
     category: string;
 }
+export type Time = bigint;
+export interface BreakingNews {
+    id: bigint;
+    createdAt: Time;
+    text: string;
+}
 export interface LocalNewsArticle {
     id: bigint;
     title: string;
+    publishedAt: Time;
+    sourceUrl: string;
+    sourceName: string;
+    author: string;
+    summary: string;
+    imageBase64: string;
+    category: string;
+}
+export interface ExternalNews {
+    id: bigint;
+    title: string;
+    fetchedAt: Time;
+    sourceUrl: string;
+    sourceName: string;
     summary: string;
     category: string;
-    imageBase64: string;
-    author: string;
-    sourceName: string;
-    sourceUrl: string;
-    publishedAt: Time;
+}
+export interface HttpResponse {
+    status: bigint;
+    body: Uint8Array;
+    headers: Array<HttpHeader>;
+}
+export interface HttpHeader {
+    value: string;
+    name: string;
+}
+export interface TransformArgs {
+    context: Uint8Array;
+    response: HttpResponse;
 }
 export interface backendInterface {
     addAdmin(admin: Principal): Promise<void>;
+    addLocalNews(title: string, summary: string, category: string, imageBase64: string, author: string, sourceName: string, sourceUrl: string): Promise<bigint>;
     createArticle(title: string, summary: string, category: string, imageUrl: string, author: string, isFeatured: boolean): Promise<bigint>;
     createBreakingNews(text: string): Promise<bigint>;
+    deleteLocalNews(id: bigint): Promise<boolean>;
+    fetchExternalNews(): Promise<bigint>;
     getAllArticles(): Promise<Array<Article>>;
     getAllBreakingNews(): Promise<Array<BreakingNews>>;
-    getArticle(id: bigint): Promise<Article>;
-    getFeaturedArticles(): Promise<Array<Article>>;
-    addLocalNews(title: string, summary: string, category: string, imageBase64: string, author: string, sourceName: string, sourceUrl: string): Promise<bigint>;
     getAllLocalNews(): Promise<Array<LocalNewsArticle>>;
-    deleteLocalNews(id: bigint): Promise<boolean>;
+    getArticle(id: bigint): Promise<Article>;
+    getExternalNews(): Promise<Array<ExternalNews>>;
+    getFeaturedArticles(): Promise<Array<Article>>;
+    getLastFetchedTime(): Promise<Time | null>;
+    getLocalNewsByDateRange(fromTimestamp: Time, toTimestamp: Time): Promise<Array<LocalNewsArticle>>;
     searchLocalNews(keyword: string): Promise<Array<LocalNewsArticle>>;
-    getLocalNewsByDateRange(fromTimestamp: bigint, toTimestamp: bigint): Promise<Array<LocalNewsArticle>>;
+    transform(args: TransformArgs): Promise<HttpResponse>;
 }
+import type { Time as _Time } from "./declarations/backend.did.d.ts";
 export class Backend implements backendInterface {
     constructor(private actor: ActorSubclass<_SERVICE>, private _uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, private _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, private processError?: (error: unknown) => never){}
     async addAdmin(arg0: Principal): Promise<void> {
@@ -143,6 +170,20 @@ export class Backend implements backendInterface {
             }
         } else {
             const result = await this.actor.addAdmin(arg0);
+            return result;
+        }
+    }
+    async addLocalNews(arg0: string, arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, arg6: string): Promise<bigint> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.addLocalNews(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.addLocalNews(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
             return result;
         }
     }
@@ -174,6 +215,34 @@ export class Backend implements backendInterface {
             return result;
         }
     }
+    async deleteLocalNews(arg0: bigint): Promise<boolean> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.deleteLocalNews(arg0);
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.deleteLocalNews(arg0);
+            return result;
+        }
+    }
+    async fetchExternalNews(): Promise<bigint> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.fetchExternalNews();
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.fetchExternalNews();
+            return result;
+        }
+    }
     async getAllArticles(): Promise<Array<Article>> {
         if (this.processError) {
             try {
@@ -202,6 +271,20 @@ export class Backend implements backendInterface {
             return result;
         }
     }
+    async getAllLocalNews(): Promise<Array<LocalNewsArticle>> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.getAllLocalNews();
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.getAllLocalNews();
+            return result;
+        }
+    }
     async getArticle(arg0: bigint): Promise<Article> {
         if (this.processError) {
             try {
@@ -213,6 +296,20 @@ export class Backend implements backendInterface {
             }
         } else {
             const result = await this.actor.getArticle(arg0);
+            return result;
+        }
+    }
+    async getExternalNews(): Promise<Array<ExternalNews>> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.getExternalNews();
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.getExternalNews();
             return result;
         }
     }
@@ -230,45 +327,31 @@ export class Backend implements backendInterface {
             return result;
         }
     }
-    async addLocalNews(arg0: string, arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, arg6: string): Promise<bigint> {
+    async getLastFetchedTime(): Promise<Time | null> {
         if (this.processError) {
             try {
-                const result = await this.actor.addLocalNews(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-                return result;
+                const result = await this.actor.getLastFetchedTime();
+                return from_candid_opt_n1(this._uploadFile, this._downloadFile, result);
             } catch (e) {
                 this.processError(e);
                 throw new Error("unreachable");
             }
         } else {
-            const result = await this.actor.addLocalNews(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
-            return result;
+            const result = await this.actor.getLastFetchedTime();
+            return from_candid_opt_n1(this._uploadFile, this._downloadFile, result);
         }
     }
-    async getAllLocalNews(): Promise<Array<LocalNewsArticle>> {
+    async getLocalNewsByDateRange(arg0: Time, arg1: Time): Promise<Array<LocalNewsArticle>> {
         if (this.processError) {
             try {
-                const result = await this.actor.getAllLocalNews();
+                const result = await this.actor.getLocalNewsByDateRange(arg0, arg1);
                 return result;
             } catch (e) {
                 this.processError(e);
                 throw new Error("unreachable");
             }
         } else {
-            const result = await this.actor.getAllLocalNews();
-            return result;
-        }
-    }
-    async deleteLocalNews(arg0: bigint): Promise<boolean> {
-        if (this.processError) {
-            try {
-                const result = await this.actor.deleteLocalNews(arg0);
-                return result;
-            } catch (e) {
-                this.processError(e);
-                throw new Error("unreachable");
-            }
-        } else {
-            const result = await this.actor.deleteLocalNews(arg0);
+            const result = await this.actor.getLocalNewsByDateRange(arg0, arg1);
             return result;
         }
     }
@@ -286,20 +369,23 @@ export class Backend implements backendInterface {
             return result;
         }
     }
-    async getLocalNewsByDateRange(arg0: bigint, arg1: bigint): Promise<Array<LocalNewsArticle>> {
+    async transform(arg0: TransformArgs): Promise<HttpResponse> {
         if (this.processError) {
             try {
-                const result = await this.actor.getLocalNewsByDateRange(arg0, arg1);
+                const result = await this.actor.transform(arg0);
                 return result;
             } catch (e) {
                 this.processError(e);
                 throw new Error("unreachable");
             }
         } else {
-            const result = await this.actor.getLocalNewsByDateRange(arg0, arg1);
+            const result = await this.actor.transform(arg0);
             return result;
         }
     }
+}
+function from_candid_opt_n1(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: [] | [_Time]): Time | null {
+    return value.length === 0 ? null : value[0];
 }
 export interface CreateActorOptions {
     agent?: Agent;

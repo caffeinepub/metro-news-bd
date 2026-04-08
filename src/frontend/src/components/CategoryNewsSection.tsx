@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Article } from "../backend";
+import type { Article } from "../types";
 import { type NewsDetailItem, NewsDetailModal } from "./NewsDetailModal";
 
 interface CategoryNewsSectionProps {

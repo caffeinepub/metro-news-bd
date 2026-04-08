@@ -1099,14 +1099,14 @@ export function ExternalNewsSection({
     }
   }, [categoryFilter]);
 
-  // Auto-refresh every 6 hours
+  // Auto-refresh every 1 hour (প্রতি ১ ঘন্টায় স্বয়ংক্রিয় আপডেট)
   useEffect(() => {
     const timer = setInterval(
       () => {
         setRefreshCount((c) => c + 1);
         setLastRefreshed("এইমাত্র");
       },
-      6 * 60 * 60 * 1000,
+      60 * 60 * 1000,
     );
     return () => clearInterval(timer);
   }, []);

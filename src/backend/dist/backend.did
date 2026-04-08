@@ -1,0 +1,77 @@
+type TransformArgs = 
+ record {
+   context: blob;
+   response: HttpResponse;
+ };
+type Time = int;
+type LocalNewsArticle = 
+ record {
+   author: text;
+   category: text;
+   id: nat;
+   imageBase64: text;
+   publishedAt: Time;
+   sourceName: text;
+   sourceUrl: text;
+   summary: text;
+   title: text;
+ };
+type HttpResponse = 
+ record {
+   body: vec nat8;
+   headers: vec HttpHeader;
+   status: nat;
+ };
+type HttpHeader = 
+ record {
+   name: text;
+   value: text;
+ };
+type ExternalNews = 
+ record {
+   category: text;
+   fetchedAt: Time;
+   id: nat;
+   sourceName: text;
+   sourceUrl: text;
+   summary: text;
+   title: text;
+ };
+type BreakingNews = 
+ record {
+   createdAt: Time;
+   id: nat;
+   "text": text;
+ };
+type Article = 
+ record {
+   author: text;
+   category: text;
+   id: nat;
+   imageUrl: text;
+   isFeatured: bool;
+   publishedAt: Time;
+   summary: text;
+   title: text;
+ };
+service : {
+  addAdmin: (admin: principal) -> ();
+  addLocalNews: (title: text, summary: text, category: text, imageBase64:
+   text, author: text, sourceName: text, sourceUrl: text) -> (nat);
+  createArticle: (title: text, summary: text, category: text, imageUrl: 
+   text, author: text, isFeatured: bool) -> (nat);
+  createBreakingNews: ("text": text) -> (nat);
+  deleteLocalNews: (id: nat) -> (bool);
+  fetchExternalNews: () -> (nat);
+  getAllArticles: () -> (vec Article) query;
+  getAllBreakingNews: () -> (vec BreakingNews) query;
+  getAllLocalNews: () -> (vec LocalNewsArticle) query;
+  getArticle: (id: nat) -> (Article) query;
+  getExternalNews: () -> (vec ExternalNews) query;
+  getFeaturedArticles: () -> (vec Article) query;
+  getLastFetchedTime: () -> (opt Time) query;
+  getLocalNewsByDateRange: (fromTimestamp: Time, toTimestamp: Time) ->
+   (vec LocalNewsArticle) query;
+  searchLocalNews: (keyword: text) -> (vec LocalNewsArticle) query;
+  transform: (args: TransformArgs) -> (HttpResponse) query;
+}

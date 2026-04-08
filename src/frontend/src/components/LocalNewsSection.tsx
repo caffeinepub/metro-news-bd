@@ -12,9 +12,14 @@ import {
   X,
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { LocalNewsArticle } from "../backend";
 import { useActor } from "../hooks/useActor";
+import type { BackendActor } from "../hooks/useQueries";
+import type { LocalNewsArticle } from "../types";
 import { type NewsDetailItem, NewsDetailModal } from "./NewsDetailModal";
+
+function castActor(a: unknown): BackendActor {
+  return a as BackendActor;
+}
 
 const CATEGORIES = [
   "স্থানীয় খবর",
@@ -364,7 +369,7 @@ export function LocalNewsSection() {
     setIsLoading(true);
     setLoadError("");
     try {
-      const result = await actor.getAllLocalNews();
+      const result = await castActor(actor).getAllLocalNews();
       const sorted = [...result].sort((a, b) => {
         const aMs = toDisplayMs(a.publishedAt);
         const bMs = toDisplayMs(b.publishedAt);
@@ -392,7 +397,7 @@ export function LocalNewsSection() {
             const migrated: LocalNewsArticle[] = [];
             for (const old of toMigrate) {
               try {
-                const newId = await actor.addLocalNews(
+                const newId = await castActor(actor).addLocalNews(
                   old.title,
                   old.summary,
                   old.category,
@@ -420,7 +425,7 @@ export function LocalNewsSection() {
               localStorage.removeItem("localNews");
               // Reload from blockchain to get all articles including newly migrated
               try {
-                const freshResult = await actor.getAllLocalNews();
+                const freshResult = await castActor(actor).getAllLocalNews();
                 const freshSorted = [...freshResult].sort((a, b) => {
                   return (
                     toDisplayMs(b.publishedAt) - toDisplayMs(a.publishedAt)
@@ -457,36 +462,40 @@ export function LocalNewsSection() {
     }
   }, [actor]);
 
-  const hasLoaded = useRef(false);
+  // Track last actor instance that was used to load — avoids duplicate loads
+  // but ensures loading happens whenever a new actor becomes available
+  const loadedActorRef = useRef<typeof actor>(null);
 
   useEffect(() => {
-    if (actor && !hasLoaded.current) {
-      hasLoaded.current = true;
+    // Wait until actor is ready and not currently fetching
+    if (actor && !actorFetching && actor !== loadedActorRef.current) {
+      loadedActorRef.current = actor;
       loadArticles();
     }
-  }, [actor, loadArticles]);
+  }, [actor, actorFetching, loadArticles]);
 
-  // If actor is still null after 5 seconds, show connection message
+  // If actor is still null/fetching after 10 seconds, show connection message
   useEffect(() => {
-    if (!actor) {
+    if (!actor || actorFetching) {
       const timer = setTimeout(() => {
+        // Only show error if still not ready
         if (!actor) {
           setIsLoading(false);
           setLoadError(
             "ব্লকচেইন সংযোগ হচ্ছে... পেজ রিফ্রেশ করুন অথবা একটু অপেক্ষা করুন।",
           );
         }
-      }, 5000);
+      }, 10000);
       return () => clearTimeout(timer);
     }
-  }, [actor]);
+  }, [actor, actorFetching]);
 
   // Auto-refresh from blockchain every 30 seconds to stay in sync across devices
   useEffect(() => {
     if (!actor || actorFetching) return;
     const interval = setInterval(() => {
       if (actor && !actorFetching) {
-        actor
+        castActor(actor)
           .getAllLocalNews()
           .then((result) => {
             const sorted = [...result].sort((a, b) => {
@@ -592,7 +601,7 @@ export function LocalNewsSection() {
     setIsSaving(true);
     setSaveError("");
     try {
-      await actor.addLocalNews(
+      await castActor(actor).addLocalNews(
         title.trim(),
         summary.trim(),
         category,
@@ -627,7 +636,7 @@ export function LocalNewsSection() {
     if (!actor) return;
     setDeletingId(id);
     try {
-      await actor.deleteLocalNews(id);
+      await castActor(actor).deleteLocalNews(id);
       await loadArticles();
     } catch (err) {
       console.error("Failed to delete article:", err);
@@ -647,9 +656,9 @@ export function LocalNewsSection() {
         const toMs = new Date(searchToDate).setHours(23, 59, 59, 999);
         const fromNs = BigInt(fromMs) * 1_000_000n;
         const toNs = BigInt(toMs) * 1_000_000n;
-        result = await actor.getLocalNewsByDateRange(fromNs, toNs);
+        result = await castActor(actor).getLocalNewsByDateRange(fromNs, toNs);
       } else if (searchKeyword.trim()) {
-        result = await actor.searchLocalNews(searchKeyword.trim());
+        result = await castActor(actor).searchLocalNews(searchKeyword.trim());
       } else {
         await loadArticles();
         setIsSearchMode(false);

@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import {
   SiFacebook,
   SiInstagram,
-  SiLinkedin,
   SiPinterest,
   SiTelegram,
   SiTiktok,
@@ -43,7 +42,7 @@ function getPlatformIcon(platform: string) {
   if (p === "x" || p === "twitter") return <SiX size={13} />;
   if (p === "instagram") return <SiInstagram size={14} />;
   if (p === "tiktok") return <SiTiktok size={14} />;
-  if (p === "linkedin") return <SiLinkedin size={14} />;
+  if (p === "linkedin") return <Globe size={14} />;
   if (p === "whatsapp") return <SiWhatsapp size={14} />;
   if (p === "telegram") return <SiTelegram size={14} />;
   if (p === "pinterest") return <SiPinterest size={14} />;

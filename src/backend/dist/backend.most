@@ -1,0 +1,106 @@
+// Version: 1.0.0
+type Article__693132840 =
+  {
+    author : Text;
+    category : Text;
+    id : Nat;
+    imageUrl : Text;
+    isFeatured : Bool;
+    publishedAt : Time__900049286;
+    summary : Text;
+    title : Text
+  };
+type BreakingNews__435099029 =
+  {createdAt : Time__900049286; id : Nat; text : Text};
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type ExternalNews__968514505 =
+  {
+    category : Text;
+    fetchedAt : Time__900049286;
+    id : Nat;
+    sourceName : Text;
+    sourceUrl : Text;
+    summary : Text;
+    title : Text
+  };
+type HttpHeader__837997805 = {name : Text; value : Text};
+type HttpMethod__1061600257 = {#get; #head; #post};
+type HttpRequest__103655718 =
+  {
+    body : ?[Nat8];
+    headers : [HttpHeader__837997805];
+    max_response_bytes : ?Nat64;
+    method : HttpMethod__1061600257;
+    transform : ?TransformArg__374383012;
+    url : Text
+  };
+type HttpResponse__280953736 =
+  {body : [Nat8]; headers : [HttpHeader__837997805]; status : Nat};
+type Int__270357528 = Int__616954475;
+type Int__616954475 = Int;
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type LocalNewsArticle__724990795 =
+  {
+    author : Text;
+    category : Text;
+    id : Nat;
+    imageBase64 : Text;
+    publishedAt : Time__900049286;
+    sourceName : Text;
+    sourceUrl : Text;
+    summary : Text;
+    title : Text
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type Time__796480547 = Int__270357528;
+type Time__900049286 = Time__796480547;
+type TransformArg__374383012 =
+  {
+    context : Blob;
+    function :
+      shared query TransformArgs__358391134 -> async HttpResponse__280953736
+  };
+type TransformArgs__358391134 =
+  {context : Blob; response : HttpResponse__280953736};
+actor {
+  stable admins :
+    {var root : Node__46230540<Principal, Bool>; var size : Nat__490723111};
+  stable articles :
+    {
+      var root : Node__46230540<Nat, Article__693132840>;
+      var size : Nat__490723111
+    };
+  stable breakingNewsItems :
+    {
+      var root : Node__46230540<Nat, BreakingNews__435099029>;
+      var size : Nat__490723111
+    };
+  stable var externalNewsItems :
+    {
+      var root : Node__46230540<Nat, ExternalNews__968514505>;
+      var size : Nat__490723111
+    };
+  stable ic :
+    actor {
+      http_request :
+        shared HttpRequest__103655718 -> async HttpResponse__280953736
+    };
+  stable var lastFetchedAt : ?Time__900049286;
+  stable var localNewsItems :
+    {
+      var root : Node__46230540<Nat, LocalNewsArticle__724990795>;
+      var size : Nat__490723111
+    };
+  stable var nextArticleId : Nat;
+  stable var nextBreakingNewsId : Nat;
+  stable var nextExternalNewsId : Nat;
+  stable var nextLocalNewsId : Nat;
+  stable var stableLocalNews : [(Nat, LocalNewsArticle__724990795)];
+  stable var stableNextLocalNewsId : Nat
+};

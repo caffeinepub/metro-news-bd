@@ -27,32 +27,67 @@ export const BreakingNews = IDL.Record({
 export const LocalNewsArticle = IDL.Record({
   'id' : IDL.Nat,
   'title' : IDL.Text,
+  'publishedAt' : Time,
+  'sourceUrl' : IDL.Text,
+  'sourceName' : IDL.Text,
+  'author' : IDL.Text,
+  'summary' : IDL.Text,
+  'imageBase64' : IDL.Text,
+  'category' : IDL.Text,
+});
+export const ExternalNews = IDL.Record({
+  'id' : IDL.Nat,
+  'title' : IDL.Text,
+  'fetchedAt' : Time,
+  'sourceUrl' : IDL.Text,
+  'sourceName' : IDL.Text,
   'summary' : IDL.Text,
   'category' : IDL.Text,
-  'imageBase64' : IDL.Text,
-  'author' : IDL.Text,
-  'sourceName' : IDL.Text,
-  'sourceUrl' : IDL.Text,
-  'publishedAt' : Time,
+});
+export const HttpHeader = IDL.Record({ 'value' : IDL.Text, 'name' : IDL.Text });
+export const HttpResponse = IDL.Record({
+  'status' : IDL.Nat,
+  'body' : IDL.Vec(IDL.Nat8),
+  'headers' : IDL.Vec(HttpHeader),
+});
+export const TransformArgs = IDL.Record({
+  'context' : IDL.Vec(IDL.Nat8),
+  'response' : HttpResponse,
 });
 
 export const idlService = IDL.Service({
   'addAdmin' : IDL.Func([IDL.Principal], [], []),
+  'addLocalNews' : IDL.Func(
+      [IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text],
+      [IDL.Nat],
+      [],
+    ),
   'createArticle' : IDL.Func(
       [IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Bool],
       [IDL.Nat],
       [],
     ),
   'createBreakingNews' : IDL.Func([IDL.Text], [IDL.Nat], []),
+  'deleteLocalNews' : IDL.Func([IDL.Nat], [IDL.Bool], []),
+  'fetchExternalNews' : IDL.Func([], [IDL.Nat], []),
   'getAllArticles' : IDL.Func([], [IDL.Vec(Article)], ['query']),
   'getAllBreakingNews' : IDL.Func([], [IDL.Vec(BreakingNews)], ['query']),
-  'getArticle' : IDL.Func([IDL.Nat], [Article], ['query']),
-  'getFeaturedArticles' : IDL.Func([], [IDL.Vec(Article)], ['query']),
-  'addLocalNews' : IDL.Func([IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text], [IDL.Nat], []),
   'getAllLocalNews' : IDL.Func([], [IDL.Vec(LocalNewsArticle)], ['query']),
-  'deleteLocalNews' : IDL.Func([IDL.Nat], [IDL.Bool], []),
-  'searchLocalNews' : IDL.Func([IDL.Text], [IDL.Vec(LocalNewsArticle)], ['query']),
-  'getLocalNewsByDateRange' : IDL.Func([IDL.Int, IDL.Int], [IDL.Vec(LocalNewsArticle)], ['query']),
+  'getArticle' : IDL.Func([IDL.Nat], [Article], ['query']),
+  'getExternalNews' : IDL.Func([], [IDL.Vec(ExternalNews)], ['query']),
+  'getFeaturedArticles' : IDL.Func([], [IDL.Vec(Article)], ['query']),
+  'getLastFetchedTime' : IDL.Func([], [IDL.Opt(Time)], ['query']),
+  'getLocalNewsByDateRange' : IDL.Func(
+      [Time, Time],
+      [IDL.Vec(LocalNewsArticle)],
+      ['query'],
+    ),
+  'searchLocalNews' : IDL.Func(
+      [IDL.Text],
+      [IDL.Vec(LocalNewsArticle)],
+      ['query'],
+    ),
+  'transform' : IDL.Func([TransformArgs], [HttpResponse], ['query']),
 });
 
 export const idlInitArgs = [];
@@ -77,32 +112,67 @@ export const idlFactory = ({ IDL }) => {
   const LocalNewsArticle = IDL.Record({
     'id' : IDL.Nat,
     'title' : IDL.Text,
+    'publishedAt' : Time,
+    'sourceUrl' : IDL.Text,
+    'sourceName' : IDL.Text,
+    'author' : IDL.Text,
+    'summary' : IDL.Text,
+    'imageBase64' : IDL.Text,
+    'category' : IDL.Text,
+  });
+  const ExternalNews = IDL.Record({
+    'id' : IDL.Nat,
+    'title' : IDL.Text,
+    'fetchedAt' : Time,
+    'sourceUrl' : IDL.Text,
+    'sourceName' : IDL.Text,
     'summary' : IDL.Text,
     'category' : IDL.Text,
-    'imageBase64' : IDL.Text,
-    'author' : IDL.Text,
-    'sourceName' : IDL.Text,
-    'sourceUrl' : IDL.Text,
-    'publishedAt' : Time,
+  });
+  const HttpHeader = IDL.Record({ 'value' : IDL.Text, 'name' : IDL.Text });
+  const HttpResponse = IDL.Record({
+    'status' : IDL.Nat,
+    'body' : IDL.Vec(IDL.Nat8),
+    'headers' : IDL.Vec(HttpHeader),
+  });
+  const TransformArgs = IDL.Record({
+    'context' : IDL.Vec(IDL.Nat8),
+    'response' : HttpResponse,
   });
   
   return IDL.Service({
     'addAdmin' : IDL.Func([IDL.Principal], [], []),
+    'addLocalNews' : IDL.Func(
+        [IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text],
+        [IDL.Nat],
+        [],
+      ),
     'createArticle' : IDL.Func(
         [IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Bool],
         [IDL.Nat],
         [],
       ),
     'createBreakingNews' : IDL.Func([IDL.Text], [IDL.Nat], []),
+    'deleteLocalNews' : IDL.Func([IDL.Nat], [IDL.Bool], []),
+    'fetchExternalNews' : IDL.Func([], [IDL.Nat], []),
     'getAllArticles' : IDL.Func([], [IDL.Vec(Article)], ['query']),
     'getAllBreakingNews' : IDL.Func([], [IDL.Vec(BreakingNews)], ['query']),
-    'getArticle' : IDL.Func([IDL.Nat], [Article], ['query']),
-    'getFeaturedArticles' : IDL.Func([], [IDL.Vec(Article)], ['query']),
-    'addLocalNews' : IDL.Func([IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text, IDL.Text], [IDL.Nat], []),
     'getAllLocalNews' : IDL.Func([], [IDL.Vec(LocalNewsArticle)], ['query']),
-    'deleteLocalNews' : IDL.Func([IDL.Nat], [IDL.Bool], []),
-    'searchLocalNews' : IDL.Func([IDL.Text], [IDL.Vec(LocalNewsArticle)], ['query']),
-    'getLocalNewsByDateRange' : IDL.Func([IDL.Int, IDL.Int], [IDL.Vec(LocalNewsArticle)], ['query']),
+    'getArticle' : IDL.Func([IDL.Nat], [Article], ['query']),
+    'getExternalNews' : IDL.Func([], [IDL.Vec(ExternalNews)], ['query']),
+    'getFeaturedArticles' : IDL.Func([], [IDL.Vec(Article)], ['query']),
+    'getLastFetchedTime' : IDL.Func([], [IDL.Opt(Time)], ['query']),
+    'getLocalNewsByDateRange' : IDL.Func(
+        [Time, Time],
+        [IDL.Vec(LocalNewsArticle)],
+        ['query'],
+      ),
+    'searchLocalNews' : IDL.Func(
+        [IDL.Text],
+        [IDL.Vec(LocalNewsArticle)],
+        ['query'],
+      ),
+    'transform' : IDL.Func([TransformArgs], [HttpResponse], ['query']),
   });
 };
 

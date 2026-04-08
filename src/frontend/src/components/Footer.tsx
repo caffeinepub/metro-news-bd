@@ -2,7 +2,6 @@ import { Globe, Mail, MapPin, Phone, User } from "lucide-react";
 import {
   SiFacebook,
   SiInstagram,
-  SiLinkedin,
   SiPinterest,
   SiTelegram,
   SiTiktok,
@@ -46,7 +45,7 @@ function getPlatformIcon(platform: string) {
   if (p === "x" || p === "twitter") return <SiX size={14} />;
   if (p === "instagram") return <SiInstagram size={16} />;
   if (p === "tiktok") return <SiTiktok size={16} />;
-  if (p === "linkedin") return <SiLinkedin size={16} />;
+  if (p === "linkedin") return <Globe size={16} />;
   if (p === "whatsapp") return <SiWhatsapp size={16} />;
   if (p === "telegram") return <SiTelegram size={16} />;
   if (p === "pinterest") return <SiPinterest size={16} />;

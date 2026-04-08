@@ -25,34 +25,63 @@ export interface BreakingNews {
   'createdAt' : Time,
   'text' : string,
 }
+export interface ExternalNews {
+  'id' : bigint,
+  'title' : string,
+  'fetchedAt' : Time,
+  'sourceUrl' : string,
+  'sourceName' : string,
+  'summary' : string,
+  'category' : string,
+}
+export interface HttpHeader { 'value' : string, 'name' : string }
+export interface HttpResponse {
+  'status' : bigint,
+  'body' : Uint8Array,
+  'headers' : Array<HttpHeader>,
+}
 export interface LocalNewsArticle {
   'id' : bigint,
   'title' : string,
-  'summary' : string,
-  'category' : string,
-  'imageBase64' : string,
-  'author' : string,
-  'sourceName' : string,
-  'sourceUrl' : string,
   'publishedAt' : Time,
+  'sourceUrl' : string,
+  'sourceName' : string,
+  'author' : string,
+  'summary' : string,
+  'imageBase64' : string,
+  'category' : string,
 }
 export type Time = bigint;
+export interface TransformArgs {
+  'context' : Uint8Array,
+  'response' : HttpResponse,
+}
 export interface _SERVICE {
   'addAdmin' : ActorMethod<[Principal], undefined>,
+  'addLocalNews' : ActorMethod<
+    [string, string, string, string, string, string, string],
+    bigint
+  >,
   'createArticle' : ActorMethod<
     [string, string, string, string, string, boolean],
     bigint
   >,
   'createBreakingNews' : ActorMethod<[string], bigint>,
+  'deleteLocalNews' : ActorMethod<[bigint], boolean>,
+  'fetchExternalNews' : ActorMethod<[], bigint>,
   'getAllArticles' : ActorMethod<[], Array<Article>>,
   'getAllBreakingNews' : ActorMethod<[], Array<BreakingNews>>,
-  'getArticle' : ActorMethod<[bigint], Article>,
-  'getFeaturedArticles' : ActorMethod<[], Array<Article>>,
-  'addLocalNews' : ActorMethod<[string, string, string, string, string, string, string], bigint>,
   'getAllLocalNews' : ActorMethod<[], Array<LocalNewsArticle>>,
-  'deleteLocalNews' : ActorMethod<[bigint], boolean>,
+  'getArticle' : ActorMethod<[bigint], Article>,
+  'getExternalNews' : ActorMethod<[], Array<ExternalNews>>,
+  'getFeaturedArticles' : ActorMethod<[], Array<Article>>,
+  'getLastFetchedTime' : ActorMethod<[], [] | [Time]>,
+  'getLocalNewsByDateRange' : ActorMethod<
+    [Time, Time],
+    Array<LocalNewsArticle>
+  >,
   'searchLocalNews' : ActorMethod<[string], Array<LocalNewsArticle>>,
-  'getLocalNewsByDateRange' : ActorMethod<[bigint, bigint], Array<LocalNewsArticle>>,
+  'transform' : ActorMethod<[TransformArgs], HttpResponse>,
 }
 export declare const idlService: IDL.ServiceClass;
 export declare const idlInitArgs: IDL.Type[];
